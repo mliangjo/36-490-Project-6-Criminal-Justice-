@@ -1,0 +1,130 @@
+id,description
+1,all defendants
+10,white defendants
+11,African American defendants
+12,Hispanic / Latino defendants
+13,Native American or Alaskan defendants
+14,Asian or Pacific Islander defendants
+15,defendants of color
+16,defendants of unknown race / ethnicity
+20,male defendants
+21,female defendants
+22,defendants of unknown sex
+30,non-indigent defendants
+31,indigent defendants
+32,defendants of unknown indigent status
+40,defendants under age 18
+41,defendants age 18 to 25
+42,defendants age 26 to 35
+43,defendants age 36 to 45
+44,defendants age 46 to 65
+45,defendants over age 65
+46,defendants of unknown age group
+50,defendants who self-represented
+51,defendants represented by private attorney
+52,defendants represented by public defender
+53,defendants represented by a court-appointed private attorney
+54,defendants represented by other attorney type
+55,defendants represented by an attorney of unknown type
+60,defendants with no drug charges
+61,defendants with drug paraphernalia related charges
+62,defendants with other/unspecified drug offense charges
+63,defendants with possession/use of unspecified drug charges
+64,defendants with marijuana possession/use charges
+65,defendants with other drug possession/use charges
+66,defendants with other prescription drug possession/use charges
+67,defendants with opioid drug possession/use charges
+8100,defendants charged with a violent offense
+8101,defendants charged with a property offense
+8102,defendants charged with a drug offense
+8103,defendants charged with a DUI offense
+8104,defendants charged with a public order offense
+8105,defendants charged with a criminal traffic offense
+8106,defendants charged with other offense
+8199,defendants charged with an offense of unknown
+8200,defendants charged with a nonviolent misdemeanor
+8201,defendants charged with a violent misdemeanor
+8202,defendants charged with a nonviolent felony
+8203,defendants charged with a violent felony
+8299,defendants charged with an offense of unknown severity
+9100,defendants charged with a violent offense
+9101,defendants charged with a property offense
+9102,defendants charged with a drug offense
+9103,defendants charged with DUI offense
+9104,defendants charged with a public order offense
+9105,defendants charged with a criminal traffic offense
+9106,defendants charged with other offense
+9199,defendants charged with an offense of unknown
+9200,defendants charged with a nonviolent misdemeanor
+9201,defendants charged with a violent misdemeanor
+9202,defendants charged with a nonviolent felony
+9203,defendants charged with a violent felony
+9299,defendants charged with an offense of unknown severity
+81200,defendants charged with an ordinance / infraction
+81201,defendants charged with an unclassified misdemeanor
+81202,defendants charged with a summary offense
+81203,defendants charged with a class 3 misdemeanor
+81204,defendants charged with a class 2 misdemeanor
+81205,defendants charged with a class 1 misdemeanor
+81206,defendants charged with an unclassified felony
+81207,defendants charged with a class 3 felony
+81208,defendants charged with a class 2 felony
+81209,defendants charged with a class 1 felony
+81210,defendants charged with homicide
+81299,defendants charged with an offense of unknown severity
+81800,defendants with no drug charges
+81801,defendants with drug paraphernalia related charges
+81802,defendants with other/unspecified drug offense charges
+81803,defendants with possession/use of unspecified drug charges
+81804,defendants with marijuana possession/use charges
+81805,defendants with other drug possession/use charges
+81806,defendants with other prescription drug possession/use charges
+81807,defendants with opioid drug possession/use charges
+81808,defendants with cocaine possession/use charges
+81809,defendants with amphetamine possession/use charges
+81810,defendants with heroin possession/use charges
+81811,defendants with distribution of unspecified drug charges
+81812,defendants with marijuana distribution charges
+81813,defendants with other drug distribution charges
+81814,defendants with other prescription drug distribution charges
+81815,defendants with opioid drug distribution charges
+81816,defendants with cocaine distribution charges
+81817,defendants with amphetamine distribution charges
+81818,defendants with heroin distribution charges
+81899,defendants with unknown charges
+91200,defendants charged with an ordinance / infraction
+91201,defendants charged with an unclassified misdemeanor
+91202,defendants charged with a summary offense
+91203,defendants charged with a class 3 misdemeanor
+91204,defendants charged with a class 2 misdemeanor
+91205,defendants charged with a class 1 misdemeanor
+91206,defendants charged with an unclassified felony
+91207,defendants charged with a class 3 felony
+91208,defendants charged with a class 2 felony
+91209,defendants charged with a class 1 felony
+91210,defendants charged with homicide
+91299,defendants charged with an offense of unknown severity
+91808,defendants with cocaine possession/use charges
+91809,defendants with amphetamine possession/use charges
+91810,defendants with heroin possession/use charges
+91811,defendants with distribution of unspecified drug charges
+91812,defendants with marijuana distribution charges
+91813,defendants with other drug distribution charges
+91814,defendants with other prescription drug distribution charges
+91815,defendants with opioid drug distribution charges
+91816,defendants with cocaine distribution charges
+91817,defendants with amphetamine distribution charges
+91818,defendants with heroin distribution charges
+91899,defendants with unknown charges
+92000,defendants charged in the lower court
+92001,defendants charged in the higher court
+93000,defendants with non-domestic abuse charges
+93001,defendants with domestic abuse charges
+94001,defendants with possession/use of unspecified drug charges
+94002,defendants with marijuana possession/use charges
+94003,defendants with other drug possession/use charges
+94004,defendants with other prescription drug possession/use charges
+94005,defendants with opioid drug possession/use charges
+94006,defendants with cocaine possession/use charges
+94007,defendants with amphetamine possession/use charges
+94008,defendants with heroin possession/use charges
