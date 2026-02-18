@@ -1,0 +1,81 @@
+---
+title: "Untitled"
+output: html_document
+date: "2026-02-18"
+---
+
+```{r}
+library(dplyr)
+library(tidyverse)
+```
+
+```{r}
+pa <- read_csv("data/clean/PA.csv.gz") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "PA")
+
+fl <- read_csv("data/clean/FL.csv.gz") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "FL")
+
+or <- read_csv("data/clean/OR.csv.gz") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "OR")
+
+all_states <- bind_rows(pa, fl, or)
+
+outcome_name <- "Cases Resulting in Conviction"
+
+conv_all <- all_states %>%
+  filter(
+    measure_name == outcome_name,
+    !is.na(value)
+  )
+```
+```{r}
+ggplot(conv_all, aes(x = state, y = value)) +
+  geom_boxplot() +
+  labs(
+    title = paste0(outcome_name, " by State (county-level)"),
+    x = "State",
+    y = "Conviction (%)"
+  ) +
+  theme_minimal()
+
+```
+
+```{r}
+ggplot(conv_all %>% filter(state == "PA"),
+       aes(x = counsel_type, y = value)) +
+  geom_boxplot() +
+  labs(
+    title = "PA: Case Resulting in Conviction by Counsel Type",
+    x = "Counsel Type",
+    y = "Conviction (%)"
+  ) +
+  theme_minimal() + 
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+
+ggplot(conv_all %>% filter(state == "FL"),
+       aes(x = counsel_type, y = value)) +
+  geom_boxplot() +
+  labs(
+    title = "FL: Case Resulting in Conviction by Counsel Type",
+    x = "Counsel Type",
+    y = "Conviction (%)"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+
+ggplot(conv_all %>% filter(state == "OR"),
+       aes(x = counsel_type, y = value)) +
+  geom_boxplot() +
+  labs(
+    title = "OR: Case Resulting in Conviction by Counsel Type",
+    x = "Counsel Type",
+    y = "Conviction (%)"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+```
+
