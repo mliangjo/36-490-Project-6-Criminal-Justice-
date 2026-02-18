@@ -95,6 +95,6 @@ data_or_opti <- optimize_attorney_type(data_or_comb)
 data_fl_opti <- optimize_attorney_type(data_fl_comb)
 
 #Export
-write_csv(data_pa_opti, "data/clean/PA.csv.gz")
-write_csv(data_or_opti, "data/clean/OR.csv.gz")
-write_csv(data_fl_opti, "data/clean/FL.csv.gz")
+# write_csv(data_pa_opti, "data/clean/PA.csv.gz")
+# write_csv(data_or_opti, "data/clean/OR.csv.gz")
+# write_csv(data_fl_opti, "data/clean/FL.csv.gz")
