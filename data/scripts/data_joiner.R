@@ -82,7 +82,7 @@ optimize_attorney_type <- function (comb_data){
     mutate(counsel_type = fct_recode(counsel_type, #Shortens data names
     "Court Appointed" = "defendants represented by a court-appointed private attorney",
     "Unknown" = "defendants represented by an attorney of unknown type",
-    "Other" = "defendants represented by an attorney of unknown type",
+    "Other" = "defendants represented by other attorney type",
     "Private" = "defendants represented by private attorney",
     "Public Defender" = "defendants represented by public defender",
     "Self-Represented" = "defendants who self-represented"
@@ -95,6 +95,6 @@ data_or_opti <- optimize_attorney_type(data_or_comb)
 data_fl_opti <- optimize_attorney_type(data_fl_comb)
 
 #Export
-# write_csv(data_pa_opti, "data/clean/PA.csv.gz")
-# write_csv(data_or_opti, "data/clean/OR.csv.gz")
-# write_csv(data_fl_opti, "data/clean/FL.csv.gz")
+write_csv(data_pa_opti, "data/clean/PA.csv.gz")
+write_csv(data_or_opti, "data/clean/OR.csv.gz")
+write_csv(data_fl_opti, "data/clean/FL.csv.gz")
