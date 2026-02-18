@@ -36,7 +36,7 @@ conv_all <- all_states %>%
 ggplot(conv_all, aes(x = state, y = value)) +
   geom_boxplot() +
   labs(
-    title = paste0(outcome_name, " by State (county-level)"),
+    title = paste0(outcome_name, " by State"),
     x = "State",
     y = "Conviction (%)"
   ) +
