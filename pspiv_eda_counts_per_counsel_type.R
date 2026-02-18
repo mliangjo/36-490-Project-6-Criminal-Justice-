@@ -55,7 +55,7 @@ bar_plot_percent_measures <- function(state, m_id, m_name){
          fill = "Prop of Measure Meeting Criteria")
 }
   
-# bar_plot_percent_measures(pa, 17, "Felony Cases 180 Days")
+bar_plot_percent_measures(pa, 120, "Conviction Rate")
 # bar_plot_percent_measures(pa, 18, "Misdem Cases 90 Days")
 
 
@@ -71,5 +71,5 @@ bar_plot_median_measures <- function(state, m_id, m_name){
          fill = "Median Value")
 }
 
-# bar_plot_median_measures(pa, 104, "time to disp felony")
+bar_plot_median_measures(or, 104, "time to disp felony")
 # bar_plot_median_measures(pa, 105, "time to disp misdem")
