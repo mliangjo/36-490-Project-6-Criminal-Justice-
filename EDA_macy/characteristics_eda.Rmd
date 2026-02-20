@@ -1,5 +1,332 @@
 ---
 title: "characteristics_eda"
-output: html_document
+output: pdf_document
 ---
+
+```{r data_checks, echo = FALSE, results = "hide", message = FALSE, eval = FALSE}
+library(tidyverse)
+pa_data <- read.csv('../data/clean/PA.csv.gz') 
+
+sort(unique(pa_data$measure_name))
+A <- pa_data %>% filter(location_id == "PA", measure_format == "PERCENTAGE", measure_name == "Convictions with Unknown Disposition Method") %>% select(location_id,
+counsel_type, value, numerator, denominator) %>% arrange(counsel_type) %>% mutate(val_check = numerator / denominator)
+
+j <- pa_data %>% filter(!(location_id == "PA"), measure_format == "PERCENTAGE", measure_name == "Nonviolent Misdemeanor Cases with Monetary Bail") %>% select(location_id,
+counsel_type, value, numerator, denominator) %>% arrange(location_id)
+
+j %>% group_by(counsel_type) %>% summarize(sum = sum(denominator)) %>% arrange(counsel_type)
+
+```
+
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# Process Data sets
+# Taken from Peter S.
+
+library(tidyverse)
+process_state_data <- function(state_name, data_file, locations_file, 
+                               filters_file = "filters.csv", 
+                               measures_file = "measures.csv") {
+  # Construct file paths 
+  data_path <- file.path("../data/raw", paste0(state_name, "_State_Data"), data_file)
+  locations_path <- file.path("../data/raw", paste0(state_name, "_State_Data"), locations_file)
+  filters_path <- file.path("../data/raw", paste0(state_name, "_State_Data"), filters_file)
+  measures_path <- file.path("../data/raw", paste0(state_name, "_State_Data"), measures_file)
+  
+  # Read in each data frame
+  data_years <- read_csv(data_path)
+  locations <- read_csv(locations_path)
+  filters <- read_csv(filters_path)
+  measures <- read_csv(measures_path)
+  
+  # Left join all of them
+  data_comb <- data_years %>%
+    left_join(locations, by = join_by(location_id == id)) %>%
+    left_join(filters, by = join_by(filter_id == id)) %>%
+    left_join(measures, by = join_by(measure_id == id)) %>%
+  # Rename appropriate cols as well
+    rename(
+      location_type = type,
+      location_name = name.x,
+      measure_name = name.y,
+      measure_format = format,
+      demographics = description ## This is what encodes lawyer type (from filters.csv)
+    ) %>%
+  # Reorder ids to be next to descriptions
+    ## Measure filter location
+    select(
+      measure_id, measure_name, measure_format, #Measures
+      filter_id, demographics, #filters
+      location_id, location_type, location_name, #locations
+      everything() #Everything else
+    )
+  
+  return(data_comb)
+}
+
+# Process each state
+data_pa_comb <- process_state_data("Pennsylvania", "data-2009-2013.csv", "locations.csv")
+data_or_comb <- process_state_data("Oregon", "data-2009-2013-or.csv", "locations-or.csv")
+data_fl_comb <- process_state_data("Florida", "data-2009-2013-fl.csv", "locations-fl.csv")
+
+# Transforms the combined dataset into a smaller dataset just with the filters for attorney type
+# plus convenience updates
+
+#Only keep filters which differentiate by attorney type
+optimize_attorney_type <- function (comb_data){
+  opti <- comb_data %>%
+    filter(50 <= filter_id & filter_id <= 55) %>% #Keeps only the filters with attorney type
+    rename(counsel_type = demographics) %>% #Better title
+    mutate(counsel_type = fct_recode(counsel_type, #Shortens data names
+    "Court Appointed" = "defendants represented by a court-appointed private attorney",
+    "Unknown" = "defendants represented by an attorney of unknown type",
+    "Other" = "defendants represented by an attorney of unknown type",
+    "Private" = "defendants represented by private attorney",
+    "Public Defender" = "defendants represented by public defender",
+    "Self-Represented" = "defendants who self-represented"
+    ))
+}
+```
+
+```{r, echo = FALSE, eval = FALSE}
+pa_data <- read.csv('../data/raw/Pennsylvania_State_Data/data-2009-2013.csv') 
+measures <- read.csv('../data/raw/Pennsylvania_State_Data/measures.csv') 
+
+# Non percentage, median measures
+data_pa_comb %>% filter(!(measure_format %in% c("PERCENTAGE", "MEDIAN"))) %>% distinct(measure_id, measure_name, demographics)
+measures %>% filter(!(format %in% c("PERCENTAGE", "MEDIAN"))) 
+
+
+
+# Filter for data for all non location characteristics for defendants
+all_def_data <- data_pa_comb %>% filter(filter_id == 1, measure_format %in% c("PERCENTAGE", "MEDIAN"))
+
+# Population Dataframe
+pop_df <- pa_data %>% 
+  filter(measure_id == 501) %>% # filter for populations
+  select(location_id, value) %>%  # select only needed columns
+  rename(population = value) %>%
+  mutate(population = as.integer(population))
+
+# Total Cases Dataframe
+tot_cases_df <- pa_data %>% 
+  filter(measure_id == 100) %>% 
+  select(location_id, value) %>% 
+  rename(total_cases = value) %>%
+  mutate(total_cases = as.integer(total_cases))
+
+# Median Household Income Dataframe
+mhi_df <- pa_data %>% 
+  filter(measure_id == 525) %>% 
+  select(location_id, value) %>% 
+  rename(median_household_income = value) %>%
+  mutate(median_household_income = as.integer(median_household_income))
+
+# Number of Full-Time Prosecutors Dataframe
+num_ft_pros_df <- pa_data %>% 
+  filter(measure_id == 537) %>% 
+  select(location_id, value) %>% 
+  rename(num_full_time_prosecutors = value) %>%
+  mutate(num_full_time_prosecutors = as.integer(num_full_time_prosecutors))
+
+# Total Number of Law Enforcement Agencies Dataframe
+tot_num_lea_df <- pa_data %>% 
+  filter(measure_id == 534) %>% 
+  select(location_id, value) %>% 
+  rename(total_num_law_enforcement_agencies = value) %>%
+  mutate(total_num_law_enforcement_agencies = as.integer(total_num_law_enforcement_agencies))
+
+
+all_def_char_df <- all_def_data %>% 
+  left_join(pop_df, by = join_by(location_id == location_id)) %>%
+  left_join(tot_cases_df, by = join_by(location_id == location_id)) %>%
+  left_join(mhi_df, by = join_by(location_id == location_id)) %>%
+  left_join(num_ft_pros_df, by = join_by(location_id == location_id)) %>%
+  left_join(tot_num_lea_df, by = join_by(location_id == location_id))
+  
+
+
+# Check Population adds up 
+# state rows (PA only)
+state_df <- all_def_char_df %>%
+  filter(location_type == "state") %>%
+  select(measure_id, total_cases)
+
+# county sums
+county_df <- all_def_char_df %>%
+  filter(location_type == "county") %>%
+  group_by(measure_id) %>%
+  summarise(sum = sum(as.integer(total_cases), na.rm = TRUE))#, .groups = "drop")
+
+# compare
+result <- state_df %>%
+  left_join(county_df, by = "measure_id") %>%
+  mutate(
+    difference = as.integer(total_cases) - sum,
+    match = difference == 0
+  )
+unique(result$match) == 1
+
+```
+
+# Characteristics Dataframe Function
+```{r, echo = FALSE}
+merge_char_data <- function(data_comb, data_pre_clean, measures, output_file_path) {
+  # Filter for data for all non location characteristics for defendants
+  # filter_id = 1 is all defendants
+  all_def_data <- data_comb %>% filter(filter_id == 1, toupper(measure_format) %in% c("PERCENTAGE", "MEDIAN"))
+
+  # Population Dataframe
+  pop_df <- data_pre_clean %>% 
+    filter(measure_id == 501) %>% # filter for populations
+    select(location_id, value) %>%  # select only needed columns
+    rename(population = value) %>%
+    mutate(population = as.integer(population))
+
+  # Total Cases Dataframe
+  tot_cases_df <- data_pre_clean %>% 
+    filter(measure_id == 100) %>% 
+    select(location_id, value) %>% 
+    rename(total_cases = value) %>%
+    mutate(total_cases = as.integer(total_cases))
+
+  # Median Household Income Dataframe
+  mhi_df <- data_pre_clean %>% 
+    filter(measure_id == 525) %>% 
+    select(location_id, value) %>% 
+    rename(median_household_income = value) %>%
+    mutate(median_household_income = as.integer(median_household_income))
+
+  # Number of Full-Time Prosecutors Dataframe
+  num_ft_pros_df <- data_pre_clean %>% 
+    filter(measure_id == 537) %>% 
+    select(location_id, value) %>% 
+    rename(num_full_time_prosecutors = value) %>%
+    mutate(num_full_time_prosecutors = as.integer(num_full_time_prosecutors))
+
+  # Total Number of Law Enforcement Agencies Dataframe
+  tot_num_lea_df <- data_pre_clean %>% 
+    filter(measure_id == 534) %>% 
+    select(location_id, value) %>% 
+    rename(total_num_law_enforcement_agencies = value) %>%
+    mutate(total_num_law_enforcement_agencies = as.integer(total_num_law_enforcement_agencies))
+
+
+  all_def_char_df <- all_def_data %>% 
+    left_join(pop_df, by = join_by(location_id == location_id)) %>%
+    left_join(tot_cases_df, by = join_by(location_id == location_id)) %>%
+    left_join(mhi_df, by = join_by(location_id == location_id)) %>%
+    left_join(num_ft_pros_df, by = join_by(location_id == location_id)) %>%
+    left_join(tot_num_lea_df, by = join_by(location_id == location_id))
+  
+  write_csv(all_def_char_df, path = output_file_path)
+  return(all_def_char_df)
+}
+```
+
+# Generate Characteristic Dataframes For All State
+```{r}
+measures_pa <- read.csv('../data/raw/Pennsylvania_State_Data/measures.csv') 
+data_pa <- read.csv('../data/raw/Pennsylvania_State_Data/data-2009-2013.csv')
+pa_char <- merge_char_data(data_pa_comb, data_pa, measures_pa, "pa_characteristics_all.csv")
+
+measures_or <- read.csv('../data/raw/Oregon_State_Data/measures.csv') 
+data_or <- read.csv('../data/raw/Oregon_State_Data/data-2009-2013-or.csv') 
+or_char <- merge_char_data(data_or_comb, data_or, measures_or, "or_characteristics_all.csv")
+
+measures_fl <- read.csv('../data/raw/Florida_State_Data/measures.csv') 
+data_fl <- read.csv('../data/raw/Florida_State_Data/data-2009-2013-fl.csv') 
+fl_char <- merge_char_data(data_fl_comb, data_fl, measures_fl, "fl_characteristics_all.csv")
+```
+
+# All States Master Dataframe
+```{r}
+pa_char$state <- "PA"
+or_char$state <- "OR"
+fl_char$state <- "FL"
+
+master_df <- bind_rows(pa_char, or_char, fl_char)
+write_csv(master_df, path = "master_char.csv")
+```
+
+
+# Box Plots, Characteristics by State
+```{r, echo = FALSE}
+ggplot(aes(x = state, y = log(population), fill = state), data = master_df) +
+  #geom_boxplot() + # use real value supposed to counts
+  geom_violin() +
+  labs(title = "Population by State",
+       x = "State",
+       y = "Log Population") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Dark2")
+
+ggplot(aes(x = state, y = total_cases/population * 100000, fill = state), data = master_df) +
+  #geom_boxplot() + 
+  geom_violin() +
+  labs(title = "Total Cases per 100k by State",
+       x = "State",
+       y = "Total Cases per 100k") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Dark2")
+
+ggplot(aes(x = state, y = log(median_household_income), fill = state), data = master_df) +
+  #geom_boxplot() + 
+  geom_violin() +
+  labs(title = "Median Household Income by State",
+       x = "State",
+       y = "Median Household Income") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Dark2")
+
+ggplot(aes(x = state, y = num_full_time_prosecutors, fill = state), data = master_df) +
+  #geom_boxplot() +
+  geom_violin() +
+  labs(title = "Number of Full-Time Prosecutors by State",
+       x = "State",
+       y = "Number of Full-Time Prosecutors") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Dark2")
+
+ggplot(aes(x = state, y = total_num_law_enforcement_agencies, fill = state), data = master_df) +
+  #geom_boxplot() + 
+  geom_violin() +
+  labs(title = "Total Number of Law Enforcement Agencies by State",
+       x = "State",
+       y = "Total Number of Law Enforcement Agencies") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Dark2")
+```
+
+# Characteristics Scatter Plots
+```{r, echo = FALSE}
+ggplot(aes(x = median_household_income, y = total_cases/population * 100000, color = state), data = master_df) +
+  geom_point(alpha = 0.6) +
+  labs(title = "Total Cases per 100k vs Median Income",
+       y = "Cases per 100k",
+       x = "Median Household Income",
+       color = "State")
+```
+
+# Conviction Rates Plots
+```{r, echo = FALSE, warning = FALSE}
+# measure_id = 120 is "Cases Resulting in Conviction"
+conviction_master_df <- master_df %>% filter(measure_id == 120) %>% mutate(conviction_rate = value)
+ggplot(aes(x = log(population), y = conviction_rate, color = state), data = conviction_master_df) +
+  geom_point(alpha = 0.6) +
+  labs(title = "Conviction Rate vs Population",
+       y = "Conviction Rate (Percentage)",
+       x = "Log Population")
+
+ggplot(aes(x = conviction_rate, fill = state), data = conviction_master_df) +
+  geom_density(alpha = 0.4) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2") +
+  labs(title = "Distribution of Conviction Rates by State",
+       x = "Conviction Rate",
+       y = "Density",
+       color = "State")
+```
+
 
