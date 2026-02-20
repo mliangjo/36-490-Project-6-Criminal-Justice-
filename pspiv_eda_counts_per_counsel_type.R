@@ -47,7 +47,8 @@ all_measures %>% filter(PA, OR, FL, measure_format == "MEDIAN")
 bar_plot_percent_measures <- function(state, m_id, m_name){
   state %>%
     filter(measure_id == m_id) %>%
-    ggplot(aes(x = counsel_type, y = denominator, fill = value)) +
+    ggplot(aes(x = counsel_type, y = denominator)) +
+    # geom_col(aes(fill = value)) + #A bit busy
     geom_col() +
     geom_text(aes(label = denominator, vjust = -0.5)) +
     labs(title = paste0("Barplot of ", m_name, " Shaded by Proportion of Measure Meeting Criteria"),
