@@ -1,0 +1,61 @@
+---
+title: "Presentation Characteristics"
+output: pdf_document
+---
+
+```{r}
+library(tidyverse)
+pa_data <- read.csv('../data/raw/Pennsylvania_State_Data/data-2009-2013.csv') 
+
+fl_data <- read.csv('../data/raw/Florida_State_Data/data-2009-2013-fl.csv') 
+or_data <- read.csv('../data/raw/Oregon_State_Data/data-2009-2013-or.csv') 
+```
+
+```{r}
+length(unique(pa_data$location_id)) - 1 # subtract state
+length(unique(fl_data$location_id)) - 1 # subtract state
+length(unique(or_data$location_id)) - 1 # subtract state
+```
+
+
+```{r}
+pa_county_pop <- pa_data %>% filter(measure_id == "501", location_id != "PA")
+median(pa_county_pop$value)
+
+fl_county_pop <- fl_data %>% filter(measure_id == "501", location_id != "FL")
+median(fl_county_pop$value)
+
+or_county_pop <- or_data %>% filter(measure_id == "501", location_id != "OR")
+median(or_county_pop$value)
+```
+
+
+```{r}
+pa_county_mhi <- pa_data %>% filter(measure_id == "525", location_id != "PA")
+median(pa_county_mhi$value)
+
+fl_county_mhi <- fl_data %>% filter(measure_id == "525", location_id != "FL")
+median(fl_county_mhi$value)
+
+or_county_mhi <- or_data %>% filter(measure_id == "525", location_id != "OR")
+median(or_county_mhi$value)
+```
+
+```{r}
+# Total Cases
+pa_data %>% filter(measure_id == "100", location_id == "PA")
+
+fl_data %>% filter(measure_id == "100", location_id == "FL")
+
+or_data %>% filter(measure_id == "100", location_id == "OR")
+```
+
+```{r}
+# Conviction rate
+pa_data %>% filter(measure_id == "120", location_id == "PA", filter_id == 1)
+
+fl_data %>% filter(measure_id == "120", location_id == "FL", filter_id == 1)
+
+or_data %>% filter(measure_id == "120", location_id == "OR", filter_id == 1)
+```
+

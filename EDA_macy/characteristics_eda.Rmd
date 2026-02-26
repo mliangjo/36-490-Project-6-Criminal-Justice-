@@ -255,7 +255,7 @@ write_csv(master_df, path = "master_char.csv")
 ```{r, echo = FALSE}
 ggplot(aes(x = state, y = log(population), fill = state), data = master_df) +
   #geom_boxplot() + # use real value supposed to counts
-  geom_violin() +
+  geom_boxplot() +
   labs(title = "Population by State",
        x = "State",
        y = "Log Population") +
@@ -315,9 +315,11 @@ ggplot(aes(x = median_household_income, y = total_cases/population * 100000, col
 conviction_master_df <- master_df %>% filter(measure_id == 120) %>% mutate(conviction_rate = value)
 ggplot(aes(x = log(population), y = conviction_rate, color = state), data = conviction_master_df) +
   geom_point(alpha = 0.6) +
+  geom_smooth(method = "loess", se = FALSE) +
   labs(title = "Conviction Rate vs Population",
        y = "Conviction Rate (Percentage)",
-       x = "Log Population")
+       x = "Log Population") +
+  theme_minimal()
 
 ggplot(aes(x = conviction_rate, fill = state), data = conviction_master_df) +
   geom_density(alpha = 0.4) +
@@ -326,7 +328,15 @@ ggplot(aes(x = conviction_rate, fill = state), data = conviction_master_df) +
   labs(title = "Distribution of Conviction Rates by State",
        x = "Conviction Rate",
        y = "Density",
-       color = "State")
+       color = "State") 
 ```
 
+```{r}
+ggplot(aes(x = state, y = log(population)), data = master_df) +
+  geom_boxplot() +
+  labs(title = "Distribution of County Population by State",
+       x = "State",
+       y = "Log Population") +
+  theme_minimal() 
+```
 
