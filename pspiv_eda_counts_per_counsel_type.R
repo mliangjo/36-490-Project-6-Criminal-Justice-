@@ -74,3 +74,21 @@ bar_plot_median_measures <- function(state, m_id, m_name){
 
 bar_plot_median_measures(or, 104, "time to disp felony")
 # bar_plot_median_measures(pa, 105, "time to disp misdem")
+
+
+
+bind_rows(list(fl, or, pa)) %>% select(all_of(reduce(map(list(fl, or, pa), names), intersect))) %>%
+  mutate(counts = coalesce(denominator, count)) %>%
+  ggplot(aes(x = location_id, y = counts, fill = counsel_type)) +
+  # geom_col(aes(fill = value)) + #A bit busy
+  geom_col(position = "stack") +
+  labs(title = "Number of Cases by Attorney Type by State",
+       x = "State", y = "Number of Cases", 
+       fill = "Counsel Type") +
+  theme_minimal()
+
+
+
+
+
+
