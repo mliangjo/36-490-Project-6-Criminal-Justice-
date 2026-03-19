@@ -1,0 +1,69 @@
+measure_id,measure_name,group_number,group_name
+7,Nonviolent Misdemeanor Cases with Nonmonetary Release (ROR),1,Pretrial Release & Bail Practices
+8,Failure to Pay Low Monetary Bail,1,Pretrial Release & Bail Practices
+11,Monetary Bail Reductions,1,Pretrial Release & Bail Practices
+12,Pretrial Release Violations,1,Pretrial Release & Bail Practices
+17,Felony Cases Resolved within 180 Days,2,Case Processing Speed & Court Efficiency
+18,Misdemeanor Cases Resolved within 90 Days,2,Case Processing Speed & Court Efficiency
+23,Cases Dismissed,3,Adjudication Patterns
+25,Nonviolent Felonies Sentenced to Prison,4,Sentencing Severity & Incarceration Decisions
+26,Length of Imposed Prison Sentence: Nonviolent Felonies,4,Sentencing Severity & Incarceration Decisions
+27,Nonviolent Misdemeanors Sentenced to Jail,4,Sentencing Severity & Incarceration Decisions
+28,Length of Imposed Jail Sentence: Nonviolent Misdemeanors,4,Sentencing Severity & Incarceration Decisions
+29,Drug Possession Convictions Sentenced to Prison,4,Sentencing Severity & Incarceration Decisions
+33,Court Fees and Fines,5,Financial Penalties & Legal Debt
+35,Reconviction Rate: Probation,6,Post-Sentencing Outcomes
+41,Drug Possession Convictions Sentenced to Jail,4,Sentencing Severity & Incarceration Decisions
+100,Total Cases,7,Court & Law Enforcement Capacity
+102,Cases with Monetary Bail Equivalent to $500 or Less,1,Pretrial Release & Bail Practices
+103,Misdemeanor Cases,7,Court & Law Enforcement Capacity
+104,Time to Disposition in Felony Cases,2,Case Processing Speed & Court Efficiency
+105,Time to Disposition in Misdemeanor Cases,2,Case Processing Speed & Court Efficiency
+106,Convicted Defendants with Court Fees and Fines,5,Financial Penalties & Legal Debt
+113,Convictions with Unknown Disposition Method,3,Adjudication Patterns
+114,Monetary Bail Amount,1,Pretrial Release & Bail Practices
+115,Court Fees,5,Financial Penalties & Legal Debt
+116,Fines,5,Financial Penalties & Legal Debt
+119,Cases Involving a Guilty Plea as Charged,3,Adjudication Patterns
+120,Cases Resulting in Conviction,3,Adjudication Patterns
+122,Nonviolent Felony Cases with Nonmonetary Release (ROR),1,Pretrial Release & Bail Practices
+123,Nonviolent Misdemeanor Cases with Monetary Bail,1,Pretrial Release & Bail Practices
+124,Nonviolent Felony Cases with Monetary Bail,1,Pretrial Release & Bail Practices
+135,Felony Cases with Continuances,2,Case Processing Speed & Court Efficiency
+136,Misdemeanor Cases with Continuances,2,Case Processing Speed & Court Efficiency
+137,Felony Cases Resolved within 365 Days,2,Case Processing Speed & Court Efficiency
+140,Misdemeanor Cases Resolved within 180 days,2,Case Processing Speed & Court Efficiency
+141,Time from Filing to Disposition in Homicide Cases,2,Case Processing Speed & Court Efficiency
+146,Length of Imposed Jail Sentence: Drug Possession,4,Sentencing Severity & Incarceration Decisions
+501,Population,8,Demographic Structure
+504,Urban Population,8,Demographic Structure
+505,Rural Population,8,Demographic Structure
+507,Single Female-Headed Households with Children,9,Socioeconomic Conditions
+508,Unemployment Rate,9,Socioeconomic Conditions
+510,Non-Citizens,9,Socioeconomic Conditions
+512,Below Poverty Line,9,Socioeconomic Conditions
+514,White Population,8,Demographic Structure
+516,African American Population,8,Demographic Structure
+518,Native American/Alaskan Population,8,Demographic Structure
+520,Asian or Pacific Islander Population,8,Demographic Structure
+522,Other Race Population,8,Demographic Structure
+524,Hispanic or Latino Population,8,Demographic Structure
+525,Median Household Income,9,Socioeconomic Conditions
+526,Average Commute Minutes,9,Socioeconomic Conditions
+527,Number of Criminal Court Judges,7,Court & Law Enforcement Capacity
+532,"Police Officers per 100,000 Residents",7,Court & Law Enforcement Capacity
+533,Law Enforcement Agencies Reporting to UCR,7,Court & Law Enforcement Capacity
+534,Total Number of Law Enforcement Agencies,7,Court & Law Enforcement Capacity
+537,Number of Full-Time Prosecutors,7,Court & Law Enforcement Capacity
+539,Number of Full-Time Sworn Law Enforcement Officers,7,Court & Law Enforcement Capacity
+543,Residential Mobility,9,Socioeconomic Conditions
+544,Young Males Population,8,Demographic Structure
+545,Largest Municipality,8,Demographic Structure
+546,Largest Municipality Population,8,Demographic Structure
+548,Number of Part-Time Prosecutors,7,Court & Law Enforcement Capacity
+2511,High School Graduates,9,Socioeconomic Conditions
+1,Non-Custodial Promise to Appear Instead of Custodial Arrest,1,Pretrial Release & Bail Practices
+51,Violent Cases Received,7,Court & Law Enforcement Capacity
+2,Cases Rejected for Prosecution,2,Case Processing Speed & Court Efficiency
+145,Length of Imposed Prison Sentence: Drug Possession,4,Sentencing Severity & Incarceration Decisions
+511,High School Graduates,9,Socioeconomic Conditions

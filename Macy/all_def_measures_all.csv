@@ -1,0 +1,69 @@
+measure_id,measure_name
+7,Nonviolent Misdemeanor Cases with Nonmonetary Release (ROR)
+8,Failure to Pay Low Monetary Bail
+11,Monetary Bail Reductions
+12,Pretrial Release Violations
+17,Felony Cases Resolved within 180 Days
+18,Misdemeanor Cases Resolved within 90 Days
+23,Cases Dismissed
+25,Nonviolent Felonies Sentenced to Prison
+26,Length of Imposed Prison Sentence: Nonviolent Felonies
+27,Nonviolent Misdemeanors Sentenced to Jail
+28,Length of Imposed Jail Sentence: Nonviolent Misdemeanors
+29,Drug Possession Convictions Sentenced to Prison
+33,Court Fees and Fines
+35,Reconviction Rate: Probation
+41,Drug Possession Convictions Sentenced to Jail
+100,Total Cases
+102,Cases with Monetary Bail Equivalent to $500 or Less
+103,Misdemeanor Cases
+104,Time to Disposition in Felony Cases
+105,Time to Disposition in Misdemeanor Cases
+106,Convicted Defendants with Court Fees and Fines
+113,Convictions with Unknown Disposition Method
+114,Monetary Bail Amount
+115,Court Fees
+116,Fines
+119,Cases Involving a Guilty Plea as Charged
+120,Cases Resulting in Conviction
+122,Nonviolent Felony Cases with Nonmonetary Release (ROR)
+123,Nonviolent Misdemeanor Cases with Monetary Bail
+124,Nonviolent Felony Cases with Monetary Bail
+135,Felony Cases with Continuances
+136,Misdemeanor Cases with Continuances
+137,Felony Cases Resolved within 365 Days
+140,Misdemeanor Cases Resolved within 180 days
+141,Time from Filing to Disposition in Homicide Cases
+146,Length of Imposed Jail Sentence: Drug Possession
+501,Population
+504,Urban Population
+505,Rural Population
+507,Single Female-Headed Households with Children
+508,Unemployment Rate
+510,Non-Citizens
+512,Below Poverty Line
+514,White Population
+516,African American Population
+518,Native American/Alaskan Population
+520,Asian or Pacific Islander Population
+522,Other Race Population
+524,Hispanic or Latino Population
+525,Median Household Income
+526,Average Commute Minutes
+527,Number of Criminal Court Judges
+532,"Police Officers per 100,000 Residents"
+533,Law Enforcement Agencies Reporting to UCR
+534,Total Number of Law Enforcement Agencies
+537,Number of Full-Time Prosecutors
+539,Number of Full-Time Sworn Law Enforcement Officers
+543,Residential Mobility
+544,Young Males Population
+545,Largest Municipality
+546,Largest Municipality Population
+548,Number of Part-Time Prosecutors
+2511,High School Graduates
+1,Non-Custodial Promise to Appear Instead of Custodial Arrest
+51,Violent Cases Received
+2,Cases Rejected for Prosecution
+145,Length of Imposed Prison Sentence: Drug Possession
+511,High School Graduates

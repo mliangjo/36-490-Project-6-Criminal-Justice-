@@ -1,0 +1,1111 @@
+measure_id,measure_name,measure_format,filter_id,demographics,location_id,location_type,location_name,start_year,end_year,numerator,denominator,value,missing,missing_percentage,status,count,sum,sum_squares,minimum,maximum,standard_deviation,average,calculation,population,total_cases,median_household_income,num_full_time_prosecutors,total_num_law_enforcement_agencies
+23,Cases Dismissed,percentage,1,all defendants,OR,state,Oregon,2009,2015,126686,397034,31.9081,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR001,county,Baker,2009,2015,626,1593,39.2969,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR003,county,Benton,2009,2015,2776,7533,36.8512,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,6061,26943,22.4956,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,1410,5209,27.0685,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR009,county,Columbia,2009,2015,974,3149,30.9305,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR011,county,Coos,2009,2015,2328,6854,33.9656,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR013,county,Crook,2009,2015,990,3743,26.4494,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR015,county,Curry,2009,2015,982,3022,32.495,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,5492,20075,27.3574,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR019,county,Douglas,2009,2015,3449,12255,28.1436,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,86,218,39.4495,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR023,county,Grant,2009,2015,207,829,24.9698,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR025,county,Harney,2009,2015,302,957,31.5569,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR027,county,Hood River,2009,2015,817,2699,30.2705,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR029,county,Jackson,2009,2015,7936,26372,30.0925,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,674,3511,19.1968,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR033,county,Josephine,2009,2015,2023,9479,21.3419,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR035,county,Klamath,2009,2015,4185,13319,31.4213,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR037,county,Lake,2009,2015,492,1546,31.8241,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR039,county,Lane,2009,2015,4802,22372,21.4643,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,2777,8755,31.719,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR043,county,Linn,2009,2015,1966,10704,18.367,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR045,county,Malheur,2009,2015,843,3784,22.278,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR047,county,Marion,2009,2015,4297,30119,14.2667,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR049,county,Morrow,2009,2015,142,567,25.0441,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,52995,98347,53.8857,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR053,county,Polk,2009,2015,2451,7330,33.4379,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR055,county,Sherman,2009,2015,185,606,30.5281,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,1072,3609,29.7035,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,1763,7164,24.6092,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR061,county,Union,2009,2015,749,3233,23.1673,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,185,522,35.4406,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR065,county,Wasco,2009,2015,804,3687,21.8063,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR067,county,Washington,2009,2015,8203,38666,21.215,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,32,84,38.0952,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+23,Cases Dismissed,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,1610,8179,19.6846,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR,state,Oregon,2009,2015,NA,NA,95,96,0.0669,OK,143502,NA,NA,NA,NA,NA,181.63,MEDIAN,3868721,407169,50229,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR001,county,Baker,2009,2015,NA,NA,120,0,0,OK,483,NA,NA,NA,NA,NA,236.46,MEDIAN,16055,1633,41500,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR003,county,Benton,2009,2015,NA,NA,102,0,0,OK,2252,NA,NA,NA,NA,NA,208.44,MEDIAN,85989,7633,48604,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR005,county,Clackamas,2009,2015,NA,NA,99,1,0.0109,OK,9150,NA,NA,NA,NA,NA,165.25,MEDIAN,380532,27755,64352,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR007,county,Clatsop,2009,2015,NA,NA,112,0,0,OK,2001,NA,NA,NA,NA,NA,199.12,MEDIAN,37157,5361,44683,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR009,county,Columbia,2009,2015,NA,NA,181,0,0,OK,1268,NA,NA,NA,NA,NA,302.91,MEDIAN,49333,3260,54968,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR011,county,Coos,2009,2015,NA,NA,94,7,0.2702,OK,2584,NA,NA,NA,NA,NA,169.36,MEDIAN,62753,6981,37940,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR013,county,Crook,2009,2015,NA,NA,162,0,0,OK,810,NA,NA,NA,NA,NA,252.95,MEDIAN,20894,3792,38795,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR015,county,Curry,2009,2015,NA,NA,79,1,0.1124,OK,889,NA,NA,NA,NA,NA,178.61,MEDIAN,22361,3139,39516,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR017,county,Deschutes,2009,2015,NA,NA,158,2,0.0296,OK,6756,NA,NA,NA,NA,NA,250.69,MEDIAN,160565,20436,50209,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR019,county,Douglas,2009,2015,NA,NA,162,1,0.0156,OK,6427,NA,NA,NA,NA,NA,267.33,MEDIAN,107286,12594,40524,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR021,county,Gilliam,2009,2015,NA,NA,254,0,0,OK,149,NA,NA,NA,NA,NA,381.68,MEDIAN,1915,222,44743,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR023,county,Grant,2009,2015,NA,NA,94,0,0,OK,283,NA,NA,NA,NA,NA,190.62,MEDIAN,7359,839,35051,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR025,county,Harney,2009,2015,NA,NA,107.5,0,0,OK,456,NA,NA,NA,NA,NA,277.93,MEDIAN,7314,1002,38113,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR027,county,Hood River,2009,2015,NA,NA,87,0,0,OK,639,NA,NA,NA,NA,NA,191.58,MEDIAN,22427,2787,56725,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR029,county,Jackson,2009,2015,NA,NA,133,1,0.0094,OK,10598,NA,NA,NA,NA,NA,243.63,MEDIAN,205117,27429,44005,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR031,county,Jefferson,2009,2015,NA,NA,89.5,0,0,OK,954,NA,NA,NA,NA,NA,174.23,MEDIAN,21461,3582,43373,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR033,county,Josephine,2009,2015,NA,NA,129,0,0,OK,3832,NA,NA,NA,NA,NA,218.01,MEDIAN,82783,9782,37733,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR035,county,Klamath,2009,2015,NA,NA,209,0,0,OK,4304,NA,NA,NA,NA,NA,318.06,MEDIAN,66211,14026,39627,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR037,county,Lake,2009,2015,NA,NA,126,2,0.321,OK,621,NA,NA,NA,NA,NA,284.29,MEDIAN,7862,1631,33611,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR039,county,Lane,2009,2015,NA,NA,76,9,0.0734,OK,12254,NA,NA,NA,NA,NA,161.04,MEDIAN,353382,22671,42931,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR041,county,Lincoln,2009,2015,NA,NA,101,0,0,OK,2221,NA,NA,NA,NA,NA,202.92,MEDIAN,46070,8904,42365,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR043,county,Linn,2009,2015,NA,NA,85,1,0.0182,OK,5479,NA,NA,NA,NA,NA,167.86,MEDIAN,117648,10942,46939,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR045,county,Malheur,2009,2015,NA,NA,108,1,0.0805,OK,1241,NA,NA,NA,NA,NA,234.68,MEDIAN,30898,3944,35578,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR047,county,Marion,2009,2015,NA,NA,87,3,0.0245,OK,12225,NA,NA,NA,NA,NA,153.9,MEDIAN,318441,31160,46885,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR049,county,Morrow,2009,2015,NA,NA,156,0,0,OK,321,NA,NA,NA,NA,NA,276.84,MEDIAN,11218,599,49940,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR051,county,Multnomah,2009,2015,NA,NA,61,52,0.1751,OK,29651,NA,NA,NA,NA,NA,116.31,MEDIAN,747641,100335,52511,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR053,county,Polk,2009,2015,NA,NA,66,0,0,OK,2673,NA,NA,NA,NA,NA,173.5,MEDIAN,75930,7428,52808,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR055,county,Sherman,2009,2015,NA,NA,185,0,0,OK,293,NA,NA,NA,NA,NA,369.3,MEDIAN,1865,642,42639,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR057,county,Tillamook,2009,2015,NA,NA,95,0,0,OK,948,NA,NA,NA,NA,NA,157.18,MEDIAN,25300,3736,43676,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR059,county,Umatilla,2009,2015,NA,NA,171,2,0.0598,OK,3344,NA,NA,NA,NA,NA,303.26,MEDIAN,76306,7717,48389,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR061,county,Union,2009,2015,NA,NA,146.5,0,0,OK,1052,NA,NA,NA,NA,NA,235.1,MEDIAN,25741,3368,42542,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR063,county,Wallowa,2009,2015,NA,NA,105.5,0,0,OK,130,NA,NA,NA,NA,NA,154.48,MEDIAN,6924,534,41994,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR065,county,Wasco,2009,2015,NA,NA,129,0,0,OK,1366,NA,NA,NA,NA,NA,271.3,MEDIAN,25281,3803,43765,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR067,county,Washington,2009,2015,NA,NA,53.5,13,0.1026,OK,12662,NA,NA,NA,NA,NA,117.11,MEDIAN,539608,39034,64180,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR069,county,Wheeler,2009,2015,NA,NA,243.5,0,0,OK,30,NA,NA,NA,NA,NA,317.13,MEDIAN,1292,84,37974,NA,NA
+104,Time to Disposition in Felony Cases,median,1,all defendants,OR071,county,Yamhill,2009,2015,NA,NA,95,0,0,OK,3156,NA,NA,NA,NA,NA,179.08,MEDIAN,99802,8384,54535,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR,state,Oregon,2009,2015,NA,NA,83,164,0.0674,OK,242988,NA,NA,NA,NA,NA,188.81,MEDIAN,3868721,407169,50229,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR001,county,Baker,2009,2015,NA,NA,105,0,0,OK,1039,NA,NA,NA,NA,NA,233.17,MEDIAN,16055,1633,41500,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR003,county,Benton,2009,2015,NA,NA,168,0,0,OK,5119,NA,NA,NA,NA,NA,265.93,MEDIAN,85989,7633,48604,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR005,county,Clackamas,2009,2015,NA,NA,112,0,0,OK,17572,NA,NA,NA,NA,NA,214.4,MEDIAN,380532,27755,64352,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR007,county,Clatsop,2009,2015,NA,NA,125,1,0.0344,OK,2904,NA,NA,NA,NA,NA,218.21,MEDIAN,37157,5361,44683,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR009,county,Columbia,2009,2015,NA,NA,212,2,0.1342,OK,1488,NA,NA,NA,NA,NA,320.99,MEDIAN,49333,3260,54968,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR011,county,Coos,2009,2015,NA,NA,91,3,0.0712,OK,4208,NA,NA,NA,NA,NA,184.96,MEDIAN,62753,6981,37940,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR013,county,Crook,2009,2015,NA,NA,94,1,0.0368,OK,2717,NA,NA,NA,NA,NA,205.09,MEDIAN,20894,3792,38795,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR015,county,Curry,2009,2015,NA,NA,58,1,0.0471,OK,2122,NA,NA,NA,NA,NA,164.16,MEDIAN,22361,3139,39516,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR017,county,Deschutes,2009,2015,NA,NA,135,4,0.0307,OK,13035,NA,NA,NA,NA,NA,257.71,MEDIAN,160565,20436,50209,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR019,county,Douglas,2009,2015,NA,NA,119,0,0,OK,5790,NA,NA,NA,NA,NA,211.76,MEDIAN,107286,12594,40524,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR021,county,Gilliam,2009,2015,NA,NA,71.5,0,0,OK,68,NA,NA,NA,NA,NA,209.56,MEDIAN,1915,222,44743,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR023,county,Grant,2009,2015,NA,NA,87,0,0,OK,531,NA,NA,NA,NA,NA,209.56,MEDIAN,7359,839,35051,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR025,county,Harney,2009,2015,NA,NA,85,0,0,OK,497,NA,NA,NA,NA,NA,196.43,MEDIAN,7314,1002,38113,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR027,county,Hood River,2009,2015,NA,NA,96,1,0.0489,OK,2044,NA,NA,NA,NA,NA,235.49,MEDIAN,22427,2787,56725,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR029,county,Jackson,2009,2015,NA,NA,124,12,0.0814,OK,14738,NA,NA,NA,NA,NA,229.53,MEDIAN,205117,27429,44005,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR031,county,Jefferson,2009,2015,NA,NA,64,0,0,OK,2382,NA,NA,NA,NA,NA,154.47,MEDIAN,21461,3582,43373,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR033,county,Josephine,2009,2015,NA,NA,140,4,0.073,OK,5479,NA,NA,NA,NA,NA,253.68,MEDIAN,82783,9782,37733,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR035,county,Klamath,2009,2015,NA,NA,154,2,0.0228,OK,8778,NA,NA,NA,NA,NA,260.1,MEDIAN,66211,14026,39627,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR037,county,Lake,2009,2015,NA,NA,123,0,0,OK,880,NA,NA,NA,NA,NA,290.68,MEDIAN,7862,1631,33611,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR039,county,Lane,2009,2015,NA,NA,73,7,0.0732,OK,9560,NA,NA,NA,NA,NA,185.02,MEDIAN,353382,22671,42931,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR041,county,Lincoln,2009,2015,NA,NA,95,1,0.0157,OK,6350,NA,NA,NA,NA,NA,184.29,MEDIAN,46070,8904,42365,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR043,county,Linn,2009,2015,NA,NA,71,0,0,OK,4764,NA,NA,NA,NA,NA,181.59,MEDIAN,117648,10942,46939,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR045,county,Malheur,2009,2015,NA,NA,75,0,0,OK,2451,NA,NA,NA,NA,NA,224.99,MEDIAN,30898,3944,35578,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR047,county,Marion,2009,2015,NA,NA,69,5,0.0282,OK,17732,NA,NA,NA,NA,NA,171.9,MEDIAN,318441,31160,46885,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR049,county,Morrow,2009,2015,NA,NA,93.5,0,0,OK,220,NA,NA,NA,NA,NA,148.17,MEDIAN,11218,599,49940,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR051,county,Multnomah,2009,2015,NA,NA,50,109,0.1688,OK,64452,NA,NA,NA,NA,NA,133.07,MEDIAN,747641,100335,52511,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR053,county,Polk,2009,2015,NA,NA,64,0,0,OK,4501,NA,NA,NA,NA,NA,171.18,MEDIAN,75930,7428,52808,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR055,county,Sherman,2009,2015,NA,NA,92.5,0,0,OK,300,NA,NA,NA,NA,NA,263.2,MEDIAN,1865,642,42639,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR057,county,Tillamook,2009,2015,NA,NA,112,0,0,OK,2306,NA,NA,NA,NA,NA,209.51,MEDIAN,25300,3736,43676,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR059,county,Umatilla,2009,2015,NA,NA,145,1,0.0278,OK,3596,NA,NA,NA,NA,NA,274.68,MEDIAN,76306,7717,48389,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR061,county,Union,2009,2015,NA,NA,137,1,0.0466,OK,2145,NA,NA,NA,NA,NA,219.86,MEDIAN,25741,3368,42542,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR063,county,Wallowa,2009,2015,NA,NA,126,0,0,OK,384,NA,NA,NA,NA,NA,195.36,MEDIAN,6924,534,41994,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR065,county,Wasco,2009,2015,NA,NA,81,3,0.1312,OK,2283,NA,NA,NA,NA,NA,181.79,MEDIAN,25281,3803,43765,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR067,county,Washington,2009,2015,NA,NA,58,6,0.0234,OK,25683,NA,NA,NA,NA,NA,169.43,MEDIAN,539608,39034,64180,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR069,county,Wheeler,2009,2015,NA,NA,203.5,0,0,OK,54,NA,NA,NA,NA,NA,219.59,MEDIAN,1292,84,37974,NA,NA
+105,Time to Disposition in Misdemeanor Cases,median,1,all defendants,OR071,county,Yamhill,2009,2015,NA,NA,94,0,0,OK,4816,NA,NA,NA,NA,NA,225.11,MEDIAN,99802,8384,54535,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR,state,Oregon,2009,2015,250153,397457,62.9384,9335,2.2948,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR001,county,Baker,2009,2015,1074,1566,68.5824,67,4.1029,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR003,county,Benton,2009,2015,5179,7468,69.3492,164,2.1488,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,18269,27560,66.2881,194,0.699,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,2998,5075,59.0739,285,5.3172,HIGH_MISSING_UNFILT,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR009,county,Columbia,2009,2015,1560,2882,54.1291,378,11.5951,EXCEEDS_MISSING_UNFILT,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR011,county,Coos,2009,2015,4306,6955,61.9123,13,0.1866,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR013,county,Crook,2009,2015,2749,3574,76.9166,217,5.7241,HIGH_MISSING_UNFILT,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR015,county,Curry,2009,2015,2210,3124,70.7426,7,0.2236,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,13285,20192,65.7934,243,1.1891,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR019,county,Douglas,2009,2015,5962,12585,47.3739,9,0.0715,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,71,221,32.1267,1,0.4505,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR023,county,Grant,2009,2015,537,828,64.8551,11,1.3111,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR025,county,Harney,2009,2015,523,988,52.9352,3,0.3027,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR027,county,Hood River,2009,2015,2107,2775,75.9279,11,0.3948,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR029,county,Jackson,2009,2015,15176,26264,57.7825,979,3.5936,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,2430,3418,71.0942,164,4.5784,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR033,county,Josephine,2009,2015,5704,9624,59.2685,158,1.6152,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR035,county,Klamath,2009,2015,9256,13837,66.8931,189,1.3475,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR037,county,Lake,2009,2015,924,1589,58.1498,41,2.5153,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR039,county,Lane,2009,2015,9749,22189,43.9362,482,2.1261,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,6480,8739,74.1504,165,1.8531,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR043,county,Linn,2009,2015,4901,10502,46.6673,438,4.0037,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR045,county,Malheur,2009,2015,2556,3855,66.3035,79,2.0081,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR047,county,Marion,2009,2015,18569,31086,59.7343,69,0.2215,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR049,county,Morrow,2009,2015,230,573,40.1396,23,3.8591,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,66214,96644,68.5133,3675,3.6633,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR053,county,Polk,2009,2015,4564,7287,62.6321,141,1.8982,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR055,county,Sherman,2009,2015,324,630,51.4286,12,1.8692,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,2356,3333,70.6871,366,9.8946,HIGH_MISSING_UNFILT,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,3988,7502,53.1592,202,2.622,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR061,county,Union,2009,2015,2232,3306,67.5136,60,1.7825,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,390,523,74.5698,11,2.0599,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR065,county,Wasco,2009,2015,2377,3775,62.9669,28,0.7363,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR067,county,Washington,2009,2015,25969,38817,66.9011,217,0.5559,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,54,84,64.2857,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+103,Misdemeanor Cases,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,4880,8087,60.3438,233,2.8005,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR,state,Oregon,2009,2015,101219,143502,70.5349,96,0.0669,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR001,county,Baker,2009,2015,295,483,61.0766,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR003,county,Benton,2009,2015,1526,2252,67.762,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,6538,9150,71.4536,1,0.0109,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,1352,2001,67.5662,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR009,county,Columbia,2009,2015,631,1268,49.7634,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR011,county,Coos,2009,2015,1983,2584,76.7415,7,0.2702,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR013,county,Crook,2009,2015,445,810,54.9383,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR015,county,Curry,2009,2015,650,889,73.1159,1,0.1124,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,3692,6756,54.6477,2,0.0296,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR019,county,Douglas,2009,2015,3406,6427,52.9952,1,0.0156,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,67,149,44.9664,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR023,county,Grant,2009,2015,198,283,69.9647,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR025,county,Harney,2009,2015,293,456,64.2544,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR027,county,Hood River,2009,2015,439,639,68.7011,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR029,county,Jackson,2009,2015,6292,10598,59.3697,1,0.0094,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,676,954,70.8595,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR033,county,Josephine,2009,2015,2383,3832,62.1868,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR035,county,Klamath,2009,2015,1954,4304,45.3996,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR037,county,Lake,2009,2015,373,621,60.0644,2,0.321,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR039,county,Lane,2009,2015,9511,12254,77.6155,9,0.0734,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,1499,2221,67.4921,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR043,county,Linn,2009,2015,4022,5479,73.4076,1,0.0182,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR045,county,Malheur,2009,2015,830,1241,66.8815,1,0.0805,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR047,county,Marion,2009,2015,9058,12225,74.0941,3,0.0245,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR049,county,Morrow,2009,2015,179,321,55.7632,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,24381,29651,82.2266,52,0.1751,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR053,county,Polk,2009,2015,1919,2673,71.792,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR055,county,Sherman,2009,2015,145,293,49.4881,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,671,948,70.7806,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,1722,3344,51.4952,2,0.0598,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR061,county,Union,2009,2015,601,1052,57.1293,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,93,130,71.5385,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR065,county,Wasco,2009,2015,823,1366,60.2489,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR067,county,Washington,2009,2015,10277,12662,81.1641,13,0.1026,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,9,30,30,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+17,Felony Cases Resolved within 180 Days,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,2286,3156,72.4335,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR,state,Oregon,2009,2015,126928,242988,52.2363,164,0.0674,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR001,county,Baker,2009,2015,479,1039,46.102,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR003,county,Benton,2009,2015,1711,5119,33.4245,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,7800,17572,44.3888,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,1102,2904,37.9477,1,0.0344,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR009,county,Columbia,2009,2015,309,1488,20.7661,2,0.1342,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR011,county,Coos,2009,2015,2091,4208,49.6911,3,0.0712,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR013,county,Crook,2009,2015,1334,2717,49.0983,1,0.0368,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR015,county,Curry,2009,2015,1281,2122,60.3676,1,0.0471,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,4955,13035,38.013,4,0.0307,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR019,county,Douglas,2009,2015,2317,5790,40.0173,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,35,68,51.4706,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR023,county,Grant,2009,2015,274,531,51.6008,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR025,county,Harney,2009,2015,259,497,52.1127,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR027,county,Hood River,2009,2015,1006,2044,49.2172,1,0.0489,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR029,county,Jackson,2009,2015,6360,14738,43.1538,12,0.0814,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,1386,2382,58.1864,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR033,county,Josephine,2009,2015,2019,5479,36.8498,4,0.073,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR035,county,Klamath,2009,2015,3200,8778,36.4548,2,0.0228,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR037,county,Lake,2009,2015,390,880,44.3182,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR039,county,Lane,2009,2015,5288,9560,55.3138,7,0.0732,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,3089,6350,48.6457,1,0.0157,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR043,county,Linn,2009,2015,2766,4764,58.0605,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR045,county,Malheur,2009,2015,1376,2451,56.1404,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR047,county,Marion,2009,2015,9976,17732,56.2599,5,0.0282,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR049,county,Morrow,2009,2015,109,220,49.5455,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,42359,64452,65.7218,109,0.1688,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR053,county,Polk,2009,2015,2590,4501,57.5428,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR055,county,Sherman,2009,2015,148,300,49.3333,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,1012,2306,43.8855,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,1091,3596,30.3393,1,0.0278,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR061,county,Union,2009,2015,725,2145,33.7995,1,0.0466,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,143,384,37.2396,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR065,county,Wasco,2009,2015,1223,2283,53.5699,3,0.1312,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR067,county,Washington,2009,2015,14424,25683,56.1617,6,0.0234,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,9,54,16.6667,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+18,Misdemeanor Cases Resolved within 90 Days,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,2292,4816,47.5914,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR,state,Oregon,2009,2015,123889,143502,86.3326,96,0.0669,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR001,county,Baker,2009,2015,387,483,80.1242,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR003,county,Benton,2009,2015,1892,2252,84.0142,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,8237,9150,90.0219,1,0.0109,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,1724,2001,86.1569,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR009,county,Columbia,2009,2015,915,1268,72.1609,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR011,county,Coos,2009,2015,2257,2584,87.3452,7,0.2702,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR013,county,Crook,2009,2015,630,810,77.7778,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR015,county,Curry,2009,2015,780,889,87.739,1,0.1124,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,5270,6756,78.0047,2,0.0296,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR019,county,Douglas,2009,2015,4753,6427,73.9536,1,0.0156,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,83,149,55.7047,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR023,county,Grant,2009,2015,248,283,87.6325,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR025,county,Harney,2009,2015,350,456,76.7544,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR027,county,Hood River,2009,2015,534,639,83.5681,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR029,county,Jackson,2009,2015,8351,10598,78.7979,1,0.0094,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,822,954,86.1635,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR033,county,Josephine,2009,2015,3176,3832,82.881,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR035,county,Klamath,2009,2015,3017,4304,70.0976,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR037,county,Lake,2009,2015,461,621,74.2351,2,0.321,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR039,county,Lane,2009,2015,10970,12254,89.5218,9,0.0734,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,1834,2221,82.5754,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR043,county,Linn,2009,2015,4822,5479,88.0088,1,0.0182,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR045,county,Malheur,2009,2015,982,1241,79.1297,1,0.0805,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR047,county,Marion,2009,2015,11100,12225,90.7975,3,0.0245,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR049,county,Morrow,2009,2015,242,321,75.3894,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,27640,29651,93.2178,52,0.1751,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR053,county,Polk,2009,2015,2252,2673,84.2499,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR055,county,Sherman,2009,2015,196,293,66.8942,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,850,948,89.6624,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,2496,3344,74.6411,2,0.0598,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR061,county,Union,2009,2015,856,1052,81.3688,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,118,130,90.7692,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR065,county,Wasco,2009,2015,1068,1366,78.1845,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR067,county,Washington,2009,2015,11819,12662,93.3423,13,0.1026,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,20,30,66.6667,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+137,Felony Cases Resolved within 365 Days,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,2737,3156,86.7237,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR,state,Oregon,2009,2015,16550,144819,11.4281,7,0.0048,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR001,county,Baker,2009,2015,154,487,31.6222,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR003,county,Benton,2009,2015,105,2263,4.6399,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,1769,9204,19.2199,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,208,2029,10.2514,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR009,county,Columbia,2009,2015,211,1293,16.3186,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR011,county,Coos,2009,2015,8,2632,0.304,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR013,county,Crook,2009,2015,168,816,20.5882,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR015,county,Curry,2009,2015,143,894,15.9955,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,1629,6794,23.977,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR019,county,Douglas,2009,2015,736,6457,11.3985,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,1,149,0.6711,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR023,county,Grant,2009,2015,67,288,23.2639,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR025,county,Harney,2009,2015,86,459,18.7364,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR027,county,Hood River,2009,2015,22,646,3.4056,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR029,county,Jackson,2009,2015,3626,10632,34.1046,2,0.0188,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,198,971,20.3913,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR033,county,Josephine,2009,2015,320,3855,8.3009,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR035,county,Klamath,2009,2015,1461,4358,33.5246,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR037,county,Lake,2009,2015,195,626,31.1502,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR039,county,Lane,2009,2015,45,12342,0.3646,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,191,2245,8.5078,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR043,county,Linn,2009,2015,132,5510,2.3956,1,0.0181,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR045,county,Malheur,2009,2015,240,1255,19.1235,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR047,county,Marion,2009,2015,580,12319,4.7082,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR049,county,Morrow,2009,2015,77,327,23.5474,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,23,30120,0.0764,4,0.0133,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR053,county,Polk,2009,2015,181,2690,6.7286,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR055,county,Sherman,2009,2015,18,295,6.1017,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,62,954,6.499,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,624,3373,18.4999,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR061,county,Union,2009,2015,140,1057,13.245,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,8,131,6.1069,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR065,county,Wasco,2009,2015,62,1376,4.5058,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR067,county,Washington,2009,2015,2748,12769,21.5209,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,1,30,3.3333,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+135,Felony Cases with Continuances,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,311,3173,9.8014,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR,state,Oregon,2009,2015,16592,243145,6.8239,7,0.0029,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR001,county,Baker,2009,2015,235,1039,22.6179,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR003,county,Benton,2009,2015,106,5119,2.0707,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,1313,17572,7.4721,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,228,2905,7.8485,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR009,county,Columbia,2009,2015,231,1490,15.5034,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR011,county,Coos,2009,2015,16,4211,0.38,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR013,county,Crook,2009,2015,219,2718,8.0574,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR015,county,Curry,2009,2015,289,2123,13.6128,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,2234,13039,17.1332,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR019,county,Douglas,2009,2015,415,5789,7.1688,1,0.0173,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,0,68,0,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR023,county,Grant,2009,2015,88,531,16.5725,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR025,county,Harney,2009,2015,82,497,16.499,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR027,county,Hood River,2009,2015,56,2045,2.7384,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR029,county,Jackson,2009,2015,3183,14750,21.5797,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,276,2382,11.5869,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR033,county,Josephine,2009,2015,253,5483,4.6143,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR035,county,Klamath,2009,2015,1720,8780,19.59,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR037,county,Lake,2009,2015,157,880,17.8409,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR039,county,Lane,2009,2015,107,9567,1.1184,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,273,6351,4.2985,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR043,county,Linn,2009,2015,92,4764,1.9312,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR045,county,Malheur,2009,2015,267,2451,10.8935,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR047,county,Marion,2009,2015,385,17737,2.1706,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR049,county,Morrow,2009,2015,30,220,13.6364,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,39,64556,0.0604,5,0.0077,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR053,county,Polk,2009,2015,497,4501,11.042,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR055,county,Sherman,2009,2015,9,300,3,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,132,2306,5.7242,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,469,3597,13.0386,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR061,county,Union,2009,2015,170,2146,7.9217,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,13,384,3.3854,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR065,county,Wasco,2009,2015,85,2286,3.7183,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR067,county,Washington,2009,2015,2547,25688,9.9151,1,0.0039,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,0,54,0,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+136,Misdemeanor Cases with Continuances,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,376,4816,7.8073,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR,state,Oregon,2009,2015,164033,242988,67.5066,164,0.0674,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR001,county,Baker,2009,2015,647,1039,62.2714,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR003,county,Benton,2009,2015,2639,5119,51.553,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,10686,17572,60.8127,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,1736,2904,59.7796,1,0.0344,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR009,county,Columbia,2009,2015,675,1488,45.3629,2,0.1342,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR011,county,Coos,2009,2015,3038,4208,72.1958,3,0.0712,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR013,county,Crook,2009,2015,1771,2717,65.1822,1,0.0368,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR015,county,Curry,2009,2015,1548,2122,72.95,1,0.0471,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,7485,13035,57.4223,4,0.0307,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR019,county,Douglas,2009,2015,3580,5790,61.8307,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,50,68,73.5294,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR023,county,Grant,2009,2015,349,531,65.725,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR025,county,Harney,2009,2015,351,497,70.6237,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR027,county,Hood River,2009,2015,1213,2044,59.3444,1,0.0489,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR029,county,Jackson,2009,2015,8597,14738,58.3322,12,0.0814,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,1724,2382,72.3762,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR033,county,Josephine,2009,2015,3102,5479,56.6162,4,0.073,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR035,county,Klamath,2009,2015,4743,8778,54.0328,2,0.0228,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR037,county,Lake,2009,2015,510,880,57.9545,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR039,county,Lane,2009,2015,6611,9560,69.1527,7,0.0732,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,4096,6350,64.5039,1,0.0157,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR043,county,Linn,2009,2015,3399,4764,71.3476,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR045,county,Malheur,2009,2015,1690,2451,68.9514,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR047,county,Marion,2009,2015,12610,17732,71.1144,5,0.0282,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR049,county,Morrow,2009,2015,165,220,75,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,50817,64452,78.8447,109,0.1688,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR053,county,Polk,2009,2015,3047,4501,67.6961,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR055,county,Sherman,2009,2015,197,300,65.6667,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,1489,2306,64.5707,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,2080,3596,57.842,1,0.0278,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR061,county,Union,2009,2015,1286,2145,59.9534,1,0.0466,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,238,384,61.9792,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR065,county,Wasco,2009,2015,1597,2283,69.9518,3,0.1312,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR067,county,Washington,2009,2015,17125,25683,66.6783,6,0.0234,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,20,54,37.037,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+140,Misdemeanor Cases Resolved within 180 days,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,3122,4816,64.8256,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR,state,Oregon,2009,2015,NA,NA,230,1,0.0852,OK,1173,NA,NA,NA,NA,NA,313.65,MEDIAN,3868721,407169,50229,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR001,county,Baker,2009,2015,NA,NA,183,0,0,INSUFFICIENT_DATA_UNFILT,4,NA,NA,NA,NA,NA,229,MEDIAN,16055,1633,41500,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR003,county,Benton,2009,2015,NA,NA,170,0,0,INSUFFICIENT_DATA_UNFILT,11,NA,NA,NA,NA,NA,219.09,MEDIAN,85989,7633,48604,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR005,county,Clackamas,2009,2015,NA,NA,236,0,0,OK,53,NA,NA,NA,NA,NA,408.79,MEDIAN,380532,27755,64352,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR007,county,Clatsop,2009,2015,NA,NA,272.5,0,0,INSUFFICIENT_DATA_UNFILT,28,NA,NA,NA,NA,NA,271.68,MEDIAN,37157,5361,44683,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR009,county,Columbia,2009,2015,NA,NA,335,0,0,INSUFFICIENT_DATA_UNFILT,25,NA,NA,NA,NA,NA,432.36,MEDIAN,49333,3260,54968,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR011,county,Coos,2009,2015,NA,NA,181,0,0,OK,41,NA,NA,NA,NA,NA,172.98,MEDIAN,62753,6981,37940,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR013,county,Crook,2009,2015,NA,NA,517.5,0,0,INSUFFICIENT_DATA_UNFILT,6,NA,NA,NA,NA,NA,395.17,MEDIAN,20894,3792,38795,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR015,county,Curry,2009,2015,NA,NA,418,1,25,INSUFFICIENT_DATA_UNFILT,3,NA,NA,NA,NA,NA,366,MEDIAN,22361,3139,39516,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR017,county,Deschutes,2009,2015,NA,NA,267,0,0,OK,36,NA,NA,NA,NA,NA,356.69,MEDIAN,160565,20436,50209,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR019,county,Douglas,2009,2015,NA,NA,336,0,0,INSUFFICIENT_DATA_UNFILT,29,NA,NA,NA,NA,NA,433.69,MEDIAN,107286,12594,40524,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR021,county,Gilliam,2009,2015,NA,NA,NA,0,NA,NO_DATA,0,NA,NA,NA,NA,NA,NA,MEDIAN,1915,222,44743,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR023,county,Grant,2009,2015,NA,NA,222,0,0,INSUFFICIENT_DATA_UNFILT,5,NA,NA,NA,NA,NA,224,MEDIAN,7359,839,35051,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR025,county,Harney,2009,2015,NA,NA,45,0,0,INSUFFICIENT_DATA_UNFILT,3,NA,NA,NA,NA,NA,117.67,MEDIAN,7314,1002,38113,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR027,county,Hood River,2009,2015,NA,NA,400,0,0,INSUFFICIENT_DATA_UNFILT,7,NA,NA,NA,NA,NA,371.29,MEDIAN,22427,2787,56725,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR029,county,Jackson,2009,2015,NA,NA,291,0,0,OK,35,NA,NA,NA,NA,NA,377.26,MEDIAN,205117,27429,44005,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR031,county,Jefferson,2009,2015,NA,NA,232,0,0,INSUFFICIENT_DATA_UNFILT,17,NA,NA,NA,NA,NA,218.94,MEDIAN,21461,3582,43373,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR033,county,Josephine,2009,2015,NA,NA,312,0,0,INSUFFICIENT_DATA_UNFILT,23,NA,NA,NA,NA,NA,378.7,MEDIAN,82783,9782,37733,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR035,county,Klamath,2009,2015,NA,NA,320.5,0,0,OK,54,NA,NA,NA,NA,NA,420.02,MEDIAN,66211,14026,39627,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR037,county,Lake,2009,2015,NA,NA,226,0,0,INSUFFICIENT_DATA_UNFILT,3,NA,NA,NA,NA,NA,252,MEDIAN,7862,1631,33611,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR039,county,Lane,2009,2015,NA,NA,176,0,0,OK,79,NA,NA,NA,NA,NA,228.78,MEDIAN,353382,22671,42931,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR041,county,Lincoln,2009,2015,NA,NA,205.5,0,0,INSUFFICIENT_DATA_UNFILT,24,NA,NA,NA,NA,NA,279.33,MEDIAN,46070,8904,42365,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR043,county,Linn,2009,2015,NA,NA,269,0,0,OK,31,NA,NA,NA,NA,NA,422.68,MEDIAN,117648,10942,46939,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR045,county,Malheur,2009,2015,NA,NA,147,0,0,INSUFFICIENT_DATA_UNFILT,13,NA,NA,NA,NA,NA,188.46,MEDIAN,30898,3944,35578,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR047,county,Marion,2009,2015,NA,NA,255,0,0,OK,91,NA,NA,NA,NA,NA,306.57,MEDIAN,318441,31160,46885,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR049,county,Morrow,2009,2015,NA,NA,357.5,0,0,INSUFFICIENT_DATA_UNFILT,6,NA,NA,NA,NA,NA,346.67,MEDIAN,11218,599,49940,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR051,county,Multnomah,2009,2015,NA,NA,197,0,0,OK,367,NA,NA,NA,NA,NA,272.03,MEDIAN,747641,100335,52511,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR053,county,Polk,2009,2015,NA,NA,140,0,0,INSUFFICIENT_DATA_UNFILT,17,NA,NA,NA,NA,NA,216.71,MEDIAN,75930,7428,52808,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR055,county,Sherman,2009,2015,NA,NA,164.5,0,0,INSUFFICIENT_DATA_UNFILT,2,NA,NA,NA,NA,NA,164.5,MEDIAN,1865,642,42639,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR057,county,Tillamook,2009,2015,NA,NA,448.5,0,0,INSUFFICIENT_DATA_UNFILT,6,NA,NA,NA,NA,NA,764,MEDIAN,25300,3736,43676,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR059,county,Umatilla,2009,2015,NA,NA,288,0,0,INSUFFICIENT_DATA_UNFILT,27,NA,NA,NA,NA,NA,386.67,MEDIAN,76306,7717,48389,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR061,county,Union,2009,2015,NA,NA,211,0,0,INSUFFICIENT_DATA_UNFILT,5,NA,NA,NA,NA,NA,313.6,MEDIAN,25741,3368,42542,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR063,county,Wallowa,2009,2015,NA,NA,328,0,0,INSUFFICIENT_DATA_UNFILT,1,NA,NA,NA,NA,NA,328,MEDIAN,6924,534,41994,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR065,county,Wasco,2009,2015,NA,NA,180,0,0,INSUFFICIENT_DATA_UNFILT,10,NA,NA,NA,NA,NA,343.3,MEDIAN,25281,3803,43765,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR067,county,Washington,2009,2015,NA,NA,287,0,0,OK,94,NA,NA,NA,NA,NA,371.97,MEDIAN,539608,39034,64180,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR069,county,Wheeler,2009,2015,NA,NA,NA,0,NA,NO_DATA,0,NA,NA,NA,NA,NA,NA,MEDIAN,1292,84,37974,NA,NA
+141,Time from Filing to Disposition in Homicide Cases,median,1,all defendants,OR071,county,Yamhill,2009,2015,NA,NA,284,0,0,INSUFFICIENT_DATA_UNFILT,17,NA,NA,NA,NA,NA,347.71,MEDIAN,99802,8384,54535,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR,state,Oregon,2009,2015,9144,261702,3.4941,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR001,county,Baker,2009,2015,20,913,2.1906,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR003,county,Benton,2009,2015,136,4677,2.9078,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,482,20353,2.3682,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,124,3615,3.4302,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR009,county,Columbia,2009,2015,60,2026,2.9615,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR011,county,Coos,2009,2015,201,4212,4.7721,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR013,county,Crook,2009,2015,68,2633,2.5826,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR015,county,Curry,2009,2015,79,1970,4.0102,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,344,14323,2.4017,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR019,county,Douglas,2009,2015,318,8396,3.7875,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,8,128,6.25,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR023,county,Grant,2009,2015,15,577,2.5997,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR025,county,Harney,2009,2015,9,626,1.4377,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR027,county,Hood River,2009,2015,17,1779,0.9556,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR029,county,Jackson,2009,2015,750,17790,4.2159,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,61,2763,2.2077,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR033,county,Josephine,2009,2015,212,7293,2.9069,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR035,county,Klamath,2009,2015,355,8920,3.9798,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR037,county,Lake,2009,2015,36,992,3.629,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR039,county,Lane,2009,2015,409,17131,2.3875,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,293,5740,5.1045,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR043,county,Linn,2009,2015,260,8423,3.0868,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR045,county,Malheur,2009,2015,76,2775,2.7387,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR047,county,Marion,2009,2015,505,25336,1.9932,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR049,county,Morrow,2009,2015,10,403,2.4814,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,2832,43249,6.5481,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR053,county,Polk,2009,2015,198,4606,4.2987,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR055,county,Sherman,2009,2015,11,410,2.6829,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,88,2399,3.6682,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,134,5204,2.5749,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR061,county,Union,2009,2015,43,2430,1.7695,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,6,315,1.9048,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR065,county,Wasco,2009,2015,53,2798,1.8942,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR067,county,Washington,2009,2015,726,30083,2.4133,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,1,49,2.0408,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+113,Convictions with Unknown Disposition Method,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,204,6365,3.205,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR,state,Oregon,2009,2015,261702,397034,65.9143,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR001,county,Baker,2009,2015,913,1593,57.3132,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR003,county,Benton,2009,2015,4677,7533,62.0868,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,20353,26943,75.541,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,3615,5209,69.3991,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR009,county,Columbia,2009,2015,2026,3149,64.3379,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR011,county,Coos,2009,2015,4212,6854,61.4532,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR013,county,Crook,2009,2015,2633,3743,70.3446,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR015,county,Curry,2009,2015,1970,3022,65.1886,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,14323,20075,71.3474,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR019,county,Douglas,2009,2015,8396,12255,68.5108,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,128,218,58.7156,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR023,county,Grant,2009,2015,577,829,69.6019,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR025,county,Harney,2009,2015,626,957,65.4127,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR027,county,Hood River,2009,2015,1779,2699,65.9133,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR029,county,Jackson,2009,2015,17790,26372,67.4579,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,2763,3511,78.6955,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR033,county,Josephine,2009,2015,7293,9479,76.9385,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR035,county,Klamath,2009,2015,8920,13319,66.972,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR037,county,Lake,2009,2015,992,1546,64.1656,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR039,county,Lane,2009,2015,17131,22372,76.5734,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,5740,8755,65.5625,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR043,county,Linn,2009,2015,8423,10704,78.6902,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR045,county,Malheur,2009,2015,2775,3784,73.3351,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR047,county,Marion,2009,2015,25336,30119,84.1197,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR049,county,Morrow,2009,2015,403,567,71.0758,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,43249,98347,43.9759,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR053,county,Polk,2009,2015,4606,7330,62.8377,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR055,county,Sherman,2009,2015,410,606,67.6568,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,2399,3609,66.4727,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,5204,7164,72.641,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR061,county,Union,2009,2015,2430,3233,75.1624,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,315,522,60.3448,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR065,county,Wasco,2009,2015,2798,3687,75.8883,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR067,county,Washington,2009,2015,30083,38666,77.8022,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,49,84,58.3333,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+120,Cases Resulting in Conviction,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,6365,8179,77.8212,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR,state,Oregon,2009,2015,98979,204556,48.3872,1399,0.6793,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,3868721,407169,50229,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR001,county,Baker,2009,2015,261,685,38.1022,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,16055,1633,41500,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR003,county,Benton,2009,2015,1189,3704,32.1004,44,1.174,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,85989,7633,48604,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,10836,18682,58.0024,12,0.0642,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,380532,27755,64352,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,844,2668,31.6342,73,2.6633,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,37157,5361,44683,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR009,county,Columbia,2009,2015,641,1522,42.1156,157,9.3508,HIGH_MISSING_UNFILT,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,49333,3260,54968,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR011,county,Coos,2009,2015,1589,3476,45.7135,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,62753,6981,37940,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR013,county,Crook,2009,2015,978,2162,45.2359,84,3.74,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,20894,3792,38795,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR015,county,Curry,2009,2015,764,1723,44.3413,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22361,3139,39516,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,5989,13578,44.1081,47,0.345,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,160565,20436,50209,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR019,county,Douglas,2009,2015,3091,6010,51.4309,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,107286,12594,40524,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,32,113,28.3186,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1915,222,44743,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR023,county,Grant,2009,2015,133,434,30.6452,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7359,839,35051,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR025,county,Harney,2009,2015,222,522,42.5287,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7314,1002,38113,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR027,county,Hood River,2009,2015,611,1602,38.1398,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,22427,2787,56725,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR029,county,Jackson,2009,2015,6148,15389,39.9506,232,1.4852,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,205117,27429,44005,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,1251,2299,54.415,63,2.6672,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,21461,3582,43373,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR033,county,Josephine,2009,2015,3136,5903,53.1255,13,0.2197,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,82783,9782,37733,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR035,county,Klamath,2009,2015,4797,7420,64.6496,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,66211,14026,39627,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR037,county,Lake,2009,2015,387,749,51.6689,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,7862,1631,33611,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR039,county,Lane,2009,2015,3681,5934,62.0324,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,353382,22671,42931,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,1849,4446,41.5879,7,0.1572,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,46070,8904,42365,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR043,county,Linn,2009,2015,2548,7666,33.2377,173,2.2069,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,117648,10942,46939,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR045,county,Malheur,2009,2015,1094,2424,45.132,23,0.9399,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,30898,3944,35578,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR047,county,Marion,2009,2015,13725,21039,65.236,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,318441,31160,46885,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR049,county,Morrow,2009,2015,119,323,36.8421,7,2.1212,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,11218,599,49940,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,13128,28883,45.4523,90,0.3106,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,747641,100335,52511,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR053,county,Polk,2009,2015,1582,3527,44.854,48,1.3427,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,75930,7428,52808,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR055,county,Sherman,2009,2015,192,362,53.0387,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1865,642,42639,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,800,1966,40.6918,124,5.933,HIGH_MISSING_UNFILT,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25300,3736,43676,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,1979,4163,47.5378,84,1.9779,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,76306,7717,48389,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR061,county,Union,2009,2015,822,1917,42.8795,5,0.2601,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25741,3368,42542,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,99,195,50.7692,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,6924,534,41994,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR065,county,Wasco,2009,2015,1165,2396,48.6227,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,25281,3803,43765,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR067,county,Washington,2009,2015,11206,25332,44.2365,1,0.0039,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,539608,39034,64180,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,17,41,41.4634,0,0,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,1292,84,37974,NA,NA
+119,Cases Involving a Guilty Plea as Charged,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,2074,5301,39.1247,112,2.0691,OK,NA,NA,NA,NA,NA,NA,NA,PERCENTAGE,99802,8384,54535,NA,NA
+115,Court Fees,median,1,all defendants,OR,state,Oregon,2009,2015,NA,NA,560,21847,8.691,HIGH_MISSING_UNFILT,229529,NA,NA,NA,NA,NA,829.91,MEDIAN,3868721,407169,50229,NA,NA
+115,Court Fees,median,1,all defendants,OR001,county,Baker,2009,2015,NA,NA,423,68,7.564,HIGH_MISSING_UNFILT,831,NA,NA,NA,NA,NA,714.7,MEDIAN,16055,1633,41500,NA,NA
+115,Court Fees,median,1,all defendants,OR003,county,Benton,2009,2015,NA,NA,530,29,0.6494,OK,4437,NA,NA,NA,NA,NA,738.82,MEDIAN,85989,7633,48604,NA,NA
+115,Court Fees,median,1,all defendants,OR005,county,Clackamas,2009,2015,NA,NA,719,329,1.6636,OK,19447,NA,NA,NA,NA,NA,880.01,MEDIAN,380532,27755,64352,NA,NA
+115,Court Fees,median,1,all defendants,OR007,county,Clatsop,2009,2015,NA,NA,844,28,0.8025,OK,3461,NA,NA,NA,NA,NA,1131.24,MEDIAN,37157,5361,44683,NA,NA
+115,Court Fees,median,1,all defendants,OR009,county,Columbia,2009,2015,NA,NA,750,16,0.8222,OK,1930,NA,NA,NA,NA,NA,1001.18,MEDIAN,49333,3260,54968,NA,NA
+115,Court Fees,median,1,all defendants,OR011,county,Coos,2009,2015,NA,NA,466,216,5.3268,HIGH_MISSING_UNFILT,3839,NA,NA,NA,NA,NA,687.54,MEDIAN,62753,6981,37940,NA,NA
+115,Court Fees,median,1,all defendants,OR013,county,Crook,2009,2015,NA,NA,285,585,23.8581,EXCEEDS_MISSING_UNFILT,1867,NA,NA,NA,NA,NA,456.78,MEDIAN,20894,3792,38795,NA,NA
+115,Court Fees,median,1,all defendants,OR015,county,Curry,2009,2015,NA,NA,582,32,1.6572,OK,1899,NA,NA,NA,NA,NA,955.84,MEDIAN,22361,3139,39516,NA,NA
+115,Court Fees,median,1,all defendants,OR017,county,Deschutes,2009,2015,NA,NA,305,1038,7.6577,HIGH_MISSING_UNFILT,12517,NA,NA,NA,NA,NA,523.74,MEDIAN,160565,20436,50209,NA,NA
+115,Court Fees,median,1,all defendants,OR019,county,Douglas,2009,2015,NA,NA,216,1788,22.2665,EXCEEDS_MISSING_UNFILT,6242,NA,NA,NA,NA,NA,533.38,MEDIAN,107286,12594,40524,NA,NA
+115,Court Fees,median,1,all defendants,OR021,county,Gilliam,2009,2015,NA,NA,370,9,7.6923,HIGH_MISSING_UNFILT,108,NA,NA,NA,NA,NA,464.32,MEDIAN,1915,222,44743,NA,NA
+115,Court Fees,median,1,all defendants,OR023,county,Grant,2009,2015,NA,NA,559,8,1.4184,OK,556,NA,NA,NA,NA,NA,733.94,MEDIAN,7359,839,35051,NA,NA
+115,Court Fees,median,1,all defendants,OR025,county,Harney,2009,2015,NA,NA,500,7,1.1382,OK,608,NA,NA,NA,NA,NA,591.99,MEDIAN,7314,1002,38113,NA,NA
+115,Court Fees,median,1,all defendants,OR027,county,Hood River,2009,2015,NA,NA,382,293,17.7899,EXCEEDS_MISSING_UNFILT,1354,NA,NA,NA,NA,NA,509.49,MEDIAN,22427,2787,56725,NA,NA
+115,Court Fees,median,1,all defendants,OR029,county,Jackson,2009,2015,NA,NA,563,1922,11.5519,EXCEEDS_MISSING_UNFILT,14716,NA,NA,NA,NA,NA,839.26,MEDIAN,205117,27429,44005,NA,NA
+115,Court Fees,median,1,all defendants,OR031,county,Jefferson,2009,2015,NA,NA,310,664,25.6966,EXCEEDS_MISSING_UNFILT,1920,NA,NA,NA,NA,NA,600.23,MEDIAN,21461,3582,43373,NA,NA
+115,Court Fees,median,1,all defendants,OR033,county,Josephine,2009,2015,NA,NA,813.52,23,0.3215,OK,7131,NA,NA,NA,NA,NA,1024.24,MEDIAN,82783,9782,37733,NA,NA
+115,Court Fees,median,1,all defendants,OR035,county,Klamath,2009,2015,NA,NA,576,895,10.3552,EXCEEDS_MISSING_UNFILT,7748,NA,NA,NA,NA,NA,780.77,MEDIAN,66211,14026,39627,NA,NA
+115,Court Fees,median,1,all defendants,OR037,county,Lake,2009,2015,NA,NA,691,138,15.5581,EXCEEDS_MISSING_UNFILT,749,NA,NA,NA,NA,NA,862.85,MEDIAN,7862,1631,33611,NA,NA
+115,Court Fees,median,1,all defendants,OR039,county,Lane,2009,2015,NA,NA,410.835,2805,16.6974,EXCEEDS_MISSING_UNFILT,13994,NA,NA,NA,NA,NA,812.03,MEDIAN,353382,22671,42931,NA,NA
+115,Court Fees,median,1,all defendants,OR041,county,Lincoln,2009,2015,NA,NA,796,293,5.2936,HIGH_MISSING_UNFILT,5242,NA,NA,NA,NA,NA,914.28,MEDIAN,46070,8904,42365,NA,NA
+115,Court Fees,median,1,all defendants,OR043,county,Linn,2009,2015,NA,NA,298,21,0.2623,OK,7986,NA,NA,NA,NA,NA,517.22,MEDIAN,117648,10942,46939,NA,NA
+115,Court Fees,median,1,all defendants,OR045,county,Malheur,2009,2015,NA,NA,399,458,17.5748,EXCEEDS_MISSING_UNFILT,2148,NA,NA,NA,NA,NA,656.53,MEDIAN,30898,3944,35578,NA,NA
+115,Court Fees,median,1,all defendants,OR047,county,Marion,2009,2015,NA,NA,965,101,0.403,OK,24964,NA,NA,NA,NA,NA,1230.55,MEDIAN,318441,31160,46885,NA,NA
+115,Court Fees,median,1,all defendants,OR049,county,Morrow,2009,2015,NA,NA,961,1,0.25,OK,399,NA,NA,NA,NA,NA,1190.38,MEDIAN,11218,599,49940,NA,NA
+115,Court Fees,median,1,all defendants,OR051,county,Multnomah,2009,2015,NA,NA,282,8966,22.4279,EXCEEDS_MISSING_UNFILT,31011,NA,NA,NA,NA,NA,537.95,MEDIAN,747641,100335,52511,NA,NA
+115,Court Fees,median,1,all defendants,OR053,county,Polk,2009,2015,NA,NA,642.25,173,3.8317,OK,4342,NA,NA,NA,NA,NA,924.24,MEDIAN,75930,7428,52808,NA,NA
+115,Court Fees,median,1,all defendants,OR055,county,Sherman,2009,2015,NA,NA,544,28,7.1611,HIGH_MISSING_UNFILT,363,NA,NA,NA,NA,NA,819.74,MEDIAN,1865,642,42639,NA,NA
+115,Court Fees,median,1,all defendants,OR057,county,Tillamook,2009,2015,NA,NA,555.8,354,15.643,EXCEEDS_MISSING_UNFILT,1909,NA,NA,NA,NA,NA,763.84,MEDIAN,25300,3736,43676,NA,NA
+115,Court Fees,median,1,all defendants,OR059,county,Umatilla,2009,2015,NA,NA,978.625,38,0.7428,OK,5078,NA,NA,NA,NA,NA,1171.31,MEDIAN,76306,7717,48389,NA,NA
+115,Court Fees,median,1,all defendants,OR061,county,Union,2009,2015,NA,NA,582.69,50,2.1079,OK,2322,NA,NA,NA,NA,NA,773.63,MEDIAN,25741,3368,42542,NA,NA
+115,Court Fees,median,1,all defendants,OR063,county,Wallowa,2009,2015,NA,NA,536.495,5,1.6393,OK,300,NA,NA,NA,NA,NA,640.69,MEDIAN,6924,534,41994,NA,NA
+115,Court Fees,median,1,all defendants,OR065,county,Wasco,2009,2015,NA,NA,388,243,9.1114,HIGH_MISSING_UNFILT,2424,NA,NA,NA,NA,NA,537.55,MEDIAN,25281,3803,43765,NA,NA
+115,Court Fees,median,1,all defendants,OR067,county,Washington,2009,2015,NA,NA,700,116,0.3911,OK,29542,NA,NA,NA,NA,NA,1014.65,MEDIAN,539608,39034,64180,NA,NA
+115,Court Fees,median,1,all defendants,OR069,county,Wheeler,2009,2015,NA,NA,396,5,13.8889,EXCEEDS_MISSING_UNFILT,31,NA,NA,NA,NA,NA,636.01,MEDIAN,1292,84,37974,NA,NA
+115,Court Fees,median,1,all defendants,OR071,county,Yamhill,2009,2015,NA,NA,605,102,1.6409,OK,6114,NA,NA,NA,NA,NA,797.35,MEDIAN,99802,8384,54535,NA,NA
+504,Urban Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,3104382,3831074,81.0316,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+504,Urban Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,9518,16134,58.9934,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+504,Urban Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,69521,85579,81.2361,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+504,Urban Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,308018,375992,81.9214,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+504,Urban Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,22604,37039,61.0276,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+504,Urban Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,27828,49351,56.3879,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+504,Urban Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,38864,63043,61.6468,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+504,Urban Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,10905,20978,51.983,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+504,Urban Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,13702,22364,61.2681,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+504,Urban Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,114130,157733,72.3565,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+504,Urban Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,63332,107667,58.8221,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+504,Urban Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,0,1871,0,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+504,Urban Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,0,7445,0,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+504,Urban Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,4131,7422,55.6589,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+504,Urban Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,10687,22346,47.8251,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+504,Urban Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,162458,203206,79.9474,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+504,Urban Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,8010,21720,36.8785,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+504,Urban Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,45522,82713,55.0361,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+504,Urban Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,41434,66380,62.4194,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+504,Urban Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,2895,7895,36.6688,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+504,Urban Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,290084,351715,82.477,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+504,Urban Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,28730,46034,62.4104,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+504,Urban Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,79759,116672,68.3617,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+504,Urban Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,16152,31313,51.5824,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+504,Urban Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,274046,315335,86.9063,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+504,Urban Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,6048,11173,54.1305,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+504,Urban Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,725464,735334,98.6578,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+504,Urban Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,60378,75403,80.0737,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+504,Urban Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,0,1765,0,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+504,Urban Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,7675,25250,30.396,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+504,Urban Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,53831,75889,70.9339,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+504,Urban Population,percentage,1,all defendants,OR061,county,Union,2009,2015,14909,25748,57.9035,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+504,Urban Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,0,7008,0,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+504,Urban Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,16876,25213,66.9337,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+504,Urban Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,500099,529710,94.41,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+504,Urban Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,0,1441,0,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+504,Urban Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,76772,99193,77.3966,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+505,Rural Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,726692,3831074,18.9684,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+505,Rural Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,6616,16134,41.0066,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+505,Rural Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,16058,85579,18.7639,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+505,Rural Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,67974,375992,18.0786,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+505,Rural Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,14435,37039,38.9724,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+505,Rural Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,21523,49351,43.6121,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+505,Rural Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,24179,63043,38.3532,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+505,Rural Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,10073,20978,48.017,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+505,Rural Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,8662,22364,38.7319,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+505,Rural Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,43603,157733,27.6435,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+505,Rural Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,44335,107667,41.1779,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+505,Rural Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,1871,1871,100,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+505,Rural Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,7445,7445,100,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+505,Rural Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,3291,7422,44.3411,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+505,Rural Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,11659,22346,52.1749,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+505,Rural Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,40748,203206,20.0526,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+505,Rural Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,13710,21720,63.1215,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+505,Rural Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,37191,82713,44.9639,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+505,Rural Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,24946,66380,37.5806,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+505,Rural Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,5000,7895,63.3312,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+505,Rural Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,61631,351715,17.523,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+505,Rural Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,17304,46034,37.5896,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+505,Rural Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,36913,116672,31.6383,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+505,Rural Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,15161,31313,48.4176,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+505,Rural Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,41289,315335,13.0937,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+505,Rural Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,5125,11173,45.8695,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+505,Rural Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,9870,735334,1.3422,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+505,Rural Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,15025,75403,19.9263,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+505,Rural Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,1765,1765,100,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+505,Rural Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,17575,25250,69.604,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+505,Rural Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,22058,75889,29.0661,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+505,Rural Population,percentage,1,all defendants,OR061,county,Union,2009,2015,10839,25748,42.0965,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+505,Rural Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,7008,7008,100,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+505,Rural Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,8337,25213,33.0663,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+505,Rural Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,29611,529710,5.59,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+505,Rural Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,1441,1441,100,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+505,Rural Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,22421,99193,22.6034,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR,state,Oregon,2009,2015,94499,1516456,6.2316,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR001,county,Baker,2009,2015,431,7120,6.0534,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR003,county,Benton,2009,2015,1420,33384,4.2535,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,8292,146527,5.659,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,956,15749,6.0702,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR009,county,Columbia,2009,2015,1238,19069,6.4922,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR011,county,Coos,2009,2015,1215,26072,4.6602,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR013,county,Crook,2009,2015,392,8880,4.4144,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR015,county,Curry,2009,2015,272,10355,2.6268,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,3359,64568,5.2023,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR019,county,Douglas,2009,2015,2576,43846,5.8751,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,38,883,4.3035,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR023,county,Grant,2009,2015,173,3319,5.2124,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR025,county,Harney,2009,2015,190,3113,6.1034,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR027,county,Hood River,2009,2015,421,8144,5.1694,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR029,county,Jackson,2009,2015,5788,83140,6.9618,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,594,7882,7.5362,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR033,county,Josephine,2009,2015,1739,34390,5.0567,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR035,county,Klamath,2009,2015,1884,27378,6.8814,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR037,county,Lake,2009,2015,90,3566,2.5238,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR039,county,Lane,2009,2015,8622,144912,5.9498,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,1021,20913,4.8821,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR043,county,Linn,2009,2015,3364,44722,7.522,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR045,county,Malheur,2009,2015,704,10136,6.9455,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR047,county,Marion,2009,2015,9770,113285,8.6243,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR049,county,Morrow,2009,2015,270,3741,7.2173,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,19122,305939,6.2503,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR053,county,Polk,2009,2015,1618,28239,5.7297,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR055,county,Sherman,2009,2015,35,827,4.2322,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,502,10236,4.9043,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,2512,26744,9.3928,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR061,county,Union,2009,2015,591,10235,5.7743,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,207,2996,6.9092,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR065,county,Wasco,2009,2015,672,9612,6.9913,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR067,county,Washington,2009,2015,12273,201771,6.0826,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,17,625,2.72,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+507,Single Female-Headed Households with Children,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,2131,34138,6.2423,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR,state,Oregon,2009,2015,NA,NA,11.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR001,county,Baker,2009,2015,NA,NA,11.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR003,county,Benton,2009,2015,NA,NA,8.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,NA,NA,10.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,NA,NA,9.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR009,county,Columbia,2009,2015,NA,NA,13.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR011,county,Coos,2009,2015,NA,NA,13.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR013,county,Crook,2009,2015,NA,NA,17.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR015,county,Curry,2009,2015,NA,NA,15.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,NA,NA,12.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR019,county,Douglas,2009,2015,NA,NA,14.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,NA,NA,11.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR023,county,Grant,2009,2015,NA,NA,10.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR025,county,Harney,2009,2015,NA,NA,10.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR027,county,Hood River,2009,2015,NA,NA,5.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR029,county,Jackson,2009,2015,NA,NA,13.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,NA,NA,16.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR033,county,Josephine,2009,2015,NA,NA,15.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR035,county,Klamath,2009,2015,NA,NA,13.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR037,county,Lake,2009,2015,NA,NA,13.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR039,county,Lane,2009,2015,NA,NA,12.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,NA,NA,10.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR043,county,Linn,2009,2015,NA,NA,10.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR045,county,Malheur,2009,2015,NA,NA,14.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR047,county,Marion,2009,2015,NA,NA,13.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR049,county,Morrow,2009,2015,NA,NA,10.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,NA,NA,10.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR053,county,Polk,2009,2015,NA,NA,11.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR055,county,Sherman,2009,2015,NA,NA,7.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,NA,NA,9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,NA,NA,10.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR061,county,Union,2009,2015,NA,NA,9.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,NA,NA,12.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR065,county,Wasco,2009,2015,NA,NA,10.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR067,county,Washington,2009,2015,NA,NA,9.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,NA,NA,10.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+508,Unemployment Rate,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,NA,NA,10.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR,state,Oregon,2009,2015,233939,3868721,6.0469,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR001,county,Baker,2009,2015,148,16055,0.9218,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR003,county,Benton,2009,2015,4732,85989,5.503,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,15678,380532,4.12,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,1384,37157,3.7247,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR009,county,Columbia,2009,2015,999,49333,2.025,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR011,county,Coos,2009,2015,984,62753,1.5681,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR013,county,Crook,2009,2015,287,20894,1.3736,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR015,county,Curry,2009,2015,343,22361,1.5339,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,4321,160565,2.6911,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR019,county,Douglas,2009,2015,1588,107286,1.4802,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,48,1915,2.5065,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR023,county,Grant,2009,2015,32,7359,0.4348,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR025,county,Harney,2009,2015,52,7314,0.711,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR027,county,Hood River,2009,2015,3247,22427,14.4781,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR029,county,Jackson,2009,2015,7161,205117,3.4912,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,1079,21461,5.0277,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR033,county,Josephine,2009,2015,1084,82783,1.3094,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR035,county,Klamath,2009,2015,2193,66211,3.3121,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR037,county,Lake,2009,2015,227,7862,2.8873,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR039,county,Lane,2009,2015,12982,353382,3.6736,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,1673,46070,3.6314,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR043,county,Linn,2009,2015,3395,117648,2.8857,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR045,county,Malheur,2009,2015,2559,30898,8.2821,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR047,county,Marion,2009,2015,32527,318441,10.2145,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR049,county,Morrow,2009,2015,1465,11218,13.0594,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,62410,747641,8.3476,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR053,county,Polk,2009,2015,3050,75930,4.0169,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR055,county,Sherman,2009,2015,36,1865,1.9303,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,1144,25300,4.5217,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,5687,76306,7.4529,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR061,county,Union,2009,2015,685,25741,2.6611,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,35,6924,0.5055,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR065,county,Wasco,2009,2015,1912,25281,7.563,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR067,county,Washington,2009,2015,53261,539608,9.8703,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,3,1292,0.2322,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+510,Non-Citizens,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,5528,99802,5.539,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR,state,Oregon,2009,2015,NA,NA,89.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR001,county,Baker,2009,2015,NA,NA,89.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR003,county,Benton,2009,2015,NA,NA,94.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,NA,NA,92.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,NA,NA,91.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR009,county,Columbia,2009,2015,NA,NA,89.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR011,county,Coos,2009,2015,NA,NA,88,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR013,county,Crook,2009,2015,NA,NA,84.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR015,county,Curry,2009,2015,NA,NA,91.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,NA,NA,93.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR019,county,Douglas,2009,2015,NA,NA,87.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,NA,NA,91,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR023,county,Grant,2009,2015,NA,NA,89.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR025,county,Harney,2009,2015,NA,NA,87.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR027,county,Hood River,2009,2015,NA,NA,84.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR029,county,Jackson,2009,2015,NA,NA,89.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,NA,NA,84.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR033,county,Josephine,2009,2015,NA,NA,88.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR035,county,Klamath,2009,2015,NA,NA,87.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR037,county,Lake,2009,2015,NA,NA,83.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR039,county,Lane,2009,2015,NA,NA,91.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,NA,NA,89.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR043,county,Linn,2009,2015,NA,NA,89.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR045,county,Malheur,2009,2015,NA,NA,80.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR047,county,Marion,2009,2015,NA,NA,83.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR049,county,Morrow,2009,2015,NA,NA,75.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,NA,NA,89.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR053,county,Polk,2009,2015,NA,NA,89.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR055,county,Sherman,2009,2015,NA,NA,92.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,NA,NA,88.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,NA,NA,81.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR061,county,Union,2009,2015,NA,NA,90.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,NA,NA,93.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR065,county,Wasco,2009,2015,NA,NA,85.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR067,county,Washington,2009,2015,NA,NA,90.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,NA,NA,88.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+511,High School Graduates,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,NA,NA,88,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR,state,Oregon,2009,2015,NA,NA,16.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR001,county,Baker,2009,2015,NA,NA,18,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR003,county,Benton,2009,2015,NA,NA,22.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,NA,NA,9.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,NA,NA,16.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR009,county,Columbia,2009,2015,NA,NA,13.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR011,county,Coos,2009,2015,NA,NA,17.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR013,county,Crook,2009,2015,NA,NA,19.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR015,county,Curry,2009,2015,NA,NA,15,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,NA,NA,14.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR019,county,Douglas,2009,2015,NA,NA,18.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,NA,NA,11.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR023,county,Grant,2009,2015,NA,NA,17.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR025,county,Harney,2009,2015,NA,NA,18.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR027,county,Hood River,2009,2015,NA,NA,11.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR029,county,Jackson,2009,2015,NA,NA,17.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,NA,NA,19.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR033,county,Josephine,2009,2015,NA,NA,20.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR035,county,Klamath,2009,2015,NA,NA,18.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR037,county,Lake,2009,2015,NA,NA,20.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR039,county,Lane,2009,2015,NA,NA,20,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,NA,NA,16,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR043,county,Linn,2009,2015,NA,NA,17.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR045,county,Malheur,2009,2015,NA,NA,27.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR047,county,Marion,2009,2015,NA,NA,18.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR049,county,Morrow,2009,2015,NA,NA,18,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,NA,NA,17.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR053,county,Polk,2009,2015,NA,NA,16.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR055,county,Sherman,2009,2015,NA,NA,22.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,NA,NA,16.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,NA,NA,16.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR061,county,Union,2009,2015,NA,NA,18.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,NA,NA,13.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR065,county,Wasco,2009,2015,NA,NA,18.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR067,county,Washington,2009,2015,NA,NA,11.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,NA,NA,15.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+512,Below Poverty Line,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,NA,NA,14.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+514,White Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,3018414,3868721,78.021,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+514,White Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,14826,16055,92.3451,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+514,White Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,71478,85989,83.1246,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+514,White Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,320108,380532,84.1212,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+514,White Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,32313,37157,86.9634,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+514,White Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,44372,49333,89.9439,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+514,White Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,54306,62753,86.5393,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+514,White Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,18611,20894,89.0734,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+514,White Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,19707,22361,88.1311,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+514,White Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,141616,160565,88.1985,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+514,White Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,95744,107286,89.2418,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+514,White Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,1702,1915,88.8773,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+514,White Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,6829,7359,92.7979,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+514,White Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,6509,7314,88.9937,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+514,White Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,14714,22427,65.6084,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+514,White Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,170611,205117,83.1774,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+514,White Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,13099,21461,61.0363,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+514,White Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,73112,82783,88.3176,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+514,White Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,53278,66211,80.467,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+514,White Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,6802,7862,86.5174,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+514,White Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,297374,353382,84.1509,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+514,White Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,38628,46070,83.8463,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+514,White Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,102068,117648,86.7571,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+514,White Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,19460,30898,62.9814,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+514,White Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,216030,318441,67.8399,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+514,White Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,7143,11218,63.6745,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+514,White Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,538073,747641,71.9694,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+514,White Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,60896,75930,80.2002,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+514,White Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,1683,1865,90.2413,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+514,White Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,21812,25300,86.2134,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+514,White Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,52601,76306,68.9343,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+514,White Population,percentage,1,all defendants,OR061,county,Union,2009,2015,23239,25741,90.2801,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+514,White Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,6524,6924,94.223,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+514,White Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,19454,25281,76.9511,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+514,White Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,373709,539608,69.2556,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+514,White Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,1218,1292,94.2724,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+514,White Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,78765,99802,78.9213,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+516,African American Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,66223,3868721,1.7118,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+516,African American Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,45,16055,0.2803,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+516,African American Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,866,85989,1.0071,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+516,African American Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,2667,380532,0.7009,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+516,African American Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,232,37157,0.6244,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+516,African American Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,112,49333,0.227,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+516,African American Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,203,62753,0.3235,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+516,African American Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,30,20894,0.1436,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+516,African American Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,28,22361,0.1252,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+516,African American Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,521,160565,0.3245,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+516,African American Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,281,107286,0.2619,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+516,African American Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,10,1915,0.5222,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+516,African American Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,24,7359,0.3261,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+516,African American Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,34,7314,0.4649,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+516,African American Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,109,22427,0.486,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+516,African American Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,1280,205117,0.624,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+516,African American Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,136,21461,0.6337,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+516,African American Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,280,82783,0.3382,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+516,African American Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,453,66211,0.6842,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+516,African American Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,38,7862,0.4833,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+516,African American Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,3093,353382,0.8753,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+516,African American Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,145,46070,0.3147,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+516,African American Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,533,117648,0.453,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+516,African American Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,266,30898,0.8609,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+516,African American Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,2894,318441,0.9088,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+516,African American Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,19,11218,0.1694,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+516,African American Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,40811,747641,5.4586,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+516,African American Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,316,75930,0.4162,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+516,African American Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,2,1865,0.1072,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+516,African American Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,114,25300,0.4506,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+516,African American Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,454,76306,0.595,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+516,African American Population,percentage,1,all defendants,OR061,county,Union,2009,2015,140,25741,0.5439,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+516,African American Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,30,6924,0.4333,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+516,African American Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,98,25281,0.3876,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+516,African American Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,9135,539608,1.6929,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+516,African American Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,0,1292,0,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+516,African American Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,824,99802,0.8256,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,37750,3868721,0.9758,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,206,16055,1.2831,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,564,85989,0.6559,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,1669,380532,0.4386,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,128,37157,0.3445,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,655,49333,1.3277,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,1487,62753,2.3696,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,203,20894,0.9716,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,384,22361,1.7173,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,1229,160565,0.7654,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,1527,107286,1.4233,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,16,1915,0.8355,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,38,7359,0.5164,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,232,7314,3.172,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,39,22427,0.1739,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,1343,205117,0.6547,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,3342,21461,15.5724,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,1324,82783,1.5994,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,2330,66211,3.5191,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,109,7862,1.3864,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,3256,353382,0.9214,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,1043,46070,2.2639,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,1919,117648,1.6311,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,115,30898,0.3722,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,2578,318441,0.8096,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,55,11218,0.4903,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,4971,747641,0.6649,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,804,75930,1.0589,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,31,1865,1.6622,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,191,25300,0.7549,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,1467,76306,1.9225,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR061,county,Union,2009,2015,98,25741,0.3807,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,36,6924,0.5199,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,1068,25281,4.2245,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,2393,539608,0.4435,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,6,1292,0.4644,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+518,Native American/Alaskan Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,894,99802,0.8958,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,145830,3868721,3.7695,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,82,16055,0.5107,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,4750,85989,5.524,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,14360,380532,3.7737,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,412,37157,1.1088,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,482,49333,0.977,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,710,62753,1.1314,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,86,20894,0.4116,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,87,22361,0.3891,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,1805,160565,1.1242,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,872,107286,0.8128,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,0,1915,0,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,12,7359,0.1631,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,60,7314,0.8203,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,297,22427,1.3243,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,1954,205117,0.9526,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,153,21461,0.7129,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,533,82783,0.6439,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,633,66211,0.956,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,41,7862,0.5215,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,8556,353382,2.4212,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,617,46070,1.3393,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,1135,117648,0.9647,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,516,30898,1.67,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,5731,318441,1.7997,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,71,11218,0.6329,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,49948,747641,6.6807,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,1709,75930,2.2508,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,2,1865,0.1072,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,215,25300,0.8498,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,615,76306,0.806,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR061,county,Union,2009,2015,251,25741,0.9751,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,8,6924,0.1155,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,248,25281,0.981,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,47489,539608,8.8006,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,2,1292,0.1548,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+520,Asian or Pacific Islander Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,1388,99802,1.3908,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,138603,3868721,3.58,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,327,16055,2.04,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,2643,85989,3.07,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,11716,380532,3.08,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,1183,37157,3.18,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,1593,49333,3.23,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,2521,62753,4.02,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,452,20894,2.16,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,848,22361,3.79,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,3312,160565,2.06,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,3678,107286,3.43,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,30,1915,1.57,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,227,7359,3.08,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,165,7314,2.26,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,581,22427,2.59,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,7180,205117,3.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,508,21461,2.37,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,2132,82783,2.58,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,2301,66211,3.48,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,298,7862,3.79,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,14144,353382,4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,1901,46070,4.13,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,2622,117648,2.23,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,637,30898,2.06,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,12762,318441,4.01,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,308,11218,2.75,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,32303,747641,4.32,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,2793,75930,3.68,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,63,1865,3.38,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,619,25300,2.45,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,2621,76306,3.43,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR061,county,Union,2009,2015,952,25741,3.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,157,6924,2.27,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,476,25281,1.88,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,21477,539608,3.98,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,32,1292,2.48,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+522,Other Race Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,3041,99802,3.05,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,461901,3868721,11.9394,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,569,16055,3.5441,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,5688,85989,6.6148,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,30012,380532,7.8869,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,2889,37157,7.7751,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,2119,49333,4.2953,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,3526,62753,5.6189,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,1512,20894,7.2365,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,1307,22361,5.845,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,12082,160565,7.5247,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,5184,107286,4.8319,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,157,1915,8.1984,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,229,7359,3.1118,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,314,7314,4.2931,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,6687,22427,29.8167,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,22749,205117,11.0907,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,4223,21461,19.6776,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,5402,82783,6.5255,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,7216,66211,10.8985,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,574,7862,7.3009,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,26959,353382,7.6289,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,3736,46070,8.1094,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,9371,117648,7.9653,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,9904,30898,32.0539,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,78446,318441,24.6344,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,3622,11218,32.2874,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,81535,747641,10.9056,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,9412,75930,12.3956,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,84,1865,4.504,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,2349,25300,9.2846,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,18548,76306,24.3074,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR061,county,Union,2009,2015,1061,25741,4.1218,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,169,6924,2.4408,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,3937,25281,15.573,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,85405,539608,15.8272,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,34,1292,2.6316,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+524,Hispanic or Latino Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,14890,99802,14.9195,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR,state,Oregon,2009,2015,18,100,18,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR001,county,Baker,2009,2015,16.8,100,16.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR003,county,Benton,2009,2015,21.5,100,21.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,14.8,100,14.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,18.8,100,18.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR009,county,Columbia,2009,2015,13.7,100,13.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR011,county,Coos,2009,2015,19.2,100,19.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR013,county,Crook,2009,2015,19.3,100,19.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR015,county,Curry,2009,2015,15.5,100,15.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,17.7,100,17.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR019,county,Douglas,2009,2015,17.2,100,17.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,16.6,100,16.6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR023,county,Grant,2009,2015,14.2,100,14.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR025,county,Harney,2009,2015,15.4,100,15.4,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR027,county,Hood River,2009,2015,9.2,100,9.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR029,county,Jackson,2009,2015,19.1,100,19.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,18.1,100,18.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR033,county,Josephine,2009,2015,14,100,14,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR035,county,Klamath,2009,2015,17.9,100,17.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR037,county,Lake,2009,2015,22.2,100,22.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR039,county,Lane,2009,2015,22.1,100,22.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,16.1,100,16.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR043,county,Linn,2009,2015,15.9,100,15.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR045,county,Malheur,2009,2015,15.2,100,15.2,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR047,county,Marion,2009,2015,17.8,100,17.8,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR049,county,Morrow,2009,2015,16.9,100,16.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,20,100,20,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR053,county,Polk,2009,2015,17.7,100,17.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR055,county,Sherman,2009,2015,13.9,100,13.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,13.3,100,13.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,17.5,100,17.5,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR061,county,Union,2009,2015,18,100,18,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,13.7,100,13.7,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR065,county,Wasco,2009,2015,15.9,100,15.9,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR067,county,Washington,2009,2015,17.3,100,17.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,10.1,100,10.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+543,Residential Mobility,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,16.1,100,16.1,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR,state,Oregon,2009,2015,260348,3868721,6.73,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,3868721,407169,50229,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR001,county,Baker,2009,2015,921,16055,5.74,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,16055,1633,41500,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR003,county,Benton,2009,2015,12050,85989,14.01,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,85989,7633,48604,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR005,county,Clackamas,2009,2015,24476,380532,6.43,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,380532,27755,64352,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR007,county,Clatsop,2009,2015,2428,37157,6.53,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,37157,5361,44683,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR009,county,Columbia,2009,2015,3066,49333,6.21,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,49333,3260,54968,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR011,county,Coos,2009,2015,3519,62753,5.61,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,62753,6981,37940,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR013,county,Crook,2009,2015,1160,20894,5.55,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,20894,3792,38795,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR015,county,Curry,2009,2015,1069,22361,4.78,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22361,3139,39516,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR017,county,Deschutes,2009,2015,9216,160565,5.74,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,160565,20436,50209,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR019,county,Douglas,2009,2015,6389,107286,5.96,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,107286,12594,40524,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR021,county,Gilliam,2009,2015,110,1915,5.74,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1915,222,44743,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR023,county,Grant,2009,2015,376,7359,5.11,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7359,839,35051,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR025,county,Harney,2009,2015,528,7314,7.22,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7314,1002,38113,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR027,county,Hood River,2009,2015,1420,22427,6.33,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,22427,2787,56725,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR029,county,Jackson,2009,2015,12605,205117,6.15,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,205117,27429,44005,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR031,county,Jefferson,2009,2015,1344,21461,6.26,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,21461,3582,43373,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR033,county,Josephine,2009,2015,4965,82783,6,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,82783,9782,37733,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR035,county,Klamath,2009,2015,4454,66211,6.73,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,66211,14026,39627,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR037,county,Lake,2009,2015,436,7862,5.55,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,7862,1631,33611,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR039,county,Lane,2009,2015,29798,353382,8.43,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,353382,22671,42931,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR041,county,Lincoln,2009,2015,2388,46070,5.18,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,46070,8904,42365,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR043,county,Linn,2009,2015,7254,117648,6.17,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,117648,10942,46939,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR045,county,Malheur,2009,2015,2402,30898,7.77,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,30898,3944,35578,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR047,county,Marion,2009,2015,23281,318441,7.31,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,318441,31160,46885,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR049,county,Morrow,2009,2015,838,11218,7.47,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,11218,599,49940,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR051,county,Multnomah,2009,2015,45684,747641,6.11,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,747641,100335,52511,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR053,county,Polk,2009,2015,5780,75930,7.61,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,75930,7428,52808,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR055,county,Sherman,2009,2015,112,1865,6.01,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1865,642,42639,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR057,county,Tillamook,2009,2015,1431,25300,5.66,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25300,3736,43676,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR059,county,Umatilla,2009,2015,5702,76306,7.47,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,76306,7717,48389,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR061,county,Union,2009,2015,1976,25741,7.68,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25741,3368,42542,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR063,county,Wallowa,2009,2015,297,6924,4.29,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,6924,534,41994,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR065,county,Wasco,2009,2015,1593,25281,6.3,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,25281,3803,43765,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR067,county,Washington,2009,2015,33772,539608,6.26,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,539608,39034,64180,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR069,county,Wheeler,2009,2015,60,1292,4.64,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,1292,84,37974,NA,NA
+544,Young Males Population,percentage,1,all defendants,OR071,county,Yamhill,2009,2015,7448,99802,7.46,NA,NA,OK,NA,NA,NA,NA,NA,NA,NA,AGGREGATE,99802,8384,54535,NA,NA
