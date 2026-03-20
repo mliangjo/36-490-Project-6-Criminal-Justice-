@@ -50,21 +50,356 @@ process_state_data <- function(state_name, data_file, locations_file,
 }
 
 # Process each state
-data_pa_comb <- process_state_data("Pennsylvania", "data-2009-2013.csv", "locations.csv")
-data_or_comb <- process_state_data("Oregon", "data-2009-2013-or.csv", "locations-or.csv")
-data_fl_comb <- process_state_data("Florida", "data-2009-2013-fl.csv", "locations-fl.csv")
+data_pa_comb <- process_state_data("Pennsylvania", "data-2009-2013.csv", "locations.csv") %>%
+  mutate(state = "PA")
+data_or_comb <- process_state_data("Oregon", "data-2009-2013-or.csv", "locations-or.csv") %>%
+  mutate(state = "OR") 
+data_fl_comb <- process_state_data("Florida", "data-2009-2013-fl.csv", "locations-fl.csv") %>%
+  mutate(state = "FL")
 ```
 
 
 
 # Combine Measures
 ```{r}
-pa_measures <- read.csv('../data/raw/Pennsylvania_State_Data/measures.csv') 
-fl_measures <- read.csv('../data/raw/Florida_State_Data/measures.csv') 
-or_measures <- read.csv('../data/raw/Oregon_State_Data/measures.csv') 
+pa_measures <- read.csv('../data/raw/Pennsylvania_State_Data/measures.csv')  %>% 
+  mutate(format = tolower(format))
+fl_measures <- read.csv('../data/raw/Florida_State_Data/measures.csv')%>% 
+  mutate(format = tolower(format))
+or_measures <- read.csv('../data/raw/Oregon_State_Data/measures.csv') %>% 
+  mutate(format = tolower(format))
 
 
 measures <- full_join(pa_measures, fl_measures, by = c("id", "name","format")) %>% 
   full_join(or_measures, fl_measures, by = c("id", "name","format","calculation"))
+
+write_csv(measures, path = "measures_all.csv")
+
+
+# all states combined, measures with filter_id == 1 (add defendants)
+pa_m <- data_pa_comb %>% filter(filter_id == 1) %>% 
+  select(measure_id, measure_name) %>% distinct(measure_id, measure_name)
+fl_m <- data_fl_comb %>% filter(filter_id == 1) %>% 
+  select(measure_id, measure_name) %>% distinct(measure_id, measure_name)
+or_m <- data_or_comb %>% filter(filter_id == 1) %>% 
+  select(measure_id, measure_name)  %>% distinct(measure_id, measure_name)
+
+all_def_measures_all <- full_join(pa_m, fl_m, by = c("measure_id", "measure_name")) %>% 
+  full_join(or_m, fl_measures, by = c("measure_id", "measure_name"))
+
+write_csv(all_def_measures_all, path = "all_def_measures_all.csv")
+
+
+```
+
+
+# Distinct measure, filter pairs
+```{r}
+data_pa_comb %>% distinct(measure_id, filter_id)
+
+# measures have multiple filters
+```
+
+# Common Measures
+```{r}
+chosen_filter <- 1 # "all defendants"
+
+all_long <- bind_rows(data_pa_comb, data_fl_comb, data_or_comb) %>%
+  filter(filter_id == chosen_filter, location_type == "county")
+
+common_measures <- all_long %>%
+  distinct(state, measure_id) %>%
+  count(measure_id) %>%
+  filter(n == 3) %>%   # appears in all 3 states
+  pull(measure_id)
+
+# to remove N/As we find common measures — measures present in all three states
+```
+
+# Pivot Wider
+```{r}
+# We take all county data for all defedants measures
+
+chosen_filter <- 1 # "all defendants"
+
+pa_wide_m <- data_pa_comb %>%
+  filter(filter_id == chosen_filter, location_type == "county", measure_id %in% common_measures) %>%
+  select(filter_id, location_id, measure_name, value) %>%
+  mutate(state = "PA") %>%
+  pivot_wider(
+    names_from = measure_name,
+    values_from = value
+  )
+
+fl_wide_m <- data_fl_comb %>%
+  filter(filter_id == chosen_filter, location_type == "county", measure_id %in% common_measures) %>%
+  select(filter_id, location_id, measure_name, value) %>%
+  mutate(state = "FL") %>%
+  pivot_wider(
+    names_from = measure_name,
+    values_from = value
+  )
+
+or_wide_m <- data_or_comb %>%
+  filter(filter_id == chosen_filter, location_type == "county", measure_id %in% common_measures) %>%
+  select(filter_id, location_id, measure_name, value) %>%
+  mutate(state = "OR") %>%
+  pivot_wider(
+    names_from = measure_name,
+    values_from = value
+  )
+
+all_wide_m <- bind_rows(pa_wide_m, fl_wide_m, or_wide_m)
+```
+
+
+## Correlation Exploration Full (Ignore)
+```{r}
+grouped_measures <- read_csv("all_def_measures_all_grouped.csv")
+
+
+measures_quant.pre <- all_wide_m %>% drop_na()
+measures_quant <- select(measures_quant.pre, -c(filter_id, location_id, state))
+measures_quant.pca <- prcomp(measures_quant, center = TRUE, scale. = TRUE)
+#summary(measures_quant.pca)
+
+
+library(factoextra)
+fviz_eig(measures_quant.pca, addlabels = TRUE) + # Add the labels
+  # Have to multiply by 100 to get on percent scale
+  geom_hline(yintercept = 100 * (1 / ncol(measures_quant)),
+             linetype = "dashed", color = "darkred")
+
+
+fviz_pca_biplot(measures_quant.pca, 
+                label = "var", # show variable names
+                alpha.ind = 0.45, # transparency of points
+                alpha.var = 0.55, # transparency of arrows
+                col.var = "darkblue",
+                repel = TRUE,
+                # Set the color of the points to decades variable:
+                habillage = measures_quant.pre$state, pointshape = 19
+                )
+```
+
+The scree plot indicates that no single principal component dominates the variance structure. The first component explains 22.3% of total variation, and the first three components together account for approximately 50%. This suggests that the data contain multiple underlying dimensions rather than a single dominant factor.
+
+# Groupings
+1 = Pretrial Release & Bail Practices
+2 = Case Processing Speed & Court Efficiency
+3 = Adjudication Patterns
+4 = Sentencing Severity & Incarceration Decisions
+5 = Financial Penalties & Legal Debt
+6 = Post-Sentencing Outcomes
+7 = Court & Law Enforcement Capacity
+8 = Demographic Structure
+9 = Socioeconomic Conditions
+
+# PCA by Category
+```{r}
+group_list <- split(grouped_measures$measure_name, grouped_measures$group_name)
+
+# get measures for each group
+measures_by_group <- lapply(group_list, function(vars) {
+  vars_in_data <- vars[vars %in% colnames(measures_quant.pre)]
+  measures_quant.pre %>% select(state, any_of(vars_in_data))
+})
+
+# ex. extract measure for a given group -- measures_by_group[["Socioeconomic Conditions"]]
+```
+
+```{r}
+plot_pca_biplot <- function(m_quant, group) {
+  # create pcs biplot for the given data m_quant, representing group
+  
+  measures_quant <- select(m_quant, -c(state))
+  measures_quant.pca <- prcomp(measures_quant, center = TRUE, scale. = TRUE)
+  #summary(measures_quant.pca)
+
+  fviz_eig(measures_quant.pca, addlabels = TRUE) + # Add the labels
+  # Have to multiply by 100 to get on percent scale
+    geom_hline(yintercept = 100 * (1 / ncol(measures_quant)),
+               linetype = "dashed", color = "darkred")
+  
+  return (list(pca_plot = 
+                 fviz_pca_biplot(measures_quant.pca,
+                                 label = "var", # show variable names
+                  alpha.ind = 0.45, # transparency of points
+                  alpha.var = 0.55, # transparency of arrows
+                  col.var = "darkblue",
+                  repel = TRUE,
+                  # Set the color of the points to decades variable:
+                  habillage = m_quant$state, pointshape = 19
+                  ) +
+                 labs(title = paste("PCA - Biplot:", group)),
+               rot = measures_quant.pca$rotation,
+               m_quant = measures_quant
+  ))
+}
+
+```
+
+
+```{r}
+# the commented out plots have no data (or onl 1 meaasure) -> cannot make plot
+
+#plot_pca_biplot(measures_by_group[["Pretrial Release & Bail Practices"]], "Pretrial Release & Bail Practices")
+pca2<- plot_pca_biplot(measures_by_group[["Case Processing Speed & Court Efficiency"]], "Case Processing Speed & Court Efficiency")
+pca3 <- plot_pca_biplot(measures_by_group[["Adjudication Patterns"]], "Adjudication Patterns")
+#plot_pca_biplot(measures_by_group[["Sentencing Severity & Incarceration Decisions"]], "Sentencing Severity & Incarceration Decisions")
+
+# contains one measure (Court Fees)
+#plot_pca_biplot(measures_by_group[["Financial Penalties & Legal Debt"]], "Financial Penalties & Legal Debt")
+
+#plot_pca_biplot(measures_by_group[["Post-Sentencing Outcomes"]], "Post-Sentencing Outcomes")
+pca7 <- plot_pca_biplot(measures_by_group[["Court & Law Enforcement Capacity"]], "Court & Law Enforcement Capacity")
+pca8 <- plot_pca_biplot(measures_by_group[["Demographic Structure"]], "Demographic Structure")
+pca9 <- plot_pca_biplot(measures_by_group[["Socioeconomic Conditions"]], "Socioeconomic Conditions")
+
+measure_groups_df <- read_csv("measure_groups.csv")
+
+#lapply(measure_groups_df$group_name, function(g) {
+#  plot_pca_biplot(measures_by_group[[g]], g)
+#})
+
+
+pca2$pca_plot
+pca3$pca_plot
+pca7$pca_plot
+pca8$pca_plot
+pca9$pca_plot
+```
+
+**2. Case Processing Speed & Court Efficiency**
+
+This plot has Dim1 = 56.7%, so PC1 is doing a lot of the work. The main split appears to be between counties with longer case-processing times on the right and counties with faster resolution / higher percent resolved within benchmark days on the left. In particular, “Time to Disposition in Felony Cases” and “Time to Disposition in Misdemeanor Cases” point strongly to the right, while measures like “Felony Cases Resolved within 180 Days,” “Felony Cases Resolved within 365 Days,” and the misdemeanor resolved-within-X-days measures point left. So PC1 seems to capture an overall slow vs. fast court processing dimension. PC2 adds a secondary distinction, separating some felony-resolution measures upward from homicide/misdemeanor timing measures downward, but the dominant story is still overall case-processing speed.
+
+**3. Adjudication Patterns**
+
+This one has Dim1 = 43.1% and Dim2 = 32.8%, so there is no single dominant dimension. The category is more clearly two-dimensional. Along PC1, the main contrast seems to be between dismissals / unknown disposition method on the right and cases resulting in conviction on the left. Along PC2, “Cases Involving a Guilty Plea as Charged” points strongly upward while “Convictions with Unknown Disposition Method” points strongly downward. So this category is not just one clean continuum; it reflects multiple adjudication patterns.
+
+**7. Court & Law Enforcement Capacity**
+
+This is the cleanest one. There are only two measures shown: Total Cases and Misdemeanor Cases. PC1 explains 51.2% and PC2 explains 48.8%, which makes sense with essentially two variables. The arrows point in fairly different directions, so the two measures are capturing somewhat distinct variation, not one single shared axis. The county clustering suggests state differences in case-volume structure, with Florida more spread toward the “Total Cases” direction and PA/OR more concentrated near the center-left.
+
+
+**8. Demographic Structure**
+
+This plot is clearly more complex. Dim1 = 37.2% and Dim2 = 17.9%, so PC1 matters, but there is still a lot of remaining variation outside these first two dimensions. The horizontal axis seems to separate counties with higher urban / total population / Hispanic or Latino population / African American population toward the right from counties with higher white population / rural population toward the left. PC2 seems to further distinguish white population upward from some other demographic measures downward. So the first component looks like a rough urban-diverse vs. white-rural contrast.
+
+
+**9. Socioeconomic Conditions**
+This is a fairly interpretable plot. Dim1 = 38.5% and Dim2 = 19%. PC1 seems to separate counties with higher poverty, unemployment, residential mobility, single-female-headed households with children, non-citizens on the right from counties with higher median household income on the left. That looks like a pretty classic socioeconomic disadvantage gradient. PC2 adds something like a household/commuting/family-structure dimension, but the main story is the left-right gradient of advantage vs. disadvantage.
+
+
+```{r}
+# we loot at rotation for the dominating PC (usually PC1) to find the "top" mesaure of each category
+
+sort(abs(pca2$rot[, "PC1"]), decreasing = TRUE)
+#  Felony Cases Resolved within 180 Days
+
+sort(abs(pca3$rot[, "PC1"]), decreasing = TRUE)
+# Cases Resulting in Conviction  
+
+pca7$rot
+# Total Cases
+
+sort(abs(pca8$rot[, "PC1"]), decreasing = TRUE)
+# Population
+
+sort(abs(pca9$rot[, "PC1"]), decreasing = TRUE)
+# Below Poverty Line
+
+top_measures = c("Felony Cases Resolved within 180 Days",
+                 "Cases Resulting in Conviction",
+                 "Total Cases",
+                 "Population",
+                 "Below Poverty Line",
+                 "Court Fees")
+
+measures_quant.pre.top <- measures_quant.pre %>% select(state, any_of(top_measures))
+pcaTop <- plot_pca_biplot(measures_quant.pre.top, "Top Measures Among Categories")
+
+pcaTop$pca_plot
+```
+
+# Heat Map
+```{r}
+library(corrplot)
+cor_matrix <- cor(pca2$m_quant, use = "complete.obs")
+corrplot(cor_matrix,
+         method = "color",
+         type = "upper",
+         tl.col = "black",
+         tl.srt = 45)
+
+
+cor_matrix <- cor(pca3$m_quant, use = "complete.obs")
+corrplot(cor_matrix,
+         method = "color",
+         type = "upper",
+         tl.col = "black",
+         tl.srt = 45)
+
+cor_matrix <- cor(pca7$m_quant, use = "complete.obs")
+corrplot(cor_matrix,
+         method = "color",
+         type = "upper",
+         tl.col = "black",
+         tl.srt = 45)
+
+
+cor_matrix <- cor(pca8$m_quant, use = "complete.obs")
+corrplot(cor_matrix,
+         method = "color",
+         type = "upper",
+         tl.col = "black",
+         tl.srt = 45)
+
+
+cor_matrix <- cor(pca9$m_quant, use = "complete.obs")
+corrplot(cor_matrix,
+         method = "color",
+         type = "upper",
+         tl.col = "black",
+         tl.srt = 45)
+```
+
+
+
+```{r}
+library(corrplot)
+cor_matrix <- cor(pcaTop$m_quant, use = "complete.obs")
+corrplot(cor_matrix,
+         method = "color",
+         type = "upper",
+         tl.col = "black",
+         tl.srt = 45)
+```
+
+```{r}
+dist_mat <- as.dist(1 - abs(cor(measures_quant)))
+hc <- hclust(dist_mat)
+plot(hc)
+
+library(factoextra)
+
+par(mar = c(15, 4, 4, 2))  # bigger bottom margin
+
+make_dend <- function(m_quant) {
+  measures_scaled_quant <- m_quant %>%
+  scale(center = FALSE, scale = apply(., 2, sd, na.rm = TRUE))
+  measures_dist <- dist(t(measures_scaled_quant))
+
+  hc_measures_complete <- hclust(measures_dist, method = "complete")
+  hc_measures_complete_dend <- as.dendrogram(hc_measures_complete)
+  plot(hc_measures_complete_dend, main = "Complete Linkage")
+
+  hc_measures_single <- hclust(measures_dist, method = "single")
+  hc_measures_single_dend <- as.dendrogram(hc_measures_single)
+  plot(hc_measures_single_dend, main = "Single Linkage")
+}
+
+make_dend(pca2$m_quant)
 ```
 
