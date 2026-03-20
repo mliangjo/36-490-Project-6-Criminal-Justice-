@@ -79,3 +79,123 @@ ggplot(conv_all %>% filter(state == "OR"),
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
 ```
 
+```{r}
+county_conv <- all_states %>%
+  filter(
+    measure_name == "Cases Resulting in Conviction",
+    !is.na(numerator),
+    !is.na(denominator)
+  ) %>%
+  group_by(state, location_id, location_name) %>%
+  summarise(
+    total_convictions = sum(numerator, na.rm = TRUE),
+    total_cases = sum(denominator, na.rm = TRUE),
+    conviction_rate = total_convictions / total_cases,
+    .groups = "drop"
+  )
+
+ggplot(county_conv, aes(x = state, y = conviction_rate)) +
+  geom_boxplot() +
+  labs(
+    title = "County-Level Conviction Rate by State",
+    subtitle = "Normalized by total number of cases in each county",
+    x = "State",
+    y = "Conviction Rate"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+# 1. Load conviction data
+
+pa <- read_csv("data/clean/PA.csv.gz") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "PA")
+
+fl <- read_csv("data/clean/FL.csv.gz") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "FL")
+
+or <- read_csv("data/clean/OR.csv.gz") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "OR")
+
+all_states <- bind_rows(pa, fl, or)
+
+# 2. Aggregate conviction measure to county level
+
+county_conv <- all_states %>%
+  filter(
+    measure_name == "Cases Resulting in Conviction",
+    !is.na(numerator),
+    !is.na(denominator)
+  ) %>%
+  group_by(state, location_id, location_name) %>%
+  summarise(
+    total_convictions = sum(numerator, na.rm = TRUE),
+    total_cases_measure = sum(denominator, na.rm = TRUE),
+    conviction_rate = total_convictions / total_cases_measure,
+    .groups = "drop"
+  )
+
+# 3. Load county characteristics
+
+pa_char <- read_csv("data/combined/pa_characteristics_all.csv") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "PA")
+
+fl_char <- read_csv("data/combined/fl_characteristics_all.csv") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "FL")
+
+or_char <- read_csv("data/combined/or_characteristics_all.csv") %>%
+  filter(location_type == "county") %>%
+  mutate(state = "OR")
+
+all_char <- bind_rows(pa_char, fl_char, or_char)
+
+# 4. one row per county for characteristics
+
+county_char <- all_char %>%
+  group_by(state, location_id, location_name) %>%
+  summarise(
+    population = first(na.omit(population)),
+    total_cases = first(na.omit(total_cases)),
+    median_household_income = first(na.omit(median_household_income)),
+    num_full_time_prosecutors = first(na.omit(num_full_time_prosecutors)),
+    total_num_law_enforcement_agencies = first(na.omit(total_num_law_enforcement_agencies)),
+    .groups = "drop"
+  )
+
+# 5. Merge characteristics with conviction data
+
+county_analysis <- county_conv %>%
+  left_join(county_char, by = c("state", "location_id", "location_name"))
+
+county_analysis <- county_analysis %>%
+  mutate(convictions_per_10000 = (total_convictions / population) * 10000)
+
+ggplot(county_analysis, aes(x = state, y = convictions_per_10000)) +
+  geom_boxplot() +
+  labs(
+    title = "County Convictions per 10000 Residents by State",
+    x = "State",
+    y = "Convictions per 10000 Residents"
+  ) +
+  theme_minimal()
+```
+```{r}
+ggplot(county_analysis, aes(x = median_household_income, y = conviction_rate, color = state)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    title = "Conviction Rate vs Income by State",
+    x = "Median Household Income",
+    y = "Conviction Rate"
+  ) +
+  theme_minimal()
+```
+```{r}
+names(county_analysis)
+```
+
