@@ -1,0 +1,199 @@
+---
+title: "char_table_joiner"
+---
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# Process Data sets
+# Taken from Peter S.
+
+library(tidyverse)
+process_state_data <- function(state_name, data_file, locations_file, 
+                               filters_file = "filters.csv", 
+                               measures_file = "measures.csv") {
+  # Construct file paths 
+  data_path <- file.path("../raw", paste0(state_name, "_State_Data"), data_file)
+  locations_path <- file.path("../raw", paste0(state_name, "_State_Data"), locations_file)
+  filters_path <- file.path("../raw", paste0(state_name, "_State_Data"), filters_file)
+  measures_path <- file.path("../raw", paste0(state_name, "_State_Data"), measures_file)
+  
+  # Read in each data frame
+  data_years <- read_csv(data_path)
+  locations <- read_csv(locations_path)
+  filters <- read_csv(filters_path)
+  measures <- read_csv(measures_path)
+  
+  # read_csv assumes value column to be numberic which results in NA for string value
+  # get numeric values
+  numeric_measures_id <- measures %>% filter(tolower(format) != "value") %>% pull(id)
+
+  # get char df
+  char_data <- read_csv(data_path, 
+                         col_types = cols(value = col_character())) %>%
+  mutate(value = ifelse(measure_id %in% numeric_measures_id,
+                        as.numeric(value),
+                        value)) %>%
+  filter(!(measure_id %in% numeric_measures_id))
+  
+  joins_fn <- function(df) {
+    # Left join all of them
+     df %>%
+      left_join(locations, by = join_by(location_id == id)) %>%
+      left_join(filters, by = join_by(filter_id == id)) %>%
+      left_join(measures, by = join_by(measure_id == id)) %>%
+    # Rename appropriate cols as well
+      rename(
+        location_type = type,
+        location_name = name.x,
+        measure_name = name.y,
+        measure_format = format,
+        demographics = description ## This is what encodes lawyer type (from filters.csv)
+      ) %>%
+    # Reorder ids to be next to descriptions
+      ## Measure filter location
+      select(
+        measure_id, measure_name, measure_format, #Measures
+        filter_id, demographics, #filters
+        location_id, location_type, location_name, #locations
+        everything() #Everything else
+      )
+  }
+  
+  data_comb <- joins_fn(data_years) %>% 
+    filter(measure_id %in% numeric_measures_id)
+  
+  char_comb <- joins_fn(char_data)
+  
+  return(list(numeric = data_comb, char = char_comb, num_measures_id = numeric_measures_id))
+}
+
+# Process each state
+pa_process <- process_state_data("Pennsylvania", "data-2009-2013.csv", "locations.csv")
+or_process <- process_state_data("Oregon", "data-2009-2013-or.csv", "locations-or.csv")
+fl_process <- process_state_data("Florida", "data-2009-2013-fl.csv", "locations-fl.csv")
+
+data_pa_comb <- pa_process$numeric %>% mutate(state = "PA")
+data_or_comb <- or_process$numeric %>% mutate(state = "OR") 
+data_fl_comb <- fl_process$numeric %>% mutate(state = "FL")
+
+data_pa_char <- pa_process$char
+data_or_char <- or_process$char 
+data_fl_char <- fl_process$char
+
+num_m_pa <- pa_process$num_measures_id
+num_m_or <- or_process$num_measures_id
+num_m_fl <- fl_process$num_measures_id
+```
+
+```{r, eval = FALSE}
+grouped_measures <- read_csv("../../Macy/measure_groups_assign(2).csv")
+
+numeric_measures_id <- grouped_measures %>% filter(numeric_format == TRUE) %>% select(measure_id) %>%
+  pull(measure_id)
+
+data_path <- file.path("../raw", paste0("Pennsylvania", "_State_Data"), "data-2009-2013.csv")
+data_orig <- read_csv(data_path) %>%
+  filter(measure_id != 545)
+                       
+data_years <- read_csv(data_path, col_types = cols(
+    value = col_character()
+  )) %>%
+  mutate(value = ifelse(measure_id %in% numeric_measures_id,
+                        as.numeric(value),
+                        value)) %>%
+  filter(measure_id != 545)
+
+```
+
+
+```{r}
+# code take from Peter S. and partially edited
+#Only keep filters which differentiate by attorney type
+
+# get county data on conviction rate for each attorney type
+get_conviction_attorney_type <- function (comb_data){
+  opti <- comb_data %>%
+    filter(50 <= filter_id & filter_id <= 55, measure_id == 120, location_type == "county") %>% 
+    #Keeps only the filters with attorney type 
+    rename(counsel_type = demographics) %>% #Better title
+    mutate(counsel_type = fct_recode(counsel_type, #Shortens data names
+    "Court Appointed" = "defendants represented by a court-appointed private attorney",
+    "Unknown" = "defendants represented by an attorney of unknown type",
+    "Other" = "defendants represented by other attorney type",
+    "Private" = "defendants represented by private attorney",
+    "Public Defender" = "defendants represented by public defender",
+    "Self-Represented" = "defendants who self-represented"
+    ))
+}
+
+data_pa_convic_att <- get_conviction_attorney_type(data_pa_comb)
+data_or_convic_att <- get_conviction_attorney_type(data_or_comb)
+data_fl_convic_att <- get_conviction_attorney_type(data_fl_comb)
+
+#data_pa_comb %>% filter(50 <= filter_id & filter_id <= 55) %>% distinct(demographics)
+```
+
+```{r}
+# get df with conviction rate by attorney type (columns) for each county (rows)
+get_wide_att_conv <- function(data_convic_att) {
+  data_convic_att %>% 
+    select("location_id", "value", "counsel_type") %>%
+    pivot_wider(
+      id_cols = location_id,
+      names_from = counsel_type,
+      values_from = value,
+      names_glue = "{counsel_type} conviction rate"
+    )
+}
+
+data_wide_att_conv_pa <- get_wide_att_conv(data_pa_convic_att)
+data_wide_att_conv_or <- get_wide_att_conv(data_or_convic_att)
+data_wide_att_conv_fl <- get_wide_att_conv(data_fl_convic_att)
+```
+
+```{r}
+grouped_measures <- read_csv("../../Macy/measure_groups_assign(2).csv")
+chosen_filter <- 1 # "all defendants"
+
+get_char_wide <- function(data_comb, state, data_char) {
+  maj_wide <- data_comb %>%
+    filter(filter_id == chosen_filter, location_type == "county", 
+           measure_id %in% grouped_measures$measure_id) %>%
+    mutate(measure_id = ifelse(state == "PA" & measure_id == 2511, 511, measure_id)) %>%
+    select(location_id, measure_name, value) %>%
+    mutate(state = state) %>%
+    pivot_wider(
+      names_from = measure_name,
+      values_from = value
+    )
+  
+  char_wide <- data_char %>%
+    filter(filter_id == chosen_filter, location_id != state, 
+           measure_id %in% grouped_measures$measure_id) %>%
+    select(location_id, measure_name, value) %>%
+    mutate(state = state) %>%
+    pivot_wider(
+      names_from = measure_name,
+      values_from = value
+    )
+  
+  maj_wide %>% left_join(char_wide, by = c("location_id", "state"))
+}
+
+data_wide_char_pa <- get_char_wide(data_pa_comb, "PA", data_pa_char)
+data_wide_char_or <- get_char_wide(data_or_comb, "OR", data_or_char)
+data_wide_char_fl <- get_char_wide(data_fl_comb, "FL", data_fl_char)
+```
+
+```{r}
+comb_wide <- function(wide_char, wide_att_conv) {
+  wide_char %>% left_join(wide_att_conv, by = c("location_id"))
+}
+
+data_full_wide_pa <- comb_wide(data_wide_char_pa, data_wide_att_conv_pa)
+data_full_wide_or <- comb_wide(data_wide_char_or, data_wide_att_conv_or)
+data_full_wide_fl <- comb_wide(data_wide_char_fl, data_wide_att_conv_fl)
+
+full_wide_comb <- bind_rows(data_full_wide_pa, data_full_wide_or, data_full_wide_fl)
+write_csv(full_wide_comb, "../county_characteristics_conviction.csv")
+```
+
