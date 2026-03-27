@@ -1,0 +1,457 @@
+---
+title: "Regressions"
+output: pdf_document
+date: "2026-03-18"
+---
+
+# Load Data
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy = TRUE, tidy.opts = list(width.cutoff = 60))
+```
+
+```{r}
+library(dplyr)
+library(ggrepel)
+library(stargazer)
+library(tidyverse)
+library(ggplot2)
+library(tidyr)
+```
+
+
+# First Analysis 
+
+## What are the different county variables that effect the conviction rates of different defendant types 
+```{r}
+rdf<-read.csv("county_characteristics_conviction.csv")
+
+rdf <- rdf %>% 
+  mutate(Log.pop = log(Population),
+         Log.urban = log(Urban.Population+1),
+         Log.rural = log(Rural.Population+1))
+
+#colnames(rdf)
+
+rdf_PA <- rdf %>% 
+  filter(state == "PA")
+  
+  
+rdf_OR <- rdf %>% 
+  filter(state == "OR")
+  
+rdf_FL <-rdf %>% 
+  filter(state == "FL")
+
+
+```
+
+
+```{r}
+# # Population
+# Population, High.School. Graduates, Urban Population,Rural.Population
+# # Econ
+# Below Poverty Line, Unemployment.Rate, Median Household Income
+# # Race
+# African American Population", "White Population",
+# # Crim Justice
+# Number of Criminal Court Judges","Number of Full-Time Prosecutors", "Total Number of Law Enforcement Agencies", "Number of Part-Time Prosecutors", "Police Officers per 100,000 Residents"
+
+
+
+# # Type of Defendant
+# Public.Defender.conviction.rate
+# Self.Represented.conviction.rate           
+# Private.conviction.rate                
+# Public.Defender.conviction.rate                   
+# Court.Appointed.conviction.rate              
+# Other.conviction.rate                     
+```
+
+```{r}
+
+# PA 
+
+
+lm_pd_PA<- lm(
+  Private.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf_PA,
+  na.action = na.omit)
+summary(lm_pd_PA)
+# 
+# lm_pd_PA_step <- stepAIC(lm_pd_PA, direction = "both", trace = FALSE)
+# summary(lm_pd_PA_step)
+
+lm_p_PA <- lm(
+  Private.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf_PA,
+  na.action = na.omit)
+summary(lm_p_PA)
+
+# lm_p_PA_step <- stepAIC(lm_p_PA, direction = "both", trace = FALSE)
+# summary(lm_p_PA)
+
+lm_ca_PA <- lm(
+  Private.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf_PA,
+  na.action = na.omit)
+summary(lm_ca_PA)
+
+
+lm_sr_PA <- lm(
+  Private.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf_PA,
+  na.action = na.omit)
+summary(lm_sr_PA)
+```
+```{r, warning = FALSE}
+
+# Selected som vars for visualization
+
+rdf_PA %>%
+  dplyr::select(Below.Poverty.Line, Public.Defender.conviction.rate, Private.conviction.rate,
+                Court.Appointed.conviction.rate, Self.Represented.conviction.rate) %>%
+  pivot_longer(-Below.Poverty.Line, names_to = "Type", values_to = "Rate") %>%
+  ggplot(aes(x = Below.Poverty.Line, y = Rate)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, color = "red") +
+  facet_wrap(~ Type, scales = "free_y") +
+  labs(title = "Pennsylvania: Conviction Rate vs Poverty Rate",
+       x = "Below Poverty Line", y = "Conviction Rate")
+```
+
+```{r}
+# OR
+lm_pd_OR<- lm(
+  Public.Defender.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_OR)
+summary(lm_pd_OR)
+
+lm_p_OR<- lm(
+  Private.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_OR)
+summary(lm_p_OR)
+
+
+lm_ca_OR<- lm(
+  Court.Appointed.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_OR)
+summary(lm_ca_OR)
+
+
+lm_sr_OR <- lm(
+  Self.Represented.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_OR)
+summary(lm_sr_OR)
+```
+```{r, warning = FALSE}
+
+# Selected som vars for visualization
+
+rdf_PA %>%
+  dplyr::select(Log.pop, High.School.Graduates) %>%
+  pivot_longer(-Log.pop, names_to = "Type", values_to = "Rate") %>%
+  ggplot(aes(x = Log.pop, y = Rate)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, color = "red") +
+  facet_wrap(~ Type, scales = "free_y") +
+  labs(title = "Pennsylvania: Conviction Rate vs Log Population",
+       x = "Log Population", y = "Conviction Rate")
+```
+
+
+```{r}
+# FL
+lm_pd_FL<- lm(
+  Public.Defender.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_FL)
+summary(lm_pd_FL)
+
+lm_p_FL <- lm(
+  Private.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_FL)
+summary(lm_p_FL)
+
+
+lm_ca_FL<- lm(
+  Court.Appointed.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_FL)
+summary(lm_ca_FL)
+
+lm_sr_FL <- lm(
+  Self.Represented.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_FL)
+summary(lm_sr_FL)
+```
+
+
+```{r}
+
+# Everyting Combined (prob not important, did this wrong)
+
+lm_pd<- lm(
+  Public.Defender.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +Log.rural+
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies+Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data= rdf)
+summary(lm_pd)
+
+
+lm_p <- lm(
+  Private.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +Log.rural+
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf)
+summary(lm_p)
+
+
+lm_ca <- lm(
+  Court.Appointed.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +Log.rural+
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data  = rdf)
+summary(lm_ca)
+
+
+lm_sr <- lm(
+  Self.Represented.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +Log.rural+
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf)
+summary(lm_sr)
+```
+
+
+
+```{r}
+# Trying to find the best glm to explain public defender conviction rate 
+
+library(bestglm)
+df_bestglm <- rdf_PA %>%
+  select(
+    Log.pop,
+    High.School.Graduates,
+    Log.urban,
+    Log.rural,
+    Below.Poverty.Line,
+    Unemployment.Rate,
+    Median.Household.Income,
+    Number.of.Criminal.Court.Judges,
+    Number.of.Full.Time.Prosecutors,
+    Total.Number.of.Law.Enforcement.Agencies,
+    Number.of.Part.Time.Prosecutors,
+    Police.Officers.per.100.000.Residents,
+    y = Public.Defender.conviction.rate  # rename and keep as last column
+  ) %>%
+    na.omit() %>% 
+  as.data.frame()
+
+# run best subset selection
+best_model <- bestglm(df_bestglm,
+                      family  = gaussian,   
+                      IC      = "AIC",      
+                      method  = "exhaustive") 
+
+summary(best_model$BestModel)
+
+
+```
+Regression Diagnostics 
+```{r}
+#Normality of residuals
+par(mfrow = c(2, 2))
+
+qqnorm(residuals(lm_pd), main = "Public Defender")
+qqline(residuals(lm_pd), col = "red")
+
+qqnorm(residuals(lm_p), main = "Private")
+qqline(residuals(lm_p), col = "red")
+
+qqnorm(residuals(lm_ca), main = "Court Appointed")
+qqline(residuals(lm_ca), col = "red")
+
+qqnorm(residuals(lm_sr), main = "Self Represented")
+qqline(residuals(lm_sr), col = "red")
+
+```
+```{r}
+par(mfrow = c(2, 2))
+
+plot(fitted(lm_pd), residuals(lm_pd),
+     main = "Public Defender",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+
+plot(fitted(lm_p), residuals(lm_p),
+     main = "Private",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+
+plot(fitted(lm_ca), residuals(lm_ca),
+     main = "Court Appointed",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+
+plot(fitted(lm_sr), residuals(lm_sr),
+     main = "Self Represented",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+```
+```{r, warning=FALSE}
+# for better presentation
+
+stargazer(
+  lm_p, lm_pd, lm_ca,lm_sr,
+  type         = "text",          
+  font.size     = "small",
+  column.sep.width = "1pt",
+  covariate.labels = c(
+    "Log Population", "HS Graduates", "Log Urban Pop","Log Rural Population",
+    "Below Poverty", "Unemployment Rate", "Median HH Income",
+    "Number of Criminal Court Judges", "Number of Full Time Prosecutors","Total Number of Lcw Enforcement Agencies", "Number of Part Time Prosecutors", "Police Officers per 100,000 Residents"
+  ),
+  dep.var.labels = c("Private Defender", "Public Defender ", "Court-Appointed Defender", "Self Represented "),
+  star.cutoffs   = c(0.05, 0.01, 0.001)
+)
+```
+
+# Second Analysis 
+
+## Looking at what county characteristics effect the composition of representation types 
+```{r}
+df <-read.csv("Oregon_comb.csv") # for second analysis 
+```
+
+```{r}
+representation_comp_regress<- df %>%
+  filter(location_type == "county", measure_id == 120) %>%
+  group_by(location_id) %>%
+  mutate(
+    # race of defendant
+    percent_afr_am = denominator[demographics == "African American defendants"]/denominator[demographics== "all defendants"],
+    percent_white = denominator[demographics == "white defendants"]/denominator[demographics== "all defendants"],
+  # sex of defendant
+    percent_female = denominator[demographics == "female defendants"]/denominator[demographics== "all defendants"],
+    # types of defendant 
+    percent_private = denominator[demographics == "defendants represented by private attorney"]/denominator[demographics== "all defendants"],
+    percent_public = denominator[demographics == "defendants represented by public defender"]/denominator[demographics== "all defendants"],
+    percent_court_appointed_private = denominator[demographics == "defendants represented by a court-appointed private attorney"]/denominator[demographics== "all defendants"]
+    )
+```
+
+
+```{r}
+length(unique(df$location_id))
+
+representation_comp_regress <- representation_comp_regress %>%
+  distinct(location_id, .keep_all = TRUE)
+```
+
+```{r}
+county_covs <- df %>%
+  filter(measure_name %in% c(
+    # Population
+    "Population", "High School Graduates", "Urban Population",
+    # Econ
+    "Below Poverty Line", "Unemployment Rate", "Median Household Income",
+    # Race
+    "African American Population", "White Population",
+    # Crim Justice
+    "Number of Criminal Court Judges","Number of Full-Time Prosecutors", "Total Number of Law Enforcement Agencies", "Number of Part-Time Prosecutors", "Police Officers per 100,000 Residents"
+    ),
+    demographics == "all defendants",
+    location_type == "county") %>%
+  select(location_name, measure_name, location_id, value) %>%
+  pivot_wider(names_from = measure_name, values_from = value) %>%
+  mutate(log_pop = log10(Population))
+
+```
+
+```{r}
+# merging the data set
+total <- representation_comp_regress %>%
+  left_join(county_covs, by = c("location_id", "location_name")) %>%
+  rename_with(~ gsub("\\.x$", "", .x)) 
+```
+
+```{r}
+
+lm_private <- lm(
+  percent_private ~ log_pop + `High School Graduates` + `Urban Population` +`Below Poverty Line` + `Unemployment Rate` + `Median Household Income` +`African American Population` + `White Population`,
+  data   = total
+)
+summary(lm_private)
+
+
+lm_public <- lm(
+  percent_public ~ log_pop + `High School Graduates` + `Urban Population` +`Below Poverty Line` + `Unemployment Rate` + `Median Household Income` +`African American Population` + `White Population`,
+  data   = total
+)
+summary(lm_public)
+
+
+lm_cp <- lm(
+  percent_court_appointed_private ~ log_pop + `High School Graduates` + `Urban Population` +`Below Poverty Line` + `Unemployment Rate` + `Median Household Income` +`African American Population` + `White Population`,
+  data   = total
+)
+summary(lm_cp)
+
+```
+```{r, warning=FALSE}
+# for better presentation 
+
+
+stargazer(
+  lm_private, lm_public, lm_cp,
+  type         = "text",          # "html" or "latex" for documents
+  column.labels = c("Private", "Public", "Court-Appointed"),
+  covariate.labels = c(
+    "Log Population", "HS Graduates", "Urban Pop.",
+    "Below Poverty", "Unemployment", "Median HH Income",
+    "African American Pop.", "White Pop."
+  ),
+  dep.var.labels = c("% Private", "% Public", "% Court-Appointed"),
+  star.cutoffs   = c(0.05, 0.01, 0.001)
+)
+```
+
+
