@@ -33,7 +33,7 @@ rdf_OR <- read_state("OR")
 rdf_FL <- read_state("FL")
 
 # ============================================================
-# 2. PA REGRESSIONS — full covariate set
+# 2. PA REGRESSIONS ??? full covariate set
 # ============================================================
 
 lm_pd_PA <- lm(
@@ -80,7 +80,7 @@ lm_sr_PA <- lm(
 summary(lm_sr_PA)
 
 # ============================================================
-# 3. PA VISUALIZATION — Conviction Rate vs Poverty
+# 3. PA VISUALIZATION ??? Conviction Rate vs Poverty
 # ============================================================
 rdf_PA %>%
   dplyr::select(
@@ -102,7 +102,7 @@ rdf_PA %>%
   )
 
 # ============================================================
-# 4. OR REGRESSIONS — reduced covariate set
+# 4. OR REGRESSIONS ??? reduced covariate set
 # ============================================================
 
 lm_pd_OR <- lm(
@@ -126,7 +126,7 @@ lm_sr_OR <- lm(
 summary(lm_sr_OR)
 
 # ============================================================
-# 5. FL REGRESSIONS — reduced covariate set
+# 5. FL REGRESSIONS ??? reduced covariate set
 # ============================================================
 
 lm_pd_FL <- lm(
@@ -150,7 +150,7 @@ lm_sr_FL <- lm(
 summary(lm_sr_FL)
 
 # ============================================================
-# 6. COMBINED — all three states stacked
+# 6. COMBINED ??? all three states stacked
 # ============================================================
 rdf_all <- bind_rows(
   mutate(rdf_PA, state = "PA"),
@@ -199,7 +199,7 @@ lm_sr <- lm(
 summary(lm_sr)
 
 # ============================================================
-# 7. BEST-SUBSET SELECTION (PA — Public Defender rate)
+# 7. BEST-SUBSET SELECTION (PA ??? Public Defender rate)
 # ============================================================
 df_bestglm <- rdf_PA %>%
   dplyr::select(
@@ -251,23 +251,23 @@ predictors_reduced <- c(
   "Log.pop", "High School Graduates", "Log.urban", "Log.rural"
 )
 
-# PA — full set
+# PA ??? full set
 cat("\n===== BEST GLM: PA =====\n")
 best_PA <- run_bestglm(rdf_PA, predictors_full, "CR Public Defender")
 summary(best_PA$BestModel)
 
-# OR — reduced set
+# OR ??? reduced set
 cat("\n===== BEST GLM: OR =====\n")
 best_OR <- run_bestglm(rdf_OR, predictors_reduced, "CR Public Defender")
 summary(best_OR$BestModel)
 
-# FL — reduced set
+# FL ??? reduced set
 cat("\n===== BEST GLM: FL =====\n")
 best_FL <- run_bestglm(rdf_FL, predictors_reduced, "CR Public Defender")
 summary(best_FL$BestModel)
 
 # ============================================================
-# 8. REGRESSION DIAGNOSTICS — combined models
+# 8. REGRESSION DIAGNOSTICS ??? combined models
 # ============================================================
 
 # QQ plots
@@ -389,10 +389,12 @@ ggsave("pairs_plot_PA.png", width = 16, height = 14, dpi = 150)
 
 library(patchwork)
 
+## PA
+
 plot_scatter <- function(xvar, xlabel) {
   ggplot(rdf_PA, aes(x = .data[[xvar]], y = `CR Public Defender`)) +
     geom_point(alpha = 0.6) +
-    geom_smooth(method = "lm", se = TRUE, color = "red") +
+    geom_smooth(method = "loess", se = TRUE, color = "red") +
     labs(x = xlabel, y = "CR Public Defender") +
     theme_bw()
 }
@@ -406,3 +408,43 @@ p4 <- plot_scatter("Log.pop",                               "Log Population")
   plot_annotation(title = "Pennsylvania: Public Defender Conviction Rate vs Key Covariates")
 
 ggsave("key_covariates_PA.png", width = 10, height = 8, dpi = 150)
+
+## OR
+
+plot_scatter <- function(xvar, xlabel) {
+  ggplot(rdf_PA, aes(x = .data[[xvar]], y = `CR Public Defender`)) +
+    geom_point(alpha = 0.6) +
+    geom_smooth(method = "loess", se = TRUE, color = "red") +
+    labs(x = xlabel, y = "CR Public Defender") +
+    theme_bw()
+}
+
+p1 <- plot_scatter("Unemployment Rate",               "Unemployment Rate")
+p2 <- plot_scatter("High School Graduates",                 "High School Graduates")
+p3 <- plot_scatter("Number of Criminal Court Judges",           "Number of Criminal Court Judges")
+p4 <- plot_scatter("Log.pop",                               "Log Population")
+
+(p1 | p2) / (p3 | p4) +
+  plot_annotation(title = "Pennsylvania: Public Defender Conviction Rate vs Key Covariates")
+
+ggsave("key_covariates_PA.png", width = 10, height = 8, dpi = 150)
+
+## FL
+
+plot_scatter <- function(xvar, xlabel) {
+  ggplot(rdf_OR, aes(x = .data[[xvar]], y = `CR Public Defender`)) +
+    geom_point(alpha = 0.6) +
+    geom_smooth(method = "loess", se = TRUE, color = "red") +
+    labs(x = xlabel, y = "CR Public Defender") +
+    theme_bw()
+}
+
+p1 <- plot_scatter("Unemployment Rate",               "Unemployment Rate")
+p2 <- plot_scatter("High School Graduates",                 "High School Graduates")
+p3 <- plot_scatter("African American Population",           "African American Population")
+p4 <- plot_scatter("Log.pop",                               "Log Population")
+
+(p1 | p2) / (p3 | p4) +
+  plot_annotation(title = "Oregon: Public Defender Conviction Rate vs Key Covariates")
+
+ggsave("key_covariates_OR.png", width = 10, height = 8, dpi = 150)
