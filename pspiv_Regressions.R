@@ -201,7 +201,7 @@ summary(lm_sr)
 # ============================================================
 # 7. BEST-SUBSET SELECTION (PA ??? Public Defender rate)
 # ============================================================
-df_bestglm <- rdf_PA %>%
+df_bestglm <- rdf_FL %>%
   dplyr::select(
     Log.pop,
     `High School Graduates`,
@@ -210,10 +210,10 @@ df_bestglm <- rdf_PA %>%
     `Below Poverty Line`,
     `Unemployment Rate`,
     `Median Household Income`,
-    `Number of Criminal Court Judges`,
-    `Number of Full-Time Prosecutors`,
+    # `Number of Criminal Court Judges`,
+    # `Number of Full-Time Prosecutors`,
     `Total Number of Law Enforcement Agencies`,
-    `Number of Part-Time Prosecutors`,
+    # `Number of Part-Time Prosecutors`,
     `Police Officers per 100,000 Residents`,
     y = `CR Public Defender`    # must be last column, named y
   ) %>%
