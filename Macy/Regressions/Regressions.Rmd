@@ -1,0 +1,510 @@
+---
+title: "Regressions"
+output: pdf_document
+date: "2026-03-18"
+---
+
+# Taken from Peter S
+# Load Data
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy = TRUE, tidy.opts = list(width.cutoff = 60))
+```
+
+```{r}
+library(dplyr)
+library(ggrepel)
+library(stargazer)
+library(tidyverse)
+library(ggplot2)
+library(tidyr)
+```
+
+
+# First Analysis 
+
+## What are the different county variables that effect the conviction rates of different defendant types 
+```{r}
+rdf<-read.csv("../../Data/county_characteristics_conviction.csv")
+
+rdf <- rdf %>% 
+  mutate(Log.pop = log(Population),
+         Log.urban = log(Urban.Population+1),
+         Log.rural = log(Rural.Population+1))
+
+#colnames(rdf)
+
+rdf_PA <- rdf %>% 
+  filter(state == "PA")
+  
+  
+rdf_OR <- rdf %>% 
+  filter(state == "OR")
+  
+rdf_FL <-rdf %>% 
+  filter(state == "FL")
+
+
+```
+
+
+```{r}
+# # Population
+# Population, High.School. Graduates, Urban Population,Rural.Population
+# # Econ
+# Below Poverty Line, Unemployment.Rate, Median Household Income
+# # Race
+# African American Population", "White Population",
+# # Crim Justice
+# Number of Criminal Court Judges","Number of Full-Time Prosecutors", "Total Number of Law Enforcement Agencies", "Number of Part-Time Prosecutors", "Police Officers per 100,000 Residents"
+
+
+
+# # Type of Defendant
+# Public.Defender.conviction.rate
+# Self.Represented.conviction.rate           
+# Private.conviction.rate                
+# Public.Defender.conviction.rate                   
+# Court.Appointed.conviction.rate              
+# Other.conviction.rate                     
+```
+
+```{r}
+
+# PA 
+
+
+lm_pd_PA <- lm(
+  Public.Defender.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf_PA,
+  na.action = na.omit)
+summary(lm_pd_PA)
+# 
+# lm_pd_PA_step <- stepAIC(lm_pd_PA, direction = "both", trace = FALSE)
+# summary(lm_pd_PA_step)
+
+lm_p_PA <- lm(
+  Private.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf_PA,
+  na.action = na.omit)
+summary(lm_p_PA)
+
+# lm_p_PA_step <- stepAIC(lm_p_PA, direction = "both", trace = FALSE)
+# summary(lm_p_PA)
+
+lm_ca_PA <- lm(
+  Court.Appointed.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf_PA,
+  na.action = na.omit)
+summary(lm_ca_PA)
+
+
+lm_sr_PA <- lm(
+  Self.Represented.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf_PA,
+  na.action = na.omit)
+summary(lm_sr_PA)
+```
+```{r, warning = FALSE}
+
+# Selected som vars for visualization
+
+rdf_PA %>%
+  dplyr::select(Below.Poverty.Line, Public.Defender.conviction.rate, Private.conviction.rate,
+                Court.Appointed.conviction.rate, Self.Represented.conviction.rate) %>%
+  pivot_longer(-Below.Poverty.Line, names_to = "Type", values_to = "Rate") %>%
+  ggplot(aes(x = Below.Poverty.Line, y = Rate)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, color = "red") +
+  facet_wrap(~ Type, scales = "free_y") +
+  labs(title = "Pennsylvania: Conviction Rate vs Poverty Rate",
+       x = "Below Poverty Line", y = "Conviction Rate")
+```
+
+```{r}
+# OR
+lm_pd_OR<- lm(
+  Public.Defender.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_OR)
+summary(lm_pd_OR)
+
+lm_p_OR<- lm(
+  Private.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_OR)
+summary(lm_p_OR)
+
+
+lm_ca_OR<- lm(
+  Court.Appointed.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_OR)
+summary(lm_ca_OR)
+
+
+lm_sr_OR <- lm(
+  Self.Represented.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_OR)
+summary(lm_sr_OR)
+```
+```{r, warning = FALSE}
+
+# Selected som vars for visualization
+
+rdf_PA %>%
+  dplyr::select(Log.pop, High.School.Graduates) %>%
+  pivot_longer(-Log.pop, names_to = "Type", values_to = "Rate") %>%
+  ggplot(aes(x = Log.pop, y = Rate)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, color = "red") +
+  facet_wrap(~ Type, scales = "free_y") +
+  labs(title = "Pennsylvania: Conviction Rate vs Log Population",
+       x = "Log Population", y = "Conviction Rate")
+```
+
+
+```{r}
+# FL
+lm_pd_FL<- lm(
+  Public.Defender.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_FL)
+summary(lm_pd_FL)
+
+lm_p_FL <- lm(
+  Private.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_FL)
+summary(lm_p_FL)
+
+
+lm_ca_FL<- lm(
+  Court.Appointed.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_FL)
+summary(lm_ca_FL)
+
+lm_sr_FL <- lm(
+  Self.Represented.conviction.rate ~ Log.pop + High.School.Graduates + Urban.Population +Rural.Population,
+  data   = rdf_FL)
+summary(lm_sr_FL)
+```
+
+
+```{r}
+
+# Everyting Combined (prob not important, did this wrong)
+
+lm_pd<- lm(
+  Public.Defender.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +Log.rural+
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies+Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data= rdf)
+summary(lm_pd)
+
+
+lm_p <- lm(
+  Private.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +Log.rural+
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf)
+summary(lm_p)
+
+
+lm_ca <- lm(
+  Court.Appointed.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +Log.rural+
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data  = rdf)
+summary(lm_ca)
+
+
+lm_sr <- lm(
+  Self.Represented.conviction.rate ~ 
+    # Population
+    Log.pop + High.School.Graduates + Log.urban +Log.rural+
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income+
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges+Number.of.Full.Time.Prosecutors+ Total.Number.of.Law.Enforcement.Agencies + Number.of.Part.Time.Prosecutors+ Police.Officers.per.100.000.Residents, 
+  data   = rdf)
+summary(lm_sr)
+```
+
+
+
+```{r}
+# Trying to find the best glm to explain public defender conviction rate 
+
+library(bestglm)
+df_bestglm <- rdf_PA %>%
+  select(
+    Log.pop,
+    High.School.Graduates,
+    Log.urban,
+    Log.rural,
+    Below.Poverty.Line,
+    Unemployment.Rate,
+    Median.Household.Income,
+    Number.of.Criminal.Court.Judges,
+    Number.of.Full.Time.Prosecutors,
+    Total.Number.of.Law.Enforcement.Agencies,
+    Number.of.Part.Time.Prosecutors,
+    Police.Officers.per.100.000.Residents,
+    y = Public.Defender.conviction.rate  # rename and keep as last column
+  ) %>%
+    na.omit() %>% 
+  as.data.frame()
+
+# run best subset selection
+best_model <- bestglm(df_bestglm,
+                      family  = gaussian,   
+                      IC      = "AIC",      
+                      method  = "exhaustive") 
+
+summary(best_model$BestModel)
+
+
+```
+Regression Diagnostics 
+```{r}
+#Normality of residuals
+par(mfrow = c(2, 2))
+
+qqnorm(residuals(lm_pd), main = "Public Defender")
+qqline(residuals(lm_pd), col = "red")
+
+qqnorm(residuals(lm_p), main = "Private")
+qqline(residuals(lm_p), col = "red")
+
+qqnorm(residuals(lm_ca), main = "Court Appointed")
+qqline(residuals(lm_ca), col = "red")
+
+qqnorm(residuals(lm_sr), main = "Self Represented")
+qqline(residuals(lm_sr), col = "red")
+
+```
+```{r}
+par(mfrow = c(2, 2))
+
+plot(fitted(lm_pd), residuals(lm_pd),
+     main = "Public Defender",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+
+plot(fitted(lm_p), residuals(lm_p),
+     main = "Private",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+
+plot(fitted(lm_ca), residuals(lm_ca),
+     main = "Court Appointed",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+
+plot(fitted(lm_sr), residuals(lm_sr),
+     main = "Self Represented",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+```
+```{r, warning=FALSE}
+# for better presentation
+
+stargazer(
+  lm_p, lm_pd, lm_ca,lm_sr,
+  type         = "text",          
+  font.size     = "small",
+  column.sep.width = "1pt",
+  covariate.labels = c(
+    "Log Population", "HS Graduates", "Log Urban Pop","Log Rural Population",
+    "Below Poverty", "Unemployment Rate", "Median HH Income",
+    "Number of Criminal Court Judges", "Number of Full Time Prosecutors","Total Number of Lcw Enforcement Agencies", "Number of Part Time Prosecutors", "Police Officers per 100,000 Residents"
+  ),
+  dep.var.labels = c("Private Defender", "Public Defender ", "Court-Appointed Defender", "Self Represented "),
+  star.cutoffs   = c(0.05, 0.01, 0.001)
+)
+```
+
+# PA Public Defender Residual Diagnostics
+```{r}
+# =========================
+# Residual Diagnostics (PA - Public Defender)
+# =========================
+
+par(mfrow = c(2,2))
+
+# 1. QQ plot (normality)
+qqnorm(residuals(lm_pd_PA), main = "QQ Plot (PA - PD)")
+qqline(residuals(lm_pd_PA), col = "red")
+
+# 2. Residuals vs Fitted (linearity + homoskedasticity)
+plot(fitted(lm_pd_PA), residuals(lm_pd_PA),
+     main = "Residuals vs Fitted (PA - PD)",
+     xlab = "Fitted Values", ylab = "Residuals")
+abline(h = 0, col = "red")
+
+# 3. Histogram of residuals
+hist(residuals(lm_pd_PA),
+     main = "Residual Histogram (PA - PD)",
+     xlab = "Residuals")
+
+```
+
+# PA Public Defender Leave-One_out
+```{r}
+# =========================
+# Leave-One-Out / Influence Analysis (PA - Public Defender)
+# =========================
+
+mod <- lm_pd_PA
+
+# ---- Step 1: Identify outliers ----
+
+# Studentized residuals (outliers in response)
+rstud <- rstudent(mod)
+outliers <- which(abs(rstud) > 2)
+
+# Cook's distance (influential points)
+cooks <- cooks.distance(mod)
+threshold <- 4 / length(cooks)
+influential <- which(cooks > threshold)
+
+# Combine both
+suspects <- unique(c(outliers, influential))
+
+cat("Potential influential observations:\n")
+print(suspects)
+
+
+# ---- Cook's Distance Plots ---#
+# Cook's Distance Plot
+plot(cooks,
+     pch = 19,
+     main = "Cook's Distance (PA Public Defender Model)",
+     xlab = "Observation",
+     ylab = "Cook's Distance")
+
+abline(h = threshold, col = "red", lty = 2)
+
+# label flagged points
+text(suspects, cooks[suspects],
+     labels = suspect_info$location_id,
+     pos = 3, cex = 0.8)
+
+
+# ---- Step 2: Leave-one-out refits ----
+
+loo_models <- lapply(suspects, function(i) {
+  update(mod, data = model.frame(mod)[-i, ])
+})
+
+names(loo_models) <- paste0("remove_obs_", suspects)
+
+
+# ---- Step 3: Compare coefficients ----
+
+original_coef <- coef(mod)
+
+cat("\nOriginal coefficients:\n")
+print(original_coef)
+
+cat("\nLeave-one-out coefficients:\n")
+print(lapply(loo_models, coef))
+```
+
+```{r}
+# See flagged observations with county names
+rdf_PA_complete <- model.frame(lm_pd_PA)
+
+used_data <- model.frame(lm_pd_PA)
+used_rows <- as.numeric(row.names(used_data))
+
+suspect_info <- data.frame(
+  obs = suspects, # row numbers in the model data
+  location_id = rdf_PA$location_id[used_rows[suspects]],
+  rstudent = rstud[suspects],
+  cooks_d = cooks[suspects],
+  row.names = NULL # row number in original dataset
+)
+
+suspect_info
+
+
+vars_to_check <- c(
+  "Log.pop",
+  "Below.Poverty.Line",
+  "Number.of.Criminal.Court.Judges"
+)
+
+# ---- Original coefficients ----
+comparison_table <- data.frame(
+  variable = vars_to_check,
+  original = round(coef(lm_pd_PA)[vars_to_check], 3),
+  row.names = NULL
+)
+
+# ---- Add LOO columns ----
+for (j in seq_along(suspects)) {
+  loc <- suspect_info$location_id[j]
+  
+  comparison_table[[paste0("remove_id_", loc)]] <- round(coef(loo_models[[j]])[vars_to_check], 3)
+}
+
+comparison_table
+
+
+change_table <- data.frame(
+  variable = vars_to_check
+)
+
+for (j in seq_along(suspects)) {
+  loc <- suspect_info$location_id[j]
+  
+  change_table[[paste0("change_id_", loc)]] <-
+    round(coef(loo_models[[j]])[vars_to_check] - coef(lm_pd_PA)[vars_to_check], 3) # LOO - Original
+}
+
+change_table
+
+# reshape change_table to long format
+change_long <- change_table %>%
+  pivot_longer(-variable, names_to = "model", values_to = "change")
+
+ggplot(change_long, aes(x = variable, y = change, fill = model)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Coefficient Changes After Removing Influential Observations",
+       x = "Variable",
+       y = "Change in Coefficient") +
+  theme_minimal()
+```
+
