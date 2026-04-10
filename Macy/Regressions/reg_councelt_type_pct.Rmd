@@ -1,5 +1,5 @@
 ---
-title: "resids_loo"
+title: "resida_loo2"
 output: html_document
 ---
 
@@ -23,7 +23,6 @@ library(tidyr)
 library(bestglm)
 library(stargazer)
 library(car)
-library(ggrepel)
 ```
 
 ```{r}
@@ -62,152 +61,100 @@ rdf_FL <-rdf %>%
 #names(rdf_PA)
 
 #max(car::logit(rdf_PA$Public.Defender.conviction.rate))
+```
+
+```{r}
+process_state_data <- function(state_name, data_file, locations_file, 
+                               filters_file = "filters.csv", 
+                               measures_file = "measures.csv") {
+  # Construct file paths 
+  data_path <- file.path("../../data/raw", paste0(state_name, "_State_Data"), data_file)
+  locations_path <- file.path("../../data/raw", paste0(state_name, "_State_Data"), locations_file)
+  filters_path <- file.path("../../data/raw", paste0(state_name, "_State_Data"), filters_file)
+  measures_path <- file.path("../../data/raw", paste0(state_name, "_State_Data"), measures_file)
+  
+  # Read in each data frame
+  data_years <- read_csv(data_path)
+  locations <- read_csv(locations_path)
+  filters <- read_csv(filters_path)
+  measures <- read_csv(measures_path)
+  
+  # Left join all of them
+  data_comb <- data_years %>%
+    left_join(locations, by = join_by(location_id == id)) %>%
+    left_join(filters, by = join_by(filter_id == id)) %>%
+    left_join(measures, by = join_by(measure_id == id)) %>%
+  # Rename appropriate cols as well
+    rename(
+      location_type = type,
+      location_name = name.x,
+      measure_name = name.y,
+      measure_format = format,
+      demographics = description ## This is what encodes lawyer type
+    ) %>%
+  # Reorder ids to be next to descriptions
+    ## Measure filter location
+    select(
+      measure_id, measure_name, measure_format, #Measures
+      filter_id, demographics, #filters
+      location_id, location_type, location_name, #locations
+      everything() #Everything else
+    )
+  
+  return(data_comb)
+}
+
+# Process each state
+data_pa_comb <- process_state_data("Pennsylvania", "data-2009-2013.csv", "locations.csv")
+data_or_comb <- process_state_data("Oregon", "data-2009-2013-or.csv", "locations-or.csv")
+data_fl_comb <- process_state_data("Florida", "data-2009-2013-fl.csv", "locations-fl.csv")
+
+
+```
+```{r}
+percent_att_type_df <- function(data_comb) {
+  data_comb %>% filter(location_type == "county", measure_id == 120) %>%
+    group_by(location_id) %>%
+    mutate(
+      # race of defendant
+      # percent_afr_am = denominator[demographics == "African American defendants"]/
+      #   denominator[demographics== "all defendants"],
+      # percent_white = denominator[demographics == "white defendants"]/
+      #   denominator[demographics== "all defendants"],
+      # sex of defendant
+      # percent_female = denominator[demographics == "female defendants"]/
+      # denominator[demographics== "all defendants"],
+      # types of defendant 
+      percent_p = denominator[demographics == "defendants represented by private attorney"]/
+        denominator[demographics== "all defendants"],
+      percent_pd = denominator[demographics == "defendants represented by public defender"]/
+        denominator[demographics== "all defendants"],
+      percent_ca = denominator[demographics == "defendants represented by a court-appointed private attorney"]/
+        denominator[demographics== "all defendants"],
+      percent_sr = denominator[demographics == "defendants who self-represented"]/
+        denominator[demographics== "all defendants"]
+      ) %>% 
+    distinct(location_id, .keep_all = TRUE) %>% 
+    select(location_id, percent_p, percent_pd, percent_ca, percent_sr)
+}
+
+pct_att_type_pa <- percent_att_type_df(data_pa_comb)
+pct_att_type_or <- percent_att_type_df(data_or_comb)
+pct_att_type_fl <- percent_att_type_df(data_fl_comb)
+
+full_pct_df_PA <- inner_join(rdf_PA, pct_att_type_pa, by ="location_id")
+full_pct_df_OR <- inner_join(rdf_OR, pct_att_type_or, by ="location_id")
+full_pct_df_FL <- inner_join(rdf_FL, pct_att_type_fl, by ="location_id")
 
 ```
 
 
-# Population
-Log.pop
-Log.urban
-#Log.rural <- correlated with urban
-Young.Males.Population
-Largest.Municipality.Population
-High.School.Graduates
 
-# Racial/Ethnicity
-White.Population <- baseline
-African.American.Population
-Native.American.Alaskan.Population
-Asian.or.Pacific.Islander.Population
-# Other.Race.Population <- sum to 1 so remove basline
-Hispanic.or.Latino.Population
-
-# Econ
-#Single.Female.Headed.Households.with.Children
-Unemployment.Rate
-#Non.Citizens                                      
-Below.Poverty.Line
-Median.Household.Income                          
-#Average.Commute.Minutes
-#Residential.Mobility
-
-# Crim Justice
-Number.of.Criminal.Court.Judges
-Police.Officers.per.100.000.Residents
-# Law.Enforcement.Agencies.Reporting.to.UCR
-# Total.Number.of.Law.Enforcement.Agencies <- tied to county size, population
-Number.of.Full.Time.Prosecutors
-#Number.of.Full.Time.Sworn.Law.Enforcement.Officers < correlated with # full-time prosecutors, scales with pop
-# Number.of.Part.Time.Prosecutors
-
-```{r, eval = FALSE}
-mod <- lm(
-  car::logit(Public.Defender.conviction.rate) ~ 
-    # Population
-    Log.pop + Log.urban + Young.Males.Population + Largest.Municipality.Population + High.School.Graduates +
-    # Racial/Ethnicity
-    White.Population + African.American.Population + Native.American.Alaskan.Population + 
-    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
-    # Econ
-    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income +
-    # Criminal Justice
-    Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents + Number.of.Full.Time.Prosecutors, 
-  data   = rdf_PA,
-  na.action = na.omit)
-#summary(mod)
-vif(mod)
-
-###### VIF IS REALLY HIGH #########
-# VIF < 5 → fine
-# VIF 5–10 → borderline
-# VIF > 10 → drop or rethink
-
-
-# We remove White.Population and Median.Household.Income
-mod1 <- lm(
-  car::logit(Public.Defender.conviction.rate) ~ 
-    # Population
-    Log.pop + Log.urban + Young.Males.Population + Largest.Municipality.Population + High.School.Graduates +
-    # Racial/Ethnicity
-    African.American.Population + Native.American.Alaskan.Population + 
-    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
-    # Econ
-    Below.Poverty.Line + Unemployment.Rate + #Median.Household.Income +
-    # Criminal Justice
-    Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents + Number.of.Full.Time.Prosecutors, 
-  data   = rdf_PA,
-  na.action = na.omit)
-#summary(mod)
-vif(mod1)
-
-
-# Better but not quite
-# We remove Log.urban as it drops the VIP of Log.pop the most (vs Largest.Municipality.Population)
-mod2 <- lm(
-  car::logit(Public.Defender.conviction.rate) ~ 
-    # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population + #High.School.Graduates +
-    # Racial/Ethnicity
-    African.American.Population + Native.American.Alaskan.Population + 
-    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
-    # Econ
-    Below.Poverty.Line + Unemployment.Rate +
-    # Criminal Justice
-    Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents + Number.of.Full.Time.Prosecutors, 
-  data   = rdf_PA,
-  na.action = na.omit)
-#summary(mod)
-vif(mod2)
-
-# Police.Officers.per.100.000.Residents 
-# Note moderate multicollinearity
-# It represents a different concept (law enforcement capacity) so we leave it
-
-
-```
-```{r, eval = FALSE}
-# FL 
-mod3 <- lm(
-  car::logit(Public.Defender.conviction.rate) ~ 
-    # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population + #High.School.Graduates +
-    # Racial/Ethnicity
-    African.American.Population + Native.American.Alaskan.Population + 
-    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
-    # Econ
-    Below.Poverty.Line + Unemployment.Rate +
-    # Criminal Justice
-    #Number.of.Criminal.Court.Judges + 
-    Police.Officers.per.100.000.Residents, #+ Number.of.Full.Time.Prosecutors, 
-  data   = rdf_FL,
-  na.action = na.omit)
-#summary(mod)
-vif(mod3)
-
-
-# OR
-mod4 <- lm(
-  car::logit(Public.Defender.conviction.rate) ~ 
-    # Population
-    Log.pop + Young.Males.Population + # Largest.Municipality.Population + 
-    #High.School.Graduates +
-    # Racial/Ethnicity
-    African.American.Population + Native.American.Alaskan.Population + 
-    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
-    # Econ
-    Below.Poverty.Line + Unemployment.Rate ,#+
-    # Criminal Justice
-    #Number.of.Criminal.Court.Judges +Police.Officers.per.100.000.Residents, + Number.of.Full.Time.Prosecutors, 
-  data   = rdf_OR,
-  na.action = na.omit)
-#summary(mod)
-vif(mod4)
-```
 ```{r}
 
 #PA
 lm_pd_PA <- lm(
-  car::logit(Public.Defender.conviction.rate) ~ 
+  car::logit(percent_pd) ~ 
     # Population
     Log.pop + Young.Males.Population + Largest.Municipality.Population + 
     # Racial/Ethnicity
@@ -217,13 +164,13 @@ lm_pd_PA <- lm(
     Below.Poverty.Line + Unemployment.Rate +
     # Criminal Justice
     Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents + Number.of.Full.Time.Prosecutors, 
-  data   = rdf_PA,
+  data   = full_pct_df_PA,
   na.action = na.omit)
 #summary(lm_pd_PA)
 vif(lm_pd_PA)
 
 lm_p_PA <- lm(
-  car::logit(Private.conviction.rate) ~ 
+  car::logit(percent_p) ~ 
     # Population
     Log.pop + Young.Males.Population + Largest.Municipality.Population + 
     # Racial/Ethnicity
@@ -233,13 +180,13 @@ lm_p_PA <- lm(
     Below.Poverty.Line + Unemployment.Rate +
     # Criminal Justice
     Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents + Number.of.Full.Time.Prosecutors, 
-  data   = rdf_PA,
+  data   = full_pct_df_PA,
   na.action = na.omit)
 #summary(lm_p_PA)
 vif(lm_p_PA)
 
 lm_ca_PA <- lm(
-  car::logit(Court.Appointed.conviction.rate) ~ 
+  car::logit(percent_ca) ~ 
     # Population
     Log.pop + Young.Males.Population + Largest.Municipality.Population +
     # Racial/Ethnicity
@@ -249,13 +196,13 @@ lm_ca_PA <- lm(
     Below.Poverty.Line + Unemployment.Rate +
     # Criminal Justice
     Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents + Number.of.Full.Time.Prosecutors, 
-  data   = rdf_PA,
+  data   = full_pct_df_PA,
   na.action = na.omit)
 #summary(lm_ca_PA)
 vif(lm_ca_PA)
 
 lm_sr_PA <- lm(
-  car::logit(Self.Represented.conviction.rate) ~ 
+  car::logit(percent_sr) ~ 
     # Population
     Log.pop + Young.Males.Population + Largest.Municipality.Population +
     # Racial/Ethnicity
@@ -265,7 +212,7 @@ lm_sr_PA <- lm(
     Below.Poverty.Line + Unemployment.Rate +
     # Criminal Justice
     Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents + Number.of.Full.Time.Prosecutors, 
-  data   = rdf_PA,
+  data   = full_pct_df_PA,
   na.action = na.omit)
 #summary(lm_sr_PA)
 vif(lm_sr_PA)
@@ -289,7 +236,7 @@ rdf_PA %>%
 ```{r}
 # OR
 lm_pd_OR<- lm(
-  car::logit(Public.Defender.conviction.rate) ~ 
+  car::logit(percent_pd) ~ 
     # Population
     Log.pop + Young.Males.Population +
     # Racial/Ethnicity
@@ -299,13 +246,13 @@ lm_pd_OR<- lm(
     Below.Poverty.Line + Unemployment.Rate ,
     # Criminal Justice
     # NONE
-  data   = rdf_OR,
+  data   = full_pct_df_OR,
   na.action = na.omit)
 #summary(lm_pd_OR)
 vif(lm_pd_OR)
 
 lm_p_OR<- lm(
-  car::logit(Private.conviction.rate) ~ 
+  car::logit(percent_p) ~ 
     # Population
     Log.pop + Young.Males.Population +
     # Racial/Ethnicity
@@ -315,14 +262,14 @@ lm_p_OR<- lm(
     Below.Poverty.Line + Unemployment.Rate ,
     # Criminal Justice
     # NONE
-  data   = rdf_OR,
+  data   = full_pct_df_OR,
   na.action = na.omit)
 #summary(lm_p_OR)
 vif(lm_p_OR)
 
 
 lm_ca_OR<- lm(
-  car::logit(Court.Appointed.conviction.rate) ~ 
+  car::logit(percent_ca) ~ 
     # Population
     Log.pop + Young.Males.Population +
     # Racial/Ethnicity
@@ -332,14 +279,14 @@ lm_ca_OR<- lm(
     Below.Poverty.Line + Unemployment.Rate ,
     # Criminal Justice
     # NONE
-  data   = rdf_OR,
+  data   = full_pct_df_OR,
   na.action = na.omit)
 #summary(lm_ca_OR)
 vif(lm_ca_OR)
 
 
 lm_sr_OR <- lm(
-  car::logit(Self.Represented.conviction.rate) ~ 
+  car::logit(percent_sr) ~ 
     # Population
     Log.pop + Young.Males.Population +
     # Racial/Ethnicity
@@ -349,7 +296,7 @@ lm_sr_OR <- lm(
     Below.Poverty.Line + Unemployment.Rate ,
     # Criminal Justice
     # NONE
-  data   = rdf_OR,
+  data   = full_pct_df_OR,
   na.action = na.omit)
 #summary(lm_sr_OR)
 vif(lm_sr_OR)
@@ -373,7 +320,7 @@ rdf_PA %>%
 ```{r}
 # FL
 lm_pd_FL<- lm(
-  car::logit(Public.Defender.conviction.rate) ~ 
+  car::logit(percent_pd) ~ 
     # Population
     Log.pop + Young.Males.Population + Largest.Municipality.Population + 
     # Racial/Ethnicity
@@ -383,13 +330,13 @@ lm_pd_FL<- lm(
     Below.Poverty.Line + Unemployment.Rate +
     # Criminal Justice
     Police.Officers.per.100.000.Residents,
-  data   = rdf_FL,
+  data   = full_pct_df_FL,
   na.action = na.omit)
 #summary(lm_pd_FL)
 vif(lm_pd_FL)
 
 lm_p_FL <- lm(
-  car::logit(Private.conviction.rate) ~ 
+  car::logit(percent_p) ~ 
     # Population
     Log.pop + Young.Males.Population + Largest.Municipality.Population + 
     # Racial/Ethnicity
@@ -399,14 +346,14 @@ lm_p_FL <- lm(
     Below.Poverty.Line + Unemployment.Rate +
     # Criminal Justice
     Police.Officers.per.100.000.Residents,
-  data   = rdf_FL,
+  data   = full_pct_df_FL,
   na.action = na.omit)
 #summary(lm_p_FL)
 vif(lm_p_FL)
 
 
 lm_ca_FL<- lm(
-  car::logit(Court.Appointed.conviction.rate) ~ 
+  car::logit(percent_ca) ~ 
     # Population
     Log.pop + Young.Males.Population + Largest.Municipality.Population + 
     # Racial/Ethnicity
@@ -416,13 +363,13 @@ lm_ca_FL<- lm(
     Below.Poverty.Line + Unemployment.Rate +
     # Criminal Justice
     Police.Officers.per.100.000.Residents,
-  data   = rdf_FL,
+  data   = full_pct_df_FL,
   na.action = na.omit)
 #summary(lm_ca_FL)
 vif(lm_ca_FL)
 
 lm_sr_FL <- lm(
-  car::logit(Self.Represented.conviction.rate) ~ 
+  car::logit(percent_sr) ~ 
     # Population
     Log.pop + Young.Males.Population + Largest.Municipality.Population + 
     # Racial/Ethnicity
@@ -432,7 +379,7 @@ lm_sr_FL <- lm(
     Below.Poverty.Line + Unemployment.Rate +
     # Criminal Justice
     Police.Officers.per.100.000.Residents,
-  data   = rdf_FL,
+  data   = full_pct_df_FL,
   na.action = na.omit)
 #summary(lm_sr_FL)
 vif(lm_sr_FL)
@@ -741,32 +688,7 @@ cooks_plot <- function (mod, state, counsel) {
   # 
   used_data <- model.frame(mod)
   used_rows <- as.numeric(rownames(used_data))
-  # 
-  # influential_info <- data.frame(
-  #   obs = influential,
-  #   original_row = used_rows[influential],
-  #   county_name = rdf_PA$name[used_rows[influential]],
-  #   rstudent = round(rstud[influential], 3),
-  #   cooks_d = round(cooks[influential], 3)
-  # )
-  # # Cook's Distance Plot
-  # plot(cooks,
-  #      pch = 19,
-  #      #main = "Cook's Distance (PA Public Defender Model)",
-  #      main = paste0("Cook's Distance (", state, " - ", counsel, ")"),
-  #      xlab = "Observation",
-  #      ylab = "Cook's Distance")
-  # 
-  # abline(h = threshold, col = "red", lty = 2)
-  # 
-  # # label flagged points
-  # text(influential, cooks[influential],
-  #      labels = influential_info$county_name,
-  #      pos = 4,
-  #    cex = 0.6,
-  #    offset = 0.3,
-  # col = "blue")
-  #      #pos = 3, cex = 0.8)
+
 
   df <- data.frame(
     obs = 1:length(cooks),
