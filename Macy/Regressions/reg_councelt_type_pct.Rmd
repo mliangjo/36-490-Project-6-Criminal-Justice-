@@ -43,7 +43,8 @@ rdf<-read.csv("../../Data/county_characteristics_conviction.csv")
 rdf <- rdf %>% 
   mutate(Log.pop = log(Population),
          Log.urban = log(Urban.Population+1),
-         Log.rural = log(Rural.Population+1))
+         Log.rural = log(Rural.Population+1),
+         Log.Largest.Municipality.Population = log(Largest.Municipality.Population+1))
 
 rdf_PA <- rdf %>% 
   filter(state == "PA") %>% 
@@ -156,7 +157,7 @@ full_pct_df_FL <- inner_join(rdf_FL, pct_att_type_fl, by ="location_id")
 lm_pd_PA <- lm(
   car::logit(percent_pd) ~ 
     # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population + 
+    Log.pop + Young.Males.Population + #Log.Largest.Municipality.Population + 
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -167,12 +168,12 @@ lm_pd_PA <- lm(
   data   = full_pct_df_PA,
   na.action = na.omit)
 #summary(lm_pd_PA)
-vif(lm_pd_PA)
+#vif(lm_pd_PA)
 
 lm_p_PA <- lm(
   car::logit(percent_p) ~ 
     # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population + 
+    Log.pop + Young.Males.Population + #Log.Largest.Municipality.Population + 
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -183,12 +184,12 @@ lm_p_PA <- lm(
   data   = full_pct_df_PA,
   na.action = na.omit)
 #summary(lm_p_PA)
-vif(lm_p_PA)
+#vif(lm_p_PA)
 
 lm_ca_PA <- lm(
   car::logit(percent_ca) ~ 
     # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population +
+    Log.pop + Young.Males.Population + #Log.Largest.Municipality.Population +
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -199,12 +200,12 @@ lm_ca_PA <- lm(
   data   = full_pct_df_PA,
   na.action = na.omit)
 #summary(lm_ca_PA)
-vif(lm_ca_PA)
+#vif(lm_ca_PA)
 
 lm_sr_PA <- lm(
   car::logit(percent_sr) ~ 
     # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population +
+    Log.pop + Young.Males.Population + #Log.Largest.Municipality.Population +
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -215,7 +216,7 @@ lm_sr_PA <- lm(
   data   = full_pct_df_PA,
   na.action = na.omit)
 #summary(lm_sr_PA)
-vif(lm_sr_PA)
+#vif(lm_sr_PA)
 ```
 
 ```{r, warning = FALSE, eval = FALSE}
@@ -249,7 +250,7 @@ lm_pd_OR<- lm(
   data   = full_pct_df_OR,
   na.action = na.omit)
 #summary(lm_pd_OR)
-vif(lm_pd_OR)
+#vif(lm_pd_OR)
 
 lm_p_OR<- lm(
   car::logit(percent_p) ~ 
@@ -265,7 +266,7 @@ lm_p_OR<- lm(
   data   = full_pct_df_OR,
   na.action = na.omit)
 #summary(lm_p_OR)
-vif(lm_p_OR)
+#vif(lm_p_OR)
 
 
 lm_ca_OR<- lm(
@@ -282,7 +283,7 @@ lm_ca_OR<- lm(
   data   = full_pct_df_OR,
   na.action = na.omit)
 #summary(lm_ca_OR)
-vif(lm_ca_OR)
+#vif(lm_ca_OR)
 
 
 lm_sr_OR <- lm(
@@ -299,7 +300,7 @@ lm_sr_OR <- lm(
   data   = full_pct_df_OR,
   na.action = na.omit)
 #summary(lm_sr_OR)
-vif(lm_sr_OR)
+#vif(lm_sr_OR)
 ```
 
 ```{r, warning = FALSE, eval = FALSE}
@@ -322,7 +323,7 @@ rdf_PA %>%
 lm_pd_FL<- lm(
   car::logit(percent_pd) ~ 
     # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population + 
+    Log.pop + Young.Males.Population + #Log.Largest.Municipality.Population + 
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -333,12 +334,12 @@ lm_pd_FL<- lm(
   data   = full_pct_df_FL,
   na.action = na.omit)
 #summary(lm_pd_FL)
-vif(lm_pd_FL)
+#vif(lm_pd_FL)
 
 lm_p_FL <- lm(
   car::logit(percent_p) ~ 
     # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population + 
+    Log.pop + Young.Males.Population + #Log.Largest.Municipality.Population + 
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -349,13 +350,13 @@ lm_p_FL <- lm(
   data   = full_pct_df_FL,
   na.action = na.omit)
 #summary(lm_p_FL)
-vif(lm_p_FL)
+#vif(lm_p_FL)
 
 
 lm_ca_FL<- lm(
   car::logit(percent_ca) ~ 
     # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population + 
+    Log.pop + Young.Males.Population + #Log.Largest.Municipality.Population + 
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -366,12 +367,12 @@ lm_ca_FL<- lm(
   data   = full_pct_df_FL,
   na.action = na.omit)
 #summary(lm_ca_FL)
-vif(lm_ca_FL)
+#vif(lm_ca_FL)
 
 lm_sr_FL <- lm(
   car::logit(percent_sr) ~ 
     # Population
-    Log.pop + Young.Males.Population + Largest.Municipality.Population + 
+    Log.pop + Young.Males.Population + #Log.Largest.Municipality.Population + 
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -382,26 +383,26 @@ lm_sr_FL <- lm(
   data   = full_pct_df_FL,
   na.action = na.omit)
 #summary(lm_sr_FL)
-vif(lm_sr_FL)
+#vif(lm_sr_FL)
 ```
 
 
 # Summary Tables
-```{r, echo = TRUE}
+```{r, eval=FALSE}
 summary(lm_pd_PA)
 summary(lm_p_PA)
 summary(lm_ca_PA)
 summary(lm_sr_PA)
 
 ```
-```{r, echo = TRUE}
+```{r, eval=FALSE}
 summary(lm_pd_OR)
 summary(lm_p_OR)
 summary(lm_ca_OR)
 summary(lm_sr_OR)
 
 ```
-```{r, echo = TRUE}
+```{r, eval=FALSE}
 summary(lm_pd_FL)
 summary(lm_p_FL)
 summary(lm_ca_FL)
@@ -409,18 +410,19 @@ summary(lm_sr_FL)
 ```
 
 # Coefficient Tables
-```{r, eval = FALSE}
+```{r}
 library(stargazer)
 
-state_coef_table <- function(state, lm_pd, lm_p, lm_cs, lm_sr, covar_labels) {
+state_coef_table <- function(state, lm_pd, lm_p, lm_ca, lm_sr, covar_labels, state_name) {
   stargazer(
     lm_pd,
     lm_p,
     lm_ca,
     lm_sr,
     
-    type = "html",
-    out = paste0(state, "_table.html"),
+    type = "text",
+    title = paste0("Counsel Type Percentage Regression Results (",
+                                  state_name,")"),
     
     dep.var.labels.include = FALSE,
     dep.var.caption = "",#Regression Results for Conviction Rates by Counsel Type (Pennsylvania)",
@@ -434,8 +436,9 @@ state_coef_table <- function(state, lm_pd, lm_p, lm_cs, lm_sr, covar_labels) {
     #dep.var.labels = "Logit(Conviction Rate)",
     
     digits = 3,
-    report = "vcstp",
-    omit.stat = c("f", "adj.rsq"),
+    report = "vc*s",
+    omit.stat = c("f", "rsq", "ser"),
+
     covariate.labels = covar_labels,
     
     align = TRUE
@@ -443,23 +446,48 @@ state_coef_table <- function(state, lm_pd, lm_p, lm_cs, lm_sr, covar_labels) {
 }
 
 
-covar_labels_PA = c(
-    "Log Population",
-    "High School Graduates",
-    "Log Urban Population",
-    "Below Poverty Line",
-    "Unemployment Rate",
-    "Median Household Income",
-    "Criminal Court Judges",
-    "Full-Time Prosecutors",
-    "Law Enforcement Agencies",
-    "Part-Time Prosecutors",
-    "Police per 100k"
-  )
+covar_labels_PA = c("Log Population",
+                    "Proportion of Young Males",
+                    "Proportion African American",
+                    "Proportion Native American / Alaskan",
+                    "Proportion Asian / Pacific Islander",
+                    "Proportion Hispanic or Latino",
+                    "Poverty Rate",
+                    "Unemployment Rate",
+                    "Number of Criminal Court Judges",
+                    "Police Officers per 100,000 Residents",
+                    "Number of Full-Time Prosecutors"
+)
 
-state_coef_table("pa", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA, covar_labels_PA)
-#state_coef_table("fl", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL)
-#state_coef_table("or", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR)
+covar_labels_OR = c("Log Population",
+                    "Proportion of Young Males",
+                    "Proportion African American",
+                    "Proportion Native American / Alaskan",
+                    "Proportion Asian / Pacific Islander",
+                    "Proportion Hispanic or Latino",
+                    "Poverty Rate",
+                    "Unemployment Rate"#,
+                    #"Number of Criminal Court Judges",
+                    #"Police Officers per 100,000 Residents",
+                    #"Number of Full-Time Prosecutors"
+)
+
+covar_labels_FL = c("Log Population",
+                    "Proportion of Young Males",
+                    "Proportion African American",
+                    "Proportion Native American / Alaskan",
+                    "Proportion Asian / Pacific Islander",
+                    "Proportion Hispanic or Latino",
+                    "Poverty Rate",
+                    "Unemployment Rate",
+                    #"Number of Criminal Court Judges",
+                    "Police Officers per 100,000 Residents"#,
+                    #"Number of Full-Time Prosecutors"
+)
+
+state_coef_table("pa", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA, covar_labels_PA, "Pennsylvania")
+state_coef_table("or", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR, covar_labels_OR, "Oregon")
+state_coef_table("fl", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL, covar_labels_FL, "Florida")
 ```
 
 # PA Public Defender Residual Diagnostics
