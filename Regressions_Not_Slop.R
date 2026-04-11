@@ -67,9 +67,9 @@ pa_PD_reg <- lm(LOGIT_CR_PD ~ ., data = pa%>%
                   drop_na(LOGIT_CR_PD)) 
 
 # Summaries & Diagnostics
-summary(fl_PD_reg) #Note the observations removed due to missingness
+kable(coefficients(summary(fl_PD_reg))) #Note the observations removed due to missingness
 summary(or_PD_reg)
 summary(pa_PD_reg)
 plot(fl_PD_reg, which = 1)
-plot(or_PD_reg, which = 1)
-plot(pa_PD_reg, which = 1)
+plot(or_PD_reg, which = 1, main = "Oregon: Residuals vs Fitted")
+plot(pa_PD_reg, which = 1, main = "Pennsylvania: Residuals vs Fitted")
