@@ -217,28 +217,6 @@ lm_sr_PA <- lm(
 #vif(lm_sr_PA)
 ```
 
-```{r, warning = FALSE, eval = FALSE}
-# Selected som vars for visualization
-
-rdf_PA %>%
-  dplyr::select(
-    Log.pop, Young.Males.Population,
-    # Racial/Ethnicity
-    African.American.Population, Native.American.Alaskan.Population, 
-    Asian.or.Pacific.Islander.Population, Hispanic.or.Latino.Population,
-    # Econ
-    Below.Poverty.Line, Unemployment.Rate,
-    # Criminal Justice
-    Number.of.Criminal.Court.Judges, Police.Officers.per.100.000.Residents) %>%
-  pivot_longer(-Below.Poverty.Line, names_to = "Type", values_to = "Rate") %>%
-  ggplot(aes(x = Below.Poverty.Line, y = Rate)) +
-  geom_point() +
-  geom_smooth(method = "loess", se = TRUE, color = "red") +
-  facet_wrap(~ Type, scales = "free_y") +
-  labs(title = "Pennsylvania: Conviction Rate vs Poverty Rate",
-       x = "Below Poverty Line", y = "Conviction Rate")
-```
-
 ```{r}
 # OR
 lm_pd_OR<- lm(
@@ -308,21 +286,6 @@ lm_sr_OR <- lm(
 #vif(lm_sr_OR)
 ```
 
-```{r, warning = FALSE, eval = FALSE}
-# Selected som vars for visualization
-
-rdf_PA %>%
-  dplyr::select(Log.pop, High.School.Graduates) %>%
-  pivot_longer(-Log.pop, names_to = "Type", values_to = "Rate") %>%
-  ggplot(aes(x = Log.pop, y = Rate)) +
-  geom_point() +
-  geom_smooth(method = "loess", se = TRUE, color = "red") +
-  facet_wrap(~ Type, scales = "free_y") +
-  labs(title = "Pennsylvania: Conviction Rate vs Log Population",
-       x = "Log Population", y = "Conviction Rate")
-```
-
-
 ```{r}
 # FL
 lm_pd_FL<- lm(
@@ -391,7 +354,6 @@ lm_sr_FL <- lm(
 #vif(lm_sr_FL)
 ```
 
-
 # Summary Tables
 ```{r, eval=FALSE}
 summary(lm_pd_PA)
@@ -414,6 +376,142 @@ summary(lm_ca_FL)
 summary(lm_sr_FL)
 ```
 
+
+# Regression Plots
+
+```{r}
+reg_plots <- function(full_pct_df_STATE, base_vals, state, lm_pd, lm_p, lm_ca, lm_sr) {  
+  # Sequence of unemployment values for x-axis
+  u_seq <- seq(
+    min(full_pct_df_STATE$Unemployment.Rate, na.rm = TRUE),
+    max(full_pct_df_STATE$Unemployment.Rate, na.rm = TRUE),
+    length.out = 200
+  )
+  
+  # Prediction grid
+  pred_grid <- base_vals[rep(1, length(u_seq)), ]
+  pred_grid$Unemployment.Rate <- u_seq
+  
+  # Function to get predictions + CI on response scale
+  make_pred_df <- function(model, label, newdata) {
+    pred <- predict(model, newdata = newdata, se.fit = TRUE)
+    
+    out <- newdata %>%
+      mutate(
+        # raw predictions
+        fit_link = pred$fit,
+        se_link = pred$se.fit,
+        fit = plogis(fit_link), # convert to probability scale
+        
+        # 95% concidence intervals -> probability scale
+        lwr = plogis(fit_link - 1.96 * se_link),
+        upr = plogis(fit_link + 1.96 * se_link),
+        Attorney.Type = label
+      )
+    
+    out
+  }
+  
+  pred_pd <- make_pred_df(lm_pd, "Public Defender", pred_grid)
+  pred_p  <- make_pred_df(lm_p,  "Private Attorney", pred_grid)
+  pred_ca <- make_pred_df(lm_ca, "Court Appointed", pred_grid)
+  pred_sr <- make_pred_df(lm_sr, "Self-Represented", pred_grid)
+  
+  plot_df <- bind_rows(pred_pd, pred_p, pred_ca, pred_sr)
+  
+  points_df <- full_pct_df_STATE %>%
+    select(
+      Unemployment.Rate,
+      percent_pd,
+      percent_p,
+      percent_ca,
+      percent_sr
+    ) %>%
+    pivot_longer(
+      cols = -Unemployment.Rate,
+      names_to = "Attorney.Type",
+      values_to = "pct_att_type"
+    ) %>%
+    mutate(
+      Attorney.Type = dplyr::recode(Attorney.Type,
+        "percent_p" = "Private Attorney",
+        "percent_pd" = "Public Defender",
+        "percent_ca" = "Court Appointed",
+        "percent_sr" = "Self-Represented"
+      )
+    )
+  
+  # Plot
+  ggplot(plot_df, aes(x = Unemployment.Rate, y = fit)) +
+    geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
+    geom_line(linewidth = 1, color = "red") +
+    
+    # Add actual data points
+    geom_point(
+      data = points_df,
+      aes(x = Unemployment.Rate, y = pct_att_type),
+      alpha = 0.6,
+      size = 2
+    ) +
+    
+    facet_wrap(~ Attorney.Type, ncol = 2) +
+    labs(
+      title = paste0("Predicted Conviction Rate vs. Unemployment Rate in ", state),
+      x = "Unemployment Rate",
+      y = "Predicted Percent Counsel Type"
+    ) +
+    theme_minimal(base_size = 12)
+}
+```
+```{r}
+# Common values to hold other predictors fixed at
+  base_vals_PA <- full_pct_df_PA %>%
+    summarise(
+      Log.pop = mean(Log.pop, na.rm = TRUE),
+      Young.Males.Population = mean(Young.Males.Population, na.rm = TRUE),
+      African.American.Population = mean(African.American.Population, na.rm = TRUE),
+      Native.American.Alaskan.Population = mean(Native.American.Alaskan.Population, na.rm = TRUE),
+      Asian.or.Pacific.Islander.Population = mean(Asian.or.Pacific.Islander.Population, na.rm = TRUE),
+      Hispanic.or.Latino.Population = mean(Hispanic.or.Latino.Population, na.rm = TRUE),
+      Below.Poverty.Line = mean(Below.Poverty.Line, na.rm = TRUE),
+      Number.of.Criminal.Court.Judges = mean(Number.of.Criminal.Court.Judges, na.rm = TRUE),
+      Police.Officers.per.100.000.Residents = mean(Police.Officers.per.100.000.Residents, na.rm = TRUE),
+      Number.of.Full.Time.Prosecutors = mean(Number.of.Full.Time.Prosecutors, na.rm = TRUE)
+    )
+
+base_vals_OR <- full_pct_df_OR %>%
+    summarise(
+      Log.pop = mean(Log.pop, na.rm = TRUE),
+      Young.Males.Population = mean(Young.Males.Population, na.rm = TRUE),
+      African.American.Population = mean(African.American.Population, na.rm = TRUE),
+      Native.American.Alaskan.Population = mean(Native.American.Alaskan.Population, na.rm = TRUE),
+      Asian.or.Pacific.Islander.Population = mean(Asian.or.Pacific.Islander.Population, na.rm = TRUE),
+      Hispanic.or.Latino.Population = mean(Hispanic.or.Latino.Population, na.rm = TRUE),
+      Below.Poverty.Line = mean(Below.Poverty.Line, na.rm = TRUE),
+      #Number.of.Criminal.Court.Judges = mean(Number.of.Criminal.Court.Judges, na.rm = TRUE),
+      #Police.Officers.per.100.000.Residents = mean(Police.Officers.per.100.000.Residents, na.rm = TRUE),
+      #Number.of.Full.Time.Prosecutors = mean(Number.of.Full.Time.Prosecutors, na.rm = TRUE)
+    )
+
+base_vals_FL <- full_pct_df_FL %>%
+    summarise(
+      Log.pop = mean(Log.pop, na.rm = TRUE),
+      Young.Males.Population = mean(Young.Males.Population, na.rm = TRUE),
+      African.American.Population = mean(African.American.Population, na.rm = TRUE),
+      Native.American.Alaskan.Population = mean(Native.American.Alaskan.Population, na.rm = TRUE),
+      Asian.or.Pacific.Islander.Population = mean(Asian.or.Pacific.Islander.Population, na.rm = TRUE),
+      Hispanic.or.Latino.Population = mean(Hispanic.or.Latino.Population, na.rm = TRUE),
+      Below.Poverty.Line = mean(Below.Poverty.Line, na.rm = TRUE),
+      #Number.of.Criminal.Court.Judges = mean(Number.of.Criminal.Court.Judges, na.rm = TRUE),
+      Police.Officers.per.100.000.Residents = mean(Police.Officers.per.100.000.Residents, na.rm = TRUE),
+      #Number.of.Full.Time.Prosecutors = mean(Number.of.Full.Time.Prosecutors, na.rm = TRUE)
+    )
+
+reg_plots(full_pct_df_PA, base_vals_PA, "Pennsylvania", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA)
+reg_plots(full_pct_df_OR, base_vals_OR, "Oregon", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR)
+reg_plots(full_pct_df_FL, base_vals_FL, "Florida", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL)
+```
+
 # Coefficient Tables
 ```{r}
 library(stargazer)
@@ -430,7 +528,7 @@ state_coef_table <- function(state, lm_pd, lm_p, lm_ca, lm_sr, covar_labels, sta
                                   state_name,")"),
     
     dep.var.labels.include = FALSE,
-    dep.var.caption = "",#Regression Results for Conviction Rates by Counsel Type (Pennsylvania)",
+    dep.var.caption = "",
     column.labels = c(
       "Public Defender",
       "Private",
@@ -495,30 +593,6 @@ state_coef_table("or", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR, covar_labels_OR, "
 state_coef_table("fl", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL, covar_labels_FL, "Florida")
 ```
 
-# PA Public Defender Residual Diagnostics
-```{r, eval=FALSE}
-# =========================
-# Residual Diagnostics (PA - Public Defender)
-# =========================
-
-par(mfrow = c(2,2))
-
-# 1. QQ plot (normality)
-qqnorm(residuals(lm_pd_PA), main = "QQ Plot (PA - PD)")
-qqline(residuals(lm_pd_PA), col = "red")
-
-# 2. Residuals vs Fitted (linearity + homoskedasticity)
-plot(fitted(lm_pd_PA), residuals(lm_pd_PA),
-     main = "Residuals vs Fitted (PA - PD)",
-     xlab = "Fitted Values", ylab = "Residuals")
-abline(h = 0, col = "red")
-
-# 3. Histogram of residuals
-#hist(residuals(lm_pd_PA),
-#     main = "Residual Histogram (PA - PD)",
-#     xlab = "Residuals")
-
-```
 
 # Residual Disgnostics Function
 ```{r}
@@ -556,152 +630,9 @@ residual_diag_plots(lm_ca_FL)
 residual_diag_plots(lm_sr_FL)
 ```
 
-# PA Public Defender Leave-One-Out
-```{r, eval=FALSE}
-# =========================
-# Leave-One-Out / Influence Analysis (PA - Public Defender)
-# =========================
-
-mod <- lm_pd_PA
-
-# ---- Step 1: Identify outliers ----
-
-# Studentized residuals (outliers in response)
-rstud <- rstudent(mod)
-outliers <- which(abs(rstud) > 2)
-
-# Cook's distance (influential points)
-cooks <- cooks.distance(mod)
-threshold <- 4 / length(cooks)
-influential <- which(cooks > threshold)
-
-# Combine both
-suspects <- unique(c(outliers, influential))
-
-cat("Potential influential observations:\n")
-print(suspects)
-
-used_data <- model.frame(mod)
-used_rows <- as.numeric(rownames(used_data))
-
-suspect_info <- data.frame(
-  obs = suspects,
-  original_row = used_rows[suspects],
-  location_id = rdf_PA$location_id[used_rows[suspects]],
-  rstudent = round(rstud[suspects], 3),
-  cooks_d = round(cooks[suspects], 3)
-)
-```
-
-```{r, eval=FALSE}
-
-# ---- Cook's Distance Plots ---#
-# Cook's Distance Plot
-plot(cooks,
-     pch = 19,
-     main = "Cook's Distance (PA Public Defender Model)",
-     xlab = "Observation",
-     ylab = "Cook's Distance")
-
-abline(h = threshold, col = "red", lty = 2)
-
-# label flagged points
-text(suspects, cooks[suspects],
-     labels = suspect_info$location_id,
-     pos = 3, cex = 0.8)
-
-
-# ---- Step 2: Leave-one-out refits ----
-
-loo_models <- lapply(suspects, function(i) {
-  lm(formula(mod), data = rdf_PA[-used_rows[i], , drop = FALSE],
-     na.action = na.omit)
-})
-
-names(loo_models) <- paste0("remove_obs_", suspects)
-
-
-# ---- Step 3: Compare coefficients ----
-
-#original_coef <- coef(mod)
-
-#cat("\nOriginal coefficients:\n")
-#print(original_coef)
-
-#cat("\nLeave-one-out coefficients:\n")
-#print(lapply(loo_models, coef))
-
-
-selected_indices <- seq_len(min(3, length(loo_models)))
-selected_models <- loo_models[selected_indices]
-
-```
-
-```{r, eval=FALSE}
-used_data <- model.frame(lm_pd_PA)
-used_rows <- as.numeric(row.names(used_data))
-
-suspect_info <- data.frame(
-  obs = suspects, # row numbers in the model data
-  location_id = rdf_PA$location_id[used_rows[suspects]],
-  rstudent = rstud[suspects],
-  cooks_d = cooks[suspects],
-  row.names = NULL # row number in original dataset
-)
-
-suspect_info
-
-vars_to_check <- c(
-  "Log.pop",
-  "Below.Poverty.Line",
-  "Number.of.Criminal.Court.Judges"
-)
-
-# ---- Original coefficients ----
-comparison_table <- data.frame(
-  variable = vars_to_check,
-  original = round(coef(lm_pd_PA)[vars_to_check], 3),
-  row.names = NULL
-)
-
-# ---- Add LOO columns ----
-for (j in seq_along(suspects)) {
-  loc <- suspect_info$location_id[j]
-  
-  comparison_table[[paste0("remove_id_", loc)]] <- round(coef(loo_models[[j]])[vars_to_check], 3)
-}
-
-comparison_table
-
-
-change_table <- data.frame(
-  variable = vars_to_check
-)
-
-for (j in seq_along(suspects)) {
-  loc <- suspect_info$location_id[j]
-  
-  change_table[[paste0("change_id_", loc)]] <-
-    round(coef(loo_models[[j]])[vars_to_check] - coef(lm_pd_PA)[vars_to_check], 3) # LOO - Original
-}
-
-change_table
-
-# reshape change_table to long format
-change_long <- change_table %>%
-  pivot_longer(-variable, names_to = "model", values_to = "change")
-
-ggplot(change_long, aes(x = variable, y = change, fill = model)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Coefficient Changes After Removing Influential Observations",
-       x = "Variable",
-       y = "Change in Coefficient") +
-  theme_minimal()
-```
-
 # Cook's Distanse Plot
 ```{r}
-cooks_plot <- function (mod, state, counsel) {
+cooks_plot <- function (mod, state, counsel, full_pct_df_STATE) {
   # ---- Step 1: Identify outliers ----
   
   # Studentized residuals (outliers in response)
@@ -726,7 +657,7 @@ cooks_plot <- function (mod, state, counsel) {
   df <- data.frame(
     obs = 1:length(cooks),
     cooks = cooks,
-    label = rdf_PA$name[used_rows]
+    label = full_pct_df_STATE$name[used_rows]
   )
   
   ggplot(df, aes(x = obs, y = cooks)) +
@@ -749,53 +680,24 @@ cooks_plot <- function (mod, state, counsel) {
 
 ```
 ```{r, echo = TRUE}
-cooks_plot(lm_pd_PA, "PA", "PD")
-cooks_plot(lm_p_PA, "PA", "P")
-cooks_plot(lm_ca_PA, "PA", "CA")
-cooks_plot(lm_sr_PA, "PA", "SR")
+cooks_plot(lm_pd_PA, "PA", "PD", full_pct_df_PA)
+cooks_plot(lm_p_PA, "PA", "P", full_pct_df_PA)
+cooks_plot(lm_ca_PA, "PA", "CA", full_pct_df_PA)
+cooks_plot(lm_sr_PA, "PA", "SR", full_pct_df_PA)
 
 ```
 ```{r, echo = TRUE}
-cooks_plot(lm_pd_OR, "OR", "PD")
-cooks_plot(lm_p_OR, "OR", "P")
-cooks_plot(lm_ca_OR, "OR", "CA")
-cooks_plot(lm_sr_OR, "OR", "SR")
+cooks_plot(lm_pd_OR, "OR", "PD", full_pct_df_OR)
+cooks_plot(lm_p_OR, "OR", "P", full_pct_df_OR)
+cooks_plot(lm_ca_OR, "OR", "CA", full_pct_df_OR)
+cooks_plot(lm_sr_OR, "OR", "SR", full_pct_df_OR)
 
 ```
 ```{r, echo = TRUE}
-cooks_plot(lm_pd_FL, "FL", "PD")
-cooks_plot(lm_p_FL, "FL", "P")
-cooks_plot(lm_ca_FL, "FL", "CA")
-cooks_plot(lm_sr_FL, "FL", "SR")
+cooks_plot(lm_pd_FL, "FL", "PD", full_pct_df_FL)
+cooks_plot(lm_p_FL, "FL", "P", full_pct_df_FL)
+cooks_plot(lm_ca_FL, "FL", "CA", full_pct_df_FL)
+cooks_plot(lm_sr_FL, "FL", "SR", full_pct_df_FL)
 ```
 
 
-# Ignore below
-```{r, eval=FALSE}
-change_table <- data.frame(
-  variable = vars_to_check
-)
-
-for (j in seq_along(suspects)) {
-  loc <- suspect_info$location_id[j]
-  
-  change_table[[paste0("remove_id_", loc)]] <-
-    round(
-      coef(loo_models[[j]])[vars_to_check] - coef(mod)[vars_to_check],
-      3
-    )
-}
-
-rownames(change_table) <- NULL
-
-change_table
-```
-
-```{r, eval=FALSE}
-("Pennsylvania", "data-2009-2013.csv", "locations.csv")
-pa_data <- read_csv("../../Data/raw/Pennsylvania_State_Data/data-2009-2013.csv")
-
-convic_pa <- pa_data %>% filter(measure_id == 120) %>% select(value)
-convic_pa
-min(convic_pa, na.rm = TRUE)
-```
