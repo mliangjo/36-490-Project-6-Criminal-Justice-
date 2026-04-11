@@ -42,8 +42,6 @@ rdf<-read.csv("../../Data/county_characteristics_conviction.csv")
 
 rdf <- rdf %>% 
   mutate(Log.pop = log(Population),
-         Log.urban = log(Urban.Population+1),
-         Log.rural = log(Rural.Population+1),
          Log.Largest.Municipality.Population = log(Largest.Municipality.Population+1))
 
 rdf_PA <- rdf %>% 
@@ -223,8 +221,15 @@ lm_sr_PA <- lm(
 # Selected som vars for visualization
 
 rdf_PA %>%
-  dplyr::select(Below.Poverty.Line, Public.Defender.conviction.rate, Private.conviction.rate,
-                Court.Appointed.conviction.rate, Self.Represented.conviction.rate) %>%
+  dplyr::select(
+    Log.pop, Young.Males.Population,
+    # Racial/Ethnicity
+    African.American.Population, Native.American.Alaskan.Population, 
+    Asian.or.Pacific.Islander.Population, Hispanic.or.Latino.Population,
+    # Econ
+    Below.Poverty.Line, Unemployment.Rate,
+    # Criminal Justice
+    Number.of.Criminal.Court.Judges, Police.Officers.per.100.000.Residents) %>%
   pivot_longer(-Below.Poverty.Line, names_to = "Type", values_to = "Rate") %>%
   ggplot(aes(x = Below.Poverty.Line, y = Rate)) +
   geom_point() +

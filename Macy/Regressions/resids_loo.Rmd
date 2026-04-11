@@ -43,8 +43,6 @@ rdf<-read.csv("../../Data/county_characteristics_conviction.csv")
 
 rdf <- rdf %>% 
   mutate(Log.pop = log(Population),
-         Log.urban = log(Urban.Population+1),
-         Log.rural = log(Rural.Population+1),
          Log.Largest.Municipality.Population = log(Largest.Municipality.Population + 1))
 
 rdf_PA <- rdf %>% 
@@ -69,8 +67,8 @@ rdf_FL <-rdf %>%
 
 # Population
 Log.pop
-Log.urban
-#Log.rural <- correlated with urban
+Urban.Population
+#Rural <- correlated with Urban.Population
 Young.Males.Population
 Largest.Municipality.Population
 High.School.Graduates
@@ -105,7 +103,7 @@ Number.of.Full.Time.Prosecutors
 mod <- lm(
   car::logit(Public.Defender.conviction.rate) ~ 
     # Population
-    Log.pop + Log.urban + Young.Males.Population + Log.Largest.Municipality.Population + High.School.Graduates +
+    Log.pop + Urban.Population + Young.Males.Population + Log.Largest.Municipality.Population + High.School.Graduates +
     # Racial/Ethnicity
     White.Population + African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -128,7 +126,7 @@ vif(mod)
 mod1 <- lm(
   car::logit(Public.Defender.conviction.rate) ~ 
     # Population
-    Log.pop + Log.urban + Young.Males.Population + Log.Largest.Municipality.Population + High.School.Graduates +
+    Log.pop + Urban.Population + Young.Males.Population + Log.Largest.Municipality.Population + High.School.Graduates +
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -143,11 +141,11 @@ vif(mod1)
 
 
 # Better but not quite
-# We remove Log.Largest.Municipality.Population and Log.urban as they drop the Log.pop vif the most (to a reasonable value 6~)
+# We remove Log.Largest.Municipality.Population and Urban.Population as they drop the Log.pop vif the most (to a reasonable value 6~)
 mod2 <- lm(
   car::logit(Public.Defender.conviction.rate) ~ 
     # Population
-    Log.pop + Young.Males.Population + #Log.urban + #Log.Largest.Municipality.Population + #High.School.Graduates +
+    Log.pop + Young.Males.Population + #Urban.Population + #Log.Largest.Municipality.Population + #High.School.Graduates +
     # Racial/Ethnicity
     African.American.Population + Native.American.Alaskan.Population + 
     Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
@@ -272,21 +270,6 @@ lm_sr_PA <- lm(
 #vif(lm_sr_PA)
 ```
 
-```{r, warning = FALSE, eval = FALSE}
-# Selected som vars for visualization
-
-rdf_PA %>%
-  dplyr::select(Below.Poverty.Line, Public.Defender.conviction.rate, Private.conviction.rate,
-                Court.Appointed.conviction.rate, Self.Represented.conviction.rate) %>%
-  pivot_longer(-Below.Poverty.Line, names_to = "Type", values_to = "Rate") %>%
-  ggplot(aes(x = Below.Poverty.Line, y = Rate)) +
-  geom_point() +
-  geom_smooth(method = "loess", se = TRUE, color = "red") +
-  facet_wrap(~ Type, scales = "free_y") +
-  labs(title = "Pennsylvania: Conviction Rate vs Poverty Rate",
-       x = "Below Poverty Line", y = "Conviction Rate")
-```
-
 ```{r}
 # OR
 lm_pd_OR<- lm(
@@ -355,21 +338,6 @@ lm_sr_OR <- lm(
 #summary(lm_sr_OR)
 #vif(lm_sr_OR)
 ```
-
-```{r, warning = FALSE, eval = FALSE}
-# Selected som vars for visualization
-
-rdf_PA %>%
-  dplyr::select(Log.pop, High.School.Graduates) %>%
-  pivot_longer(-Log.pop, names_to = "Type", values_to = "Rate") %>%
-  ggplot(aes(x = Log.pop, y = Rate)) +
-  geom_point() +
-  geom_smooth(method = "loess", se = TRUE, color = "red") +
-  facet_wrap(~ Type, scales = "free_y") +
-  labs(title = "Pennsylvania: Conviction Rate vs Log Population",
-       x = "Log Population", y = "Conviction Rate")
-```
-
 
 ```{r}
 # FL
@@ -461,6 +429,48 @@ summary(lm_p_FL)
 summary(lm_ca_FL)
 summary(lm_sr_FL)
 ```
+
+# Visualizations
+```{r}
+loess_curves <- function(rdf_STATE) {
+  rdf_STATE %>%
+    pivot_longer(
+      cols = c(
+        Private.conviction.rate,
+        Public.Defender.conviction.rate,
+        Court.Appointed.conviction.rate,
+        Self.Represented.conviction.rate
+      ),
+      names_to = "Attorney.Type",
+      values_to = "Conviction.Rate"
+    ) %>% 
+    mutate(
+      Attorney.Type = dplyr::recode(
+        Attorney.Type,
+        "Private.conviction.rate" = "Private Attorney",
+        "Public.Defender.conviction.rate" = "Public Defender",
+        "Court.Appointed.conviction.rate" = "Court Appointed",
+        "Self.Represented.conviction.rate" = "Self-Represented"
+      )) %>%
+    ggplot(aes(x = Unemployment.Rate, y = Conviction.Rate)) +
+    geom_point() +
+    geom_smooth(method = "loess", se = TRUE, color = "red") +
+    facet_wrap(~ Attorney.Type, scales = "fixed") +
+    labs(
+      title = "Pennsylvania: Conviction Rate vs Poverty Rate by Attorney Type",
+      x = "Unemployment Rate",
+      y = "Conviction Rate"
+    ) +
+    theme_minimal()
+}
+
+loess_curves(rdf_PA)
+loess_curves(rdf_OR)
+loess_curves(rdf_FL)
+```
+
+
+
 
 # Coefficient Tables
 ```{r}
