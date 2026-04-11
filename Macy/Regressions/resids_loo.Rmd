@@ -495,9 +495,10 @@ reg_plots <- function(rdf_STATE, base_vals, state, lm_pd, lm_p, lm_ca, lm_sr) {
     mutate(conviction_rate = conviction_rate / 100)
   
   # Plot
-  ggplot(plot_df, aes(x = Unemployment.Rate, y = fit)) +
+  loess_plt <- ggplot(plot_df, aes(x = Unemployment.Rate, y = fit)) +
     geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
-    geom_line(linewidth = 1, color = "red") +
+    #geom_line(linewidth = 1, color = "red") + <--- for linear
+    geom_smooth(method = "loess", se = FALSE, color = "red", linewidth = 1) +
     
     # Add actual data points
     geom_point(
@@ -509,11 +510,36 @@ reg_plots <- function(rdf_STATE, base_vals, state, lm_pd, lm_p, lm_ca, lm_sr) {
     
     facet_wrap(~ Attorney.Type, ncol = 2) +
     labs(
-      title = paste0("Predicted Conviction Rate vs. Unemployment Rate in ", state),
+      title = paste0("Predicted Conviction Rate vs. Unemployment Rate in ", state, " -- LOESS"),
       x = "Unemployment Rate",
       y = "Predicted Conviction Rate"
     ) +
     theme_minimal(base_size = 12)
+  
+  
+  # Plot
+  linear_plt <- ggplot(plot_df, aes(x = Unemployment.Rate, y = fit)) +
+    geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
+    geom_line(linewidth = 1, color = "red") +
+    #geom_smooth(method = "loess", se = FALSE, color = "red", linewidth = 1) +
+    
+    # Add actual data points
+    geom_point(
+      data = points_df,
+      aes(x = Unemployment.Rate, y = conviction_rate),
+      alpha = 0.6,
+      size = 2
+    ) +
+    
+    facet_wrap(~ Attorney.Type, ncol = 2) +
+    labs(
+      title = paste0("Predicted Conviction Rate vs. Unemployment Rate in ", state, " Linear"),
+      x = "Unemployment Rate",
+      y = "Predicted Conviction Rate"
+    ) +
+    theme_minimal(base_size = 12)
+  
+  return(c(loess_plt = loess_plt, linear_plt = linear_plt))
 }
 ```
 ```{r}
@@ -560,9 +586,20 @@ base_vals_FL <- rdf_FL %>%
       #Number.of.Full.Time.Prosecutors = mean(Number.of.Full.Time.Prosecutors, na.rm = TRUE)
     )
 
-reg_plots(rdf_PA, base_vals_PA, "Pennsylvania", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA)
-reg_plots(rdf_OR, base_vals_OR, "Oregon", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR)
-reg_plots(rdf_FL, base_vals_FL, "Florida", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL)
+```
+
+# Regression Plots -- LOESS
+```{r}
+reg_plots(rdf_PA, base_vals_PA, "Pennsylvania", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA)$loess_plt
+reg_plots(rdf_OR, base_vals_OR, "Oregon33", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR)$loess_plt
+reg_plots(rdf_FL, base_vals_FL, "Florida", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL)$loess_plt
+```
+
+# Regression Plots -- Linear
+```{r}
+reg_plots(rdf_PA, base_vals_PA, "Pennsylvania", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA)$linear_plt
+reg_plots(rdf_OR, base_vals_OR, "Oregon", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR)$linear_plt
+reg_plots(rdf_FL, base_vals_FL, "Florida", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL)$linear_plt
 ```
 
 # Coefficient Tables
