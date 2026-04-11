@@ -3,7 +3,10 @@ title: "resids_loo"
 output: html_document
 ---
 
-# Taken from Peter S
+Partially taken from Peter S
+
+**NOTE: To run rmd file should only need to check any file paths for read_csv()** 
+
 # Load Data
 ```{r setup, include=FALSE}
 #knitr::opts_chunk$set(echo = TRUE, tidy = TRUE, tidy.opts = list(width.cutoff = 60))
