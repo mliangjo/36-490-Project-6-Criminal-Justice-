@@ -811,7 +811,7 @@ cooks_plot <- function (mod, state, counsel) {
       size = 3
     ) +
     labs(
-      title = paste0("Cook's Distance (", state, " - ", counsel, ")"),
+      title = paste0("Cook's Distance (", state, " - ", counsel, ") conviction rate"),
       x = "Observation",
       y = "Cook's Distance"
     ) +

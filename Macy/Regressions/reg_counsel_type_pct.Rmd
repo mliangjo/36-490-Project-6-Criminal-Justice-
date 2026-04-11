@@ -1,5 +1,5 @@
 ---
-title: "resida_loo2"
+title: "reg_counsel_type_pct"
 output: html_document
 ---
 
@@ -733,7 +733,7 @@ cooks_plot <- function (mod, state, counsel) {
       size = 3
     ) +
     labs(
-      title = paste0("Cook's Distance (", state, " - ", counsel, ")"),
+      title = paste0("Cook's Distance (", state, " - ", counsel, ") % Attourney Type"),
       x = "Observation",
       y = "Cook's Distance"
     ) +
