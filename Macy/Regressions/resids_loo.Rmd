@@ -465,7 +465,7 @@ reg_plots <- function(rdf_STATE, base_vals, state, lm_pd, lm_p, lm_ca, lm_sr) {
   }
   
   pred_pd <- make_pred_df(lm_pd, "Public Defender", pred_grid)
-  pred_p  <- make_pred_df(lm_p,  "Private Attorney", pred_grid)
+  pred_p  <- make_pred_df(lm_p,  "Private Counsel", pred_grid)
   pred_ca <- make_pred_df(lm_ca, "Court Appointed", pred_grid)
   pred_sr <- make_pred_df(lm_sr, "Self-Represented", pred_grid)
   
@@ -486,7 +486,7 @@ reg_plots <- function(rdf_STATE, base_vals, state, lm_pd, lm_p, lm_ca, lm_sr) {
     ) %>%
     mutate(
       Attorney.Type = dplyr::recode(Attorney.Type,
-        "Private.conviction.rate" = "Private Attorney",
+        "Private.conviction.rate" = "Private Counsel",
         "Public.Defender.conviction.rate" = "Public Defender",
         "Court.Appointed.conviction.rate" = "Court Appointed",
         "Self.Represented.conviction.rate" = "Self-Represented"
@@ -895,7 +895,7 @@ base_vals_OR_clean <- rdf_OR_clean_p_OR %>%
   }
   
   #pred_pd <- make_pred_df(lm_pd, "Public Defender", pred_grid)
-  pred_p_OR_clean  <- make_pred_df(lm_p_OR_clean,  "Private Attorney -- w/out Influential", pred_grid_OR_clean)
+  pred_p_OR_clean  <- make_pred_df(lm_p_OR_clean,  "Private Counsel -- w/out Influential", pred_grid_OR_clean)
   #pred_ca <- make_pred_df(lm_ca, "Court Appointed", pred_grid)
   #pred_sr <- make_pred_df(lm_sr, "Self-Represented", pred_grid)
   
@@ -916,7 +916,7 @@ base_vals_OR_clean <- rdf_OR_clean_p_OR %>%
     ) %>%
     mutate(
       Attorney.Type = dplyr::recode(Attorney.Type,
-        "Private.conviction.rate" = "Private Attorney",
+        "Private.conviction.rate" = "Private Counsel",
         "Public.Defender.conviction.rate" = "Public Defender",
         "Court.Appointed.conviction.rate" = "Court Appointed",
         "Self.Represented.conviction.rate" = "Self-Represented"
@@ -1008,7 +1008,7 @@ base_vals_OR_clean2 <- rdf_OR_clean2_p_OR %>%
   pred_grid_OR_clean2$Unemployment.Rate <- u_seq_OR_clean2
 
   #pred_pd <- make_pred_df(lm_pd, "Public Defender", pred_grid)
-  pred_p_OR_clean2  <- make_pred_df(lm_p_OR_clean2,  "Private Attorney -- w/out Influential", pred_grid_OR_clean2)
+  pred_p_OR_clean2  <- make_pred_df(lm_p_OR_clean2,  "Private Counsel -- w/out Influential", pred_grid_OR_clean2)
   #pred_ca <- make_pred_df(lm_ca, "Court Appointed", pred_grid)
   #pred_sr <- make_pred_df(lm_sr, "Self-Represented", pred_grid)
   
@@ -1029,7 +1029,7 @@ base_vals_OR_clean2 <- rdf_OR_clean2_p_OR %>%
     ) %>%
     mutate(
       Attorney.Type = dplyr::recode(Attorney.Type,
-        "Private.conviction.rate" = "Private Attorney",
+        "Private.conviction.rate" = "Private Counsel",
         "Public.Defender.conviction.rate" = "Public Defender",
         "Court.Appointed.conviction.rate" = "Court Appointed",
         "Self.Represented.conviction.rate" = "Self-Represented"
