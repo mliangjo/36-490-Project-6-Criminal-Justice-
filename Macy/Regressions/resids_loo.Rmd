@@ -814,3 +814,250 @@ cooks_plot(lm_p_FL, "FL", "P", rdf_FL)
 cooks_plot(lm_ca_FL, "FL", "CA", rdf_FL)
 cooks_plot(lm_sr_FL, "FL", "SR", rdf_FL)
 ```
+
+
+# OR - Private (Outliers Revmoved)
+Removed all counties with cooks distance above the threshold
+```{r}
+# Cook's distance (influential points)
+cooks_p_OR <- cooks.distance(lm_p_OR)
+threshold_p_OR <- 4 / length(cooks_p_OR)
+influential_p_OR <- which(cooks_p_OR > threshold_p_OR)
+  
+used_data_p_OR <- model.frame(lm_p_OR)
+used_rows_p_OR <- as.numeric(rownames(used_data_p_OR))
+
+rdf_OR_clean_p_OR <- rdf_OR[-used_rows_p_OR[influential_p_OR], ]
+
+lm_p_OR_clean <- lm(
+  car::logit(Private.conviction.rate) ~ 
+    # Population
+    Log.pop + Young.Males.Population +
+    # Racial/Ethnicity
+    African.American.Population + Native.American.Alaskan.Population + 
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate ,
+    # Criminal Justice
+    # NONE
+  data   = rdf_OR_clean_p_OR,
+  na.action = na.omit)
+
+
+residual_diag_plots(lm_p_OR_clean)
+cooks_plot(lm_p_OR_clean, "FL", "P -- w/out influential", rdf_OR_clean_p_OR)
+summary(lm_p_OR_clean)
+```
+```{r}
+base_vals_OR_clean <- rdf_OR_clean_p_OR %>%
+    summarise(
+      Log.pop = mean(Log.pop, na.rm = TRUE),
+      Young.Males.Population = mean(Young.Males.Population, na.rm = TRUE),
+      African.American.Population = mean(African.American.Population, na.rm = TRUE),
+      Native.American.Alaskan.Population = mean(Native.American.Alaskan.Population, na.rm = TRUE),
+      Asian.or.Pacific.Islander.Population = mean(Asian.or.Pacific.Islander.Population, na.rm = TRUE),
+      Hispanic.or.Latino.Population = mean(Hispanic.or.Latino.Population, na.rm = TRUE),
+      Below.Poverty.Line = mean(Below.Poverty.Line, na.rm = TRUE),
+      #Number.of.Criminal.Court.Judges = mean(Number.of.Criminal.Court.Judges, na.rm = TRUE),
+      #Police.Officers.per.100.000.Residents = mean(Police.Officers.per.100.000.Residents, na.rm = TRUE),
+      #Number.of.Full.Time.Prosecutors = mean(Number.of.Full.Time.Prosecutors, na.rm = TRUE)
+    )
+
+  # Sequence of unemployment values for x-axis
+  u_seq_OR_clean <- seq(
+    min(rdf_OR_clean_p_OR$Unemployment.Rate, na.rm = TRUE),
+    max(rdf_OR_clean_p_OR$Unemployment.Rate, na.rm = TRUE),
+    length.out = 200
+  )
+  
+  # Prediction grid
+  pred_grid_OR_clean <- base_vals_OR_clean[rep(1, length(u_seq_OR_clean)), ]
+  pred_grid_OR_clean$Unemployment.Rate <- u_seq_OR_clean
+  
+  # Function to get predictions + CI on response scale
+  make_pred_df <- function(model, label, newdata) {
+    pred <- predict(model, newdata = newdata, se.fit = TRUE)
+    
+    out <- newdata %>%
+      mutate(
+        # raw predictions
+        fit_link = pred$fit,
+        se_link = pred$se.fit,
+        fit = plogis(fit_link), # convert to probability scale
+        
+        # 95% concidence intervals -> probability scale
+        lwr = plogis(fit_link - 1.96 * se_link),
+        upr = plogis(fit_link + 1.96 * se_link),
+        Attorney.Type = label
+      )
+    
+    out
+  }
+  
+  #pred_pd <- make_pred_df(lm_pd, "Public Defender", pred_grid)
+  pred_p_OR_clean  <- make_pred_df(lm_p_OR_clean,  "Private Attorney -- w/out Influential", pred_grid_OR_clean)
+  #pred_ca <- make_pred_df(lm_ca, "Court Appointed", pred_grid)
+  #pred_sr <- make_pred_df(lm_sr, "Self-Represented", pred_grid)
+  
+  #plot_df <- bind_rows(pred_pd, pred_p, pred_ca, pred_sr)
+  
+  points_df_OR_clean <- rdf_OR_clean_p_OR %>%
+    select(
+      Unemployment.Rate,
+      Private.conviction.rate,
+      Public.Defender.conviction.rate,
+      Court.Appointed.conviction.rate,
+      Self.Represented.conviction.rate
+    ) %>%
+    pivot_longer(
+      cols = -Unemployment.Rate,
+      names_to = "Attorney.Type",
+      values_to = "conviction_rate"
+    ) %>%
+    mutate(
+      Attorney.Type = dplyr::recode(Attorney.Type,
+        "Private.conviction.rate" = "Private Attorney",
+        "Public.Defender.conviction.rate" = "Public Defender",
+        "Court.Appointed.conviction.rate" = "Court Appointed",
+        "Self.Represented.conviction.rate" = "Self-Represented"
+      )
+    ) %>%
+    mutate(conviction_rate = conviction_rate / 100)
+  
+  # Plot
+  ggplot(pred_p_OR_clean, aes(x = Unemployment.Rate, y = fit)) +
+    geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
+    #geom_line(linewidth = 1, color = "red") + <--- for linear
+    geom_smooth(method = "loess", se = FALSE, color = "red", linewidth = 1) +
+    
+    # Add actual data points
+    geom_point(
+      data = points_df_OR_clean,
+      aes(x = Unemployment.Rate, y = conviction_rate),
+      alpha = 0.6,
+      size = 2
+    ) +
+    
+    #facet_wrap(~ Attorney.Type, ncol = 2) +
+    labs(
+      title = paste0("Predicted Conviction Rate vs. Unemployment Rate in OR -- LOESS"),
+      x = "Unemployment Rate",
+      y = "Predicted Conviction Rate"
+    ) +
+    theme_minimal(base_size = 12)
+
+print("plot: OR - Private w/out Infuential points")
+```
+
+# OR - Private (Multnomah Revmoved)
+```{r}
+# Cook's distance (influential points)
+#cooks_p_OR <- cooks.distance(lm_p_OR)
+#threshold_p_OR <- 4 / length(cooks_p_OR)
+#influential_p_OR <- which(cooks_p_OR > threshold_p_OR)
+max_influential <- which.max(cooks_p_OR)
+  
+#used_data_p_OR <- model.frame(lm_p_OR)
+#used_rows_p_OR <- as.numeric(rownames(used_data_p_OR))
+
+rdf_OR_clean2_p_OR <- rdf_OR[-used_rows_p_OR[max_influential], ]
+
+lm_p_OR_clean2 <- lm(
+  car::logit(Private.conviction.rate) ~ 
+    # Population
+    Log.pop + Young.Males.Population +
+    # Racial/Ethnicity
+    African.American.Population + Native.American.Alaskan.Population + 
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    # Econ
+    Below.Poverty.Line + Unemployment.Rate ,
+    # Criminal Justice
+    # NONE
+  data   = rdf_OR_clean_p_OR,
+  na.action = na.omit)
+
+
+residual_diag_plots(lm_p_OR_clean2)
+cooks_plot(lm_p_OR_clean2, "FL", "P -- w/out influential", rdf_OR_clean2_p_OR)
+summary(lm_p_OR_clean2)
+```
+```{r}
+base_vals_OR_clean2 <- rdf_OR_clean2_p_OR %>%
+    summarise(
+      Log.pop = mean(Log.pop, na.rm = TRUE),
+      Young.Males.Population = mean(Young.Males.Population, na.rm = TRUE),
+      African.American.Population = mean(African.American.Population, na.rm = TRUE),
+      Native.American.Alaskan.Population = mean(Native.American.Alaskan.Population, na.rm = TRUE),
+      Asian.or.Pacific.Islander.Population = mean(Asian.or.Pacific.Islander.Population, na.rm = TRUE),
+      Hispanic.or.Latino.Population = mean(Hispanic.or.Latino.Population, na.rm = TRUE),
+      Below.Poverty.Line = mean(Below.Poverty.Line, na.rm = TRUE),
+      #Number.of.Criminal.Court.Judges = mean(Number.of.Criminal.Court.Judges, na.rm = TRUE),
+      #Police.Officers.per.100.000.Residents = mean(Police.Officers.per.100.000.Residents, na.rm = TRUE),
+      #Number.of.Full.Time.Prosecutors = mean(Number.of.Full.Time.Prosecutors, na.rm = TRUE)
+    )
+
+  # Sequence of unemployment values for x-axis
+  u_seq_OR_clean2 <- seq(
+    min(rdf_OR_clean2_p_OR$Unemployment.Rate, na.rm = TRUE),
+    max(rdf_OR_clean2_p_OR$Unemployment.Rate, na.rm = TRUE),
+    length.out = 200
+  )
+  
+  # Prediction grid
+  pred_grid_OR_clean2 <- base_vals_OR_clean2[rep(1, length(u_seq_OR_clean2)), ]
+  pred_grid_OR_clean2$Unemployment.Rate <- u_seq_OR_clean2
+
+  #pred_pd <- make_pred_df(lm_pd, "Public Defender", pred_grid)
+  pred_p_OR_clean2  <- make_pred_df(lm_p_OR_clean2,  "Private Attorney -- w/out Influential", pred_grid_OR_clean2)
+  #pred_ca <- make_pred_df(lm_ca, "Court Appointed", pred_grid)
+  #pred_sr <- make_pred_df(lm_sr, "Self-Represented", pred_grid)
+  
+  #plot_df <- bind_rows(pred_pd, pred_p, pred_ca, pred_sr)
+  
+  points_df_OR_clean2 <- rdf_OR_clean2_p_OR %>%
+    select(
+      Unemployment.Rate,
+      Private.conviction.rate,
+      Public.Defender.conviction.rate,
+      Court.Appointed.conviction.rate,
+      Self.Represented.conviction.rate
+    ) %>%
+    pivot_longer(
+      cols = -Unemployment.Rate,
+      names_to = "Attorney.Type",
+      values_to = "conviction_rate"
+    ) %>%
+    mutate(
+      Attorney.Type = dplyr::recode(Attorney.Type,
+        "Private.conviction.rate" = "Private Attorney",
+        "Public.Defender.conviction.rate" = "Public Defender",
+        "Court.Appointed.conviction.rate" = "Court Appointed",
+        "Self.Represented.conviction.rate" = "Self-Represented"
+      )
+    ) %>%
+    mutate(conviction_rate = conviction_rate / 100)
+  
+  # Plot
+  ggplot(pred_p_OR_clean2, aes(x = Unemployment.Rate, y = fit)) +
+    geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
+    #geom_line(linewidth = 1, color = "red") + <--- for linear
+    geom_smooth(method = "loess", se = FALSE, color = "red", linewidth = 1) +
+    
+    # Add actual data points
+    geom_point(
+      data = points_df_OR_clean2,
+      aes(x = Unemployment.Rate, y = conviction_rate),
+      alpha = 0.6,
+      size = 2
+    ) +
+    
+    #facet_wrap(~ Attorney.Type, ncol = 2) +
+    labs(
+      title = paste0("Predicted Conviction Rate vs. Unemployment Rate in OR -- LOESS"),
+      x = "Unemployment Rate",
+      y = "Predicted Conviction Rate"
+    ) +
+    theme_minimal(base_size = 12)
+
+print("plot: OR - Private w/out Most Influential point (Multnomah)")
+```
