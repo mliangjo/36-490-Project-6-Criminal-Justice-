@@ -143,6 +143,11 @@ full_pct_df_PA <- inner_join(rdf_PA, pct_att_type_pa, by ="location_id")
 full_pct_df_OR <- inner_join(rdf_OR, pct_att_type_or, by ="location_id")
 full_pct_df_FL <- inner_join(rdf_FL, pct_att_type_fl, by ="location_id")
 
+
+write_csv(full_pct_df_PA, "full_resp_PA.csv")
+write_csv(full_pct_df_OR, "full_resp_OR.csv")
+write_csv(full_pct_df_FL, "full_resp_FL.csv")
+
 ```
 
 
@@ -698,12 +703,12 @@ cooks_plot <- function (mod, state, counsel, full_pct_df_STATE) {
   )
   
   ggplot(df, aes(x = obs, y = cooks)) +
-    geom_point(color = "grey70") +
+    geom_point(color = "grey70", size = 3) +
     geom_hline(yintercept = threshold, color = "red", linetype = "dashed") +
     geom_text_repel(
       data = df[influential, ],
       aes(label = label),
-      size = 3
+      size = 5
     ) +
     labs(
       title = paste0("Cook's Distance (", state, " - ", counsel, ") % Attourney Type"),

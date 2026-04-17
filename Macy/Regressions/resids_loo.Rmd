@@ -776,12 +776,12 @@ cooks_plot <- function (mod, state, counsel, rdf_STATE) {
   )
   
   ggplot(df, aes(x = obs, y = cooks)) +
-    geom_point(color = "grey70") +
+    geom_point(color = "grey70", size = 3) +
     geom_hline(yintercept = threshold, color = "red", linetype = "dashed") +
     geom_text_repel(
       data = df[influential, ],
       aes(label = label),
-      size = 3
+      size = 5,
     ) +
     labs(
       title = paste0("Cook's Distance (", state, " - ", counsel, ") conviction rate"),
