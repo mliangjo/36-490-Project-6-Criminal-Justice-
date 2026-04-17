@@ -1061,3 +1061,91 @@ base_vals_OR_clean2 <- rdf_OR_clean2_p_OR %>%
 
 print("plot: OR - Private w/out Most Influential point (Multnomah)")
 ```
+
+# PA - Private Regression Visual
+```{r}
+# choose 4 variables 
+vars <- c("Below.Poverty.Line", "Number.of.Criminal.Court.Judges", "Unemployment.Rate", "Log.pop")
+
+# baseline values for all predictors in the model
+base_vals_PA$Unemployment.Rate <- mean(rdf_PA$Unemployment.Rate, na.rm = TRUE)
+base_vals <- base_vals_PA
+
+# helper to build predicted line for one variable
+make_pred_df <- function(var_name) {
+  x_seq <- seq(
+    min(rdf_PA[[var_name]], na.rm = TRUE),
+    max(rdf_PA[[var_name]], na.rm = TRUE),
+    length.out = 200
+  )
+  
+  newdata <- base_vals[rep(1, length(x_seq)), ]
+  newdata[[var_name]] <- x_seq
+  
+  pred <- predict(lm_p_PA, newdata = newdata, se.fit = TRUE)
+  
+  data.frame(
+    Variable = var_name,
+    x_value = x_seq,
+    fit_link = pred$fit,
+    se_link = pred$se.fit
+  ) %>%
+    mutate(
+      fit = plogis(fit_link),
+      lwr = plogis(fit_link - 1.96 * se_link),
+      upr = plogis(fit_link + 1.96 * se_link)
+    )
+}
+
+pred_df <- bind_rows(lapply(vars, make_pred_df))
+
+# observed points
+points_df <- rdf_PA %>%
+  select(all_of(vars), Private.conviction.rate) %>%
+  pivot_longer(
+    cols = all_of(vars),
+    names_to = "Variable",
+    values_to = "x_value"
+  ) %>%
+  mutate(conviction_rate = Private.conviction.rate / 100)
+
+points_df$Variable <- dplyr::recode(points_df$Variable,
+         "Below.Poverty.Line" = "Poverty Rate", 
+         "Number.of.Criminal.Court.Judges" = "Number of Criminal Court Judges",
+         "Unemployment.Rate" = "Unemployment Rate",
+         "Log.pop" = "Log Population"
+         )
+
+pred_df$Variable <- dplyr::recode(pred_df$Variable,
+         "Below.Poverty.Line" = "Poverty Rate", 
+         "Number.of.Criminal.Court.Judges" = "Number of Criminal Court Judges",
+         "Unemployment.Rate" = "Unemployment Rate",
+         "Log.pop" = "Log Population"
+         )
+
+ggplot() +
+  geom_point(
+    data = points_df,
+    aes(x = x_value, y = conviction_rate),
+    alpha = 0.6,
+    size = 2
+  ) +
+  geom_ribbon(
+    data = pred_df,
+    aes(x = x_value, ymin = lwr, ymax = upr),
+    alpha = 0.2
+  ) +
+  geom_line(
+    data = pred_df,
+    aes(x = x_value, y = fit),
+    color = "red",
+    linewidth = 1
+  ) +
+  facet_wrap(~ Variable, ncol = 2, scales = "free_x") +
+  labs(
+    title = "Pred CR vs selected predictors Pennsylvania (Private Counsel)",
+    x = "Predictor Value",
+    y = "Conviction Rate"
+  ) +
+  theme_minimal()
+```
