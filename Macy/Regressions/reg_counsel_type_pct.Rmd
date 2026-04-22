@@ -129,10 +129,14 @@ percent_att_type_df <- function(data_comb) {
       percent_ca = denominator[demographics == "defendants represented by a court-appointed private attorney"]/
         denominator[demographics== "all defendants"],
       percent_sr = denominator[demographics == "defendants who self-represented"]/
+        denominator[demographics== "all defendants"],
+      percent_u = denominator[demographics == "defendants represented by an attorney of unknown type"]/
+        denominator[demographics== "all defendants"],
+      percent_o = denominator[demographics == "defendants represented by other attorney type"]/
         denominator[demographics== "all defendants"]
       ) %>% 
     distinct(location_id, .keep_all = TRUE) %>% 
-    select(location_id, percent_p, percent_pd, percent_ca, percent_sr)
+    select(location_id, percent_p, percent_pd, percent_ca, percent_sr, percent_o, percent_u)
 }
 
 pct_att_type_pa <- percent_att_type_df(data_pa_comb)
