@@ -53,7 +53,8 @@ PA_rep <- PA_rep %>%
     self_represented = percent_sr,
     other = percent_o,
     unknown = percent_u
-  )
+  ) %>%
+  mutate(alternative = self_represented + other + unknown)
 
 OR_rep <- OR_rep %>% 
   mutate(Log.pop = log(Population)) %>%
@@ -64,7 +65,8 @@ OR_rep <- OR_rep %>%
     self_represented = percent_sr,
     other = percent_o,
     unknown = percent_u
-  )
+  )%>%
+  mutate(alternative = self_represented + other + unknown)
 
 FL_rep <- FL_rep %>% 
   mutate(Log.pop = log(Population)) %>%
@@ -75,27 +77,28 @@ FL_rep <- FL_rep %>%
     self_represented = percent_sr,
     other = percent_o,
     unknown = percent_u
-  )
+  )%>%
+  mutate(alternative = self_represented + other + unknown)
 ```
 # Default Model 
 
 ```{r Models}
-PA_rep$Y <- DR_data(PA_rep[, c("private", "public_defender", "appointed_counsel", "self_represented", "other", "unknown")])
+PA_rep$Y <- DR_data(PA_rep[, c("private", "public_defender", "appointed_counsel", "alternative")])
 
 mod_dir_PA <- DirichReg(Y ~
     Log.pop + Urban.Population +
-    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income
-    +  High.School.Graduates,
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income + High.School.Graduates +
+    African.American.Population,
     data = PA_rep)
 
-OR_rep$Y <- DR_data(OR_rep[, c("private", "public_defender", "appointed_counsel", "self_represented", "other", "unknown")])
+OR_rep$Y <- DR_data(OR_rep[, c("private", "public_defender", "appointed_counsel", "alternative")])
 
 mod_dir_OR <- DirichReg(Y ~
     Log.pop + Urban.Population +
     Below.Poverty.Line + Unemployment.Rate + High.School.Graduates,
     data = OR_rep)
 
-FL_rep$Y <- DR_data(FL_rep[, c("private", "public_defender", "appointed_counsel", "self_represented", "other", "unknown")])
+FL_rep$Y <- DR_data(FL_rep[, c("private", "public_defender", "appointed_counsel", "alternative")])
 
 mod_dir_FL <- DirichReg(Y ~
     Log.pop + Urban.Population +
@@ -139,7 +142,7 @@ run_dirichlet_diagnostics <- function(model,
   save_base_plot(
     paste0(state_label, "_1_resid_vs_fitted.png"),
     function() {
-      par(mfrow = c(2, 3))
+      par(mfrow = c(2, 2))
       for (i in seq_len(n_cat)) {
         plot(fits[, i], resids[, i],
              main = paste0(state_label, " - ", colnames(resids)[i]),
@@ -155,7 +158,7 @@ run_dirichlet_diagnostics <- function(model,
   save_base_plot(
     paste0(state_label, "_2_qq_plots.png"),
     function() {
-      par(mfrow = c(2, 3))
+      par(mfrow = c(2, 2))
       for (i in seq_len(n_cat)) {
         qqnorm(resids[, i],
                main = paste0(state_label, " - ", colnames(resids)[i]),
@@ -169,7 +172,7 @@ run_dirichlet_diagnostics <- function(model,
   save_base_plot(
     paste0(state_label, "_3_fitted_vs_observed.png"),
     function() {
-      par(mfrow = c(2, 3))
+      par(mfrow = c(2, 2))
       for (col in colnames(fits)) {
         plot(obs[, col], fits[, col],
              main = paste0(state_label, " - ", col),
@@ -271,15 +274,15 @@ for (cat in colnames(resids)) {
 run_dirichlet_diagnostics(mod_dir_PA, 
                           PA_rep,  c("Log.pop","Urban.Population","Unemployment.Rate","Below.Poverty.Line"),
                           "PA", 
-                          "Diagnostic_Plots/PA")
+                          "Diagnostic_Plots/PA_Alt")
 
 run_dirichlet_diagnostics(mod_dir_OR, 
                           OR_rep,  c("Log.pop","Urban.Population","Unemployment.Rate","Below.Poverty.Line"),
                           "OR", 
-                          "Diagnostic_Plots/OR")
+                          "Diagnostic_Plots/OR_Alt")
 
 run_dirichlet_diagnostics(mod_dir_FL, 
                           FL_rep,  c("Log.pop","Urban.Population","Unemployment.Rate","Below.Poverty.Line"),
                           "FL", 
-                          "Diagnostic_Plots/FL")
+                          "Diagnostic_Plots/FL_Alt")
 ```
