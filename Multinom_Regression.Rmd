@@ -1,0 +1,290 @@
+---
+title: "Dirichlet Regression"
+output: pdf_document
+date: "2026-04-24"
+---
+Adapted from Zining
+Changes
+- Using Urban.Population instead of Urban.Population (why are we logging a percent)
+- Renamed to more descriptive names
+- Deleted alternative models section
+
+| Factor                       | PA | OR | FL |
+|------------------------------|----|----|----|
+| Log.pop (Pop)                | 1  | 1  | 1  |
+| Urban.Population  (Pop)      | 1  | 1  | 1  |
+| Below.Poverty.Line  (Econ)   | 1  | 1  | 1  |
+| Unemployment.Rate   (Econ)   | 1  | 1  | 1  |
+| High.School.Graduates (Econ) | 1  | 1  | 1  |
+| Median.Household.Income(Econ)| 1  | 0  | 1  |
+| African.American.Population  | 0  | 0  | 1  |
+
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE, tidy = TRUE, tidy.opts = list(width.cutoff = 60))
+
+knitr::opts_chunk$set(message=FALSE, warning=FALSE, fig.align="center",
+               echo=FALSE)
+```
+
+```{r Libs and Data}
+library(dplyr)
+library(ggrepel)
+library(stargazer)
+library(tidyverse)
+library(ggplot2)
+library(tidyr)
+
+library(bestglm)
+library(stargazer)
+library(car)
+
+library(DirichletReg)
+
+FL_rep <- read.csv("full_resp_FL2.csv")
+PA_rep <- read.csv("full_resp_PA2.csv")
+OR_rep <- read.csv("full_resp_OR2.csv")
+
+PA_rep <- PA_rep %>% 
+  mutate(Log.pop = log(Population)) %>%
+  rename(
+    private = percent_p,
+    public_defender = percent_pd,
+    appointed_counsel = percent_ca,
+    self_represented = percent_sr,
+    other = percent_o,
+    unknown = percent_u
+  )
+
+OR_rep <- OR_rep %>% 
+  mutate(Log.pop = log(Population)) %>%
+  rename(
+    private = percent_p,
+    public_defender = percent_pd,
+    appointed_counsel = percent_ca,
+    self_represented = percent_sr,
+    other = percent_o,
+    unknown = percent_u
+  )
+
+FL_rep <- FL_rep %>% 
+  mutate(Log.pop = log(Population)) %>%
+  rename(
+    private = percent_p,
+    public_defender = percent_pd,
+    appointed_counsel = percent_ca,
+    self_represented = percent_sr,
+    other = percent_o,
+    unknown = percent_u
+  )
+```
+# Default Model 
+
+```{r Models}
+PA_rep$Y <- DR_data(PA_rep[, c("private", "public_defender", "appointed_counsel", "self_represented", "other", "unknown")])
+
+mod_dir_PA <- DirichReg(Y ~
+    Log.pop + Urban.Population +
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income
+    +  High.School.Graduates,
+    data = PA_rep)
+
+OR_rep$Y <- DR_data(OR_rep[, c("private", "public_defender", "appointed_counsel", "self_represented", "other", "unknown")])
+
+mod_dir_OR <- DirichReg(Y ~
+    Log.pop + Urban.Population +
+    Below.Poverty.Line + Unemployment.Rate + High.School.Graduates,
+    data = OR_rep)
+
+FL_rep$Y <- DR_data(FL_rep[, c("private", "public_defender", "appointed_counsel", "self_represented", "other", "unknown")])
+
+mod_dir_FL <- DirichReg(Y ~
+    Log.pop + Urban.Population +
+    Below.Poverty.Line + Unemployment.Rate + Median.Household.Income + High.School.Graduates +
+    African.American.Population,
+    data = FL_rep)
+
+summary(mod_dir_PA)
+summary(mod_dir_OR)
+summary(mod_dir_FL)
+```
+
+```{r Diagnostics Fn}
+run_dirichlet_diagnostics <- function(model,
+                                      data,
+                                      predictors,
+                                      state_label,
+                                      out_dir = "diagnostics") {
+
+  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+
+  response_cols <- c("private", "public_defender", "appointed_counsel",
+                     "self_represented", "other", "unknown")
+
+  resids <- residuals(model, type = "standardized")
+  fits   <- fitted(model)
+  obs    <- as.matrix(data[rownames(fits), response_cols])  # align to model rows
+  n_cat  <- ncol(resids)
+  n      <- nrow(fits)
+
+  # helper: plot_fn is a function() so it executes inside the png device
+  save_base_plot <- function(file_name, plot_fn, width = 10, height = 8) {
+    png(file.path(out_dir, file_name), width = width, height = height,
+        units = "in", res = 150)
+    plot_fn()
+    dev.off()
+    message("Saved: ", file.path(out_dir, file_name))
+  }
+
+  # 1. Standardized Residuals vs Fitted
+  save_base_plot(
+    paste0(state_label, "_1_resid_vs_fitted.png"),
+    function() {
+      par(mfrow = c(2, 3))
+      for (i in seq_len(n_cat)) {
+        plot(fits[, i], resids[, i],
+             main = paste0(state_label, " - ", colnames(resids)[i]),
+             xlab = "Fitted Values",
+             ylab = "Standardized Residuals",
+             pch  = 16, col = adjustcolor("steelblue", 0.6))
+        abline(h =  0, lty = 2, col = "red")
+        abline(h =  3, lty = 3, col = "orange")
+        abline(h = -3, lty = 3, col = "orange")
+      }
+    }
+  )
+
+  # 2. QQ Plots
+  save_base_plot(
+    paste0(state_label, "_2_qq_plots.png"),
+    function() {
+      par(mfrow = c(2, 3))
+      for (i in seq_len(n_cat)) {
+        qqnorm(resids[, i],
+               main = paste0(state_label, " - ", colnames(resids)[i]),
+               pch = 16, col = adjustcolor("steelblue", 0.6))
+        qqline(resids[, i], col = "red", lwd = 2)
+      }
+    }
+  )
+
+  # 3. Fitted vs Observed
+  save_base_plot(
+    paste0(state_label, "_3_fitted_vs_observed.png"),
+    function() {
+      par(mfrow = c(2, 3))
+      for (col in colnames(fits)) {
+        plot(obs[, col], fits[, col],
+             main = paste0(state_label, " - ", col),
+             xlab = "Observed",
+             ylab = "Fitted",
+             pch  = 16, col = adjustcolor("steelblue", 0.6))
+        abline(0, 1, col = "red", lty = 2, lwd = 2)
+      }
+    }
+  )
+
+# 4. Residuals vs Each Predictor
+n_pred <- length(predictors)
+n_cols <- min(2, n_pred)
+n_rows <- ceiling(n_pred / n_cols)
+
+for (cat in colnames(resids)) {
+  local({
+    cat_ <- cat
+    save_base_plot(
+      paste0(state_label, "_4_resid_vs_pred_", cat_, ".png"),
+      function() {
+        par(mfrow = c(n_rows, n_cols))
+        for (pred in predictors) {
+          x <- data[rownames(fits), pred]
+          y <- resids[, cat_]
+          complete <- complete.cases(x, y)
+          x_clean  <- x[complete]
+          y_clean  <- y[complete]
+          
+          plot(x, y,
+               main = paste0(state_label, ": ", cat_, " ~ ", pred),
+               xlab = pred,
+               ylab = "Standardized Residual",
+               pch  = 16, col = adjustcolor("steelblue", 0.6))
+          abline(h = 0, lty = 2, col = "red")
+          lines(lowess(x_clean, y_clean), col = "darkgreen", lwd = 2)
+        }
+      },
+      width  = 4 * n_cols,
+      height = 4 * n_rows
+    )
+  })
+}
+
+  # 5. Leave-One-Out Influence
+  coef_full     <- coef(model)
+  model_formula <- formula(model)
+  data_aligned  <- data[rownames(fits), ]
+
+  influence <- sapply(seq_len(n), function(i) {
+    tryCatch({
+      mod_loo <- DirichReg(model_formula,
+                           data    = data_aligned[-i, ],
+                           model   = "alternative",
+                           control = list(maxit = 5000))
+      coef_loo <- coef(mod_loo)
+      shared   <- intersect(names(coef_loo), names(coef_full))
+      sum((coef_loo[shared] - coef_full[shared])^2)
+    }, error   = function(e) NA,
+       warning = function(w) NA)
+  })
+
+  cat(state_label, "- Successful LOO refits:", sum(!is.na(influence)),
+      "out of", n, "\n")
+  cat(state_label, "- Failed refits at observations:",
+      which(is.na(influence)), "\n")
+
+  if (sum(!is.na(influence)) > 2) {
+
+    threshold <- mean(influence, na.rm = TRUE) + 2 * sd(influence, na.rm = TRUE)
+    flagged   <- which(influence > threshold)
+
+    loo_df <- data.frame(obs = seq_len(n), influence = influence)
+
+    p_loo <- ggplot(loo_df, aes(x = obs, y = influence)) +
+      geom_segment(aes(xend = obs, yend = 0), color = "steelblue") +
+      geom_hline(yintercept = threshold, color = "red", linetype = "dashed") +
+      {
+        if (length(flagged) > 0)
+          ggrepel::geom_text_repel(data  = loo_df[flagged, ],
+                                   aes(label = obs),
+                                   color = "red", size = 3)
+      } +
+      labs(title = paste0(state_label, " - Leave-One-Out Influence"),
+           x = "Observation", y = "LOO Influence") +
+      theme_bw()
+
+    out_path <- file.path(out_dir, paste0(state_label, "_5_loo_influence.png"))
+    ggsave(out_path, plot = p_loo, width = 8, height = 5, dpi = 150)
+    message("Saved: ", out_path)
+
+  } else {
+    cat(state_label, "- Too many failed LOO refits; LOO influence plot skipped.\n")
+  }
+
+  invisible(influence)
+}
+```
+
+```{r Run Diagnostics}
+run_dirichlet_diagnostics(mod_dir_PA, 
+                          PA_rep,  c("Log.pop","Urban.Population","Unemployment.Rate","Below.Poverty.Line"),
+                          "PA", 
+                          "Diagnostic_Plots/PA")
+
+run_dirichlet_diagnostics(mod_dir_OR, 
+                          OR_rep,  c("Log.pop","Urban.Population","Unemployment.Rate","Below.Poverty.Line"),
+                          "OR", 
+                          "Diagnostic_Plots/OR")
+
+run_dirichlet_diagnostics(mod_dir_FL, 
+                          FL_rep,  c("Log.pop","Urban.Population","Unemployment.Rate","Below.Poverty.Line"),
+                          "FL", 
+                          "Diagnostic_Plots/FL")
+```
