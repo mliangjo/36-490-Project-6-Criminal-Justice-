@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dirichlet Regression Results — PA</title>
+  <style>
+    body { font-family: monospace; font-size: 13px; margin: 20px; background: #fff; }
+    h2   { font-family: Arial, sans-serif; color: #3949ab; }
+    pre  { background: #f5f5f5; padding: 16px; border-radius: 4px;
+           border: 1px solid #ddd; white-space: pre; overflow-x: auto; }
+    p.note { font-family: Arial, sans-serif; font-size: 11px; color: #555; }
+  </style>
+</head>
+<body>
+  <h2>Dirichlet Regression Results — PA</h2>
+  <pre>
+Call:
+DirichReg(formula = Y ~ Log.pop + Urban.Population + Below.Poverty.Line + Unemployment.Rate +
+Median.Household.Income + High.School.Graduates + African.American.Population, data = PA_rep)
+
+Standardized Residuals:
+                       Min       1Q   Median      3Q     Max
+private            -1.4683  -0.4832  -0.2883  0.1676  1.8915
+public_defender    -2.9931  -0.5464   0.0241  0.9471  2.1097
+appointed_counsel  -1.5169  -0.6217  -0.2986  0.3251  4.0260
+alternative        -1.7095  -0.8851  -0.1389  0.7776  5.6945
+
+------------------------------------------------------------------
+Beta-Coefficients for variable no. 1: private
+                              Estimate Std. Error z value Pr(&amp;gt;|z|)  
+(Intercept)                 -2.135e+00  4.857e+00  -0.440   0.6603  
+Log.pop                      5.634e-01  2.552e-01   2.208   0.0273 *
+Urban.Population            -2.128e-02  1.024e-02  -2.078   0.0377 *
+Below.Poverty.Line           1.032e-01  8.386e-02   1.230   0.2185  
+Unemployment.Rate           -9.346e-03  9.347e-02  -0.100   0.9203  
+Median.Household.Income      6.597e-05  2.973e-05   2.219   0.0265 *
+High.School.Graduates       -6.695e-02  5.370e-02  -1.247   0.2125  
+African.American.Population  7.806e-02  3.105e-02   2.514   0.0119 *
+------------------------------------------------------------------
+Beta-Coefficients for variable no. 2: public_defender
+                              Estimate Std. Error z value Pr(&amp;gt;|z|)   
+(Intercept)                  1.406e+00  4.714e+00   0.298  0.76547   
+Log.pop                      5.807e-01  2.667e-01   2.178  0.02942 * 
+Urban.Population            -2.117e-02  1.143e-02  -1.853  0.06390 . 
+Below.Poverty.Line           1.156e-01  8.173e-02   1.414  0.15739   
+Unemployment.Rate           -5.661e-03  8.391e-02  -0.067  0.94621   
+Median.Household.Income      5.982e-05  3.120e-05   1.917  0.05521 . 
+High.School.Graduates       -1.042e-01  5.150e-02  -2.024  0.04296 * 
+African.American.Population  8.195e-02  2.852e-02   2.874  0.00406 **
+------------------------------------------------------------------
+Beta-Coefficients for variable no. 3: appointed_counsel
+                              Estimate Std. Error z value Pr(&amp;gt;|z|)   
+(Intercept)                  2.617e+00  4.857e+00   0.539  0.58999   
+Log.pop                      5.051e-01  2.354e-01   2.146  0.03189 * 
+Urban.Population            -1.033e-02  8.217e-03  -1.257  0.20870   
+Below.Poverty.Line           7.242e-02  1.029e-01   0.703  0.48178   
+Unemployment.Rate            2.324e-02  9.170e-02   0.253  0.79996   
+Median.Household.Income      2.833e-05  3.884e-05   0.729  0.46575   
+High.School.Graduates       -1.143e-01  5.548e-02  -2.060  0.03942 * 
+African.American.Population  7.993e-02  2.817e-02   2.837  0.00455 **
+------------------------------------------------------------------
+Beta-Coefficients for variable no. 4: alternative
+                              Estimate Std. Error z value Pr(&amp;gt;|z|)  
+(Intercept)                  2.355e-03  5.409e+00   0.000   0.9997  
+Log.pop                      2.687e-01  2.666e-01   1.008   0.3136  
+Urban.Population            -3.980e-03  9.007e-03  -0.442   0.6586  
+Below.Poverty.Line           3.462e-02  8.118e-02   0.426   0.6698  
+Unemployment.Rate            3.653e-02  9.340e-02   0.391   0.6957  
+Median.Household.Income      2.089e-05  3.338e-05   0.626   0.5315  
+High.School.Graduates       -4.250e-02  5.250e-02  -0.810   0.4182  
+African.American.Population  7.086e-02  3.470e-02   2.042   0.0411 *
+------------------------------------------------------------------
+Significance codes: 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Log-likelihood: 289.4 on 32 df (279 BFGS + 2 NR Iterations)
+AIC: -514.7, BIC: -444.2
+Number of Observations: 67
+Link: Log
+Parametrization: common
+</pre>
+  <p class="note">Significance: *** p &lt; 0.001 &nbsp; ** p &lt; 0.01 &nbsp; * p &lt; 0.05 &nbsp; . p &lt; 0.1</p>
+</body>
+</html>

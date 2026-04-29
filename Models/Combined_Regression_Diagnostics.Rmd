@@ -1,0 +1,880 @@
+---
+title: "Combined Regression & Diagnostics (Dirichlet + Conviction-Rate LMs)"
+output: html_document
+date: "2026-04-28"
+---
+
+Merged from:
+- `Multinom_Regression_2.Rmd`  → Dirichlet model, `[DIR]` diagnostic plots, `[DIR]Regr_Table`
+- `resids_loo.Rmd`              → Conviction-rate LMs, `[CR]` diagnostic plots
+
+**Output naming convention** (matches `Appendix/` directory):
+
+| Prefix | Plot | Location |
+|--------|------|----------|
+| `[DIR]` | Dirichlet diagnostics | `Appendix/{STATE}/` and `Appendix/{STATE}/{counsel}/` |
+| `[CR]`  | Conviction-rate LM diagnostics | `Appendix/{STATE}/` and `Appendix/{STATE}/{counsel}/` |
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.align = "center",
+                      echo = FALSE)
+```
+
+---
+
+# Libraries & Data
+
+```{r libs-and-data}
+library(dplyr)
+library(ggrepel)
+library(stargazer)
+library(tidyverse)
+library(ggplot2)
+library(tidyr)
+library(bestglm)
+library(car)
+library(DirichletReg)
+
+# ── Dirichlet data ──────────────────────────────────────────────────────────
+FL_rep <- read.csv("../data/dir/full_resp_FL2.csv")
+PA_rep <- read.csv("../data/dir/full_resp_PA2.csv")
+OR_rep <- read.csv("../data/dir/full_resp_OR2.csv")
+
+PA_rep <- PA_rep %>%
+  mutate(Log.pop = log(Population)) %>%
+  rename(
+    private          = percent_p,
+    public_defender  = percent_pd,
+    appointed_counsel = percent_ca,
+    self_represented = percent_sr,
+    other            = percent_o,
+    unknown          = percent_u
+  ) %>%
+  mutate(alternative = self_represented + other + unknown)
+
+OR_rep <- OR_rep %>%
+  mutate(Log.pop = log(Population)) %>%
+  rename(
+    private          = percent_p,
+    public_defender  = percent_pd,
+    appointed_counsel = percent_ca,
+    self_represented = percent_sr,
+    other            = percent_o,
+    unknown          = percent_u
+  ) %>%
+  mutate(alternative = self_represented + other + unknown)
+
+FL_rep <- FL_rep %>%
+  mutate(Log.pop = log(Population)) %>%
+  rename(
+    private          = percent_p,
+    public_defender  = percent_pd,
+    appointed_counsel = percent_ca,
+    self_represented = percent_sr,
+    other            = percent_o,
+    unknown          = percent_u
+  ) %>%
+  mutate(alternative = self_represented + other + unknown)
+
+# ── Conviction-rate LM data ─────────────────────────────────────────────────
+locations_pa <- read_csv("../data/raw/Pennsylvania_State_Data/locations.csv")
+locations_or <- read_csv("../data/raw/Oregon_State_Data/locations-or.csv")
+locations_fl <- read_csv("../data/raw/Florida_State_Data/locations-fl.csv")
+
+rdf <- read.csv("../data/county_characteristics_conviction.csv")
+
+rdf <- rdf %>%
+  mutate(
+    Log.pop = log(Population),
+    Log.Largest.Municipality.Population = log(Largest.Municipality.Population + 1)
+  )
+
+rdf_PA <- rdf %>% filter(state == "PA") %>%
+  left_join(locations_pa, by = c("location_id" = "id"))
+
+rdf_OR <- rdf %>% filter(state == "OR") %>%
+  left_join(locations_or, by = c("location_id" = "id"))
+
+rdf_FL <- rdf %>% filter(state == "FL") %>%
+  left_join(locations_fl, by = c("location_id" = "id"))
+```
+
+---
+
+# Part 1 — Dirichlet Regression (`[DIR]`)
+
+## Models
+
+```{r dir-models}
+PA_rep$Y <- DR_data(PA_rep[, c("private", "public_defender", "appointed_counsel", "alternative")])
+
+mod_dir_PA <- DirichReg(Y ~
+  Log.pop + Urban.Population +
+  Below.Poverty.Line + Unemployment.Rate + Median.Household.Income + High.School.Graduates +
+  African.American.Population,
+  data = PA_rep)
+
+OR_rep$Y <- DR_data(OR_rep[, c("private", "public_defender", "appointed_counsel", "alternative")])
+
+mod_dir_OR <- DirichReg(Y ~
+  Log.pop + Urban.Population +
+  Below.Poverty.Line + Unemployment.Rate + High.School.Graduates,
+  data = OR_rep)
+
+FL_rep$Y <- DR_data(FL_rep[, c("private", "public_defender", "appointed_counsel", "alternative")])
+
+mod_dir_FL <- DirichReg(Y ~
+  Log.pop + Urban.Population +
+  Below.Poverty.Line + Unemployment.Rate + Median.Household.Income + High.School.Graduates +
+  African.American.Population,
+  data = FL_rep)
+
+summary(mod_dir_PA)
+summary(mod_dir_OR)
+summary(mod_dir_FL)
+```
+
+## Regression Tables → `[DIR]Regr_Table`
+
+Saves one HTML regression table per state to `Appendix/{STATE}/[DIR]Regr_Table.html`.
+
+```{r dir-regr-tables}
+# Helper: extract a tidy coefficient data-frame from a DirichReg model.
+# Returns a data.frame with columns: component, term, estimate, std_error,
+# z_value, p_value.
+extract_dirreg_coefs <- function(model) {
+  s      <- summary(model)
+  coefs  <- s$coef.mat          # list, one element per response category
+  cats   <- names(coefs)
+  do.call(rbind, lapply(cats, function(cat) {
+    m <- coefs[[cat]]
+    data.frame(
+      component  = cat,
+      term       = rownames(m),
+      estimate   = round(m[, "Estimate"],   3),
+      std_error  = round(m[, "Std. Error"], 3),
+      z_value    = round(m[, "z value"],    3),
+      p_value    = round(m[, "Pr(>|z|)"],   4),
+      stringsAsFactors = FALSE
+    )
+  }))
+}
+
+# Helper: render coef data.frame as an HTML table and write to disk.
+save_dir_regr_table <- function(coef_df, state_label, appendix_root = "Appendix") {
+  out_dir  <- file.path(appendix_root, state_label)
+  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+  out_path <- file.path(out_dir, "[DIR]Regr_Table.html")
+
+  # Build a simple, self-contained HTML table
+  cats <- unique(coef_df$component)
+
+  rows_html <- vapply(cats, function(cat) {
+    sub_df <- coef_df[coef_df$component == cat, ]
+
+    # Section header
+    header <- sprintf(
+      '<tr><td colspan="5" style="background:#e8eaf6;font-weight:bold;padding:6px 10px;">%s</td></tr>',
+      cat
+    )
+
+    # Data rows
+    data_rows <- paste(apply(sub_df, 1, function(r) {
+      p <- as.numeric(r["p_value"])
+      stars <- if (p < 0.001) "***" else if (p < 0.01) "**" else if (p < 0.05) "*" else if (p < 0.1) "." else ""
+      sprintf(
+        '<tr><td style="padding:4px 10px;">%s</td><td style="text-align:right;padding:4px 10px;">%s</td><td style="text-align:right;padding:4px 10px;">%s</td><td style="text-align:right;padding:4px 10px;">%s</td><td style="text-align:right;padding:4px 10px;">%s%s</td></tr>',
+        r["term"], r["estimate"], r["std_error"], r["z_value"], r["p_value"], stars
+      )
+    }), collapse = "\n")
+
+    paste(header, data_rows, sep = "\n")
+  }, character(1))
+
+  html <- sprintf('<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dirichlet Regression Results — %s</title>
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 13px; margin: 20px; }
+    h2   { color: #3949ab; }
+    table { border-collapse: collapse; width: 100%%; max-width: 750px; }
+    th   { background: #3949ab; color: #fff; padding: 6px 10px; text-align: left; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    td   { border-bottom: 1px solid #ddd; }
+    p.note { font-size: 11px; color: #555; }
+  </style>
+</head>
+<body>
+  <h2>Dirichlet Regression Results — %s</h2>
+  <p>Response categories: <em>private, public_defender, appointed_counsel, alternative</em></p>
+  <table>
+    <tr>
+      <th>Term</th>
+      <th>Estimate</th>
+      <th>Std. Error</th>
+      <th>z value</th>
+      <th>p value</th>
+    </tr>
+    %s
+  </table>
+  <p class="note">Significance: *** p &lt; 0.001 &nbsp; ** p &lt; 0.01 &nbsp; * p &lt; 0.05 &nbsp; . p &lt; 0.1</p>
+</body>
+</html>',
+  state_label, state_label,
+  paste(rows_html, collapse = "\n"))
+
+  writeLines(html, out_path)
+  message("Saved: ", out_path)
+  invisible(out_path)
+}
+
+# --- Run for each state ---
+save_dir_regr_table(extract_dirreg_coefs(mod_dir_PA), "PA")
+save_dir_regr_table(extract_dirreg_coefs(mod_dir_OR), "OR")
+save_dir_regr_table(extract_dirreg_coefs(mod_dir_FL), "FL")
+```
+
+## Diagnostic Plots → `[DIR]` files
+
+Output paths (matching `Appendix/` naming convention):
+
+| Plot | Output file |
+|------|-------------|
+| Residuals vs Fitted (all 4 categories) | `Appendix/{STATE}/[DIR]Resid_Fitted.png` |
+| QQ Plots (all 4 categories)            | `Appendix/{STATE}/[DIR]QQ.png` |
+| Fitted vs Observed (all 4 categories)  | `Appendix/{STATE}/[DIR]Fitted_Observed.png` |
+| Fitted vs each predictor (per category)| `Appendix/{STATE}/{STATE}_4.5_fitted_vs_pred_{cat}.png` |
+
+```{r dir-diagnostics-fn}
+run_dirichlet_diagnostics <- function(model,
+                                      data,
+                                      predictors,
+                                      state_label,
+                                      appendix_root = "Appendix") {
+
+  # Output directory is the state root, e.g. Appendix/PA
+  out_dir <- file.path(appendix_root, state_label)
+  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+
+  response_cols <- c("private", "public_defender", "appointed_counsel", "alternative")
+
+  resids <- residuals(model, type = "standardized")
+  fits   <- fitted(model)
+  n_cat  <- ncol(resids)
+  n      <- nrow(fits)
+  obs    <- as.matrix(data[seq_len(n), response_cols])
+
+  save_base_plot <- function(file_name, plot_fn, width = 10, height = 8) {
+    png(file.path(out_dir, file_name), width = width, height = height,
+        units = "in", res = 150)
+    plot_fn()
+    dev.off()
+    message("Saved: ", file.path(out_dir, file_name))
+  }
+
+  # 1. Standardized Residuals vs Fitted  →  [DIR]Resid_Fitted.png
+  save_base_plot(
+    "[DIR]Resid_Fitted.png",
+    function() {
+      par(mfrow = c(2, 2))
+      for (i in seq_len(n_cat)) {
+        plot(fits[, i], resids[, i],
+             main = paste0(state_label, " - ", colnames(resids)[i]),
+             xlab = "Fitted Values",
+             ylab = "Standardized Residuals",
+             pch  = 16, col = adjustcolor("steelblue", 0.6))
+        abline(h = 0, lty = 2, col = "firebrick")
+      }
+    }
+  )
+
+  # 2. QQ Plots  →  [DIR]QQ.png
+  save_base_plot(
+    "[DIR]QQ.png",
+    function() {
+      par(mfrow = c(2, 2))
+      for (i in seq_len(n_cat)) {
+        qqnorm(resids[, i],
+               main = paste0(state_label, " - ", colnames(resids)[i]),
+               pch = 16, col = adjustcolor("steelblue", 0.6))
+        qqline(resids[, i], col = "red", lwd = 2)
+      }
+    }
+  )
+
+  # 3. Fitted vs Observed  →  [DIR]Fitted_Observed.png
+  save_base_plot(
+    "[DIR]Fitted_Observed.png",
+    function() {
+      par(mfrow = c(2, 2))
+      for (col in colnames(fits)) {
+        plot(obs[, col], fits[, col],
+             main = paste0(state_label, " - ", col),
+             xlab = "Observed",
+             ylab = "Fitted",
+             pch  = 16, col = adjustcolor("steelblue", 0.6))
+        abline(0, 1, col = "red", lty = 2, lwd = 2)
+      }
+    }
+  )
+
+  # 4. Residuals vs Each Predictor  (internal; not in Appendix naming convention)
+  for (cat in colnames(resids)) {
+    local({
+      cat_ <- cat
+      save_base_plot(
+        paste0(state_label, "_4_resid_vs_pred_", cat_, ".png"),
+        function() {
+          par(mfrow = c(2, 2))
+          for (pred in predictors) {
+            x <- data[seq_len(n), pred]
+            y <- resids[, cat_]
+            complete <- complete.cases(x, y)
+            plot(x[complete], y[complete],
+                 main = paste0(state_label, ": ", cat_, " ~ ", pred),
+                 xlab = pred,
+                 ylab = "Standardized Residual",
+                 pch  = 16, col = adjustcolor("steelblue", 0.6))
+            abline(h = 0, lty = 2, col = "red")
+            lines(lowess(x[complete], y[complete]), col = "darkgreen", lwd = 2)
+          }
+        },
+        width = 8, height = 8
+      )
+    })
+  }
+
+  # 4.5 Fitted vs Each Predictor  →  {STATE}_4.5_fitted_vs_pred_{cat}.png
+  for (cat in colnames(fits)) {
+    local({
+      cat_ <- cat
+      save_base_plot(
+        paste0(state_label, "_4.5_fitted_vs_pred_", cat_, ".png"),
+        function() {
+          par(mfrow = c(2, 2))
+          for (pred in predictors) {
+            x <- data[seq_len(n), pred]
+            y <- fits[, cat_]
+            complete <- complete.cases(x, y)
+            plot(x[complete], y[complete],
+                 main = paste0(state_label, ": ", cat_, " ~ ", pred),
+                 xlab = pred,
+                 ylab = "Fitted",
+                 pch  = 16, col = adjustcolor("steelblue", 0.6))
+            lines(lowess(x[complete], y[complete]), col = "darkgreen", lwd = 2)
+          }
+        },
+        width = 8, height = 8
+      )
+    })
+  }
+
+  # 5. Leave-One-Out Influence  (internal; not in Appendix naming convention)
+  coef_full     <- coef(model)
+  model_formula <- formula(model)
+  data_aligned  <- data[seq_len(n), ]
+
+  influence <- sapply(seq_len(n), function(i) {
+    tryCatch({
+      mod_loo <- DirichReg(model_formula,
+                           data    = data_aligned[-i, ],
+                           model   = "alternative",
+                           control = list(maxit = 5000))
+      coef_loo <- coef(mod_loo)
+      shared   <- intersect(names(coef_loo), names(coef_full))
+      sum((coef_loo[shared] - coef_full[shared])^2)
+    }, error   = function(e) NA,
+       warning = function(w) NA)
+  })
+
+  cat(state_label, "- Successful LOO refits:", sum(!is.na(influence)), "out of", n, "\n")
+  cat(state_label, "- Failed refits at observations:", which(is.na(influence)), "\n")
+
+  if (sum(!is.na(influence)) > 2) {
+    threshold <- mean(influence, na.rm = TRUE) + 2 * sd(influence, na.rm = TRUE)
+    flagged   <- which(influence > threshold)
+    loo_df    <- data.frame(obs = seq_len(n), influence = influence)
+
+    p_loo <- ggplot(loo_df, aes(x = obs, y = influence)) +
+      geom_segment(aes(xend = obs, yend = 0), color = "steelblue") +
+      geom_hline(yintercept = threshold, color = "red", linetype = "dashed") +
+      {
+        if (length(flagged) > 0)
+          ggrepel::geom_text_repel(data  = loo_df[flagged, ],
+                                   aes(label = obs),
+                                   color = "red", size = 3)
+      } +
+      labs(title = paste0(state_label, " - Leave-One-Out Influence"),
+           x = "Observation", y = "LOO Influence") +
+      theme_bw()
+
+    out_path <- file.path(out_dir, paste0(state_label, "_5_loo_influence.png"))
+    ggsave(out_path, plot = p_loo, width = 8, height = 5, dpi = 150)
+    message("Saved: ", out_path)
+  } else {
+    cat(state_label, "- Too many failed LOO refits; LOO influence plot skipped.\n")
+  }
+
+  invisible(influence)
+}
+```
+
+```{r dir-run-diagnostics}
+predictors_PA <- c("Log.pop", "Urban.Population", "Unemployment.Rate", "Below.Poverty.Line")
+predictors_OR <- c("Log.pop", "Urban.Population", "Unemployment.Rate", "Below.Poverty.Line")
+predictors_FL <- c("Log.pop", "Urban.Population", "Unemployment.Rate", "Below.Poverty.Line")
+
+run_dirichlet_diagnostics(mod_dir_PA, PA_rep, predictors_PA, "PA")
+run_dirichlet_diagnostics(mod_dir_OR, OR_rep, predictors_OR, "OR")
+run_dirichlet_diagnostics(mod_dir_FL, FL_rep, predictors_FL, "FL")
+```
+
+---
+
+# Part 2 — Conviction-Rate Linear Models (`[CR]`)
+
+## Models
+
+```{r cr-models}
+# ── Pennsylvania ────────────────────────────────────────────────────────────
+lm_pd_PA <- lm(
+  car::logit(Public.Defender.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate +
+    Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents +
+    Number.of.Full.Time.Prosecutors,
+  data = rdf_PA, na.action = na.omit)
+
+lm_p_PA <- lm(
+  car::logit(Private.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate +
+    Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents +
+    Number.of.Full.Time.Prosecutors,
+  data = rdf_PA, na.action = na.omit)
+
+lm_ca_PA <- lm(
+  car::logit(Court.Appointed.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate +
+    Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents +
+    Number.of.Full.Time.Prosecutors,
+  data = rdf_PA, na.action = na.omit)
+
+lm_sr_PA <- lm(
+  car::logit(Self.Represented.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate +
+    Number.of.Criminal.Court.Judges + Police.Officers.per.100.000.Residents +
+    Number.of.Full.Time.Prosecutors,
+  data = rdf_PA, na.action = na.omit)
+
+# ── Oregon ───────────────────────────────────────────────────────────────────
+lm_pd_OR <- lm(
+  car::logit(Public.Defender.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate,
+  data = rdf_OR, na.action = na.omit)
+
+lm_p_OR <- lm(
+  car::logit(Private.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate,
+  data = rdf_OR, na.action = na.omit)
+
+lm_ca_OR <- lm(
+  car::logit(Court.Appointed.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate,
+  data = rdf_OR, na.action = na.omit)
+
+lm_sr_OR <- lm(
+  car::logit(Self.Represented.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate,
+  data = rdf_OR, na.action = na.omit)
+
+# ── Florida ──────────────────────────────────────────────────────────────────
+lm_pd_FL <- lm(
+  car::logit(Public.Defender.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate +
+    Police.Officers.per.100.000.Residents,
+  data = rdf_FL, na.action = na.omit)
+
+lm_p_FL <- lm(
+  car::logit(Private.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate +
+    Police.Officers.per.100.000.Residents,
+  data = rdf_FL, na.action = na.omit)
+
+lm_ca_FL <- lm(
+  car::logit(Court.Appointed.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate +
+    Police.Officers.per.100.000.Residents,
+  data = rdf_FL, na.action = na.omit)
+
+lm_sr_FL <- lm(
+  car::logit(Self.Represented.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate +
+    Police.Officers.per.100.000.Residents,
+  data = rdf_FL, na.action = na.omit)
+```
+
+## Regression Plots → `[CR]Unemployment_LOESS` / `[CR]Unemployment_LIN`
+
+```{r cr-reg-plots-fn}
+reg_plots <- function(rdf_STATE, base_vals, state, lm_pd, lm_p, lm_ca, lm_sr) {
+
+  u_seq    <- seq(min(rdf_STATE$Unemployment.Rate, na.rm = TRUE),
+                  max(rdf_STATE$Unemployment.Rate, na.rm = TRUE),
+                  length.out = 200)
+  pred_grid <- base_vals[rep(1, length(u_seq)), ]
+  pred_grid$Unemployment.Rate <- u_seq
+
+  make_pred_df <- function(model, label, newdata) {
+    pred <- predict(model, newdata = newdata, se.fit = TRUE)
+    newdata %>%
+      mutate(
+        fit_link  = pred$fit,
+        se_link   = pred$se.fit,
+        fit       = plogis(fit_link),
+        lwr       = plogis(fit_link - 1.96 * se_link),
+        upr       = plogis(fit_link + 1.96 * se_link),
+        Attorney.Type = label
+      )
+  }
+
+  plot_df <- bind_rows(
+    make_pred_df(lm_pd, "Public Defender",  pred_grid),
+    make_pred_df(lm_p,  "Private Counsel",  pred_grid),
+    make_pred_df(lm_ca, "Court Appointed",  pred_grid),
+    make_pred_df(lm_sr, "Self-Represented", pred_grid)
+  )
+
+  points_df <- rdf_STATE %>%
+    select(Unemployment.Rate,
+           Private.conviction.rate, Public.Defender.conviction.rate,
+           Court.Appointed.conviction.rate, Self.Represented.conviction.rate) %>%
+    pivot_longer(cols = -Unemployment.Rate,
+                 names_to = "Attorney.Type", values_to = "conviction_rate") %>%
+    mutate(
+      Attorney.Type = dplyr::recode(Attorney.Type,
+        "Private.conviction.rate"        = "Private Counsel",
+        "Public.Defender.conviction.rate" = "Public Defender",
+        "Court.Appointed.conviction.rate" = "Court Appointed",
+        "Self.Represented.conviction.rate" = "Self-Represented"),
+      conviction_rate = conviction_rate / 100
+    )
+
+  loess_plt <- ggplot(plot_df, aes(x = Unemployment.Rate, y = fit)) +
+    geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
+    geom_smooth(method = "loess", se = FALSE, color = "red", linewidth = 1) +
+    geom_point(data = points_df, aes(x = Unemployment.Rate, y = conviction_rate),
+               alpha = 0.6, size = 2) +
+    facet_wrap(~ Attorney.Type, ncol = 2) +
+    labs(title = paste0("Predicted Conviction Rate vs. Unemployment Rate in ", state, " — LOESS"),
+         x = "Unemployment Rate", y = "Predicted Conviction Rate") +
+    theme_minimal(base_size = 12)
+
+  linear_plt <- ggplot(plot_df, aes(x = Unemployment.Rate, y = fit)) +
+    geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
+    geom_line(linewidth = 1, color = "red") +
+    geom_point(data = points_df, aes(x = Unemployment.Rate, y = conviction_rate),
+               alpha = 0.6, size = 2) +
+    facet_wrap(~ Attorney.Type, ncol = 2) +
+    labs(title = paste0("Predicted Conviction Rate vs. Unemployment Rate in ", state, " Linear"),
+         x = "Unemployment Rate", y = "Predicted Conviction Rate") +
+    theme_minimal(base_size = 12)
+
+  list(loess_plt = loess_plt, linear_plt = linear_plt)
+}
+```
+
+```{r cr-base-vals}
+base_vals_PA <- rdf_PA %>%
+  summarise(
+    Log.pop = mean(Log.pop, na.rm = TRUE),
+    Young.Males.Population = mean(Young.Males.Population, na.rm = TRUE),
+    African.American.Population = mean(African.American.Population, na.rm = TRUE),
+    Native.American.Alaskan.Population = mean(Native.American.Alaskan.Population, na.rm = TRUE),
+    Asian.or.Pacific.Islander.Population = mean(Asian.or.Pacific.Islander.Population, na.rm = TRUE),
+    Hispanic.or.Latino.Population = mean(Hispanic.or.Latino.Population, na.rm = TRUE),
+    Below.Poverty.Line = mean(Below.Poverty.Line, na.rm = TRUE),
+    Number.of.Criminal.Court.Judges = mean(Number.of.Criminal.Court.Judges, na.rm = TRUE),
+    Police.Officers.per.100.000.Residents = mean(Police.Officers.per.100.000.Residents, na.rm = TRUE),
+    Number.of.Full.Time.Prosecutors = mean(Number.of.Full.Time.Prosecutors, na.rm = TRUE)
+  )
+
+base_vals_OR <- rdf_OR %>%
+  summarise(
+    Log.pop = mean(Log.pop, na.rm = TRUE),
+    Young.Males.Population = mean(Young.Males.Population, na.rm = TRUE),
+    African.American.Population = mean(African.American.Population, na.rm = TRUE),
+    Native.American.Alaskan.Population = mean(Native.American.Alaskan.Population, na.rm = TRUE),
+    Asian.or.Pacific.Islander.Population = mean(Asian.or.Pacific.Islander.Population, na.rm = TRUE),
+    Hispanic.or.Latino.Population = mean(Hispanic.or.Latino.Population, na.rm = TRUE),
+    Below.Poverty.Line = mean(Below.Poverty.Line, na.rm = TRUE)
+  )
+
+base_vals_FL <- rdf_FL %>%
+  summarise(
+    Log.pop = mean(Log.pop, na.rm = TRUE),
+    Young.Males.Population = mean(Young.Males.Population, na.rm = TRUE),
+    African.American.Population = mean(African.American.Population, na.rm = TRUE),
+    Native.American.Alaskan.Population = mean(Native.American.Alaskan.Population, na.rm = TRUE),
+    Asian.or.Pacific.Islander.Population = mean(Asian.or.Pacific.Islander.Population, na.rm = TRUE),
+    Hispanic.or.Latino.Population = mean(Hispanic.or.Latino.Population, na.rm = TRUE),
+    Below.Poverty.Line = mean(Below.Poverty.Line, na.rm = TRUE),
+    Police.Officers.per.100.000.Residents = mean(Police.Officers.per.100.000.Residents, na.rm = TRUE)
+  )
+```
+
+Output: `Appendix/{STATE}/[CR]Unemployment_LOESS.png` and `[CR]Unemployment_LIN.png`
+
+```{r cr-save-reg-plots}
+save_reg_plots <- function(state_label, rdf_STATE, base_vals,
+                           state_name, lm_pd, lm_p, lm_ca, lm_sr,
+                           appendix_root = "Appendix") {
+  out_dir <- file.path(appendix_root, state_label)
+  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+
+  plts <- reg_plots(rdf_STATE, base_vals, state_name, lm_pd, lm_p, lm_ca, lm_sr)
+
+  ggsave(file.path(out_dir, "[CR]Unemployment_LOESS.png"),
+         plot = plts$loess_plt, width = 10, height = 8, dpi = 150)
+  message("Saved: ", file.path(out_dir, "[CR]Unemployment_LOESS.png"))
+
+  ggsave(file.path(out_dir, "[CR]Unemployment_LIN.png"),
+         plot = plts$linear_plt, width = 10, height = 8, dpi = 150)
+  message("Saved: ", file.path(out_dir, "[CR]Unemployment_LIN.png"))
+}
+
+save_reg_plots("PA", rdf_PA, base_vals_PA, "Pennsylvania",
+               lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA)
+save_reg_plots("OR", rdf_OR, base_vals_OR, "Oregon",
+               lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR)
+save_reg_plots("FL", rdf_FL, base_vals_FL, "Florida",
+               lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL)
+```
+
+## Coefficient Tables → `[CR]Regr_Table`
+
+Output: `Appendix/{STATE}/[CR]Regr_Table.html`
+
+```{r cr-coef-tables}
+covar_labels_PA <- c(
+  "Log Population", "Proportion of Young Males",
+  "Proportion African American", "Proportion Native American / Alaskan",
+  "Proportion Asian / Pacific Islander", "Proportion Hispanic or Latino",
+  "Poverty Rate", "Unemployment Rate",
+  "Number of Criminal Court Judges", "Police Officers per 100,000 Residents",
+  "Number of Full-Time Prosecutors"
+)
+
+covar_labels_OR <- c(
+  "Log Population", "Proportion of Young Males",
+  "Proportion African American", "Proportion Native American / Alaskan",
+  "Proportion Asian / Pacific Islander", "Proportion Hispanic or Latino",
+  "Poverty Rate", "Unemployment Rate"
+)
+
+covar_labels_FL <- c(
+  "Log Population", "Proportion of Young Males",
+  "Proportion African American", "Proportion Native American / Alaskan",
+  "Proportion Asian / Pacific Islander", "Proportion Hispanic or Latino",
+  "Poverty Rate", "Unemployment Rate",
+  "Police Officers per 100,000 Residents"
+)
+
+save_cr_regr_table <- function(state_label, lm_pd, lm_p, lm_ca, lm_sr,
+                               covar_labels, state_name,
+                               appendix_root = "Appendix") {
+  out_dir  <- file.path(appendix_root, state_label)
+  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+  out_path <- file.path(out_dir, "[CR]Regr_Table.html")
+
+  stargazer(
+    lm_pd, lm_p, lm_ca, lm_sr,
+    type             = "html",
+    out              = out_path,
+    title            = paste0("Conviction Rate Regression Results by Attorney Type (", state_name, ")"),
+    dep.var.labels.include = FALSE,
+    dep.var.caption  = "",
+    column.labels    = c("Public Defender", "Private", "Court Appointed", "Self-Represented"),
+    digits           = 3,
+    report           = "vc*s",
+    omit.stat        = c("f", "rsq", "ser"),
+    covariate.labels = covar_labels,
+    align            = TRUE
+  )
+  message("Saved: ", out_path)
+}
+
+save_cr_regr_table("PA", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA,
+                   covar_labels_PA, "Pennsylvania")
+save_cr_regr_table("OR", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR,
+                   covar_labels_OR, "Oregon")
+save_cr_regr_table("FL", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL,
+                   covar_labels_FL, "Florida")
+```
+
+## Residual Diagnostics → `[CR]QQ_Resid` / `[CR]Cooks`
+
+Output per counsel type: `Appendix/{STATE}/{counsel}/[CR]QQ_Resid.png`
+and `Appendix/{STATE}/{counsel}/[CR]Cooks.png`
+
+```{r cr-diag-fns}
+# QQ + Residuals vs Fitted (2-panel base plot) --------------------------------
+residual_diag_plots <- function(lm_att_state) {
+  par(mfrow = c(2, 2))
+  qqnorm(residuals(lm_att_state), main = "QQ Plot")
+  qqline(residuals(lm_att_state), col = "red")
+  plot(fitted(lm_att_state), residuals(lm_att_state),
+       main = "Residuals vs Fitted",
+       xlab = "Fitted Values", ylab = "Residuals")
+  abline(h = 0, col = "red")
+}
+
+# Cook's Distance ggplot -------------------------------------------------------
+cooks_plot <- function(mod, state, counsel, rdf_STATE) {
+  rstud       <- rstudent(mod)
+  cooks       <- cooks.distance(mod)
+  threshold   <- 4 / length(cooks)
+  influential <- which(cooks > threshold)
+  used_rows   <- as.numeric(rownames(model.frame(mod)))
+
+  df <- data.frame(
+    obs   = seq_along(cooks),
+    cooks = cooks,
+    label = rdf_STATE$name[used_rows]
+  )
+
+  ggplot(df, aes(x = obs, y = cooks)) +
+    geom_point(color = "grey70") +
+    geom_hline(yintercept = threshold, color = "red", linetype = "dashed") +
+    geom_text_repel(data = df[influential, ], aes(label = label), size = 3) +
+    labs(
+      title = paste0("Cook's Distance (", state, " - ", counsel, ") conviction rate"),
+      x = "Observation", y = "Cook's Distance"
+    ) +
+    theme_minimal() +
+    theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
+}
+
+# Wrapper: save both plots for one state/counsel combination ------------------
+# counsel_code: "PD", "P", "AC", "SR"  (matches Appendix sub-folder names)
+save_cr_diagnostics <- function(mod, state_label, counsel_code, rdf_STATE,
+                                appendix_root = "Appendix") {
+  out_dir <- file.path(appendix_root, state_label, counsel_code)
+  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+
+  # QQ + Resid vs Fitted  →  [CR]QQ_Resid.png
+  png(file.path(out_dir, "[CR]QQ_Resid.png"), width = 10, height = 8,
+      units = "in", res = 150)
+  residual_diag_plots(mod)
+  dev.off()
+  message("Saved: ", file.path(out_dir, "[CR]QQ_Resid.png"))
+
+  # Cook's Distance  →  [CR]Cooks.png
+  p_cooks <- cooks_plot(mod, state_label, counsel_code, rdf_STATE)
+  ggsave(file.path(out_dir, "[CR]Cooks.png"),
+         plot = p_cooks, width = 8, height = 5, dpi = 150)
+  message("Saved: ", file.path(out_dir, "[CR]Cooks.png"))
+}
+```
+
+```{r cr-save-diagnostics}
+# Pennsylvania
+save_cr_diagnostics(lm_pd_PA, "PA", "PD", rdf_PA)
+save_cr_diagnostics(lm_p_PA,  "PA", "P",  rdf_PA)
+save_cr_diagnostics(lm_ca_PA, "PA", "AC", rdf_PA)
+save_cr_diagnostics(lm_sr_PA, "PA", "SR", rdf_PA)
+
+# Oregon
+save_cr_diagnostics(lm_pd_OR, "OR", "PD", rdf_OR)
+save_cr_diagnostics(lm_p_OR,  "OR", "P",  rdf_OR)
+save_cr_diagnostics(lm_ca_OR, "OR", "AC", rdf_OR)
+save_cr_diagnostics(lm_sr_OR, "OR", "SR", rdf_OR)
+
+# Florida
+save_cr_diagnostics(lm_pd_FL, "FL", "PD", rdf_FL)
+save_cr_diagnostics(lm_p_FL,  "FL", "P",  rdf_FL)
+save_cr_diagnostics(lm_ca_FL, "FL", "AC", rdf_FL)
+save_cr_diagnostics(lm_sr_FL, "FL", "SR", rdf_FL)
+```
+
+---
+
+# OR — Private (Outliers Removed)
+Removed all counties with Cook's distance above the threshold.
+
+```{r or-private-clean}
+cooks_p_OR      <- cooks.distance(lm_p_OR)
+threshold_p_OR  <- 4 / length(cooks_p_OR)
+influential_p_OR <- which(cooks_p_OR > threshold_p_OR)
+used_data_p_OR  <- model.frame(lm_p_OR)
+used_rows_p_OR  <- as.numeric(rownames(used_data_p_OR))
+
+rdf_OR_clean_p_OR <- rdf_OR[-used_rows_p_OR[influential_p_OR], ]
+
+lm_p_OR_clean <- lm(
+  car::logit(Private.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate,
+  data = rdf_OR_clean_p_OR, na.action = na.omit)
+
+residual_diag_plots(lm_p_OR_clean)
+cooks_plot(lm_p_OR_clean, "OR", "P -- w/out influential", rdf_OR_clean_p_OR)
+summary(lm_p_OR_clean)
+```
+
+# OR — Private (Multnomah Removed)
+
+```{r or-private-clean2}
+max_influential         <- which.max(cooks_p_OR)
+rdf_OR_clean2_p_OR      <- rdf_OR[-used_rows_p_OR[max_influential], ]
+
+lm_p_OR_clean2 <- lm(
+  car::logit(Private.conviction.rate) ~
+    Log.pop + Young.Males.Population +
+    African.American.Population + Native.American.Alaskan.Population +
+    Asian.or.Pacific.Islander.Population + Hispanic.or.Latino.Population +
+    Below.Poverty.Line + Unemployment.Rate,
+  data = rdf_OR_clean_p_OR, na.action = na.omit)
+
+residual_diag_plots(lm_p_OR_clean2)
+cooks_plot(lm_p_OR_clean2, "OR", "P -- w/out Multnomah", rdf_OR_clean2_p_OR)
+summary(lm_p_OR_clean2)
+```

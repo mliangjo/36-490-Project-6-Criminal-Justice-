@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dirichlet Regression Results — OR</title>
+  <style>
+    body { font-family: monospace; font-size: 13px; margin: 20px; background: #fff; }
+    h2   { font-family: Arial, sans-serif; color: #3949ab; }
+    pre  { background: #f5f5f5; padding: 16px; border-radius: 4px;
+           border: 1px solid #ddd; white-space: pre; overflow-x: auto; }
+    p.note { font-family: Arial, sans-serif; font-size: 11px; color: #555; }
+  </style>
+</head>
+<body>
+  <h2>Dirichlet Regression Results — OR</h2>
+  <pre>
+Call:
+DirichReg(formula = Y ~ Log.pop + Urban.Population + Below.Poverty.Line + Unemployment.Rate +
+High.School.Graduates, data = OR_rep)
+
+Standardized Residuals:
+                       Min       1Q   Median       3Q      Max
+private            -1.1743  -0.5113  -0.2131   0.0671   2.0128
+public_defender    -1.1473  -0.7640  -0.5492  -0.1503  11.5578
+appointed_counsel  -3.4086  -0.3872   0.2267   1.0048   2.0840
+alternative        -1.8726  -0.8271  -0.1816   0.5208   2.3625
+
+------------------------------------------------------------------
+Beta-Coefficients for variable no. 1: private
+                      Estimate Std. Error z value Pr(&amp;gt;|z|)    
+(Intercept)            3.04108    3.88272   0.783 0.433490    
+Log.pop               -2.19421    0.37812  -5.803 6.51e-09 ***
+Urban.Population       0.11255    0.02370   4.750 2.04e-06 ***
+Below.Poverty.Line    -0.10488    0.06584  -1.593 0.111156    
+Unemployment.Rate      0.09184    0.07198   1.276 0.202023    
+High.School.Graduates  0.18306    0.05038   3.634 0.000279 ***
+------------------------------------------------------------------
+Beta-Coefficients for variable no. 2: public_defender
+                      Estimate Std. Error z value Pr(&amp;gt;|z|)    
+(Intercept)           -0.49392    4.63902  -0.106 0.915209    
+Log.pop               -1.64695    0.37485  -4.394 1.11e-05 ***
+Urban.Population       0.08867    0.02284   3.883 0.000103 ***
+Below.Poverty.Line    -0.07174    0.06007  -1.194 0.232332    
+Unemployment.Rate      0.24994    0.10696   2.337 0.019446 *  
+High.School.Graduates  0.12915    0.05214   2.477 0.013241 *  
+------------------------------------------------------------------
+Beta-Coefficients for variable no. 3: appointed_counsel
+                      Estimate Std. Error z value Pr(&amp;gt;|z|)    
+(Intercept)            6.31530    4.04101   1.563  0.11810    
+Log.pop               -2.28256    0.36748  -6.211 5.25e-10 ***
+Urban.Population       0.12021    0.02405   4.999 5.77e-07 ***
+Below.Poverty.Line    -0.11546    0.07016  -1.646  0.09983 .  
+Unemployment.Rate      0.14584    0.07099   2.054  0.03994 *  
+High.School.Graduates  0.16603    0.05115   3.246  0.00117 ** 
+------------------------------------------------------------------
+Beta-Coefficients for variable no. 4: alternative
+                      Estimate Std. Error z value Pr(&amp;gt;|z|)    
+(Intercept)           -6.28853    4.42535  -1.421  0.15531    
+Log.pop               -1.88698    0.33836  -5.577 2.45e-08 ***
+Urban.Population       0.10681    0.02121   5.036 4.76e-07 ***
+Below.Poverty.Line    -0.02351    0.05977  -0.393  0.69408    
+Unemployment.Rate      0.24684    0.09349   2.640  0.00829 ** 
+High.School.Graduates  0.21776    0.05531   3.937 8.25e-05 ***
+------------------------------------------------------------------
+Significance codes: 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Log-likelihood: 203.9 on 24 df (168 BFGS + 3 NR Iterations)
+AIC: -359.7, BIC: -321.7
+Number of Observations: 36
+Link: Log
+Parametrization: common
+</pre>
+  <p class="note">Significance: *** p &lt; 0.001 &nbsp; ** p &lt; 0.01 &nbsp; * p &lt; 0.05 &nbsp; . p &lt; 0.1</p>
+</body>
+</html>
