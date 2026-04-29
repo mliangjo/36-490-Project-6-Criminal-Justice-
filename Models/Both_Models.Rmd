@@ -139,57 +139,17 @@ summary(mod_dir_FL)
 Saves one HTML regression table per state to `Appendix/{STATE}/[DIR]Regr_Table.html`.
 
 ```{r dir-regr-tables}
-# Helper: extract a tidy coefficient data-frame from a DirichReg model.
-# Returns a data.frame with columns: component, term, estimate, std_error,
-# z_value, p_value.
-extract_dirreg_coefs <- function(model) {
-  s      <- summary(model)
-  coefs  <- s$coef.mat          # list, one element per response category
-  cats   <- names(coefs)
-  do.call(rbind, lapply(cats, function(cat) {
-    m <- coefs[[cat]]
-    data.frame(
-      component  = cat,
-      term       = rownames(m),
-      estimate   = round(m[, "Estimate"],   3),
-      std_error  = round(m[, "Std. Error"], 3),
-      z_value    = round(m[, "z value"],    3),
-      p_value    = round(m[, "Pr(>|z|)"],   4),
-      stringsAsFactors = FALSE
-    )
-  }))
-}
-
-# Helper: render coef data.frame as an HTML table and write to disk.
-save_dir_regr_table <- function(coef_df, state_label, appendix_root = "Appendix") {
+# Captures the console output of summary(model) and wraps it in a minimal
+# self-contained HTML file.  DirichletReg stores its coefficient matrices
+# inside the printed summary rather than in a cleanly-accessible list slot,
+# so capturing the text output is the most robust approach.
+save_dir_regr_table <- function(model, state_label, appendix_root = "Appendix") {
   out_dir  <- file.path(appendix_root, state_label)
   dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
   out_path <- file.path(out_dir, "[DIR]Regr_Table.html")
 
-  # Build a simple, self-contained HTML table
-  cats <- unique(coef_df$component)
-
-  rows_html <- vapply(cats, function(cat) {
-    sub_df <- coef_df[coef_df$component == cat, ]
-
-    # Section header
-    header <- sprintf(
-      '<tr><td colspan="5" style="background:#e8eaf6;font-weight:bold;padding:6px 10px;">%s</td></tr>',
-      cat
-    )
-
-    # Data rows
-    data_rows <- paste(apply(sub_df, 1, function(r) {
-      p <- as.numeric(r["p_value"])
-      stars <- if (p < 0.001) "***" else if (p < 0.01) "**" else if (p < 0.05) "*" else if (p < 0.1) "." else ""
-      sprintf(
-        '<tr><td style="padding:4px 10px;">%s</td><td style="text-align:right;padding:4px 10px;">%s</td><td style="text-align:right;padding:4px 10px;">%s</td><td style="text-align:right;padding:4px 10px;">%s</td><td style="text-align:right;padding:4px 10px;">%s%s</td></tr>',
-        r["term"], r["estimate"], r["std_error"], r["z_value"], r["p_value"], stars
-      )
-    }), collapse = "\n")
-
-    paste(header, data_rows, sep = "\n")
-  }, character(1))
+  # Capture the full printed summary as a character vector
+  summary_text <- paste(capture.output(summary(model)), collapse = "\n")
 
   html <- sprintf('<!DOCTYPE html>
 <html>
@@ -197,33 +157,24 @@ save_dir_regr_table <- function(coef_df, state_label, appendix_root = "Appendix"
   <meta charset="UTF-8">
   <title>Dirichlet Regression Results — %s</title>
   <style>
-    body { font-family: Arial, sans-serif; font-size: 13px; margin: 20px; }
-    h2   { color: #3949ab; }
-    table { border-collapse: collapse; width: 100%%; max-width: 750px; }
-    th   { background: #3949ab; color: #fff; padding: 6px 10px; text-align: left; }
-    tr:nth-child(even) { background: #f5f5f5; }
-    td   { border-bottom: 1px solid #ddd; }
-    p.note { font-size: 11px; color: #555; }
+    body { font-family: monospace; font-size: 13px; margin: 20px; background: #fff; }
+    h2   { font-family: Arial, sans-serif; color: #3949ab; }
+    pre  { background: #f5f5f5; padding: 16px; border-radius: 4px;
+           border: 1px solid #ddd; white-space: pre; overflow-x: auto; }
+    p.note { font-family: Arial, sans-serif; font-size: 11px; color: #555; }
   </style>
 </head>
 <body>
   <h2>Dirichlet Regression Results — %s</h2>
-  <p>Response categories: <em>private, public_defender, appointed_counsel, alternative</em></p>
-  <table>
-    <tr>
-      <th>Term</th>
-      <th>Estimate</th>
-      <th>Std. Error</th>
-      <th>z value</th>
-      <th>p value</th>
-    </tr>
-    %s
-  </table>
+  <pre>%s</pre>
   <p class="note">Significance: *** p &lt; 0.001 &nbsp; ** p &lt; 0.01 &nbsp; * p &lt; 0.05 &nbsp; . p &lt; 0.1</p>
 </body>
 </html>',
   state_label, state_label,
-  paste(rows_html, collapse = "\n"))
+  # Escape any HTML special characters in the summary text
+  gsub("&", "&amp;",
+    gsub("<", "&lt;",
+      gsub(">", "&gt;", summary_text))))
 
   writeLines(html, out_path)
   message("Saved: ", out_path)
@@ -231,9 +182,9 @@ save_dir_regr_table <- function(coef_df, state_label, appendix_root = "Appendix"
 }
 
 # --- Run for each state ---
-save_dir_regr_table(extract_dirreg_coefs(mod_dir_PA), "PA")
-save_dir_regr_table(extract_dirreg_coefs(mod_dir_OR), "OR")
-save_dir_regr_table(extract_dirreg_coefs(mod_dir_FL), "FL")
+save_dir_regr_table(mod_dir_PA, "PA")
+save_dir_regr_table(mod_dir_OR, "OR")
+save_dir_regr_table(mod_dir_FL, "FL")
 ```
 
 ## Diagnostic Plots → `[DIR]` files
@@ -756,7 +707,7 @@ and `Appendix/{STATE}/{counsel}/[CR]Cooks.png`
 ```{r cr-diag-fns}
 # QQ + Residuals vs Fitted (2-panel base plot) --------------------------------
 residual_diag_plots <- function(lm_att_state) {
-  par(mfrow = c(2, 2))
+  par(mfrow = c(2, 1))
   qqnorm(residuals(lm_att_state), main = "QQ Plot")
   qqline(residuals(lm_att_state), col = "red")
   plot(fitted(lm_att_state), residuals(lm_att_state),
