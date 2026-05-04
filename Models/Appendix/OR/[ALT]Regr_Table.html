@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dirichlet Regression — OR</title>
+  <style>
+    body  { font-family: Georgia, serif; font-size: 13px; margin: 2em; }
+    h2    { font-family: Arial, sans-serif; font-size: 15px; font-weight: normal; margin-bottom: 0.5em; }
+    table { border-collapse: collapse; }
+    tr:nth-child(odd)  { background-color: #fafafa; }
+    tr:nth-child(even) { background-color: #ffffff; }
+    td[style*="ffd700"] { background-color: #ffd700 !important; }
+    p.note { font-size: 11px; color: #333; margin-top: 0.5em; font-family: Georgia, serif; }
+  </style>
+</head>
+<body>
+  <h2>Dirichlet Regression Results by Attorney Type (Oregon)</h2>
+  <table>
+    <thead><tr><th style="text-align:left;padding:5px 14px;border-bottom:2px solid #333;"></th><th style="text-align:center;padding:5px 14px;border-bottom:2px solid #333;">Private</th><th style="text-align:center;padding:5px 14px;border-bottom:2px solid #333;">Public Defender</th><th style="text-align:center;padding:5px 14px;border-bottom:2px solid #333;">Appointed Counsel</th><th style="text-align:center;padding:5px 14px;border-bottom:2px solid #333;">Alternative</th></tr></thead>
+    <tbody><tr><td style="text-align:left;padding:3px 14px;white-space:nowrap;">Constant</td><td style="text-align:center;padding:3px 14px;color:#999;font-style:italic;">ref.</td><td style="text-align:center;padding:3px 14px;">-0.364</td><td style="text-align:center;padding:3px 14px;">3.431</td><td style="text-align:center;padding:3px 14px;">-5.767</td></tr>
+<tr><td style="text-align:left;padding:2px 14px 2px 14px;color:#444;white-space:nowrap;"></td><td style="text-align:center;padding:3px 14px;"></td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(5.423)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(2.769)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(4.055)</td></tr>
+<tr><td style="text-align:left;padding:3px 14px;white-space:nowrap;">Log Population</td><td style="text-align:center;padding:3px 14px;color:#999;font-style:italic;">ref.</td><td style="text-align:center;padding:3px 14px;">0.199</td><td style="text-align:center;padding:3px 14px;">-0.020</td><td style="text-align:center;padding:3px 14px;">0.086</td></tr>
+<tr><td style="text-align:left;padding:2px 14px 2px 14px;color:#444;white-space:nowrap;"></td><td style="text-align:center;padding:3px 14px;"></td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.277)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.159)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.208)</td></tr>
+<tr><td style="text-align:left;padding:3px 14px;white-space:nowrap;">Urban Population</td><td style="text-align:center;padding:3px 14px;color:#999;font-style:italic;">ref.</td><td style="text-align:center;padding:3px 14px;">-0.007</td><td style="text-align:center;padding:3px 14px;">0.002</td><td style="text-align:center;padding:3px 14px;">0.003</td></tr>
+<tr><td style="text-align:left;padding:2px 14px 2px 14px;color:#444;white-space:nowrap;"></td><td style="text-align:center;padding:3px 14px;"></td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.015)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.009)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.012)</td></tr>
+<tr><td style="text-align:left;padding:3px 14px;white-space:nowrap;">Below Poverty Line</td><td style="text-align:center;padding:3px 14px;color:#999;font-style:italic;">ref.</td><td style="text-align:center;padding:3px 14px;">0.019</td><td style="text-align:center;padding:3px 14px;">0.005</td><td style="text-align:center;padding:3px 14px;">0.027</td></tr>
+<tr><td style="text-align:left;padding:2px 14px 2px 14px;color:#444;white-space:nowrap;"></td><td style="text-align:center;padding:3px 14px;"></td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.058)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.033)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.043)</td></tr>
+<tr><td style="text-align:left;padding:3px 14px;white-space:nowrap;">Unemployment Rate</td><td style="text-align:center;padding:3px 14px;color:#999;font-style:italic;">ref.</td><td style="text-align:center;padding:3px 14px;">-0.007</td><td style="text-align:center;padding:3px 14px;">0.054</td><td style="text-align:center;padding:3px 14px;">0.062</td></tr>
+<tr><td style="text-align:left;padding:2px 14px 2px 14px;color:#444;white-space:nowrap;"></td><td style="text-align:center;padding:3px 14px;"></td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.099)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.044)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.065)</td></tr>
+<tr><td style="text-align:left;padding:3px 14px;white-space:nowrap;">High School Graduates</td><td style="text-align:center;padding:3px 14px;color:#999;font-style:italic;">ref.</td><td style="text-align:center;padding:3px 14px;">-0.033</td><td style="text-align:center;padding:3px 14px;">-0.027</td><td style="text-align:center;padding:3px 14px;">0.038</td></tr>
+<tr><td style="text-align:left;padding:2px 14px 2px 14px;color:#444;white-space:nowrap;"></td><td style="text-align:center;padding:3px 14px;"></td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.051)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.029)</td><td style="text-align:center;padding:3px 14px;color:#666;font-size:0.95em;">(0.040)</td></tr>
+    <tr style="border-top:2px solid #333;"><td style="text-align:left;padding:3px 14px;white-space:nowrap;">Observations</td><td style="text-align:center;padding:3px 14px;">36</td><td style="text-align:center;padding:3px 14px;">36</td><td style="text-align:center;padding:3px 14px;">36</td><td style="text-align:center;padding:3px 14px;">36</td></tr>
+<tr><td style="text-align:left;padding:3px 14px;white-space:nowrap;">Log Likelihood</td><td style="text-align:center;padding:3px 14px;">180.65</td><td style="text-align:center;padding:3px 14px;">180.65</td><td style="text-align:center;padding:3px 14px;">180.65</td><td style="text-align:center;padding:3px 14px;">180.65</td></tr></tbody>
+  </table>
+  <p class="note"><em>Note:</em> &nbsp;
+    <sup>*</sup>p&lt;0.1; <sup>**</sup>p&lt;0.05; <sup>***</sup>p&lt;0.01.
+    Standard errors in parentheses. "ref." denotes the reference category.
+  </p>
+</body>
+</html>
