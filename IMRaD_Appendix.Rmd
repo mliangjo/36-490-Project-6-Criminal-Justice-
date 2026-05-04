@@ -1,0 +1,788 @@
+---
+title: "County-Level Characteristics and Indigent Defense Outcomes"
+subtitle: "A Regression Analysis"
+author: 
+  - Zining Chen
+  - Sukwoo Kwon
+  - Macy Liang-Jones
+  - Peter Spivack
+date: "Apr. 28, 2026"
+abstract: | 
+  **Abstract:** This research draws on data from Measures for Justice to examine how structural differences shape indigent defense outcomes across Pennsylvania, Oregon, and Florida. We investigate the relationship between particular county level characteristics and judicial outcomes of indigent defendants. Using regression analysis our goal is to compare county-level characteristics within each state and across the three states to determine trends and patterns in structures which produce unequal outcomes.
+output: 
+  bookdown::pdf_document2:
+    highlight: tango
+    toc: true
+    number_sections: true
+documentclass: scrartcl
+classoption:
+  - fontsize=11pt
+  - parskip=half
+  - headings=normal
+fig_caption: false
+header-includes:
+  - \usepackage{fourier}
+  - \setkomafont{disposition}{\normalfont}
+  - \usepackage{mathtools, braket}
+  - \usepackage[headsepline]{scrlayer-scrpage}
+  - \pagestyle{scrheadings}
+  - \automark{section}
+  - \ihead{Chen, Kwon, Liang-Jones, \& Spivack}
+  - \chead{}
+  - \ohead{\rightmark}
+  - \newcommand{\E}{\mathbb{E}}
+  - \renewcommand{\P}{\mathbb{P}}
+  - \newcommand{\V}{\mathbb{V}}
+---
+
+```{r style, include = F}
+# General libraries and style preferences, used for consistency across all hws
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+knitr::opts_chunk$set(echo = F, include = T, out.width = "100%")
+knitr::opts_chunk$set(cache = TRUE)
+set_theme(theme_bw())
+```
+
+\newpage
+
+# Introduction
+
+The right to legal representation is a constitutionally guaranteed right for all defendants, and for defendants otherwise unable to afford an attorney (“indigent defendants”), the government must appoint counsel for them. Each jurisdiction creates their own system to manage the allocation of legal counsel for indigent representation, often called public defenders offices. However, these public defense systems vary substantially in attorney workload, funding, and overall resource allocation across jurisdictions. 
+
+Such variation raises important concerns about whether differences in public defense capacity are associated with differences in legal outcomes. As variation in public defense burden may correspond to differences in legal outcomes across jurisdictions, understanding how these structural differences relate to conviction rates is essential. These differences carry important implications for fairness, consistency, and equal protection under the law.
+
+This analysis aims to help investigate the relationship between county-level characteristics and the type of representation and conviction rates across attorney types, with a focus on public defenders. By analyzing county-level characteristics, including population, demographic, economic, and criminal justice system measures, and linking these factors to conviction rates, the analysis aims to provide a more systematic understanding of potential sources of disparity in legal outcomes. Collectively, by linking county-level characteristics to conviction rates and to the type of representation, the analysis seeks to provide insight into structural inequalities within the criminal justice system.
+
+***
+
+# Methods
+
+## Data Source
+
+The data used in this analysis are obtained from Measure for Justice (MFJ), a nonpartisan nonprofit focused on increasing transparency and accountability in the United States legal system. Our dataset contains adult criminal case data drawn from state administrative case management systems across more than 20 U.S. states.
+
+For the purposes of this project, we restrict the analysis to Oregon, Pennsylvania, and Florida, as these are the only states in the dataset that provide county-level conviction rate data, which is necessary for our analysis.
+
+## Data Structure
+
+The MFJ dataset organizes information into three primary components: measures, filters, and locations.
+
+### Measures
+
+Measures capture quantitative characteristics of counties and courts, including county-level characteristics such as total population, unemployment rate, and median household income, as well as court-level characteristics such as the number of misdemeanor cases, total caseload, and conviction rates.
+
+We take a look at selected structural characteristics across Florida, Oregon, and Pennsylvania to provide a summary of key county- and court-level statistics.
+
+```{r}
+data.frame(
+  State = c("Florida", "Oregon", "Pennsylvania"),
+  Median = c("98,409", "41,614", "88,404"),
+  Counties = c("67", "36", "67"),
+  Income = c("$43,413", "$43,524", "$46,044"),
+  Loads = c("3,097,814", "407,169", "935,686"),
+  Conviction = c("72.01%", "65.91%", "69.78%")
+  ) %>%
+  kable(
+    format = "latex",
+    booktabs = T,
+    caption = "Select county-level and court-level characteristics across counties in FL, OR, and PA",
+    col.names = c(
+      "State",
+      "Median County Pop.",
+      "Num. Counties",
+      "Median Median Household Income",
+      "Num. Caseloads",
+      "Mean Conviction Rate")
+  ) %>%
+  kable_styling(latex_options = c("scale_down", "hold_position")) %>%
+  column_spec(1, bold = T) %>%
+  column_spec(4, width = "1.5in") # Forces the income header to wrap if needed
+```
+
+### Filters
+
+Filters describe defendant characteristics and demographic attributes that can be used to subset the data. One key variable in this study is the type of legal representation, which includes:
+
+- **Public Defender:** A government-employed attorney who represents defendants unable to afford private counsel. These attorneys are assigned to ensure legal representation for indigent defendants.
+
+- **Appointed Counsel:** A private attorney assigned by the court to represent a defendant who cannot afford private representation. The prosecuting jurisdiction pays for this attorney, and such appointments are typically made when a public defender is unavailable or unable to take the case.
+
+- **Private Counsel:** An attorney hired and paid for directly by the defendant. In this arrangement, the defendant selects their own legal representation, typically based on preference, expertise, or available resources.
+
+- **Self-Represented:** A defendant who chooses to represent themselves in court without an attorney. This may occur by choice or due to other constraints, and such defendants are responsible for handling all aspects of their legal defense.
+
+### Locations
+
+Location variables identify the court jurisdictions included in the dataset, providing a list of all court locations within each of the selected states.
+
+## Exploratory Data Analysis and Visualization
+
+To explore patterns in the data and identify potential differences in outcomes across legal representation types, we conducted an exploratory data analysis using R. The primary goal of this analysis was to examine variation in state-level conviction rates and assess how these rates are associated with structural county characteristics and case-level variables, such as the type of legal representation.
+
+## Logistic Regression: Conviction Rate by State and Counsel Type
+
+__Response Variable__
+
+The response variable in all models was the logic of conviction rate, defined as the proportion of cases resulting in conviction for each attorney type within a county.
+
+__Explanatory Variable__
+
+A subset of candidate explanatory variables was considered across all models, grouped into four categories: 
+
+- **Population Measures:** indicators of population size (Population, Urban Population, Rural Population, High School Graduates)
+
+- **Economic Measures:** indicators of economic conditions (Unemployment Rate, Below Poverty Line, Median Household Income)
+
+- **Criminal Justice Measures:** indicators of criminal justice system capacity (Number of Criminal Court Judges, Police Officers per 100000 Residents, Total Number of Law Enforcement Agencies, Number of Full-Time Prosecutors, Number of Part-Time Prosecutors)
+
+- **Demographic Measures:** racial and ethnic composition (White Population, African American Population) 
+
+The final subset was selected based on multicollinearity considerations discussed below.
+
+__Regression Modeling__
+
+Analyses were conducted separately for each state. Within each state, conviction rates were examined independently by defender type (public, court-appointed, private, self-represented), resulting in a distinct model for each state-counsel type combination.
+
+All regression analyses were conducted in R. County-level covariates were categorized into four domains: Population, Racial/Ethnic Composition, Economic Conditions, and Criminal Justice System Characteristics. An initial model including all variables was specified, and multicollinearity was assessed using variance inflation factors (VIF). Variables exhibiting high collinearity were removed to reduce redundancy while preserving interpretability. The resulting subset of variables was then applied consistently across all state–counsel type regression models to ensure comparability of results across states.
+
+LOESS curves were applied to model-predicted probabilities to provide a smoothed visualization of the relationship between key predictors and conviction rates, accounting for the nonlinearity introduced by the logit transformation. Residual diagnostics were conducted for all models to assess assumptions of linearity, homoscedasticity, and normality of errors. In addition, leave-one-out influence analysis was performed using Cook’s distance to identify potentially influential observations.
+
+## Dirichlet Regression: Counsel Type Composition by State
+
+### Introducing the Dirichlet Distribution
+
+The Dirichlet distribution is a multivariate generalization of the Beta distribution used to model vectors of proportions. Let $Y_i = (y_{i1}, \dots, y_{ik})$ denote a vector of category shares for observation $i$, where each component is nonnegative and the components sum to one. This makes the Dirichlet distribution well-suited for compositional data.
+
+The probability density function of $Y_i \sim \text{Dirichlet}(\alpha_i)$ with parameter vector $\alpha_i = (\alpha_{i1}, \dots, \alpha_{ik})$, is given by:
+
+$$f(\mathbf y|\boldsymbol\alpha) = \frac{1}{B(\boldsymbol \alpha)} \prod_{i=1}^k y_i^{\alpha_i - 1}$$
+
+The expected value of each component is:
+
+$$\E(y_{ij}) = \dfrac{\alpha_{ij}}{\sum_{j=1}^k \alpha_{ij}}$$
+
+The variance of each component is:
+
+$$\text{Var}(y_{ij}) = \dfrac{\alpha_{ij} \big( \sum_{l=1}^k \alpha_{il} - \alpha_{ij}\big)}{\big( \sum_{l=1}^k \alpha_{il}\big)^2 \big( \sum_{l=1}^k \alpha_{il} + 1\big)}$$
+
+As the total concentration parameter $\sum_j \alpha_{ij}$ increases, the variance decreases and the distribution becomes more concentrated around its mean. Larger values of $\alpha_ij$ relative to other components increase the expected share of category $j$. 
+
+### Cross-Sectional Data Description
+
+```{r}
+data.frame(
+  `Location ID` = c("PA001", "PA002"),
+  `County Covariates` = c("---", "---"),
+  Private = c(38.2, 52.1),
+  `Public Defender` = c(31.5, 28.3),
+  `Court Appointed` = c(22.4, 14.6),
+  Alternative = c(7.9, 5.0)
+) %>% kable(
+  caption = "Select Counsel Type Percentages by Location ID (PA)",
+  col.names = c("Location ID", "County Covariates", "Private", "Public Defender", "Court Appointned", "Alternative"),
+  align = "lcrrrr"
+) %>% 
+  kable_styling(latex_options = "hold_position")
+
+```
+
+The unit of observation in this analysis is the county. For each county iii, we observe the proportion of criminal cases handled by each counsel type, forming a compositional response vector: 
+
+$$Y_i = (\text{Private, Public Defender, Court Appointed, Alternative})$$
+
+The “Alternative” category aggregates Other, Unknown, and Self-represented (SR) defendants. By construction, these proportions sum to one within each county, meaning the categories are interdependent. Because the outcome is compositional, standard regression approaches applied separately to each category would fail to account for the dependence structure induced by the sum-to-one constraint. This motivates the use of Dirichlet regression to model the joint distribution of counsel type shares.
+
+### Counsel Type Composition Dirichlet Model
+
+__Response Variable__
+
+The response variable is the vector of counsel type proportions within each county:
+
+$$Y_i = (y_{i1}, y_{i2}, y_{i3}, y_{i4}) $$
+
+where each component represents the share of cases handled by a specific counsel type.
+
+__Model Specification__
+
+We model the composition of counsel types using a Dirichlet distribution:
+
+$$Y_i \sim \text{Dirichlet}(\alpha_i)$$,
+
+where each component of $\alpha_i$ is linked to county-level covariates through a log-linear specification: 
+
+$$\alpha_{ij} = \exp(x_i^\top \beta_j)$$
+
+This formulation allows each counsel type j to have its own set of coefficients while modeling all categories simultaneously.
+
+__Explanatory Variables__
+
+The covariate vector $x_i$ includes variables from the Population, Economic, Criminal Justice, and Demographic categories. Consistent with the logistic regression models for conviction rate by state and counsel type, candidate explanatory variables were considered across all four measure types. 
+
+The final subset of covariates varied by state due to issues with multicollinearity and model convergence considerations. Oregon particularly uses a reduced set of covariates as the smaller dataset required a smaller set of covariates in order to converge. The models for Florida, Oregon, and Pennsylvania include log population, urban population proportion, proportion below poverty line, unemployment rate, and proportion of high school graduates. Florida and Pennsylvania also included median household income and proportion of African American population.
+
+__Regression Modeling__
+
+Dirichlet regression models are estimated separately for each state (PA, OR, FL), allowing the relationship between county-level characteristics and counsel type composition to vary by state while maintaining a consistent specification across models. Estimation is performed in R using the *DirichReg* package under the common parameterization, in which each counsel type is associated with its own set of regression coefficients.
+
+Model diagnostics are conducted at the component level to assess fit. LOESS curves are used to visualize relationships between predictors and fitted values. Leave-one-out influence analysis using Cook’s distance was also performed to identify potentially influential observations.
+
+***
+
+# Results
+
+## Explanatory Data Analysis
+
+### Variation in Conviction Rates Across States
+
+```{r}
+include_graphics("EDA311.png")
+```
+
+Figure 3.1.1 shows the distribution of county-level conviction rates for the measure Cases Resulting in Conviction across Florida, Oregon, and Pennsylvania. The measures are aggregate conviction rate per state, each data point representing total convictions per county over total cases per county. The median conviction rates in Florida and Pennsylvania are higher than in Oregon. Florida has a median conviction rate of approximately 78%, while Pennsylvania has a median of around 73%. Oregon shows the lowest median conviction rate, at approximately 67%. Overall, Oregon shows a lower median conviction rate than Florida and Pennsylvania.
+
+### Distribution of Attorney Types Across States
+
+```{r}
+include_graphics("EDA312.png")
+```
+
+Figure 3.1.2 displays the proportion of cases handled by different attorney types within each state. The distribution of attorney types varies substantially across the three states. Florida and Pennsylvania rely primarily on public defenders, with public defender cases representing the largest proportion of cases in both states. Unlike the two states, Oregon relies heavily on court-appointed counsel, which accounts for the largest proportion in that state. 
+
+### Conviction Rates by Counsel Type
+
+```{r}
+include_graphics("EDA313.png")
+```
+
+Figure 3.1.3 shows county-level conviction rates by counsel type for Florida, Oregon, and Pennsylvania. Conviction rates vary systematically across counsel types within each state. Public defenders and court-appointed attorney types show higher median conviction rates compared to private attorneys. The Unknown attorney type shows the highest variability. For public defender attorney types, Oregon shows the highest median conviction rate out of the three states, unlike all other attorney types, where Oregon shows the lowest median conviction rate.
+
+## Conviction Rate Regression
+
+After conducting EDA, we found that the conviction rate varies systematically across PA, OR, and FL. To provide a comparison, we examine public defender attorney cases in Pennsylvania.
+
+\newpage
+
+<!-- ### Pennsylvania - Public Defender Detailed Analysis -->
+
+__Residual Diagnostics__
+
+```{r}
+include_graphics("Models/Appendix/PA/PD/[CR]QQ_Resid.png")
+```
+\begin{center}
+\textbf{Figure B.3.1:} Residual diagnostic plots (Q-Q and residuals vs fitted) for the conviction rate model (PA - Public Defender)
+\end{center}
+
+Figure B.3.1 shows the residual diagnostic plots for the public defender conviction rate model in Pennsylvania. The Q-Q plot shows that most residuals follow close to the reference line, but there is a deviation in the upper tail. The residuals vs fitted plot does not display a clear pattern, with residuals appearing to be scattered around zero across the fitted values. These diagnostics suggest that public defender cases provide a reasonable fit to the data, as there are only minor deviations.
+
+\newpage
+
+__Leave One Out Analysis__
+
+```{r}
+include_graphics("Models/Appendix/PA/PD/[CR]Cooks.png")
+```
+\begin{center}
+\textbf{Figure B.3.2:} Cook’s distance plot for the conviction rate model (PA - Public Defender)
+\end{center}
+
+Figure B.3.2 shows the Cook’s distance plot for the public defender conviction rate model in Pennsylvania. The counties McKean and Monroe exceed Cook's distance threshold, indicating that these observations have a strong influence on the regression estimates. Dauphin County is slightly above the Cook's distance threshold, indicating that these observations have a slightly significant influence on the regression estimates. Despite the presence of these influential observations, the majority of counties fall below the threshold, indicating that most data points do not exert substantial influence on the model.
+
+\newpage
+
+__Other Attorney Types__
+
+Residual diagnostic plots for Pennsylvania across all four attorney types (Public Defender, Private, Court-Appointed, and Self-Represented) are shown in the Appendix (Figures: B.3.1, B.3.3, B.3.5, B.3.7). Overall, the Q-Q plots show that most residuals follow close to the reference line, but there is a deviation in the upper tail for all attorney types. The deviation in the upper tail is more visually evident for the court-appointed and self-represented models, suggesting the presence of some extreme residual values.
+
+Cook’s distance plots for Pennsylvania across all four attorney types (Public Defender, Private, Court-Appointed, and Self-Represented) are shown in the Appendix (Figures: B.3.2, B.3.4, B.3.6, B.3.8). For the private attorney model, Monroe, Adams, Dauphin, and Forest Counties far exceeds Cook's distance threshold, indicating that these observations have a strong influence on the regression estimates.  For the court-appointed model, Cameron far exceeds Cook's distance threshold. For the self-represented model, Berks, Delaware, and Dauphin far exceed Cook's distance threshold. 
+
+The self-represented model shows the most extreme influence patterns with Berks, Delaware, and Dauphin showing much higher Cook’s distance values than other observations. This suggests that the self-represented model is more sensitive to individual counties compared to the other attorney types.
+
+Overall, while the regression models for Pennsylvania appear to be reasonable, there are some concerns related to influential observations and variability across counties. The self-represented attorney type model seems to be the most unstable compared to the other attorney types.
+
+\newpage
+
+__Summary Regression Table__
+
+```{r}
+include_graphics("Models/Appendix/PA/[CR]Regr_Table.png")
+```
+\begin{center}
+\textbf{Figure A.3.1:} Conviction Rate Regression Results by Attorney Type (Pennsylvania)
+\end{center}
+
+Figure A.3.1 shows the regression results for conviction rates across the four attorney types in Pennsylvania. Overall, the explanatory variables show different patterns of association by attorney type.
+
+For public defenders, the Number of Criminal Court Judges shows to be statistically significant ($\beta$ = 0.009, p<0.1). The model’s overall fit remains low with $R^2$ = 0.021. For the private attorney type, Poverty Rate and Number of Criminal Court Judges show to be statistically significant (Poverty Rate: $\beta$ = 0.074, p<0.05, Number of Criminal Court Judges: $\beta$ = 0.013, p<0.01). Compared to the other models, the private attorney model shows the highest explanatory power, although the overall fit is still modest ($R^2$ = 0.131). For the court-appointed attorney type, none of the explanatory variables are statistically significant. The model also shows to be a poor fit with a negative $R^2$ (-0.075). For the self-represented attorney type, the Proportion Hispanic or Latino shows to be statistically significant ($\beta$ = -0.368, p<0.05). However, this model has the smallest sample size and a negative adjusted $R^2$ (-0.029), indicating low explanatory power.
+
+__Model Fit Visualization__
+
+```{r}
+include_graphics("Models/Appendix/PA/[CR]Unemployment_LOESS.png")
+```
+\begin{center}
+\textbf{Figure A.3.2:} Predicted Conviction Rate vs. Unemployment Rate by Attorney Type  (Pennsylvania)
+\end{center}
+
+To further assess model fit, predicted conviction rates were plotted against a key predictor (unemployment rate), alongside the observed county-level values for each attorney type. In these visualizations, the points represent the observed conviction rates, while the smoothed curves reflect the model’s predicted values across the range of the predictor.
+
+Across attorney types, the alignment between observed points and predicted curves is generally weak, consistent with the low $R^2$ values reported in Figure A.3.1. For court-appointed and private counsel the predicted trends are relatively flat and do not closely track the distribution of observed values, suggesting limited explanatory power. The public defender model shows a slightly more visible pattern, with a modest negative relationship between unemployment rate and predicted conviction rate, though much variability remains in the model’s predictions.
+
+For self-represented defendants, the predicted curve exhibits a more pronounced nonlinear pattern, however, the wide spread of observed points, particularly at higher unemployment rates, indicate instability in the model fit. This is further reflected in the large uncertainty and low adjusted $R^2$ for this model.
+
+## Counsel Type Composition Regression
+
+We also found from our exploratory data analysis that the proportional share of legal representation varies systematically across PA, OR, and FL. We will examine in detail the variation in counsel type distribution across counties in Pennsylvania.
+
+\newpage
+
+<!-- ### Pennsylvania  -->
+
+__Residual Diagnostics__
+
+```{r}
+include_graphics("Models/Appendix/PA/[DIR]Resid_Fitted.png")
+
+```
+\begin{center}
+\textbf{Figure C.3.1:} Residual vs. Fitted Plots for Each Counsel Type (Pennsylvania)
+\end{center}
+
+Figure C.3.1 demonstrates that residuals are generally well scattered around 0 across all counsel types, showing no systematic trends or patterns. There are a few fitted values with very high standardized residuals (>4) for appointed counsel and alternative counsel types, which may underline some increased variance in these particular fits.
+
+```{r}
+include_graphics("Models/Appendix/PA/[DIR]QQ.png")
+```
+\begin{center}
+\textbf{Figure C.3.2:} Q-Q Plots for Each Counsel Type (Pennsylvania)
+\end{center}
+
+Figure C.3.2 shows that the public defender and appointed counsel residuals follow the QQ line very closely implying the residuals are all very close to Gaussian. Private counsel shows considerable drift from the Q-Q line particularly for high quantiles, and alternative counsel doesn't look like it follows the Q-Q line at all. There are likely some extreme residual values for these counsel types.
+
+```{r}
+include_graphics("Models/Appendix/PA/[DIR]Fitted_Observed.png")
+```
+\begin{center}
+\textbf{Figure C.3.3:} Fitted vs. Observed Plots for Each Counsel Type (Pennsylvania)
+\end{center}
+
+Figure C.3.3 aligns with our previous analyses, showing that the model's fitted values track pretty well with the observed values for private counsel and public defenders, and there are some very positive outliers for appointed counsel and alternative representation which indicate lower predictive accuracy.
+
+\newpage
+
+__Summary Regression Table__
+
+```{r}
+include_graphics("Models/Appendix/PA/[DIR]Regr_Table.png")
+```
+\begin{center}
+\textbf{Figure A.3.3:} Counsel Type Composition Regression Results (Pennsylvania)
+\end{center}
+
+Figure A.3.3 displays some incredibly notable patterns in the model.
+
+African American population proportion is positively and significantly associated with all four counsel shares. Notably, the magnitude of the coefficients are all similar. Positive, significant, and similar magnitude combine to show us that counties with higher African American populations as a proportion of county population with all other covariates fixed will have a more similar distribution of counsel type, and will converge toward a uniform distribution.
+
+Log population is positively and significantly associated with private counsel, public defenders, and appointed counsel. This suggests that counties with higher population ceteris paribus increasingly concentrate cases between private counsel, public defenders, and court appointed counsel. In other words, while we don't have evidence that the coefficient on the proportional share of alternative representation is positive, we know with significance the coefficient on the primary three representation types is positive, and thus we are sure their compositional share will increase.
+
+Median household income is positively associated with public defender and appointed counsel shares, suggesting that wealthier counties either have better funded public defenders offices and don't rely on appointed counsel as much and/or have clients who can afford to a hire a private attorney. Similarly, high school graduation rate is negatively correlated to a statistically significant level with appointed counsel and public defense as a compositional share of the distribution of defense, suggesting counties with higher educated populations rely less on government funded legal defense.
+
+__Model Fit Visualization__
+
+```{r}
+include_graphics("Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png")
+```
+\begin{center}
+\textbf{Figure C.3.4:} Residual v. Predicted Plots for Public Defender by Select Predictors (Pennsylvania)
+\end{center}
+
+Figure C.3.4 shows the residual vs predictor plots against key covariates for the public defender share of counties in Pennsylvania. See the Appendix (Figure C.3.5, Figure C.3.6, Figure C.3.7) for the residual vs predictor plots for private counsel, appointed counsel, and alternative representation. Overall, the model fit seems reasonable, with there being no systematic patterns in the residuals for any particular covariate. There's a fairly abrupt divergence from the expected 0 residual in unemployment rate around 10% for both public defenders and alternative counsel, which may suggest some nonlinearity in the true relationship, but also may simply be due to sparesness in the data. Taken as a whole, these figures suggest that the each counsel type component of the model is reasonably well specified.
+
+***
+
+# Discussion
+
+Across the three states, counsel type distributions differ markedly. Pennsylvania and Florida share a similar reliance on public defenders, both with medians around 46-47%, while Oregon's public defender median is negligible at just 0.74%, reflecting its state-administered contracting system. Oregon is instead dominated by court-appointed counsel at a median of 76.58%, a category that is relatively rare in both Pennsylvania (6.42%) and Florida (2.9%). Florida stands apart in its high prevalence of self-represented defendants, with a median of 27.12%, compared to near-zero rates in both Pennsylvania (0.03%) and Oregon (0.01%), suggesting that pro se representation is a distinctly Floridian phenomenon. Private counsel is relatively consistent across all three states, with medians of 30.13% (PA), 11.42% (OR), and 13.19% (FL), though Pennsylvania's notably higher rate may reflect its county-funded defense structure leaving more room for private retention.
+
+Looking across all three states, the regression results reveal that no single covariate consistently predicts counsel type distributions, though several noteworthy patterns emerge.
+
+Population is one of the more consistent predictors. In Pennsylvania, log population is positively associated with both court-appointed ($\beta$ = 0.483, p<0.1) and self-represented counsel ($\beta$ = 0.080, p<0.05). In Florida, it is negatively associated with court-appointed ($\beta$ = -0.245, p<0.01) and self-represented counsel ($\beta$ = -0.436, p<0.1), suggesting that the direction of population effects differs by state institutional context. The opposing directions of the population effect across Pennsylvania and Florida likely reflect differences in how each state's justice system scales with county size. In Pennsylvania, more populous counties may have greater court backlogs and resource constraints, pushing more cases toward court-appointed and self-represented outcomes as the system struggles to meet demand. In Florida, the opposite pattern may reflect that larger, more urbanized counties have better-resourced public defender offices and stronger legal aid infrastructure, reducing the need for court-appointed counsel and the likelihood of defendants going unrepresented. In other words, population growth may strain Pennsylvania's county-funded defense system while actually expanding capacity in Florida's more centralized structure.
+
+Racial composition shows some notable effects. In Pennsylvania, the proportion of Native American/Alaskan residents is strongly negatively associated with public defender representation ($\beta$ = -3.901, p<0.01), the largest and most significant coefficient across all models. In Oregon, the proportion of African American residents is negatively associated with private counsel ($\beta$ = -0.162, p<0.1), while the proportion of Hispanic or Latino residents is also negatively associated with private counsel ($\beta$ = -0.011, p<0.1).
+
+Socioeconomic factors produce mixed results. In Pennsylvania, poverty rate is positively associated with self-represented counsel ($\beta$ = 0.018, p<0.1), while the number of full-time prosecutors is negatively associated ($\beta$ = -0.006, p<0.1). In Oregon, unemployment rate is negatively associated with private counsel ($\beta$ = -0.050, p<0.1).
+
+Overall, model fit varies considerably, Oregon's private counsel model performs best (adjusted $R^2$ = 0.485). These results suggest that county-level characteristics alone are insufficient to explain the variation in counsel type distributions across jurisdictions. The inconsistency of predictor effects across states points to the importance of state-level institutional factors — such as how public defense is funded, administered, and structured — as the more fundamental drivers of these patterns. This motivates moving beyond county-level covariates toward a framework that incorporates state-level legal context, defense structures, and system-level resource constraints to better understand what shapes counsel type distributions and defendant outcomes.
+
+Finally, the analysis highlights the importance of broader system-level pressures not captured in the current models. At a minimum, these results motivate the development of a measure of court burdenedness to better quantify how resource constraints may be associated with defendant outcomes. Comparing these relationships across attorney types will help identify whether disparities differ by type of legal representation. While the current analysis focuses on public defender outcomes, extending this framework to appointed counsel and private attorneys will allow for more direct comparisons across representation types.
+
+***
+***
+
+\appendix
+
+# Regression Results
+
+## Florida Regression Results
+
+### Table of Conviction Rate Regression Results by Attorney Type
+
+```{r}
+include_graphics("Models/Appendix/FL/[CR]Regr_Table.png")
+```
+
+### Predicted Conviction Rate vs. Unemploymen Rate by Attorney Type
+
+```{r}
+include_graphics("Models/Appendix/FL/[CR]Unemployment_LOESS.png")
+```
+
+### Table of Counsel Type Percentage Regression Results
+
+```{r}
+include_graphics("Models/Appendix/FL/[DIR]Regr_Table.png")
+```
+
+### Summary Statistics for Counsel Type Composition
+
+```{r}
+#include_graphics("Models/Appendix/FL/Summary_Stats.png")
+data.frame(
+  Stat = c("Min.", "1st Qu.", "Median", "Mean", "3rd Qu.", "Max."),
+  `Public Defender` = c(0, 38.79, 46.13, 43.96, 52.97, 76.66),
+  Private = c(0, 7.92, 13.19, 14.58, 19.16, 52.38),
+  `Court Appointed` = c(0, 1.15, 2.90, 3.88, 5.78, 13.95),
+  `Self-Represented` = c(0, 8.65, 27.12, 23.37, 35.73, 59.47)
+) %>%
+  kable(caption = NULL,
+        digits = 2)
+```
+
+---
+
+## Oregon Regression Results
+
+### Table of Conviction Rate Regression Results by Attorney Type
+
+```{r}
+include_graphics("Models/Appendix/OR/[CR]Regr_Table.png")
+```
+
+### Predicted Conviction Rate vs. Unemploymen Rate by Attorney Type
+
+```{r}
+include_graphics("Models/Appendix/OR/[CR]Unemployment_LOESS.png")
+```
+
+### Table of Counsel Type Percentage Regression Results
+
+```{r}
+include_graphics("Models/Appendix/OR/[DIR]Regr_Table.png")
+```
+
+### Summary Statistics for Counsel Type Composition
+
+```{r, results='asis'}
+# include_graphics("Models/Appendix/OR/Summary_Stats.png")
+data.frame(
+  Stat = c("Min.", "1st Qu.", "Median", "Mean", "3rd Qu.", "Max."),
+  `Public Defender` = c(0, 0.25, 0.74, 4.03, 1.46, 75.81),
+  Private = c(5.5, 8.79, 11.42, 11.40, 13.71, 23.81),
+  `Court Appointed` = c(12.03, 71.1, 76.58, 74.01, 82.5, 88.89),
+  `Self-Represented` = c(0, 0, 0.01, 0.12, 0.05, 1.97)
+) %>%
+  kable(caption = NULL,
+        digits = 2)
+```
+
+---
+
+## Pennsylvania Regression Results
+
+### Table of Conviction Rate Regression Results by Attorney Type
+
+```{r}
+include_graphics("Models/Appendix/PA/[CR]Regr_Table.png")
+```
+
+### Predicted Conviction Rate vs. Unemploymen Rate by Attorney Type
+
+```{r}
+include_graphics("Models/Appendix/PA/[CR]Unemployment_LOESS.png")
+```
+
+### Table of Counsel Type Percentage Regression Results
+
+```{r}
+include_graphics("Models/Appendix/PA/[DIR]Regr_Table.png")
+```
+
+### Summary Statistics for Counsel Type Composition
+
+```{r, results='asis'}
+# include_graphics("Models/Appendix/PA/Summary_Stats.png")
+data.frame(
+  Stat = c("Min.", "1st Qu.", "Median", "Mean", "3rd Qu.", "Max."),
+  `Public Defender` = c(8.87, 42.84, 47.18, 48.10, 56.94, 71.73),
+  Private = c(17.53, 26.04, 30.13, 30.86, 34.67, 46.52),
+  `Court Appointed` = c(0.20, 4.58, 6.42, 7.04, 9.20, 29.44),
+  `Self-Represented` = c(0, 0, 0.03, 0.19, 0.23, 2.88)
+) %>%
+  kable(caption = NULL,
+        digits = 2)
+```
+
+***
+
+# Conviction Rate Models Diagnostic Plots
+
+## Florida
+
+### Q-Q and Residuals v. Fitted Plot for Public Defender Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/FL/PD/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Public Defender Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/FL/PD/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Private Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/FL/P/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Private Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/FL/P/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Appointed Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/FL/AC/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Appointed Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/FL/AC/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Self Represented Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/FL/SR/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Self Represented Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/FL/SR/[CR]Cooks.png")
+```
+
+---
+
+## Oregon
+
+### Q-Q and Residuals v. Fitted Plot for Public Defender Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/OR/PD/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Public Defender Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/OR/PD/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Private Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/OR/P/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Private Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/OR/P/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Appointed Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/OR/AC/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Appointed Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/OR/AC/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Self Represented Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/OR/SR/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Self Represented Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/OR/SR/[CR]Cooks.png")
+```
+
+---
+
+## Pennsylvania
+
+### Q-Q and Residuals v. Fitted Plot for Public Defender Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/PA/PD/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Public Defender Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/PA/PD/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Private Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/PA/P/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Private Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/PA/P/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Appointed Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/PA/AC/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Appointed Counsel Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/PA/AC/[CR]Cooks.png")
+```
+
+### Q-Q and Residuals v. Fitted Plot for Self Represented Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/PA/SR/[CR]QQ_Resid.png")
+```
+
+### Cook's Distance Plot for Self Represented Conviction Rate Model
+```{r}
+include_graphics("Models/Appendix/PA/SR/[CR]Cooks.png")
+```
+
+***
+
+# Compositional Share Counsel Type Models Diagnostic Plots
+
+## Florida
+
+### Residuals v. Fitted Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/FL/[DIR]Resid_Fitted.png")
+```
+
+### Q-Q Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/FL/[DIR]QQ.png")
+```
+
+### Fitted v. Observed Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/FL/[DIR]Fitted_Observed.png")
+```
+
+### Residuals v. Predictor Plots for Public Defender Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png")
+```
+
+### Residuals v. Predictor Plots for Private Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/FL/FL_4_resid_vs_pred_private.png")
+```
+
+### Residuals v. Predictor Plots for Appointed Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png")
+```
+
+### Residuals v. Predictor Plots for Alternative Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png")
+```
+
+---
+
+## Oregon
+
+### Residuals v. Fitted Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/OR/[DIR]Resid_Fitted.png")
+```
+
+### Q-Q Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/OR/[DIR]QQ.png")
+```
+
+### Fitted v. Observed Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/OR/[DIR]Fitted_Observed.png")
+```
+
+### Residuals v. Predictor Plots for Public Defender Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png")
+```
+
+### Residuals v. Predictor Plots for Private Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/OR/OR_4_resid_vs_pred_private.png")
+```
+
+### Residuals v. Predictor Plots for Appointed Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png")
+```
+
+### Residuals v. Predictor Plots for Alternative Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png")
+```
+
+---
+
+## Pennsylvania
+
+### Residuals v. Fitted Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/PA/[DIR]Resid_Fitted.png")
+```
+
+### Q-Q Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/PA/[DIR]QQ.png")
+```
+
+### Fitted v. Observed Plot for Compositional Share Counsel Type Model
+```{r}
+include_graphics("Models/Appendix/PA/[DIR]Fitted_Observed.png")
+```
+
+### Residuals v. Predictor Plots for Public Defender Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png")
+```
+
+### Residuals v. Predictor Plots for Private Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/PA/PA_4_resid_vs_pred_private.png")
+```
+
+### Residuals v. Predictor Plots for Appointed Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png")
+```
+
+### Residuals v. Predictor Plots for Alternative Counsel Share (Counsel Type Model)
+```{r}
+include_graphics("Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png")
+```

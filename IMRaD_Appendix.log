@@ -1,0 +1,1601 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.18)  30 APR 2026 04:33
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**IMRaD_Appendix.tex
+(./IMRaD_Appendix.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-03-20>
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrartcl.cls
+Document Class: scrartcl 2026/02/02 v3.49.2 KOMA-Script document class (article)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hooks)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
+))) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+)) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2026/02/02 v3.49.2 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip49
+\scr@dte@tocline@numbox=\box53
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 141.
+Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input line 2489.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+File: scrsize11pt.clo 2026/02/02 v3.49.2 KOMA-Script font size class option (11pt)
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
+Package: typearea 2026/02/02 v3.49.2 KOMA-Script package (type area)
+\ta@bcor=\skip50
+\ta@div=\count275
+\ta@hblk=\skip51
+\ta@vblk=\skip52
+\ta@temp=\skip53
+\footheight=\skip54
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 17.3562pt
+(typearea)              \oddsidemargin  = 17.3562pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.6pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1810.
+)
+\c@part=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\scr@dte@section@maxnumwidth=\skip55
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\section on input line 5015.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\section on input line 5015.
+\scr@dte@part@maxnumwidth=\skip56
+Class scrartcl Info: using compatibility default `afterindent=false'
+(scrartcl)           for `\part on input line 5023.
+\scr@dte@subsection@maxnumwidth=\skip57
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\subsection on input line 5033.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\subsection on input line 5033.
+\scr@dte@subsubsection@maxnumwidth=\skip58
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\subsubsection on input line 5043.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\subsubsection on input line 5043.
+\scr@dte@paragraph@maxnumwidth=\skip59
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\paragraph on input line 5054.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\paragraph on input line 5054.
+\scr@dte@subparagraph@maxnumwidth=\skip60
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\subparagraph on input line 5064.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\subparagraph on input line 5064.
+\abovecaptionskip=\skip61
+\belowcaptionskip=\skip62
+\c@pti@nb@sid@b@x=\box54
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 6287.
+\scr@dte@figure@maxnumwidth=\skip63
+\c@figure=\count282
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 6299.
+\scr@dte@table@maxnumwidth=\skip64
+\c@table=\count283
+Class scrartcl Info: Redefining `\numberline' on input line 6469.
+\bibindent=\dimen150
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip65
+For additional information on amsmath, use the `?' option.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen151
+)) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen152
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count284
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count285
+\leftroot@=\count286
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count287
+\DOTSCASE@=\count288
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box55
+\strutbox@=\box56
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen153
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count289
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count290
+\dotsspace@=\muskip17
+\c@parentequation=\count291
+\dspbrk@lvl=\count292
+\tag@help=\toks19
+\row@=\count293
+\column@=\count294
+\maxfields@=\count295
+\andhelp@=\toks20
+\eqnshift@=\dimen154
+\alignsep@=\dimen155
+\tagshift@=\dimen156
+\tagwidth@=\dimen157
+\totwidth@=\dimen158
+\lineht@=\dimen159
+\@envbody=\toks21
+\multlinegap=\skip66
+\multlinetaggap=\skip67
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count296
+)
+\MT@toks=\toks25
+\MT@tempbox=\box57
+\MT@count=\count297
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
+LaTeX Info: Redefining \leftprotrusion on input line 1085.
+\MT@prot@toks=\toks26
+LaTeX Info: Redefining \rightprotrusion on input line 1104.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen160
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count298
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2026/03/01 v3.2d Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 944.
+LaTeX Info: Redefining \lslig on input line 944.
+\MT@outer@space=\skip68
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip69
+\LTright=\skip70
+\LTpre=\skip71
+\LTpost=\skip72
+\LTchunksize=\count299
+\LTcapwidth=\dimen161
+\LT@head=\box58
+\LT@firsthead=\box59
+\LT@foot=\box60
+\LT@lastfoot=\box61
+\LT@gbox=\box62
+\LT@cols=\count300
+\LT@rows=\count301
+\c@LT@tables=\count302
+\c@LT@chunks=\count303
+\LT@p@ftn=\toks27
+)
+Class scrartcl Info: longtable captions redefined on input line 42.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen162
+\lightrulewidth=\dimen163
+\cmidrulewidth=\dimen164
+\belowrulesep=\dimen165
+\belowbottomsep=\dimen166
+\aboverulesep=\dimen167
+\abovetopsep=\dimen168
+\cmidrulesep=\dimen169
+\cmidrulekern=\dimen170
+\defaultaddspace=\dimen171
+\@cmidla=\count304
+\@cmidlb=\count305
+\@aboverulesep=\dimen172
+\@belowrulesep=\dimen173
+\@thisruleclass=\count306
+\@lastruleclass=\count307
+\@thisrulewidth=\dimen174
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen175
+\ar@mcellbox=\box63
+\extrarowheight=\dimen176
+\NC@list=\toks28
+\extratabsurround=\skip73
+\backup@length=\skip74
+\ar@cellbox=\box64
+)
+\c@none=\count308
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count309
+\calc@Bcount=\count310
+\calc@Adimen=\dimen177
+\calc@Bdimen=\dimen178
+\calc@Askip=\skip75
+\calc@Bskip=\skip76
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count311
+\calc@Cskip=\skip77
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box65
+\fn@width=\dimen179
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen180
+\Gin@req@width=\dimen181
+)
+\pandoc@box=\box66
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fourier/fourier.sty
+Package: fourier 2024/09/08 2.4 fourier-GUTenberg package
+Now handling font encoding FML ...
+... no UTF-8 mapping file for font encoding FML
+Now handling font encoding FMS ...
+... no UTF-8 mapping file for font encoding FMS
+Now handling font encoding FMX ...
+... no UTF-8 mapping file for font encoding FMX
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+futs on input line 116.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fourier/t1futs.fd
+File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
+)) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fourier/fourier-orns.sty
+Package: fourier-orns 2024/09/08 2.4 fourier-ornaments package
+)
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 64.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 64.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> T1/futs/m/n on input line 64.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 64.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/bx/n --> T1/futs/m/n on input line 64.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  T1/futs/m/n --> T1/futs/b/n on input line 65.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 73.
+LaTeX Font Info:    Encoding `OML' has changed to `FML' for symbol font
+(Font)              `letters' in the math version `normal' on input line 73.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/lmm/m/it --> FML/futmi/m/it on input line 73.
+LaTeX Font Info:    Encoding `OML' has changed to `FML' for symbol font
+(Font)              `letters' in the math version `bold' on input line 73.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/lmm/b/it --> FML/futmi/m/it on input line 73.
+\symotherletters=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  FML/futmi/m/it --> FML/futmi/b/it on input line 75.
+LaTeX Font Info:    Overwriting symbol font `otherletters' in version `bold'
+(Font)                  FML/futm/m/it --> FML/futm/b/it on input line 76.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 80.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 87.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 127.
+LaTeX Font Info:    Encoding `OMS' has changed to `FMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 127.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/lmsy/m/n --> FMS/futm/m/n on input line 127.
+LaTeX Font Info:    Encoding `OMS' has changed to `FMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 127.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/lmsy/b/n --> FMS/futm/m/n on input line 127.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 128.
+LaTeX Font Info:    Encoding `OMX' has changed to `FMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 128.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/lmex/m/n --> FMX/futm/m/n on input line 128.
+LaTeX Font Info:    Encoding `OMX' has changed to `FMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 128.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/lmex/m/n --> FMX/futm/m/n on input line 128.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 129.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> T1/futs/bx/n on input line 129.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/lmr/bx/n --> T1/futs/bx/n on input line 129.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 130.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 131.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> T1/futs/m/it on input line 131.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/bx/it --> T1/futs/m/it on input line 131.
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \leqslant on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 144.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 145.
+LaTeX Font Info:    Redeclaring math symbol \nleqslant on input line 146.
+LaTeX Font Info:    Redeclaring math symbol \ngeqslant on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \parallel on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \nparallel on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 151.
+LaTeX Font Info:    Redeclaring math symbol \intercal on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \hslash on input line 153.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 154.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 156.
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \smallsetminus on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 165.
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 167.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 168.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \blacksquare on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 200.
+LaTeX Font Info:    Redeclaring math symbol \varvarrho on input line 201.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 224.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 229.
+LaTeX Font Info:    Redeclaring math delimiter \lvert on input line 231.
+LaTeX Font Info:    Redeclaring math delimiter \rvert on input line 233.
+LaTeX Font Info:    Redeclaring math delimiter \lVert on input line 235.
+LaTeX Font Info:    Redeclaring math delimiter \rVert on input line 237.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 239.
+LaTeX Font Info:    Redeclaring math delimiter \backslash on input line 241.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 243.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 245.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 247.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 249.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 251.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 253.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 255.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 257.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 261.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 262.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 263.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 264.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 265.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 266.
+LaTeX Font Info:    Redeclaring math accent \check on input line 267.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 268.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 269.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 270.
+\symUfutm=\mathgroup7
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count312
+\l_MT_multwidth_dim=\dimen182
+\origjot=\skip78
+\l_MT_shortvdotswithinadjustabove_dim=\dimen183
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen184
+\l_MT_above_intertext_sep=\dimen185
+\l_MT_below_intertext_sep=\dimen186
+\l_MT_above_shortintertext_sep=\dimen187
+\l_MT_below_shortintertext_sep=\dimen188
+\xmathstrut@box=\box67
+\xmathstrut@dim=\dimen189
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/braket/braket.sty) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+Package: scrlayer-scrpage 2026/02/02 v3.49.2 KOMA-Script package (end user interface for scrlayer)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlayer.sty
+Package: scrlayer 2026/02/02 v3.49.2 KOMA-Script package (defining layers and page styles)
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 2179.
+)
+Package scrlayer-scrpage Info: Makeing stand-alone element `pagehead' from
+(scrlayer-scrpage)             alias to `pageheadfoot' on input line 1106.
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip79
+\multirow@cntb=\count313
+\multirow@dima=\skip80
+\bigstrutjot=\dimen190
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen191
+\WF@size=\dimen192
+\c@WF@wrappedlines=\count314
+\WF@box=\box68
+\WF@everypar=\toks29
+Package: wrapfig 2003/01/31  v 3.6
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count315
+\float@exts=\toks30
+\float@box=\box69
+\@float@everytoks=\toks31
+\@floatcapt=\box70
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+\everycr=\toks32
+\minrowclearance=\skip81
+\rownum=\count316
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PDF (HO)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box71
+\sift@deathcycles=\count317
+\@vwid@loff=\dimen193
+\@vwid@roff=\dimen194
+)
+==> First Aid for varwidth.sty applied!
+\c@taburow=\count318
+\tabu@nbcols=\count319
+\tabu@cnt=\count320
+\tabu@Xcol=\count321
+\tabu@alloc=\count322
+\tabu@nested=\count323
+\tabu@target=\dimen195
+\tabu@spreadtarget=\dimen196
+\tabu@naturalX=\dimen197
+\tabucolX=\dimen198
+\tabu@Xsum=\dimen199
+\extrarowdepth=\dimen256
+\abovetabulinesep=\dimen257
+\belowtabulinesep=\dimen258
+\tabustrutrule=\dimen259
+\tabu@thebody=\toks33
+\tabu@footnotes=\toks34
+\tabu@box=\box72
+\tabu@arstrutbox=\box73
+\tabu@hleads=\box74
+\tabu@vleads=\box75
+\tabu@cellskip=\skip82
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box76
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip83
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box77
+\UL@hyphenbox=\box78
+\UL@skip=\skip84
+\UL@hook=\toks35
+\UL@height=\dimen260
+\UL@pe=\count324
+\UL@pixel=\dimen261
+\ULC@box=\box79
+Package: ulem 2019/11/18
+\ULdepth=\dimen262
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen263
+\c@nlinenum=\count325
+\TeXr@lab=\toks36
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-04-24 v7.01q Hypertext links for LaTeX
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count326
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen264
+\Hy@linkcounter=\count327
+\Hy@pagecounter=\count328
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-04-24 v7.01q Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count329
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-04-24 v7.01q Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4070.
+Package hyperref Info: Hyper figures OFF on input line 4199.
+Package hyperref Info: Link nesting OFF on input line 4204.
+Package hyperref Info: Hyper index ON on input line 4207.
+Package hyperref Info: Plain pages OFF on input line 4214.
+Package hyperref Info: Backreferencing OFF on input line 4219.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4466.
+\c@Hy@tempcnt=\count330
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4805.
+\XeTeXLinkMargin=\dimen265
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count331
+\Field@Width=\dimen266
+\Fld@charsize=\dimen267
+Package hyperref Info: Hyper figures OFF on input line 6091.
+Package hyperref Info: Link nesting OFF on input line 6096.
+Package hyperref Info: Hyper index ON on input line 6099.
+Package hyperref Info: backreferencing OFF on input line 6106.
+Package hyperref Info: Link coloring OFF on input line 6111.
+Package hyperref Info: Link coloring with OCG OFF on input line 6116.
+Package hyperref Info: PDF/A mode OFF on input line 6121.
+\Hy@abspage=\count332
+\c@Item=\count333
+\c@Hfootnote=\count334
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2026-04-24 v7.01q Hyperref driver for pdfTeX
+\Fld@listcount=\count335
+\c@bookmark@seq@number=\count336
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip85
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
+\BKM@id=\count337
+)) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count338
+) (./IMRaD_Appendix.aux)
+\openout1 = `IMRaD_Appendix.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 116.
+LaTeX Font Info:    Trying to load font information for FML+futm on input line 116.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fourier/fmlfutm.fd
+File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
+)
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 116.
+LaTeX Font Info:    Trying to load font information for FMS+futm on input line 116.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fourier/fmsfutm.fd
+File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
+)
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 116.
+LaTeX Font Info:    Trying to load font information for FMX+futm on input line 116.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fourier/fmxfutm.fd
+File: fmxfutm.fd futm-extension
+)
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+Package scrbase Info: activating english \abstractname on input line 116.
+Package scrbase Info: activating english \partname on input line 116.
+Package scrbase Info: activating english \figurename on input line 116.
+Package scrbase Info: activating english \tablename on input line 116.
+Package scrbase Info: activating english \contentsname on input line 116.
+Package scrbase Info: activating english \listfigurename on input line 116.
+Package scrbase Info: activating english \listtablename on input line 116.
+Package scrbase Info: activating english \refname on input line 116.
+Package scrbase Info: activating english \indexname on input line 116.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package microtype Info: Patching varwidth to enable character protrusion.
+\MT@vwid@leftmargin=\dimen268
+\MT@vwid@rightmargin=\dimen269
+LaTeX Info: Redefining \microtypecontext on input line 116.
+Package microtype Info: Applying patch `item' on input line 116.
+Package microtype Info: Applying patch `toc' on input line 116.
+Package microtype Info: Applying patch `eqnum' on input line 116.
+Package microtype Info: Applying patch `footnote' on input line 116.
+Package microtype Info: Applying patch `verbatim' on input line 116.
+LaTeX Info: Redefining \microtypesetup on input line 116.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+Package microtype Info: Patching command `\showhyphens'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `futs' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 116.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 116.
+Package hyperref Info: Link coloring OFF on input line 116.
+LaTeX Font Info:    Trying to load font information for FML+futmi on input line 118.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fourier/fmlfutmi.fd
+File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
+)
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 118.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 118.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 118.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 118.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 118.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 118.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 118.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 118.
+Package tocbasic Info: character protrusion at toc deactivated on input line 124.
+(./IMRaD_Appendix.toc
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 3.
+[1
+
+
+{c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}])
+\tf@toc=\write3
+\openout3 = `IMRaD_Appendix.toc'.
+
+[2] [3]
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 178.
+(c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
+) [4] [5]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 234.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8.3> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 234.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <6> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 234.
+
+Overfull \hbox (31.3833pt too wide) in paragraph at lines 252--261
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6] [7]
+<EDA311.png, id=99, 513.92pt x 308.15125pt>
+File: EDA311.png Graphic file (type png)
+<use EDA311.png>
+Package pdftex.def Info: EDA311.png  used on input line 311.
+(pdftex.def)             Requested size: 418.25555pt x 250.79544pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 311--312
+[] 
+ []
+
+[8]
+<EDA312.png, id=104, 677.53125pt x 376.40625pt>
+File: EDA312.png Graphic file (type png)
+<use EDA312.png>
+Package pdftex.def Info: EDA312.png  used on input line 317.
+(pdftex.def)             Requested size: 418.25555pt x 232.37009pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 317--318
+[] 
+ []
+
+[9 <./EDA311.png>]
+<EDA313.png, id=110, 513.92pt x 308.15125pt>
+File: EDA313.png Graphic file (type png)
+<use EDA313.png>
+Package pdftex.def Info: EDA313.png  used on input line 323.
+(pdftex.def)             Requested size: 418.25555pt x 250.79544pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 323--324
+[] 
+ []
+
+[10 <./EDA312.png>] [11 <./EDA313.png>]
+<Models/Appendix/PA/PD/[CR]QQ_Resid.png, id=122, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/PD/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/PA/PD/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/PA/PD/[CR]QQ_Resid.png  used on input line 335.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 335--336
+[][] 
+ []
+
+[12 <./Models/Appendix/PA/PD/[CR]QQ_Resid.png>]
+<Models/Appendix/PA/PD/[CR]Cooks.png, id=128, 578.16pt x 361.35pt>
+File: Models/Appendix/PA/PD/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/PA/PD/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/PA/PD/[CR]Cooks.png  used on input line 347.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 347--348
+[][] 
+ []
+
+[13 <./Models/Appendix/PA/PD/[CR]Cooks.png>] [14]
+<Models/Appendix/PA/[CR]Regr_Table.png, id=138, 736.7525pt x 804.00375pt>
+File: Models/Appendix/PA/[CR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/PA/[CR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/PA/[CR]Regr_Table.png  used on input line 371.
+(pdftex.def)             Requested size: 418.25555pt x 456.43442pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 371--372
+[][] 
+ []
+
+[15 <./Models/Appendix/PA/[CR]Regr_Table.png>]
+<Models/Appendix/PA/[CR]Unemployment_LOESS.png, id=145, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/[CR]Unemployment_LOESS.png Graphic file (type png)
+<use Models/Appendix/PA/[CR]Unemployment_LOESS.png>
+Package pdftex.def Info: Models/Appendix/PA/[CR]Unemployment_LOESS.png  used on input line 383.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 383--384
+[][] 
+ []
+
+[16 <./Models/Appendix/PA/[CR]Unemployment_LOESS.png>] [17]
+<Models/Appendix/PA/[DIR]Resid_Fitted.png, id=154, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/[DIR]Resid_Fitted.png Graphic file (type png)
+<use Models/Appendix/PA/[DIR]Resid_Fitted.png>
+Package pdftex.def Info: Models/Appendix/PA/[DIR]Resid_Fitted.png  used on input line 403.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 403--404
+[][] 
+ []
+
+<Models/Appendix/PA/[DIR]QQ.png, id=155, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/[DIR]QQ.png Graphic file (type png)
+<use Models/Appendix/PA/[DIR]QQ.png>
+Package pdftex.def Info: Models/Appendix/PA/[DIR]QQ.png  used on input line 411.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 411--412
+[][] 
+ []
+
+[18 <./Models/Appendix/PA/[DIR]Resid_Fitted.png>]
+<Models/Appendix/PA/[DIR]Fitted_Observed.png, id=162, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/[DIR]Fitted_Observed.png Graphic file (type png)
+<use Models/Appendix/PA/[DIR]Fitted_Observed.png>
+Package pdftex.def Info: Models/Appendix/PA/[DIR]Fitted_Observed.png  used on input line 419.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 419--420
+[][] 
+ []
+
+[19 <./Models/Appendix/PA/[DIR]QQ.png>] [20 <./Models/Appendix/PA/[DIR]Fitted_Observed.png>]
+<Models/Appendix/PA/[DIR]Regr_Table.png, id=174, 659.46375pt x 401.5pt>
+File: Models/Appendix/PA/[DIR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/PA/[DIR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/PA/[DIR]Regr_Table.png  used on input line 431.
+(pdftex.def)             Requested size: 418.25555pt x 254.64946pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 431--432
+[][] 
+ []
+
+[21 <./Models/Appendix/PA/[DIR]Regr_Table.png>]
+<Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png, id=180, 578.16pt x 578.16pt>
+File: Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png Graphic file (type png)
+<use Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png>
+Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png  used on input line 447.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 447--448
+[][] 
+ []
+
+[22 <./Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png>] [23]
+<Models/Appendix/FL/[CR]Regr_Table.png, id=190, 731.73375pt x 694.595pt>
+File: Models/Appendix/FL/[CR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/FL/[CR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/FL/[CR]Regr_Table.png  used on input line 485.
+(pdftex.def)             Requested size: 418.25555pt x 397.02553pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 485--486
+[] 
+ []
+
+[24]
+<Models/Appendix/FL/[CR]Unemployment_LOESS.png, id=195, 722.7pt x 578.16pt>
+File: Models/Appendix/FL/[CR]Unemployment_LOESS.png Graphic file (type png)
+<use Models/Appendix/FL/[CR]Unemployment_LOESS.png>
+Package pdftex.def Info: Models/Appendix/FL/[CR]Unemployment_LOESS.png  used on input line 489.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 489--490
+[] 
+ []
+
+[25 <./Models/Appendix/FL/[CR]Regr_Table.png>]
+<Models/Appendix/FL/[DIR]Regr_Table.png, id=203, 653.44125pt x 401.5pt>
+File: Models/Appendix/FL/[DIR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/FL/[DIR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/FL/[DIR]Regr_Table.png  used on input line 493.
+(pdftex.def)             Requested size: 418.25555pt x 256.98975pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 493--494
+[] 
+ []
+
+[26 <./Models/Appendix/FL/[CR]Unemployment_LOESS.png>]
+<Models/Appendix/OR/[CR]Regr_Table.png, id=209, 735.74875pt x 647.41875pt>
+File: Models/Appendix/OR/[CR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/OR/[CR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/OR/[CR]Regr_Table.png  used on input line 521.
+(pdftex.def)             Requested size: 418.25555pt x 368.05452pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 521--522
+[] 
+ []
+
+[27 <./Models/Appendix/FL/[DIR]Regr_Table.png>]
+<Models/Appendix/OR/[CR]Unemployment_LOESS.png, id=217, 722.7pt x 578.16pt>
+File: Models/Appendix/OR/[CR]Unemployment_LOESS.png Graphic file (type png)
+<use Models/Appendix/OR/[CR]Unemployment_LOESS.png>
+Package pdftex.def Info: Models/Appendix/OR/[CR]Unemployment_LOESS.png  used on input line 525.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 525--526
+[] 
+ []
+
+[28 <./Models/Appendix/OR/[CR]Regr_Table.png>]
+<Models/Appendix/OR/[DIR]Regr_Table.png, id=224, 612.2875pt x 329.23pt>
+File: Models/Appendix/OR/[DIR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/OR/[DIR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/OR/[DIR]Regr_Table.png  used on input line 529.
+(pdftex.def)             Requested size: 418.25555pt x 224.89825pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 529--530
+[] 
+ []
+
+[29 <./Models/Appendix/OR/[CR]Unemployment_LOESS.png>]
+File: Models/Appendix/PA/[CR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/PA/[CR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/PA/[CR]Regr_Table.png  used on input line 557.
+(pdftex.def)             Requested size: 418.25555pt x 456.43442pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 557--558
+[] 
+ []
+
+[30 <./Models/Appendix/OR/[DIR]Regr_Table.png>]
+File: Models/Appendix/PA/[CR]Unemployment_LOESS.png Graphic file (type png)
+<use Models/Appendix/PA/[CR]Unemployment_LOESS.png>
+Package pdftex.def Info: Models/Appendix/PA/[CR]Unemployment_LOESS.png  used on input line 561.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 561--562
+[] 
+ []
+
+[31]
+File: Models/Appendix/PA/[DIR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/PA/[DIR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/PA/[DIR]Regr_Table.png  used on input line 565.
+(pdftex.def)             Requested size: 418.25555pt x 254.64946pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 565--566
+[] 
+ []
+
+[32]
+<Models/Appendix/FL/PD/[CR]QQ_Resid.png, id=248, 722.7pt x 578.16pt>
+File: Models/Appendix/FL/PD/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/FL/PD/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/FL/PD/[CR]QQ_Resid.png  used on input line 595.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 595--596
+[] 
+ []
+
+[33]
+<Models/Appendix/FL/PD/[CR]Cooks.png, id=255, 578.16pt x 361.35pt>
+File: Models/Appendix/FL/PD/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/FL/PD/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/FL/PD/[CR]Cooks.png  used on input line 599.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 599--600
+[] 
+ []
+
+[34 <./Models/Appendix/FL/PD/[CR]QQ_Resid.png>]
+<Models/Appendix/FL/P/[CR]QQ_Resid.png, id=262, 722.7pt x 578.16pt>
+File: Models/Appendix/FL/P/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/FL/P/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/FL/P/[CR]QQ_Resid.png  used on input line 603.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 603--604
+[] 
+ []
+
+[35 <./Models/Appendix/FL/PD/[CR]Cooks.png>]
+<Models/Appendix/FL/P/[CR]Cooks.png, id=268, 578.16pt x 361.35pt>
+File: Models/Appendix/FL/P/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/FL/P/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/FL/P/[CR]Cooks.png  used on input line 607.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 607--608
+[] 
+ []
+
+[36 <./Models/Appendix/FL/P/[CR]QQ_Resid.png>]
+<Models/Appendix/FL/AC/[CR]QQ_Resid.png, id=275, 722.7pt x 578.16pt>
+File: Models/Appendix/FL/AC/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/FL/AC/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/FL/AC/[CR]QQ_Resid.png  used on input line 611.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 611--612
+[] 
+ []
+
+[37 <./Models/Appendix/FL/P/[CR]Cooks.png>]
+<Models/Appendix/FL/AC/[CR]Cooks.png, id=282, 578.16pt x 361.35pt>
+File: Models/Appendix/FL/AC/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/FL/AC/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/FL/AC/[CR]Cooks.png  used on input line 615.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 615--616
+[] 
+ []
+
+[38 <./Models/Appendix/FL/AC/[CR]QQ_Resid.png>]
+<Models/Appendix/FL/SR/[CR]QQ_Resid.png, id=289, 722.7pt x 578.16pt>
+File: Models/Appendix/FL/SR/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/FL/SR/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/FL/SR/[CR]QQ_Resid.png  used on input line 619.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 619--620
+[] 
+ []
+
+[39 <./Models/Appendix/FL/AC/[CR]Cooks.png>]
+<Models/Appendix/FL/SR/[CR]Cooks.png, id=295, 578.16pt x 361.35pt>
+File: Models/Appendix/FL/SR/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/FL/SR/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/FL/SR/[CR]Cooks.png  used on input line 623.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 623--624
+[] 
+ []
+
+[40 <./Models/Appendix/FL/SR/[CR]QQ_Resid.png>]
+<Models/Appendix/OR/PD/[CR]QQ_Resid.png, id=302, 722.7pt x 578.16pt>
+File: Models/Appendix/OR/PD/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/OR/PD/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/OR/PD/[CR]QQ_Resid.png  used on input line 631.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 631--632
+[] 
+ []
+
+[41 <./Models/Appendix/FL/SR/[CR]Cooks.png>]
+<Models/Appendix/OR/PD/[CR]Cooks.png, id=308, 578.16pt x 361.35pt>
+File: Models/Appendix/OR/PD/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/OR/PD/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/OR/PD/[CR]Cooks.png  used on input line 635.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 635--636
+[] 
+ []
+
+[42 <./Models/Appendix/OR/PD/[CR]QQ_Resid.png>]
+<Models/Appendix/OR/P/[CR]QQ_Resid.png, id=316, 722.7pt x 578.16pt>
+File: Models/Appendix/OR/P/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/OR/P/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/OR/P/[CR]QQ_Resid.png  used on input line 639.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 639--640
+[] 
+ []
+
+[43 <./Models/Appendix/OR/PD/[CR]Cooks.png>]
+<Models/Appendix/OR/P/[CR]Cooks.png, id=323, 578.16pt x 361.35pt>
+File: Models/Appendix/OR/P/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/OR/P/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/OR/P/[CR]Cooks.png  used on input line 643.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 643--644
+[] 
+ []
+
+[44 <./Models/Appendix/OR/P/[CR]QQ_Resid.png>]
+<Models/Appendix/OR/AC/[CR]QQ_Resid.png, id=330, 722.7pt x 578.16pt>
+File: Models/Appendix/OR/AC/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/OR/AC/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/OR/AC/[CR]QQ_Resid.png  used on input line 647.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 647--648
+[] 
+ []
+
+[45 <./Models/Appendix/OR/P/[CR]Cooks.png>]
+<Models/Appendix/OR/AC/[CR]Cooks.png, id=336, 578.16pt x 361.35pt>
+File: Models/Appendix/OR/AC/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/OR/AC/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/OR/AC/[CR]Cooks.png  used on input line 651.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 651--652
+[] 
+ []
+
+[46 <./Models/Appendix/OR/AC/[CR]QQ_Resid.png>]
+<Models/Appendix/OR/SR/[CR]QQ_Resid.png, id=343, 722.7pt x 578.16pt>
+File: Models/Appendix/OR/SR/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/OR/SR/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/OR/SR/[CR]QQ_Resid.png  used on input line 655.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 655--656
+[] 
+ []
+
+[47 <./Models/Appendix/OR/AC/[CR]Cooks.png>]
+<Models/Appendix/OR/SR/[CR]Cooks.png, id=349, 578.16pt x 361.35pt>
+File: Models/Appendix/OR/SR/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/OR/SR/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/OR/SR/[CR]Cooks.png  used on input line 659.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 659--660
+[] 
+ []
+
+[48 <./Models/Appendix/OR/SR/[CR]QQ_Resid.png>]
+File: Models/Appendix/PA/PD/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/PA/PD/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/PA/PD/[CR]QQ_Resid.png  used on input line 667.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 667--668
+[] 
+ []
+
+[49 <./Models/Appendix/OR/SR/[CR]Cooks.png>]
+File: Models/Appendix/PA/PD/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/PA/PD/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/PA/PD/[CR]Cooks.png  used on input line 671.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 671--672
+[] 
+ []
+
+[50]
+<Models/Appendix/PA/P/[CR]QQ_Resid.png, id=367, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/P/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/PA/P/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/PA/P/[CR]QQ_Resid.png  used on input line 675.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 675--676
+[] 
+ []
+
+[51]
+<Models/Appendix/PA/P/[CR]Cooks.png, id=373, 578.16pt x 361.35pt>
+File: Models/Appendix/PA/P/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/PA/P/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/PA/P/[CR]Cooks.png  used on input line 679.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 679--680
+[] 
+ []
+
+[52 <./Models/Appendix/PA/P/[CR]QQ_Resid.png>]
+<Models/Appendix/PA/AC/[CR]QQ_Resid.png, id=380, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/AC/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/PA/AC/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/PA/AC/[CR]QQ_Resid.png  used on input line 683.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 683--684
+[] 
+ []
+
+[53 <./Models/Appendix/PA/P/[CR]Cooks.png>]
+<Models/Appendix/PA/AC/[CR]Cooks.png, id=386, 578.16pt x 361.35pt>
+File: Models/Appendix/PA/AC/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/PA/AC/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/PA/AC/[CR]Cooks.png  used on input line 687.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 687--688
+[] 
+ []
+
+[54 <./Models/Appendix/PA/AC/[CR]QQ_Resid.png>]
+<Models/Appendix/PA/SR/[CR]QQ_Resid.png, id=393, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/SR/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/PA/SR/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/PA/SR/[CR]QQ_Resid.png  used on input line 691.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 691--692
+[] 
+ []
+
+[55 <./Models/Appendix/PA/AC/[CR]Cooks.png>]
+<Models/Appendix/PA/SR/[CR]Cooks.png, id=400, 578.16pt x 361.35pt>
+File: Models/Appendix/PA/SR/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/PA/SR/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/PA/SR/[CR]Cooks.png  used on input line 695.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 695--696
+[] 
+ []
+
+[56 <./Models/Appendix/PA/SR/[CR]QQ_Resid.png>]
+<Models/Appendix/FL/[DIR]Resid_Fitted.png, id=407, 722.7pt x 578.16pt>
+File: Models/Appendix/FL/[DIR]Resid_Fitted.png Graphic file (type png)
+<use Models/Appendix/FL/[DIR]Resid_Fitted.png>
+Package pdftex.def Info: Models/Appendix/FL/[DIR]Resid_Fitted.png  used on input line 705.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 705--706
+[] 
+ []
+
+[57 <./Models/Appendix/PA/SR/[CR]Cooks.png>]
+<Models/Appendix/FL/[DIR]QQ.png, id=413, 722.7pt x 578.16pt>
+File: Models/Appendix/FL/[DIR]QQ.png Graphic file (type png)
+<use Models/Appendix/FL/[DIR]QQ.png>
+Package pdftex.def Info: Models/Appendix/FL/[DIR]QQ.png  used on input line 709.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 709--710
+[] 
+ []
+
+[58 <./Models/Appendix/FL/[DIR]Resid_Fitted.png>]
+<Models/Appendix/FL/[DIR]Fitted_Observed.png, id=420, 722.7pt x 578.16pt>
+File: Models/Appendix/FL/[DIR]Fitted_Observed.png Graphic file (type png)
+<use Models/Appendix/FL/[DIR]Fitted_Observed.png>
+Package pdftex.def Info: Models/Appendix/FL/[DIR]Fitted_Observed.png  used on input line 713.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 713--714
+[] 
+ []
+
+[59 <./Models/Appendix/FL/[DIR]QQ.png>]
+<Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png, id=427, 578.16pt x 578.16pt>
+File: Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png Graphic file (type png)
+<use Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png>
+Package pdftex.def Info: Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png  used on input line 717.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 717--718
+[] 
+ []
+
+[60 <./Models/Appendix/FL/[DIR]Fitted_Observed.png>]
+<Models/Appendix/FL/FL_4_resid_vs_pred_private.png, id=434, 578.16pt x 578.16pt>
+File: Models/Appendix/FL/FL_4_resid_vs_pred_private.png Graphic file (type png)
+<use Models/Appendix/FL/FL_4_resid_vs_pred_private.png>
+Package pdftex.def Info: Models/Appendix/FL/FL_4_resid_vs_pred_private.png  used on input line 721.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 721--722
+[] 
+ []
+
+[61 <./Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png>]
+<Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png, id=442, 578.16pt x 578.16pt>
+File: Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png Graphic file (type png)
+<use Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png>
+Package pdftex.def Info: Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png  used on input line 725.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 725--726
+[] 
+ []
+
+[62 <./Models/Appendix/FL/FL_4_resid_vs_pred_private.png>]
+<Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png, id=449, 578.16pt x 578.16pt>
+File: Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png Graphic file (type png)
+<use Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png>
+Package pdftex.def Info: Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png  used on input line 729.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 729--730
+[] 
+ []
+
+[63 <./Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png>]
+<Models/Appendix/OR/[DIR]Resid_Fitted.png, id=456, 722.7pt x 578.16pt>
+File: Models/Appendix/OR/[DIR]Resid_Fitted.png Graphic file (type png)
+<use Models/Appendix/OR/[DIR]Resid_Fitted.png>
+Package pdftex.def Info: Models/Appendix/OR/[DIR]Resid_Fitted.png  used on input line 737.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 737--738
+[] 
+ []
+
+[64 <./Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png>]
+<Models/Appendix/OR/[DIR]QQ.png, id=463, 722.7pt x 578.16pt>
+File: Models/Appendix/OR/[DIR]QQ.png Graphic file (type png)
+<use Models/Appendix/OR/[DIR]QQ.png>
+Package pdftex.def Info: Models/Appendix/OR/[DIR]QQ.png  used on input line 741.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 741--742
+[] 
+ []
+
+[65 <./Models/Appendix/OR/[DIR]Resid_Fitted.png>]
+<Models/Appendix/OR/[DIR]Fitted_Observed.png, id=470, 722.7pt x 578.16pt>
+File: Models/Appendix/OR/[DIR]Fitted_Observed.png Graphic file (type png)
+<use Models/Appendix/OR/[DIR]Fitted_Observed.png>
+Package pdftex.def Info: Models/Appendix/OR/[DIR]Fitted_Observed.png  used on input line 745.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 745--746
+[] 
+ []
+
+[66 <./Models/Appendix/OR/[DIR]QQ.png>]
+<Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png, id=478, 578.16pt x 578.16pt>
+File: Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png Graphic file (type png)
+<use Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png>
+Package pdftex.def Info: Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png  used on input line 749.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 749--750
+[] 
+ []
+
+[67 <./Models/Appendix/OR/[DIR]Fitted_Observed.png>]
+<Models/Appendix/OR/OR_4_resid_vs_pred_private.png, id=486, 578.16pt x 578.16pt>
+File: Models/Appendix/OR/OR_4_resid_vs_pred_private.png Graphic file (type png)
+<use Models/Appendix/OR/OR_4_resid_vs_pred_private.png>
+Package pdftex.def Info: Models/Appendix/OR/OR_4_resid_vs_pred_private.png  used on input line 753.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 753--754
+[] 
+ []
+
+[68 <./Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png>]
+<Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png, id=493, 578.16pt x 578.16pt>
+File: Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png Graphic file (type png)
+<use Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png>
+Package pdftex.def Info: Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png  used on input line 757.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 757--758
+[] 
+ []
+
+[69 <./Models/Appendix/OR/OR_4_resid_vs_pred_private.png>]
+<Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png, id=500, 578.16pt x 578.16pt>
+File: Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png Graphic file (type png)
+<use Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png>
+Package pdftex.def Info: Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png  used on input line 761.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 761--762
+[] 
+ []
+
+[70 <./Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png>]
+File: Models/Appendix/PA/[DIR]Resid_Fitted.png Graphic file (type png)
+<use Models/Appendix/PA/[DIR]Resid_Fitted.png>
+Package pdftex.def Info: Models/Appendix/PA/[DIR]Resid_Fitted.png  used on input line 769.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 769--770
+[] 
+ []
+
+[71 <./Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png>]
+File: Models/Appendix/PA/[DIR]QQ.png Graphic file (type png)
+<use Models/Appendix/PA/[DIR]QQ.png>
+Package pdftex.def Info: Models/Appendix/PA/[DIR]QQ.png  used on input line 773.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 773--774
+[] 
+ []
+
+[72]
+File: Models/Appendix/PA/[DIR]Fitted_Observed.png Graphic file (type png)
+<use Models/Appendix/PA/[DIR]Fitted_Observed.png>
+Package pdftex.def Info: Models/Appendix/PA/[DIR]Fitted_Observed.png  used on input line 777.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 777--778
+[] 
+ []
+
+[73]
+File: Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png Graphic file (type png)
+<use Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png>
+Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png  used on input line 781.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 781--782
+[] 
+ []
+
+[74]
+<Models/Appendix/PA/PA_4_resid_vs_pred_private.png, id=529, 578.16pt x 578.16pt>
+File: Models/Appendix/PA/PA_4_resid_vs_pred_private.png Graphic file (type png)
+<use Models/Appendix/PA/PA_4_resid_vs_pred_private.png>
+Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_private.png  used on input line 785.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 785--786
+[] 
+ []
+
+[75]
+<Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png, id=535, 578.16pt x 578.16pt>
+File: Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png Graphic file (type png)
+<use Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png>
+Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png  used on input line 789.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 789--790
+[] 
+ []
+
+[76 <./Models/Appendix/PA/PA_4_resid_vs_pred_private.png>]
+<Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png, id=542, 578.16pt x 578.16pt>
+File: Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png Graphic file (type png)
+<use Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png>
+Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png  used on input line 793.
+(pdftex.def)             Requested size: 418.25555pt x 418.251pt.
+
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 793--794
+[] 
+ []
+
+[77 <./Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png>] [78 <./Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png>] (./IMRaD_Appendix.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-03-20>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 20982 strings out of 469278
+ 412981 string characters out of 5462733
+ 974906 words of memory out of 5000000
+ 49043 multiletter control sequences out of 15000+600000
+ 741741 words of font info for 335 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 108i,20n,107p,11236b,670s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-mlitb.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on IMRaD_Appendix.pdf (78 pages, 1887642 bytes).
+PDF statistics:
+ 709 PDF objects out of 1000 (max. 8388607)
+ 508 compressed objects within 6 object streams
+ 171 named destinations out of 1000 (max. 500000)
+ 66014 words of extra memory for PDF output out of 74296 (max. 10000000)
+
