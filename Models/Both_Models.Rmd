@@ -139,52 +139,214 @@ summary(mod_dir_FL)
 Saves one HTML regression table per state to `Appendix/{STATE}/[DIR]Regr_Table.html`.
 
 ```{r dir-regr-tables}
-# Captures the console output of summary(model) and wraps it in a minimal
-# self-contained HTML file.  DirichletReg stores its coefficient matrices
-# inside the printed summary rather than in a cleanly-accessible list slot,
-# so capturing the text output is the most robust approach.
-save_dir_regr_table <- function(model, state_label, appendix_root = "Appendix") {
+# # Captures the console output of summary(model) and wraps it in a minimal
+# # self-contained HTML file.  DirichletReg stores its coefficient matrices
+# # inside the printed summary rather than in a cleanly-accessible list slot,
+# # so capturing the text output is the most robust approach.
+# save_dir_regr_table <- function(model, state_label, appendix_root = "Appendix") {
+#   out_dir  <- file.path(appendix_root, state_label)
+#   dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+#   out_path <- file.path(out_dir, "[DIR]Regr_Table.html")
+# 
+#   # Capture the full printed summary as a character vector
+#   summary_text <- paste(capture.output(summary(model)), collapse = "\n")
+# 
+#   html <- sprintf('<!DOCTYPE html>
+# <html>
+# <head>
+#   <meta charset="UTF-8">
+#   <title>Dirichlet Regression Results — %s</title>
+#   <style>
+#     body { font-family: monospace; font-size: 13px; margin: 20px; background: #fff; }
+#     h2   { font-family: Arial, sans-serif; color: #3949ab; }
+#     pre  { background: #f5f5f5; padding: 16px; border-radius: 4px;
+#            border: 1px solid #ddd; white-space: pre; overflow-x: auto; }
+#     p.note { font-family: Arial, sans-serif; font-size: 11px; color: #555; }
+#   </style>
+# </head>
+# <body>
+#   <h2>Dirichlet Regression Results — %s</h2>
+#   <pre>%s</pre>
+#   <p class="note">Significance: *** p &lt; 0.001 &nbsp; ** p &lt; 0.01 &nbsp; * p &lt; 0.05 &nbsp; . p &lt; 0.1</p>
+# </body>
+# </html>',
+#   state_label, state_label,
+#   # Escape any HTML special characters in the summary text
+#   gsub("&", "&amp;",
+#     gsub("<", "&lt;",
+#       gsub(">", "&gt;", summary_text))))
+# 
+#   writeLines(html, out_path)
+#   message("Saved: ", out_path)
+#   invisible(out_path)
+# }
+# 
+# # --- Run for each state ---
+# save_dir_regr_table(mod_dir_PA, "PA")
+# save_dir_regr_table(mod_dir_OR, "OR")
+# save_dir_regr_table(mod_dir_FL, "FL")
+
+save_dir_regr_table <- function(model, state_label, state_name, appendix_root = "Appendix") {
+
+  # ── 1. Build flat vectors then slice by category ───────────────────────────
+  coefs  <- model$coefficients
+  ses    <- model$se
+  z_vals <- coefs / ses
+  p_vals <- 2 * pnorm(-abs(z_vals))
+  names(coefs) <- names(ses) <- names(z_vals) <- names(p_vals) <- model$coefnames
+
+  cats   <- model$varnames
+  n_cats <- length(cats)
+  ends   <- cumsum(model$n.vars)
+  starts <- c(1L, ends[-length(ends)] + 1L)
+
+  coef_list <- lapply(seq_len(n_cats), function(i) {
+    idx <- seq.int(starts[i], ends[i])
+    m   <- cbind(Estimate = coefs[idx], SE = ses[idx],
+                 z = z_vals[idx], p = p_vals[idx])
+    rownames(m) <- sub("^[^:]+:", "", rownames(m))
+    m
+  })
+  names(coef_list) <- cats
+
+  covar_names <- rownames(coef_list[[1]])
+
+  # ── 2. Label lookup maps ───────────────────────────────────────────────────
+  col_labels <- c(
+    private           = "Private",
+    public_defender   = "Public Defender",
+    appointed_counsel = "Appointed Counsel",
+    alternative       = "Alternative"
+  )
+
+  row_labels <- c(
+    "(Intercept)"                = "Constant",
+    "Log.pop"                    = "Log Population",
+    "Urban.Population"           = "Urban Population",
+    "Below.Poverty.Line"         = "Below Poverty Line",
+    "Unemployment.Rate"          = "Unemployment Rate",
+    "Median.Household.Income"    = "Median Household Income ($1,000s)",
+    "High.School.Graduates"      = "High School Graduates",
+    "African.American.Population"= "African American Population"
+  )
+
+  # ── 3. Scale Median Household Income by 1000 ──────────────────────────────
+  mhi <- "Median.Household.Income"
+  for (cat in cats) {
+    if (mhi %in% rownames(coef_list[[cat]])) {
+      coef_list[[cat]][mhi, "Estimate"] <- coef_list[[cat]][mhi, "Estimate"] * 1000
+      coef_list[[cat]][mhi, "SE"]       <- coef_list[[cat]][mhi, "SE"]       * 1000
+    }
+  }
+
+  # ── 4. Star helper ─────────────────────────────────────────────────────────
+  stars <- function(p) {
+    if      (p < 0.001) "***"
+    else if (p < 0.01)  "**"
+    else if (p < 0.05)  "*"
+    else if (p < 0.1)   "."
+    else                ""
+  }
+
+  # ── 5. Build HTML table ────────────────────────────────────────────────────
+  th <- function(x, align = "center")
+    sprintf('<th style="text-align:%s;padding:5px 14px;border-bottom:2px solid #333;">%s</th>', align, x)
+  td <- function(x, style = "")
+    sprintf('<td style="text-align:center;padding:3px 14px;%s">%s</td>', style, x)
+  td_label <- function(x, indent = FALSE) {
+    pad <- if (indent) "padding:2px 14px 2px 14px;color:#444;" else "padding:3px 14px;"
+    sprintf('<td style="text-align:left;%swhite-space:nowrap;">%s</td>', pad, x)
+  }
+
+  sig_style <- "background-color:#ffd700;font-weight:bold;"
+  se_style  <- "color:#666;font-size:0.95em;"
+
+  display_cats <- sapply(cats, function(c) col_labels[c])
+
+  header <- paste0(
+    "<tr>",
+    th("", "left"),
+    paste(sapply(display_cats, th), collapse = ""),
+    "</tr>"
+  )
+
+  body <- paste(sapply(covar_names, function(v) {
+    label <- if (!is.na(row_labels[v])) row_labels[v] else v
+
+    est_cells <- paste(sapply(cats, function(cat) {
+      m   <- coef_list[[cat]]
+      s   <- stars(m[v, "p"])
+      val <- sprintf("%.3f%s", m[v, "Estimate"], s)
+      td(val, if (s != "") sig_style else "")
+    }), collapse = "")
+
+    se_cells <- paste(sapply(cats, function(cat) {
+      td(sprintf("(%.3f)", coef_list[[cat]][v, "SE"]), se_style)
+    }), collapse = "")
+
+    paste0(
+      "<tr>", td_label(label),   est_cells, "</tr>\n",
+      "<tr>", td_label("", TRUE), se_cells,  "</tr>"
+    )
+  }), collapse = "\n")
+
+  # Observations and Log Likelihood footer rows
+  n_obs   <- nrow(model$data)
+  log_lik <- round(as.numeric(logLik(model)), 2)
+
+  footer <- paste0(
+    '<tr style="border-top:2px solid #333;">',
+    td_label("Observations"),
+    paste(rep(td(n_obs), n_cats), collapse = ""),
+    "</tr>\n",
+    "<tr>",
+    td_label("Log Likelihood"),
+    paste(rep(td(log_lik), n_cats), collapse = ""),
+    "</tr>"
+  )
+
+  # ── 6. Write file ──────────────────────────────────────────────────────────
   out_dir  <- file.path(appendix_root, state_label)
   dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
   out_path <- file.path(out_dir, "[DIR]Regr_Table.html")
 
-  # Capture the full printed summary as a character vector
-  summary_text <- paste(capture.output(summary(model)), collapse = "\n")
-
-  html <- sprintf('<!DOCTYPE html>
+  writeLines(sprintf('<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Dirichlet Regression Results — %s</title>
+  <title>Dirichlet Regression — %s</title>
   <style>
-    body { font-family: monospace; font-size: 13px; margin: 20px; background: #fff; }
-    h2   { font-family: Arial, sans-serif; color: #3949ab; }
-    pre  { background: #f5f5f5; padding: 16px; border-radius: 4px;
-           border: 1px solid #ddd; white-space: pre; overflow-x: auto; }
-    p.note { font-family: Arial, sans-serif; font-size: 11px; color: #555; }
+    body  { font-family: Georgia, serif; font-size: 13px; margin: 2em; }
+    h2    { font-family: Arial, sans-serif; font-size: 15px; font-weight: normal; margin-bottom: 0.5em; }
+    table { border-collapse: collapse; }
+    tr:nth-child(odd)  { background-color: #fafafa; }
+    tr:nth-child(even) { background-color: #ffffff; }
+    td[style*="ffd700"] { background-color: #ffd700 !important; }
+    p.note { font-size: 11px; color: #333; margin-top: 0.5em; font-family: Georgia, serif; }
   </style>
 </head>
 <body>
-  <h2>Dirichlet Regression Results — %s</h2>
-  <pre>%s</pre>
-  <p class="note">Significance: *** p &lt; 0.001 &nbsp; ** p &lt; 0.01 &nbsp; * p &lt; 0.05 &nbsp; . p &lt; 0.1</p>
+  <h2>Dirichlet Regression Results by Attorney Type (%s)</h2>
+  <table>
+    <thead>%s</thead>
+    <tbody>%s
+    %s</tbody>
+  </table>
+  <p class="note"><em>Note:</em> &nbsp;
+    <sup>*</sup>p&lt;0.1; <sup>**</sup>p&lt;0.05; <sup>***</sup>p&lt;0.01.
+    Standard errors in parentheses.
+  </p>
 </body>
-</html>',
-  state_label, state_label,
-  # Escape any HTML special characters in the summary text
-  gsub("&", "&amp;",
-    gsub("<", "&lt;",
-      gsub(">", "&gt;", summary_text))))
+</html>', state_label, state_name, header, body, footer),
+  out_path)
 
-  writeLines(html, out_path)
   message("Saved: ", out_path)
   invisible(out_path)
 }
 
-# --- Run for each state ---
-save_dir_regr_table(mod_dir_PA, "PA")
-save_dir_regr_table(mod_dir_OR, "OR")
-save_dir_regr_table(mod_dir_FL, "FL")
+save_dir_regr_table(mod_dir_PA, "PA", "Pennsylvania")
+save_dir_regr_table(mod_dir_OR, "OR", "Oregon")
+save_dir_regr_table(mod_dir_FL, "FL", "Florida")
 ```
 
 ## Diagnostic Plots → `[DIR]` files
