@@ -266,6 +266,19 @@ After conducting EDA, we found that the conviction rate varies systematically ac
 
 <!-- ### Pennsylvania - Public Defender Detailed Analysis -->
 
+__Summary Regression Table__
+
+```{r}
+include_graphics("Models/Appendix/PA/[CR]Regr_Table.png")
+```
+\begin{center}
+\textbf{Figure 3.2.1:} Conviction Rate Regression Results by Attorney Type (Pennsylvania)
+\end{center}
+
+Figure 3.2.1 shows the regression results for conviction rates across the four attorney types in Pennsylvania. Overall, the explanatory variables show different patterns of association by attorney type.
+
+For public defenders, the Number of Criminal Court Judges shows to be statistically significant ($\beta$ = 0.009, p<0.1). The model’s overall fit remains low with $R^2$ = 0.021. For the private attorney type, Poverty Rate and Number of Criminal Court Judges show to be statistically significant (Poverty Rate: $\beta$ = 0.074, p<0.05, Number of Criminal Court Judges: $\beta$ = 0.013, p<0.01). Compared to the other models, the private attorney model shows the highest explanatory power, although the overall fit is still modest ($R^2$ = 0.131). For the court-appointed attorney type, none of the explanatory variables are statistically significant. The model also shows to be a poor fit with a negative $R^2$ (-0.075). For the self-represented attorney type, the Proportion Hispanic or Latino shows to be statistically significant ($\beta$ = -0.368, p<0.05). However, this model has the smallest sample size and a negative adjusted $R^2$ (-0.029), indicating low explanatory power.
+
 __Residual Diagnostics__
 
 ```{r}
@@ -303,19 +316,6 @@ The self-represented model shows the most extreme influence patterns with Berks,
 Overall, while the regression models for Pennsylvania appear to be reasonable, there are some concerns related to influential observations and variability across counties. The self-represented attorney type model seems to be the most unstable compared to the other attorney types.
 
 \newpage
-
-__Summary Regression Table__
-
-```{r}
-include_graphics("Models/Appendix/PA/[CR]Regr_Table.png")
-```
-\begin{center}
-\textbf{Figure A.3.1:} Conviction Rate Regression Results by Attorney Type (Pennsylvania)
-\end{center}
-
-Figure A.3.1 shows the regression results for conviction rates across the four attorney types in Pennsylvania. Overall, the explanatory variables show different patterns of association by attorney type.
-
-For public defenders, the Number of Criminal Court Judges shows to be statistically significant ($\beta$ = 0.009, p<0.1). The model’s overall fit remains low with $R^2$ = 0.021. For the private attorney type, Poverty Rate and Number of Criminal Court Judges show to be statistically significant (Poverty Rate: $\beta$ = 0.074, p<0.05, Number of Criminal Court Judges: $\beta$ = 0.013, p<0.01). Compared to the other models, the private attorney model shows the highest explanatory power, although the overall fit is still modest ($R^2$ = 0.131). For the court-appointed attorney type, none of the explanatory variables are statistically significant. The model also shows to be a poor fit with a negative $R^2$ (-0.075). For the self-represented attorney type, the Proportion Hispanic or Latino shows to be statistically significant ($\beta$ = -0.368, p<0.05). However, this model has the smallest sample size and a negative adjusted $R^2$ (-0.029), indicating low explanatory power.
 
 __Model Fit Visualization__
 

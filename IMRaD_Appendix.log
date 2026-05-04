@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.18)  30 APR 2026 04:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.18)  4 MAY 2026 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -895,40 +895,40 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 323--324
  []
 
 [10 <./EDA312.png>] [11 <./EDA313.png>]
-<Models/Appendix/PA/PD/[CR]QQ_Resid.png, id=122, 722.7pt x 578.16pt>
-File: Models/Appendix/PA/PD/[CR]QQ_Resid.png Graphic file (type png)
-<use Models/Appendix/PA/PD/[CR]QQ_Resid.png>
-Package pdftex.def Info: Models/Appendix/PA/PD/[CR]QQ_Resid.png  used on input line 335.
-(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
+<Models/Appendix/PA/[CR]Regr_Table.png, id=122, 739.76375pt x 804.00375pt>
+File: Models/Appendix/PA/[CR]Regr_Table.png Graphic file (type png)
+<use Models/Appendix/PA/[CR]Regr_Table.png>
+Package pdftex.def Info: Models/Appendix/PA/[CR]Regr_Table.png  used on input line 335.
+(pdftex.def)             Requested size: 418.25555pt x 454.58194pt.
 
 Overfull \hbox (9.63599pt too wide) in paragraph at lines 335--336
 [][] 
  []
 
-[12 <./Models/Appendix/PA/PD/[CR]QQ_Resid.png>]
-<Models/Appendix/PA/PD/[CR]Cooks.png, id=128, 578.16pt x 361.35pt>
-File: Models/Appendix/PA/PD/[CR]Cooks.png Graphic file (type png)
-<use Models/Appendix/PA/PD/[CR]Cooks.png>
-Package pdftex.def Info: Models/Appendix/PA/PD/[CR]Cooks.png  used on input line 347.
-(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
+[12 <./Models/Appendix/PA/[CR]Regr_Table.png>]
+<Models/Appendix/PA/PD/[CR]QQ_Resid.png, id=129, 722.7pt x 578.16pt>
+File: Models/Appendix/PA/PD/[CR]QQ_Resid.png Graphic file (type png)
+<use Models/Appendix/PA/PD/[CR]QQ_Resid.png>
+Package pdftex.def Info: Models/Appendix/PA/PD/[CR]QQ_Resid.png  used on input line 347.
+(pdftex.def)             Requested size: 418.25555pt x 334.6008pt.
 
 Overfull \hbox (9.63599pt too wide) in paragraph at lines 347--348
 [][] 
  []
 
-[13 <./Models/Appendix/PA/PD/[CR]Cooks.png>] [14]
-<Models/Appendix/PA/[CR]Regr_Table.png, id=138, 736.7525pt x 804.00375pt>
-File: Models/Appendix/PA/[CR]Regr_Table.png Graphic file (type png)
-<use Models/Appendix/PA/[CR]Regr_Table.png>
-Package pdftex.def Info: Models/Appendix/PA/[CR]Regr_Table.png  used on input line 371.
-(pdftex.def)             Requested size: 418.25555pt x 456.43442pt.
+[13 <./Models/Appendix/PA/PD/[CR]QQ_Resid.png>] [14]
+<Models/Appendix/PA/PD/[CR]Cooks.png, id=140, 578.16pt x 361.35pt>
+File: Models/Appendix/PA/PD/[CR]Cooks.png Graphic file (type png)
+<use Models/Appendix/PA/PD/[CR]Cooks.png>
+Package pdftex.def Info: Models/Appendix/PA/PD/[CR]Cooks.png  used on input line 359.
+(pdftex.def)             Requested size: 418.25555pt x 261.40688pt.
 
-Overfull \hbox (9.63599pt too wide) in paragraph at lines 371--372
+Overfull \hbox (9.63599pt too wide) in paragraph at lines 359--360
 [][] 
  []
 
-[15 <./Models/Appendix/PA/[CR]Regr_Table.png>]
-<Models/Appendix/PA/[CR]Unemployment_LOESS.png, id=145, 722.7pt x 578.16pt>
+[15 <./Models/Appendix/PA/PD/[CR]Cooks.png>] [16]
+<Models/Appendix/PA/[CR]Unemployment_LOESS.png, id=149, 722.7pt x 578.16pt>
 File: Models/Appendix/PA/[CR]Unemployment_LOESS.png Graphic file (type png)
 <use Models/Appendix/PA/[CR]Unemployment_LOESS.png>
 Package pdftex.def Info: Models/Appendix/PA/[CR]Unemployment_LOESS.png  used on input line 383.
@@ -938,8 +938,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 383--384
 [][] 
  []
 
-[16 <./Models/Appendix/PA/[CR]Unemployment_LOESS.png>] [17]
-<Models/Appendix/PA/[DIR]Resid_Fitted.png, id=154, 722.7pt x 578.16pt>
+[17 <./Models/Appendix/PA/[CR]Unemployment_LOESS.png>] [18]
+<Models/Appendix/PA/[DIR]Resid_Fitted.png, id=159, 722.7pt x 578.16pt>
 File: Models/Appendix/PA/[DIR]Resid_Fitted.png Graphic file (type png)
 <use Models/Appendix/PA/[DIR]Resid_Fitted.png>
 Package pdftex.def Info: Models/Appendix/PA/[DIR]Resid_Fitted.png  used on input line 403.
@@ -949,7 +949,7 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 403--404
 [][] 
  []
 
-<Models/Appendix/PA/[DIR]QQ.png, id=155, 722.7pt x 578.16pt>
+<Models/Appendix/PA/[DIR]QQ.png, id=160, 722.7pt x 578.16pt>
 File: Models/Appendix/PA/[DIR]QQ.png Graphic file (type png)
 <use Models/Appendix/PA/[DIR]QQ.png>
 Package pdftex.def Info: Models/Appendix/PA/[DIR]QQ.png  used on input line 411.
@@ -959,8 +959,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 411--412
 [][] 
  []
 
-[18 <./Models/Appendix/PA/[DIR]Resid_Fitted.png>]
-<Models/Appendix/PA/[DIR]Fitted_Observed.png, id=162, 722.7pt x 578.16pt>
+[19 <./Models/Appendix/PA/[DIR]Resid_Fitted.png>]
+<Models/Appendix/PA/[DIR]Fitted_Observed.png, id=167, 722.7pt x 578.16pt>
 File: Models/Appendix/PA/[DIR]Fitted_Observed.png Graphic file (type png)
 <use Models/Appendix/PA/[DIR]Fitted_Observed.png>
 Package pdftex.def Info: Models/Appendix/PA/[DIR]Fitted_Observed.png  used on input line 419.
@@ -970,8 +970,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 419--420
 [][] 
  []
 
-[19 <./Models/Appendix/PA/[DIR]QQ.png>] [20 <./Models/Appendix/PA/[DIR]Fitted_Observed.png>]
-<Models/Appendix/PA/[DIR]Regr_Table.png, id=174, 659.46375pt x 401.5pt>
+[20 <./Models/Appendix/PA/[DIR]QQ.png>] [21 <./Models/Appendix/PA/[DIR]Fitted_Observed.png>]
+<Models/Appendix/PA/[DIR]Regr_Table.png, id=178, 659.46375pt x 401.5pt>
 File: Models/Appendix/PA/[DIR]Regr_Table.png Graphic file (type png)
 <use Models/Appendix/PA/[DIR]Regr_Table.png>
 Package pdftex.def Info: Models/Appendix/PA/[DIR]Regr_Table.png  used on input line 431.
@@ -981,8 +981,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 431--432
 [][] 
  []
 
-[21 <./Models/Appendix/PA/[DIR]Regr_Table.png>]
-<Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png, id=180, 578.16pt x 578.16pt>
+[22 <./Models/Appendix/PA/[DIR]Regr_Table.png>]
+<Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png, id=184, 578.16pt x 578.16pt>
 File: Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png Graphic file (type png)
 <use Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png>
 Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png  used on input line 447.
@@ -992,8 +992,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 447--448
 [][] 
  []
 
-[22 <./Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png>] [23]
-<Models/Appendix/FL/[CR]Regr_Table.png, id=190, 731.73375pt x 694.595pt>
+[23 <./Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png>] [24]
+<Models/Appendix/FL/[CR]Regr_Table.png, id=194, 731.73375pt x 694.595pt>
 File: Models/Appendix/FL/[CR]Regr_Table.png Graphic file (type png)
 <use Models/Appendix/FL/[CR]Regr_Table.png>
 Package pdftex.def Info: Models/Appendix/FL/[CR]Regr_Table.png  used on input line 485.
@@ -1003,8 +1003,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 485--486
 [] 
  []
 
-[24]
-<Models/Appendix/FL/[CR]Unemployment_LOESS.png, id=195, 722.7pt x 578.16pt>
+[25]
+<Models/Appendix/FL/[CR]Unemployment_LOESS.png, id=200, 722.7pt x 578.16pt>
 File: Models/Appendix/FL/[CR]Unemployment_LOESS.png Graphic file (type png)
 <use Models/Appendix/FL/[CR]Unemployment_LOESS.png>
 Package pdftex.def Info: Models/Appendix/FL/[CR]Unemployment_LOESS.png  used on input line 489.
@@ -1014,8 +1014,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 489--490
 [] 
  []
 
-[25 <./Models/Appendix/FL/[CR]Regr_Table.png>]
-<Models/Appendix/FL/[DIR]Regr_Table.png, id=203, 653.44125pt x 401.5pt>
+[26 <./Models/Appendix/FL/[CR]Regr_Table.png>]
+<Models/Appendix/FL/[DIR]Regr_Table.png, id=207, 653.44125pt x 401.5pt>
 File: Models/Appendix/FL/[DIR]Regr_Table.png Graphic file (type png)
 <use Models/Appendix/FL/[DIR]Regr_Table.png>
 Package pdftex.def Info: Models/Appendix/FL/[DIR]Regr_Table.png  used on input line 493.
@@ -1025,19 +1025,19 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 493--494
 [] 
  []
 
-[26 <./Models/Appendix/FL/[CR]Unemployment_LOESS.png>]
-<Models/Appendix/OR/[CR]Regr_Table.png, id=209, 735.74875pt x 647.41875pt>
+[27 <./Models/Appendix/FL/[CR]Unemployment_LOESS.png>]
+<Models/Appendix/OR/[CR]Regr_Table.png, id=213, 737.75626pt x 647.41875pt>
 File: Models/Appendix/OR/[CR]Regr_Table.png Graphic file (type png)
 <use Models/Appendix/OR/[CR]Regr_Table.png>
 Package pdftex.def Info: Models/Appendix/OR/[CR]Regr_Table.png  used on input line 521.
-(pdftex.def)             Requested size: 418.25555pt x 368.05452pt.
+(pdftex.def)             Requested size: 418.25555pt x 367.037pt.
 
 Overfull \hbox (9.63599pt too wide) in paragraph at lines 521--522
 [] 
  []
 
-[27 <./Models/Appendix/FL/[DIR]Regr_Table.png>]
-<Models/Appendix/OR/[CR]Unemployment_LOESS.png, id=217, 722.7pt x 578.16pt>
+[28 <./Models/Appendix/FL/[DIR]Regr_Table.png>]
+<Models/Appendix/OR/[CR]Unemployment_LOESS.png, id=221, 722.7pt x 578.16pt>
 File: Models/Appendix/OR/[CR]Unemployment_LOESS.png Graphic file (type png)
 <use Models/Appendix/OR/[CR]Unemployment_LOESS.png>
 Package pdftex.def Info: Models/Appendix/OR/[CR]Unemployment_LOESS.png  used on input line 525.
@@ -1047,8 +1047,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 525--526
 [] 
  []
 
-[28 <./Models/Appendix/OR/[CR]Regr_Table.png>]
-<Models/Appendix/OR/[DIR]Regr_Table.png, id=224, 612.2875pt x 329.23pt>
+[29 <./Models/Appendix/OR/[CR]Regr_Table.png>]
+<Models/Appendix/OR/[DIR]Regr_Table.png, id=228, 612.2875pt x 329.23pt>
 File: Models/Appendix/OR/[DIR]Regr_Table.png Graphic file (type png)
 <use Models/Appendix/OR/[DIR]Regr_Table.png>
 Package pdftex.def Info: Models/Appendix/OR/[DIR]Regr_Table.png  used on input line 529.
@@ -1058,17 +1058,17 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 529--530
 [] 
  []
 
-[29 <./Models/Appendix/OR/[CR]Unemployment_LOESS.png>]
+[30 <./Models/Appendix/OR/[CR]Unemployment_LOESS.png>]
 File: Models/Appendix/PA/[CR]Regr_Table.png Graphic file (type png)
 <use Models/Appendix/PA/[CR]Regr_Table.png>
 Package pdftex.def Info: Models/Appendix/PA/[CR]Regr_Table.png  used on input line 557.
-(pdftex.def)             Requested size: 418.25555pt x 456.43442pt.
+(pdftex.def)             Requested size: 418.25555pt x 454.58194pt.
 
 Overfull \hbox (9.63599pt too wide) in paragraph at lines 557--558
 [] 
  []
 
-[30 <./Models/Appendix/OR/[DIR]Regr_Table.png>]
+[31 <./Models/Appendix/OR/[DIR]Regr_Table.png>]
 File: Models/Appendix/PA/[CR]Unemployment_LOESS.png Graphic file (type png)
 <use Models/Appendix/PA/[CR]Unemployment_LOESS.png>
 Package pdftex.def Info: Models/Appendix/PA/[CR]Unemployment_LOESS.png  used on input line 561.
@@ -1078,7 +1078,7 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 561--562
 [] 
  []
 
-[31]
+[32]
 File: Models/Appendix/PA/[DIR]Regr_Table.png Graphic file (type png)
 <use Models/Appendix/PA/[DIR]Regr_Table.png>
 Package pdftex.def Info: Models/Appendix/PA/[DIR]Regr_Table.png  used on input line 565.
@@ -1088,8 +1088,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 565--566
 [] 
  []
 
-[32]
-<Models/Appendix/FL/PD/[CR]QQ_Resid.png, id=248, 722.7pt x 578.16pt>
+[33]
+<Models/Appendix/FL/PD/[CR]QQ_Resid.png, id=252, 722.7pt x 578.16pt>
 File: Models/Appendix/FL/PD/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/FL/PD/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/FL/PD/[CR]QQ_Resid.png  used on input line 595.
@@ -1099,8 +1099,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 595--596
 [] 
  []
 
-[33]
-<Models/Appendix/FL/PD/[CR]Cooks.png, id=255, 578.16pt x 361.35pt>
+[34]
+<Models/Appendix/FL/PD/[CR]Cooks.png, id=259, 578.16pt x 361.35pt>
 File: Models/Appendix/FL/PD/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/FL/PD/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/FL/PD/[CR]Cooks.png  used on input line 599.
@@ -1110,8 +1110,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 599--600
 [] 
  []
 
-[34 <./Models/Appendix/FL/PD/[CR]QQ_Resid.png>]
-<Models/Appendix/FL/P/[CR]QQ_Resid.png, id=262, 722.7pt x 578.16pt>
+[35 <./Models/Appendix/FL/PD/[CR]QQ_Resid.png>]
+<Models/Appendix/FL/P/[CR]QQ_Resid.png, id=266, 722.7pt x 578.16pt>
 File: Models/Appendix/FL/P/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/FL/P/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/FL/P/[CR]QQ_Resid.png  used on input line 603.
@@ -1121,8 +1121,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 603--604
 [] 
  []
 
-[35 <./Models/Appendix/FL/PD/[CR]Cooks.png>]
-<Models/Appendix/FL/P/[CR]Cooks.png, id=268, 578.16pt x 361.35pt>
+[36 <./Models/Appendix/FL/PD/[CR]Cooks.png>]
+<Models/Appendix/FL/P/[CR]Cooks.png, id=272, 578.16pt x 361.35pt>
 File: Models/Appendix/FL/P/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/FL/P/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/FL/P/[CR]Cooks.png  used on input line 607.
@@ -1132,8 +1132,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 607--608
 [] 
  []
 
-[36 <./Models/Appendix/FL/P/[CR]QQ_Resid.png>]
-<Models/Appendix/FL/AC/[CR]QQ_Resid.png, id=275, 722.7pt x 578.16pt>
+[37 <./Models/Appendix/FL/P/[CR]QQ_Resid.png>]
+<Models/Appendix/FL/AC/[CR]QQ_Resid.png, id=280, 722.7pt x 578.16pt>
 File: Models/Appendix/FL/AC/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/FL/AC/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/FL/AC/[CR]QQ_Resid.png  used on input line 611.
@@ -1143,8 +1143,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 611--612
 [] 
  []
 
-[37 <./Models/Appendix/FL/P/[CR]Cooks.png>]
-<Models/Appendix/FL/AC/[CR]Cooks.png, id=282, 578.16pt x 361.35pt>
+[38 <./Models/Appendix/FL/P/[CR]Cooks.png>]
+<Models/Appendix/FL/AC/[CR]Cooks.png, id=286, 578.16pt x 361.35pt>
 File: Models/Appendix/FL/AC/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/FL/AC/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/FL/AC/[CR]Cooks.png  used on input line 615.
@@ -1154,8 +1154,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 615--616
 [] 
  []
 
-[38 <./Models/Appendix/FL/AC/[CR]QQ_Resid.png>]
-<Models/Appendix/FL/SR/[CR]QQ_Resid.png, id=289, 722.7pt x 578.16pt>
+[39 <./Models/Appendix/FL/AC/[CR]QQ_Resid.png>]
+<Models/Appendix/FL/SR/[CR]QQ_Resid.png, id=293, 722.7pt x 578.16pt>
 File: Models/Appendix/FL/SR/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/FL/SR/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/FL/SR/[CR]QQ_Resid.png  used on input line 619.
@@ -1165,8 +1165,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 619--620
 [] 
  []
 
-[39 <./Models/Appendix/FL/AC/[CR]Cooks.png>]
-<Models/Appendix/FL/SR/[CR]Cooks.png, id=295, 578.16pt x 361.35pt>
+[40 <./Models/Appendix/FL/AC/[CR]Cooks.png>]
+<Models/Appendix/FL/SR/[CR]Cooks.png, id=299, 578.16pt x 361.35pt>
 File: Models/Appendix/FL/SR/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/FL/SR/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/FL/SR/[CR]Cooks.png  used on input line 623.
@@ -1176,8 +1176,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 623--624
 [] 
  []
 
-[40 <./Models/Appendix/FL/SR/[CR]QQ_Resid.png>]
-<Models/Appendix/OR/PD/[CR]QQ_Resid.png, id=302, 722.7pt x 578.16pt>
+[41 <./Models/Appendix/FL/SR/[CR]QQ_Resid.png>]
+<Models/Appendix/OR/PD/[CR]QQ_Resid.png, id=306, 722.7pt x 578.16pt>
 File: Models/Appendix/OR/PD/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/OR/PD/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/OR/PD/[CR]QQ_Resid.png  used on input line 631.
@@ -1187,8 +1187,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 631--632
 [] 
  []
 
-[41 <./Models/Appendix/FL/SR/[CR]Cooks.png>]
-<Models/Appendix/OR/PD/[CR]Cooks.png, id=308, 578.16pt x 361.35pt>
+[42 <./Models/Appendix/FL/SR/[CR]Cooks.png>]
+<Models/Appendix/OR/PD/[CR]Cooks.png, id=313, 578.16pt x 361.35pt>
 File: Models/Appendix/OR/PD/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/OR/PD/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/OR/PD/[CR]Cooks.png  used on input line 635.
@@ -1198,8 +1198,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 635--636
 [] 
  []
 
-[42 <./Models/Appendix/OR/PD/[CR]QQ_Resid.png>]
-<Models/Appendix/OR/P/[CR]QQ_Resid.png, id=316, 722.7pt x 578.16pt>
+[43 <./Models/Appendix/OR/PD/[CR]QQ_Resid.png>]
+<Models/Appendix/OR/P/[CR]QQ_Resid.png, id=321, 722.7pt x 578.16pt>
 File: Models/Appendix/OR/P/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/OR/P/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/OR/P/[CR]QQ_Resid.png  used on input line 639.
@@ -1209,8 +1209,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 639--640
 [] 
  []
 
-[43 <./Models/Appendix/OR/PD/[CR]Cooks.png>]
-<Models/Appendix/OR/P/[CR]Cooks.png, id=323, 578.16pt x 361.35pt>
+[44 <./Models/Appendix/OR/PD/[CR]Cooks.png>]
+<Models/Appendix/OR/P/[CR]Cooks.png, id=327, 578.16pt x 361.35pt>
 File: Models/Appendix/OR/P/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/OR/P/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/OR/P/[CR]Cooks.png  used on input line 643.
@@ -1220,8 +1220,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 643--644
 [] 
  []
 
-[44 <./Models/Appendix/OR/P/[CR]QQ_Resid.png>]
-<Models/Appendix/OR/AC/[CR]QQ_Resid.png, id=330, 722.7pt x 578.16pt>
+[45 <./Models/Appendix/OR/P/[CR]QQ_Resid.png>]
+<Models/Appendix/OR/AC/[CR]QQ_Resid.png, id=334, 722.7pt x 578.16pt>
 File: Models/Appendix/OR/AC/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/OR/AC/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/OR/AC/[CR]QQ_Resid.png  used on input line 647.
@@ -1231,8 +1231,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 647--648
 [] 
  []
 
-[45 <./Models/Appendix/OR/P/[CR]Cooks.png>]
-<Models/Appendix/OR/AC/[CR]Cooks.png, id=336, 578.16pt x 361.35pt>
+[46 <./Models/Appendix/OR/P/[CR]Cooks.png>]
+<Models/Appendix/OR/AC/[CR]Cooks.png, id=340, 578.16pt x 361.35pt>
 File: Models/Appendix/OR/AC/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/OR/AC/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/OR/AC/[CR]Cooks.png  used on input line 651.
@@ -1242,8 +1242,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 651--652
 [] 
  []
 
-[46 <./Models/Appendix/OR/AC/[CR]QQ_Resid.png>]
-<Models/Appendix/OR/SR/[CR]QQ_Resid.png, id=343, 722.7pt x 578.16pt>
+[47 <./Models/Appendix/OR/AC/[CR]QQ_Resid.png>]
+<Models/Appendix/OR/SR/[CR]QQ_Resid.png, id=347, 722.7pt x 578.16pt>
 File: Models/Appendix/OR/SR/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/OR/SR/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/OR/SR/[CR]QQ_Resid.png  used on input line 655.
@@ -1253,8 +1253,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 655--656
 [] 
  []
 
-[47 <./Models/Appendix/OR/AC/[CR]Cooks.png>]
-<Models/Appendix/OR/SR/[CR]Cooks.png, id=349, 578.16pt x 361.35pt>
+[48 <./Models/Appendix/OR/AC/[CR]Cooks.png>]
+<Models/Appendix/OR/SR/[CR]Cooks.png, id=353, 578.16pt x 361.35pt>
 File: Models/Appendix/OR/SR/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/OR/SR/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/OR/SR/[CR]Cooks.png  used on input line 659.
@@ -1264,7 +1264,7 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 659--660
 [] 
  []
 
-[48 <./Models/Appendix/OR/SR/[CR]QQ_Resid.png>]
+[49 <./Models/Appendix/OR/SR/[CR]QQ_Resid.png>]
 File: Models/Appendix/PA/PD/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/PA/PD/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/PA/PD/[CR]QQ_Resid.png  used on input line 667.
@@ -1274,7 +1274,7 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 667--668
 [] 
  []
 
-[49 <./Models/Appendix/OR/SR/[CR]Cooks.png>]
+[50 <./Models/Appendix/OR/SR/[CR]Cooks.png>]
 File: Models/Appendix/PA/PD/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/PA/PD/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/PA/PD/[CR]Cooks.png  used on input line 671.
@@ -1284,8 +1284,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 671--672
 [] 
  []
 
-[50]
-<Models/Appendix/PA/P/[CR]QQ_Resid.png, id=367, 722.7pt x 578.16pt>
+[51]
+<Models/Appendix/PA/P/[CR]QQ_Resid.png, id=371, 722.7pt x 578.16pt>
 File: Models/Appendix/PA/P/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/PA/P/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/PA/P/[CR]QQ_Resid.png  used on input line 675.
@@ -1295,8 +1295,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 675--676
 [] 
  []
 
-[51]
-<Models/Appendix/PA/P/[CR]Cooks.png, id=373, 578.16pt x 361.35pt>
+[52]
+<Models/Appendix/PA/P/[CR]Cooks.png, id=377, 578.16pt x 361.35pt>
 File: Models/Appendix/PA/P/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/PA/P/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/PA/P/[CR]Cooks.png  used on input line 679.
@@ -1306,8 +1306,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 679--680
 [] 
  []
 
-[52 <./Models/Appendix/PA/P/[CR]QQ_Resid.png>]
-<Models/Appendix/PA/AC/[CR]QQ_Resid.png, id=380, 722.7pt x 578.16pt>
+[53 <./Models/Appendix/PA/P/[CR]QQ_Resid.png>]
+<Models/Appendix/PA/AC/[CR]QQ_Resid.png, id=384, 722.7pt x 578.16pt>
 File: Models/Appendix/PA/AC/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/PA/AC/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/PA/AC/[CR]QQ_Resid.png  used on input line 683.
@@ -1317,8 +1317,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 683--684
 [] 
  []
 
-[53 <./Models/Appendix/PA/P/[CR]Cooks.png>]
-<Models/Appendix/PA/AC/[CR]Cooks.png, id=386, 578.16pt x 361.35pt>
+[54 <./Models/Appendix/PA/P/[CR]Cooks.png>]
+<Models/Appendix/PA/AC/[CR]Cooks.png, id=390, 578.16pt x 361.35pt>
 File: Models/Appendix/PA/AC/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/PA/AC/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/PA/AC/[CR]Cooks.png  used on input line 687.
@@ -1328,8 +1328,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 687--688
 [] 
  []
 
-[54 <./Models/Appendix/PA/AC/[CR]QQ_Resid.png>]
-<Models/Appendix/PA/SR/[CR]QQ_Resid.png, id=393, 722.7pt x 578.16pt>
+[55 <./Models/Appendix/PA/AC/[CR]QQ_Resid.png>]
+<Models/Appendix/PA/SR/[CR]QQ_Resid.png, id=398, 722.7pt x 578.16pt>
 File: Models/Appendix/PA/SR/[CR]QQ_Resid.png Graphic file (type png)
 <use Models/Appendix/PA/SR/[CR]QQ_Resid.png>
 Package pdftex.def Info: Models/Appendix/PA/SR/[CR]QQ_Resid.png  used on input line 691.
@@ -1339,8 +1339,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 691--692
 [] 
  []
 
-[55 <./Models/Appendix/PA/AC/[CR]Cooks.png>]
-<Models/Appendix/PA/SR/[CR]Cooks.png, id=400, 578.16pt x 361.35pt>
+[56 <./Models/Appendix/PA/AC/[CR]Cooks.png>]
+<Models/Appendix/PA/SR/[CR]Cooks.png, id=404, 578.16pt x 361.35pt>
 File: Models/Appendix/PA/SR/[CR]Cooks.png Graphic file (type png)
 <use Models/Appendix/PA/SR/[CR]Cooks.png>
 Package pdftex.def Info: Models/Appendix/PA/SR/[CR]Cooks.png  used on input line 695.
@@ -1350,8 +1350,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 695--696
 [] 
  []
 
-[56 <./Models/Appendix/PA/SR/[CR]QQ_Resid.png>]
-<Models/Appendix/FL/[DIR]Resid_Fitted.png, id=407, 722.7pt x 578.16pt>
+[57 <./Models/Appendix/PA/SR/[CR]QQ_Resid.png>]
+<Models/Appendix/FL/[DIR]Resid_Fitted.png, id=411, 722.7pt x 578.16pt>
 File: Models/Appendix/FL/[DIR]Resid_Fitted.png Graphic file (type png)
 <use Models/Appendix/FL/[DIR]Resid_Fitted.png>
 Package pdftex.def Info: Models/Appendix/FL/[DIR]Resid_Fitted.png  used on input line 705.
@@ -1361,8 +1361,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 705--706
 [] 
  []
 
-[57 <./Models/Appendix/PA/SR/[CR]Cooks.png>]
-<Models/Appendix/FL/[DIR]QQ.png, id=413, 722.7pt x 578.16pt>
+[58 <./Models/Appendix/PA/SR/[CR]Cooks.png>]
+<Models/Appendix/FL/[DIR]QQ.png, id=417, 722.7pt x 578.16pt>
 File: Models/Appendix/FL/[DIR]QQ.png Graphic file (type png)
 <use Models/Appendix/FL/[DIR]QQ.png>
 Package pdftex.def Info: Models/Appendix/FL/[DIR]QQ.png  used on input line 709.
@@ -1372,8 +1372,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 709--710
 [] 
  []
 
-[58 <./Models/Appendix/FL/[DIR]Resid_Fitted.png>]
-<Models/Appendix/FL/[DIR]Fitted_Observed.png, id=420, 722.7pt x 578.16pt>
+[59 <./Models/Appendix/FL/[DIR]Resid_Fitted.png>]
+<Models/Appendix/FL/[DIR]Fitted_Observed.png, id=424, 722.7pt x 578.16pt>
 File: Models/Appendix/FL/[DIR]Fitted_Observed.png Graphic file (type png)
 <use Models/Appendix/FL/[DIR]Fitted_Observed.png>
 Package pdftex.def Info: Models/Appendix/FL/[DIR]Fitted_Observed.png  used on input line 713.
@@ -1383,8 +1383,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 713--714
 [] 
  []
 
-[59 <./Models/Appendix/FL/[DIR]QQ.png>]
-<Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png, id=427, 578.16pt x 578.16pt>
+[60 <./Models/Appendix/FL/[DIR]QQ.png>]
+<Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png, id=431, 578.16pt x 578.16pt>
 File: Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png Graphic file (type png)
 <use Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png>
 Package pdftex.def Info: Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png  used on input line 717.
@@ -1394,8 +1394,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 717--718
 [] 
  []
 
-[60 <./Models/Appendix/FL/[DIR]Fitted_Observed.png>]
-<Models/Appendix/FL/FL_4_resid_vs_pred_private.png, id=434, 578.16pt x 578.16pt>
+[61 <./Models/Appendix/FL/[DIR]Fitted_Observed.png>]
+<Models/Appendix/FL/FL_4_resid_vs_pred_private.png, id=439, 578.16pt x 578.16pt>
 File: Models/Appendix/FL/FL_4_resid_vs_pred_private.png Graphic file (type png)
 <use Models/Appendix/FL/FL_4_resid_vs_pred_private.png>
 Package pdftex.def Info: Models/Appendix/FL/FL_4_resid_vs_pred_private.png  used on input line 721.
@@ -1405,8 +1405,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 721--722
 [] 
  []
 
-[61 <./Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png>]
-<Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png, id=442, 578.16pt x 578.16pt>
+[62 <./Models/Appendix/FL/FL_4_resid_vs_pred_public_defender.png>]
+<Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png, id=446, 578.16pt x 578.16pt>
 File: Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png Graphic file (type png)
 <use Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png>
 Package pdftex.def Info: Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png  used on input line 725.
@@ -1416,8 +1416,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 725--726
 [] 
  []
 
-[62 <./Models/Appendix/FL/FL_4_resid_vs_pred_private.png>]
-<Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png, id=449, 578.16pt x 578.16pt>
+[63 <./Models/Appendix/FL/FL_4_resid_vs_pred_private.png>]
+<Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png, id=453, 578.16pt x 578.16pt>
 File: Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png Graphic file (type png)
 <use Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png>
 Package pdftex.def Info: Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png  used on input line 729.
@@ -1427,8 +1427,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 729--730
 [] 
  []
 
-[63 <./Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png>]
-<Models/Appendix/OR/[DIR]Resid_Fitted.png, id=456, 722.7pt x 578.16pt>
+[64 <./Models/Appendix/FL/FL_4_resid_vs_pred_appointed_counsel.png>]
+<Models/Appendix/OR/[DIR]Resid_Fitted.png, id=460, 722.7pt x 578.16pt>
 File: Models/Appendix/OR/[DIR]Resid_Fitted.png Graphic file (type png)
 <use Models/Appendix/OR/[DIR]Resid_Fitted.png>
 Package pdftex.def Info: Models/Appendix/OR/[DIR]Resid_Fitted.png  used on input line 737.
@@ -1438,8 +1438,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 737--738
 [] 
  []
 
-[64 <./Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png>]
-<Models/Appendix/OR/[DIR]QQ.png, id=463, 722.7pt x 578.16pt>
+[65 <./Models/Appendix/FL/FL_4_resid_vs_pred_alternative.png>]
+<Models/Appendix/OR/[DIR]QQ.png, id=467, 722.7pt x 578.16pt>
 File: Models/Appendix/OR/[DIR]QQ.png Graphic file (type png)
 <use Models/Appendix/OR/[DIR]QQ.png>
 Package pdftex.def Info: Models/Appendix/OR/[DIR]QQ.png  used on input line 741.
@@ -1449,8 +1449,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 741--742
 [] 
  []
 
-[65 <./Models/Appendix/OR/[DIR]Resid_Fitted.png>]
-<Models/Appendix/OR/[DIR]Fitted_Observed.png, id=470, 722.7pt x 578.16pt>
+[66 <./Models/Appendix/OR/[DIR]Resid_Fitted.png>]
+<Models/Appendix/OR/[DIR]Fitted_Observed.png, id=475, 722.7pt x 578.16pt>
 File: Models/Appendix/OR/[DIR]Fitted_Observed.png Graphic file (type png)
 <use Models/Appendix/OR/[DIR]Fitted_Observed.png>
 Package pdftex.def Info: Models/Appendix/OR/[DIR]Fitted_Observed.png  used on input line 745.
@@ -1460,8 +1460,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 745--746
 [] 
  []
 
-[66 <./Models/Appendix/OR/[DIR]QQ.png>]
-<Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png, id=478, 578.16pt x 578.16pt>
+[67 <./Models/Appendix/OR/[DIR]QQ.png>]
+<Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png, id=483, 578.16pt x 578.16pt>
 File: Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png Graphic file (type png)
 <use Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png>
 Package pdftex.def Info: Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png  used on input line 749.
@@ -1471,8 +1471,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 749--750
 [] 
  []
 
-[67 <./Models/Appendix/OR/[DIR]Fitted_Observed.png>]
-<Models/Appendix/OR/OR_4_resid_vs_pred_private.png, id=486, 578.16pt x 578.16pt>
+[68 <./Models/Appendix/OR/[DIR]Fitted_Observed.png>]
+<Models/Appendix/OR/OR_4_resid_vs_pred_private.png, id=490, 578.16pt x 578.16pt>
 File: Models/Appendix/OR/OR_4_resid_vs_pred_private.png Graphic file (type png)
 <use Models/Appendix/OR/OR_4_resid_vs_pred_private.png>
 Package pdftex.def Info: Models/Appendix/OR/OR_4_resid_vs_pred_private.png  used on input line 753.
@@ -1482,8 +1482,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 753--754
 [] 
  []
 
-[68 <./Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png>]
-<Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png, id=493, 578.16pt x 578.16pt>
+[69 <./Models/Appendix/OR/OR_4_resid_vs_pred_public_defender.png>]
+<Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png, id=497, 578.16pt x 578.16pt>
 File: Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png Graphic file (type png)
 <use Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png>
 Package pdftex.def Info: Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png  used on input line 757.
@@ -1493,8 +1493,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 757--758
 [] 
  []
 
-[69 <./Models/Appendix/OR/OR_4_resid_vs_pred_private.png>]
-<Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png, id=500, 578.16pt x 578.16pt>
+[70 <./Models/Appendix/OR/OR_4_resid_vs_pred_private.png>]
+<Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png, id=504, 578.16pt x 578.16pt>
 File: Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png Graphic file (type png)
 <use Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png>
 Package pdftex.def Info: Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png  used on input line 761.
@@ -1504,7 +1504,7 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 761--762
 [] 
  []
 
-[70 <./Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png>]
+[71 <./Models/Appendix/OR/OR_4_resid_vs_pred_appointed_counsel.png>]
 File: Models/Appendix/PA/[DIR]Resid_Fitted.png Graphic file (type png)
 <use Models/Appendix/PA/[DIR]Resid_Fitted.png>
 Package pdftex.def Info: Models/Appendix/PA/[DIR]Resid_Fitted.png  used on input line 769.
@@ -1514,7 +1514,7 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 769--770
 [] 
  []
 
-[71 <./Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png>]
+[72 <./Models/Appendix/OR/OR_4_resid_vs_pred_alternative.png>]
 File: Models/Appendix/PA/[DIR]QQ.png Graphic file (type png)
 <use Models/Appendix/PA/[DIR]QQ.png>
 Package pdftex.def Info: Models/Appendix/PA/[DIR]QQ.png  used on input line 773.
@@ -1524,7 +1524,7 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 773--774
 [] 
  []
 
-[72]
+[73]
 File: Models/Appendix/PA/[DIR]Fitted_Observed.png Graphic file (type png)
 <use Models/Appendix/PA/[DIR]Fitted_Observed.png>
 Package pdftex.def Info: Models/Appendix/PA/[DIR]Fitted_Observed.png  used on input line 777.
@@ -1534,7 +1534,7 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 777--778
 [] 
  []
 
-[73]
+[74]
 File: Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png Graphic file (type png)
 <use Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png>
 Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_public_defender.png  used on input line 781.
@@ -1544,8 +1544,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 781--782
 [] 
  []
 
-[74]
-<Models/Appendix/PA/PA_4_resid_vs_pred_private.png, id=529, 578.16pt x 578.16pt>
+[75]
+<Models/Appendix/PA/PA_4_resid_vs_pred_private.png, id=533, 578.16pt x 578.16pt>
 File: Models/Appendix/PA/PA_4_resid_vs_pred_private.png Graphic file (type png)
 <use Models/Appendix/PA/PA_4_resid_vs_pred_private.png>
 Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_private.png  used on input line 785.
@@ -1555,8 +1555,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 785--786
 [] 
  []
 
-[75]
-<Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png, id=535, 578.16pt x 578.16pt>
+[76]
+<Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png, id=539, 578.16pt x 578.16pt>
 File: Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png Graphic file (type png)
 <use Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png>
 Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png  used on input line 789.
@@ -1566,8 +1566,8 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 789--790
 [] 
  []
 
-[76 <./Models/Appendix/PA/PA_4_resid_vs_pred_private.png>]
-<Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png, id=542, 578.16pt x 578.16pt>
+[77 <./Models/Appendix/PA/PA_4_resid_vs_pred_private.png>]
+<Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png, id=546, 578.16pt x 578.16pt>
 File: Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png Graphic file (type png)
 <use Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png>
 Package pdftex.def Info: Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png  used on input line 793.
@@ -1577,25 +1577,25 @@ Overfull \hbox (9.63599pt too wide) in paragraph at lines 793--794
 [] 
  []
 
-[77 <./Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png>] [78 <./Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png>] (./IMRaD_Appendix.aux)
+[78 <./Models/Appendix/PA/PA_4_resid_vs_pred_appointed_counsel.png>] [79 <./Models/Appendix/PA/PA_4_resid_vs_pred_alternative.png>] (./IMRaD_Appendix.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20982 strings out of 469278
- 412981 string characters out of 5462733
+ 20983 strings out of 469278
+ 412988 string characters out of 5462733
  974906 words of memory out of 5000000
  49043 multiletter control sequences out of 15000+600000
  741741 words of font info for 335 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  108i,20n,107p,11236b,670s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-mlitb.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><c:/Users/pspiv/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on IMRaD_Appendix.pdf (78 pages, 1887642 bytes).
+Output written on IMRaD_Appendix.pdf (79 pages, 1891927 bytes).
 PDF statistics:
- 709 PDF objects out of 1000 (max. 8388607)
- 508 compressed objects within 6 object streams
- 171 named destinations out of 1000 (max. 500000)
+ 714 PDF objects out of 1000 (max. 8388607)
+ 512 compressed objects within 6 object streams
+ 172 named destinations out of 1000 (max. 500000)
  66014 words of extra memory for PDF output out of 74296 (max. 10000000)
 

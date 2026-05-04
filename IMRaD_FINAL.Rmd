@@ -266,16 +266,29 @@ After conducting EDA, we found that the conviction rate varies systematically ac
 
 <!-- ### Pennsylvania - Public Defender Detailed Analysis -->
 
+__Summary Regression Table__
+
+```{r}
+include_graphics("Models/Appendix/PA/[CR]Regr_Table.png")
+```
+\begin{center}
+\textbf{Figure 3.2.1:} Conviction Rate Regression Results by Attorney Type (Pennsylvania)
+\end{center}
+
+Figure 3.2.1 shows the regression results for conviction rates across the four attorney types in Pennsylvania. Overall, the explanatory variables show different patterns of association by attorney type.
+
+For public defenders, the Number of Criminal Court Judges shows to be statistically significant ($\beta$ = 0.009, p<0.1). The model’s overall fit remains low with $R^2_a$ = 0.021. Note we use the adjusted $R^2_a \coloneq 1 - \dfrac{SS_{\text{res}}/df_{\text{res}}} {SS_{\text{tot}}/df_{\text{tot}}}$, for $SS$ the sum of square errors and $df$ the degrees of freedom as a measure of determination which adjusts for the degrees of freedom used. For the private attorney type, Poverty Rate and Number of Criminal Court Judges show to be statistically significant (Poverty Rate: $\beta$ = 0.074, p<0.05, Number of Criminal Court Judges: $\beta$ = 0.013, p<0.01). Compared to the other models, the private attorney model shows the highest explanatory power, although the overall fit is still modest ($R^2_a$ = 0.131). For the court-appointed attorney type, none of the explanatory variables are statistically significant. The model also shows to be a poor fit with a negative $R^2_a$ (-0.075). For the self-represented attorney type, the Proportion Hispanic or Latino shows to be statistically significant ($\beta$ = -0.368, p<0.05). However, this model has the smallest sample size and a negative adjusted $R^2_a$ (-0.029), indicating low explanatory power.
+
 __Residual Diagnostics__
 
 ```{r}
 include_graphics("Models/Appendix/PA/PD/[CR]QQ_Resid.png")
 ```
 \begin{center}
-\textbf{Figure B.3.1:} Residual diagnostic plots (Q-Q and residuals vs fitted) for the conviction rate model (PA - Public Defender)
+\textbf{Figure 3.2.2:} Residual diagnostic plots (Q-Q and residuals vs fitted) for the conviction rate model (PA - Public Defender)
 \end{center}
 
-Figure B.3.1 shows the residual diagnostic plots for the public defender conviction rate model in Pennsylvania. The Q-Q plot shows that most residuals follow close to the reference line, but there is a deviation in the upper tail. The residuals vs fitted plot does not display a clear pattern, with residuals appearing to be scattered around zero across the fitted values. These diagnostics suggest that public defender cases provide a reasonable fit to the data, as there are only minor deviations.
+Figure 3.2.2 shows the residual diagnostic plots for the public defender conviction rate model in Pennsylvania. The Q-Q plot shows that most residuals follow close to the reference line, but there is a deviation in the upper tail. The residuals vs fitted plot does not display a clear pattern, with residuals appearing to be scattered around zero across the fitted values. These diagnostics suggest that public defender cases provide a reasonable fit to the data, as there are only minor deviations.
 
 \newpage
 
@@ -285,10 +298,10 @@ __Leave One Out Analysis__
 include_graphics("Models/Appendix/PA/PD/[CR]Cooks.png")
 ```
 \begin{center}
-\textbf{Figure B.3.2:} Cook’s distance plot for the conviction rate model (PA - Public Defender)
+\textbf{Figure 3.2.3:} Cook’s distance plot for the conviction rate model (PA - Public Defender)
 \end{center}
 
-Figure B.3.2 shows the Cook’s distance plot for the public defender conviction rate model in Pennsylvania. The counties McKean and Monroe exceed Cook's distance threshold, indicating that these observations have a strong influence on the regression estimates. Dauphin County is slightly above the Cook's distance threshold, indicating that these observations have a slightly significant influence on the regression estimates. Despite the presence of these influential observations, the majority of counties fall below the threshold, indicating that most data points do not exert substantial influence on the model.
+Figure 3.2.3 shows the Cook’s distance plot for the public defender conviction rate model in Pennsylvania. The counties McKean and Monroe exceed Cook's distance threshold, indicating that these observations have a strong influence on the regression estimates. Dauphin County is slightly above the Cook's distance threshold, indicating that these observations have a slightly significant influence on the regression estimates. Despite the presence of these influential observations, the majority of counties fall below the threshold, indicating that most data points do not exert substantial influence on the model.
 
 \newpage
 
@@ -304,31 +317,18 @@ Overall, while the regression models for Pennsylvania appear to be reasonable, t
 
 \newpage
 
-__Summary Regression Table__
-
-```{r}
-include_graphics("Models/Appendix/PA/[CR]Regr_Table.png")
-```
-\begin{center}
-\textbf{Figure A.3.1:} Conviction Rate Regression Results by Attorney Type (Pennsylvania)
-\end{center}
-
-Figure A.3.1 shows the regression results for conviction rates across the four attorney types in Pennsylvania. Overall, the explanatory variables show different patterns of association by attorney type.
-
-For public defenders, the Number of Criminal Court Judges shows to be statistically significant ($\beta$ = 0.009, p<0.1). The model’s overall fit remains low with $R^2$ = 0.021. For the private attorney type, Poverty Rate and Number of Criminal Court Judges show to be statistically significant (Poverty Rate: $\beta$ = 0.074, p<0.05, Number of Criminal Court Judges: $\beta$ = 0.013, p<0.01). Compared to the other models, the private attorney model shows the highest explanatory power, although the overall fit is still modest ($R^2$ = 0.131). For the court-appointed attorney type, none of the explanatory variables are statistically significant. The model also shows to be a poor fit with a negative $R^2$ (-0.075). For the self-represented attorney type, the Proportion Hispanic or Latino shows to be statistically significant ($\beta$ = -0.368, p<0.05). However, this model has the smallest sample size and a negative adjusted $R^2$ (-0.029), indicating low explanatory power.
-
 __Model Fit Visualization__
 
 ```{r}
 include_graphics("Models/Appendix/PA/[CR]Unemployment_LOESS.png")
 ```
 \begin{center}
-\textbf{Figure A.3.2:} Predicted Conviction Rate vs. Unemployment Rate by Attorney Type  (Pennsylvania)
+\textbf{Figure 3.2.4:} Predicted Conviction Rate vs. Unemployment Rate by Attorney Type  (Pennsylvania)
 \end{center}
 
 To further assess model fit, predicted conviction rates were plotted against a key predictor (unemployment rate), alongside the observed county-level values for each attorney type. In these visualizations, the points represent the observed conviction rates, while the smoothed curves reflect the model’s predicted values across the range of the predictor.
 
-Across attorney types, the alignment between observed points and predicted curves is generally weak, consistent with the low $R^2$ values reported in Figure A.3.1. For court-appointed and private counsel the predicted trends are relatively flat and do not closely track the distribution of observed values, suggesting limited explanatory power. The public defender model shows a slightly more visible pattern, with a modest negative relationship between unemployment rate and predicted conviction rate, though much variability remains in the model’s predictions.
+Across attorney types, the alignment between observed points and predicted curves is generally weak, consistent with the low $R^2$ values reported in Figure 3.2.1. For court-appointed and private counsel the predicted trends are relatively flat and do not closely track the distribution of observed values, suggesting limited explanatory power. The public defender model shows a slightly more visible pattern, with a modest negative relationship between unemployment rate and predicted conviction rate, though much variability remains in the model’s predictions.
 
 For self-represented defendants, the predicted curve exhibits a more pronounced nonlinear pattern, however, the wide spread of observed points, particularly at higher unemployment rates, indicate instability in the model fit. This is further reflected in the large uncertainty and low adjusted $R^2$ for this model.
 

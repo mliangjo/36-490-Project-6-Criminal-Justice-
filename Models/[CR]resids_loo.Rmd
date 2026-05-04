@@ -34,11 +34,11 @@ library(tidyr)
 
 ## What are the different county variables that effect the conviction rates of different defendant types 
 ```{r}
-locations_pa <- read_csv("../../data/raw/Pennsylvania_State_Data/locations.csv")
-locations_or <- read_csv("../../data/raw/Oregon_State_Data/locations-or.csv")
-locations_fl <- read_csv("../../data/raw/Florida_State_Data/locations-fl.csv")
+locations_pa <- read_csv("../data/raw/Pennsylvania_State_Data/locations.csv")
+locations_or <- read_csv("../data/raw/Oregon_State_Data/locations-or.csv")
+locations_fl <- read_csv("../data/raw/Florida_State_Data/locations-fl.csv")
 
-rdf<-read.csv("../../Data/county_characteristics_conviction.csv")
+rdf<-read.csv("../Data/county_characteristics_conviction.csv")
 
 rdf <- rdf %>% 
   mutate(Log.pop = log(Population),
@@ -606,6 +606,111 @@ reg_plots(rdf_FL, base_vals_FL, "Florida", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL
 ```{r}
 library(stargazer)
 
+# state_coef_table <- function(state, lm_pd, lm_p, lm_ca, lm_sr, covar_labels, state_name) {
+#   stargazer(
+#     lm_pd,
+#     lm_p,
+#     lm_ca,
+#     lm_sr,
+#     
+#     type = "text",
+#     title = paste0("Conviction Rate Regression Results by Attorney Type (",
+#                                   state_name,")"),
+#     
+#     dep.var.labels.include = FALSE,
+#     dep.var.caption = "",#Regression Results for Conviction Rates by Counsel Type (Pennsylvania)",
+#     column.labels = c(
+#       "Public Defender",
+#       "Private",
+#       "Court Appointed",
+#       "Self-Represented"
+#     ),
+#     
+#     #dep.var.labels = "Logit(Conviction Rate)",
+#     
+#     digits = 3,
+#     report = "vc*s",
+#     omit.stat = c("f", "rsq", "ser"),
+# 
+#     covariate.labels = covar_labels,
+#     
+#     align = TRUE
+#   ) 
+# }
+# 
+# 
+# covar_labels_PA = c("Log Population",
+#                     "Proportion of Young Males",
+#                     "Proportion African American",
+#                     "Proportion Native American / Alaskan",
+#                     "Proportion Asian / Pacific Islander",
+#                     "Proportion Hispanic or Latino",
+#                     "Poverty Rate",
+#                     "Unemployment Rate",
+#                     "Number of Criminal Court Judges",
+#                     "Police Officers per 100,000 Residents",
+#                     "Number of Full-Time Prosecutors"
+# )
+# 
+# covar_labels_OR = c("Log Population",
+#                     "Proportion of Young Males",
+#                     "Proportion African American",
+#                     "Proportion Native American / Alaskan",
+#                     "Proportion Asian / Pacific Islander",
+#                     "Proportion Hispanic or Latino",
+#                     "Poverty Rate",
+#                     "Unemployment Rate"#,
+#                     #"Number of Criminal Court Judges",
+#                     #"Police Officers per 100,000 Residents",
+#                     #"Number of Full-Time Prosecutors"
+# )
+# 
+# covar_labels_FL = c("Log Population",
+#                     "Proportion of Young Males",
+#                     "Proportion African American",
+#                     "Proportion Native American / Alaskan",
+#                     "Proportion Asian / Pacific Islander",
+#                     "Proportion Hispanic or Latino",
+#                     "Poverty Rate",
+#                     "Unemployment Rate",
+#                     #"Number of Criminal Court Judges",
+#                     "Police Officers per 100,000 Residents"#,
+#                     #"Number of Full-Time Prosecutors"
+# )
+# 
+# state_coef_table("pa", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA, covar_labels_PA, "Pennsylvania")
+# state_coef_table("or", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR, covar_labels_OR, "Oregon")
+# state_coef_table("fl", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL, covar_labels_FL, "Florida")
+
+library(stargazer)
+
+# CSS to highlight significant coefficients (rows where stargazer adds * markers)
+cat('
+<style>
+  /* Bold and gold-highlight significant coefficient rows in stargazer HTML tables */
+  table.stargazer tr td:first-child {
+    white-space: nowrap;
+  }
+  .sig-highlight {
+    background-color: #fffbcc;
+    font-weight: bold;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Find all stargazer tables and highlight rows with significance stars
+    document.querySelectorAll("table.stargazer").forEach(function(tbl) {
+      tbl.querySelectorAll("tr").forEach(function(row) {
+        var text = row.innerText || row.textContent;
+        if (/[*]/.test(text)) {
+          row.classList.add("sig-highlight");
+        }
+      });
+    });
+  });
+</script>
+')
+
 state_coef_table <- function(state, lm_pd, lm_p, lm_ca, lm_sr, covar_labels, state_name) {
   stargazer(
     lm_pd,
@@ -613,7 +718,7 @@ state_coef_table <- function(state, lm_pd, lm_p, lm_ca, lm_sr, covar_labels, sta
     lm_ca,
     lm_sr,
     
-    type = "text",
+    type = "html",
     title = paste0("Conviction Rate Regression Results by Attorney Type (",
                                   state_name,")"),
     
@@ -681,6 +786,50 @@ covar_labels_FL = c("Log Population",
 state_coef_table("pa", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA, covar_labels_PA, "Pennsylvania")
 state_coef_table("or", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR, covar_labels_OR, "Oregon")
 state_coef_table("fl", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL, covar_labels_FL, "Florida")
+
+# highlight_sig_cells <- function(html_path) {
+#   html <- paste(readLines(html_path, warn = FALSE), collapse = "\n")
+#   
+#   # Bold + highlight only the individual <td> cells containing significance stars
+#   # Matches: <td>-0.170<sup>*</sup></td>  or  <td>3.396<sup>**</sup></td> etc.
+#   html <- gsub(
+#     "(<td)([^>]*>)([^<]*<sup>\\*+<\\/sup>)",
+#     "\\1 style='background-color:#ffd700;font-weight:bold;'\\2\\3",
+#     html
+#   )
+#   
+#   writeLines(strsplit(html, "\n")[[1]], html_path)
+#   message("Highlighted: ", html_path)
+# }
+# 
+# save_cr_regr_table <- function(state_label, lm_pd, lm_p, lm_ca, lm_sr,
+#                                covar_labels, state_name,
+#                                appendix_root = "Appendix") {
+#   out_dir  <- file.path(appendix_root, state_label)
+#   dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+#   out_path <- file.path(out_dir, "[CR]Regr_Table.html")
+#   
+#   stargazer(
+#     lm_pd, lm_p, lm_ca, lm_sr,
+#     type                   = "html",
+#     out                    = out_path,
+#     title                  = paste0("Conviction Rate Regression Results by Attorney Type (", state_name, ")"),
+#     dep.var.labels.include = FALSE,
+#     dep.var.caption        = "",
+#     column.labels          = c("Public Defender", "Private", "Court Appointed", "Self-Represented"),
+#     digits                 = 3,
+#     report                 = "vc*s",
+#     omit.stat              = c("f", "rsq", "ser"),
+#     covariate.labels       = covar_labels,
+#     align                  = TRUE
+#   )
+#   
+#   highlight_sig_cells(out_path)
+# }
+# 
+# save_cr_regr_table("PA", lm_pd_PA, lm_p_PA, lm_ca_PA, lm_sr_PA, covar_labels_PA, "Pennsylvania")
+# save_cr_regr_table("OR", lm_pd_OR, lm_p_OR, lm_ca_OR, lm_sr_OR, covar_labels_OR, "Oregon")
+# save_cr_regr_table("FL", lm_pd_FL, lm_p_FL, lm_ca_FL, lm_sr_FL, covar_labels_FL, "Florida")
 ```
 
 
